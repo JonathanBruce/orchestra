@@ -29,6 +29,7 @@
     "eslint-plugin-react": "^4.2.3",
     "file-loader": "^0.8.5",
     "intern": "^3.0.6",
+    "markdown-include": "^0.4.3",
     "node-sass": "^3.4.2",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
