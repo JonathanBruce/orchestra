@@ -3,77 +3,77 @@
 	margin-right: auto;
 	width: 1200px;
 
-	.alpha {
-		margin-left: 0;
-	}
-
-	.omega {
-		margin-right: 0;
-	}
-
-	.grid-1,
-	.grid-2,
-	.grid-3,
-	.grid-4,
-	.grid-5,
-	.grid-6,
-	.grid-7,
-	.grid-8,
-	.grid-9,
-	.grid-10,
-	.grid-11,
-	.grid-12 {
+	.orch-grid-1,
+	.orch-grid-2,
+	.orch-grid-3,
+	.orch-grid-4,
+	.orch-grid-5,
+	.orch-grid-6,
+	.orch-grid-7,
+	.orch-grid-8,
+	.orch-grid-9,
+	.orch-grid-10,
+	.orch-grid-11,
+	.orch-grid-12 {
 		display: inline;
 		float: left;
 		margin-left: 10px;
 		margin-right: 10px;
+
+		&.alpha {
+			margin-left: 0;
+		}
+
+		&.omega {
+			margin-right: 0;
+		}
 	}
 
-	.grid-1 {
+	.orch-grid-1 {
 		width: 80px;
 	}
 
-	.grid-2 {
+	.orch-grid-2 {
 		width: 180px;
 	}
 
-	.grid-3 {
+	.orch-grid-3 {
 		width: 280px;
 	}
 
-	.grid-4 {
+	.orch-grid-4 {
 		width: 380px;
 	}
 
-	.grid-5 {
+	.orch-grid-5 {
 		width: 480px;
 	}
 
-	.grid-6 {
+	.orch-grid-6 {
 		width: 580px;
 	}
 
-	.grid-7 {
+	.orch-grid-7 {
 		width: 680px;
 	}
 
-	.grid-8 {
+	.orch-grid-8 {
 		width: 780px;
 	}
 
-	.grid-9 {
+	.orch-grid-9 {
 		width: 880px;
 	}
 
-	.grid-10 {
+	.orch-grid-10 {
 		width: 980px;
 	}
 
-	.grid-11 {
+	.orch-grid-11 {
 		width: 1080px;
 	}
 
-	.grid-12 {
+	.orch-grid-12 {
 		width: 1180px;
 	}
 
