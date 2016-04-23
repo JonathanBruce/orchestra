@@ -2,7 +2,7 @@
   "name": "orchestra",
   "version": "1.0.0",
   "description": "Insightpool's official UI kit",
-  "main": "ui.js",
+  "main": "ui.build.js",
   "scripts": {
     "build-ui": "webpack --config webpack.config.js",
     "build-test-ui": "webpack --config webpack.test.js",
