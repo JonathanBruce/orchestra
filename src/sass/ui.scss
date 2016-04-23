@@ -1,0 +1,15 @@
+/**
+ * Import supporting styles
+ */
+
+@import './_reset.scss';
+@import './_global.scss';
+@import './_mixins.scss';
+@import './_variables.scss';
+
+/**
+ * Import button component styles
+ */
+
+@import './components/buttons/Action.scss';
+@import './components/buttons/Primary.scss';

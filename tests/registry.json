@@ -1,0 +1,7 @@
+{
+	"files": [
+		"functional/base/Button",
+		"functional/buttons/Action",
+		"functional/buttons/Primary"
+	]
+}

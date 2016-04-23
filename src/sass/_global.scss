@@ -1,0 +1,15 @@
+button {
+	background-color: transparent;
+	border: none;
+	border-radius: 3px;
+	font-size: 13px;
+	letter-spacing: 3px;
+	outline: none;
+	padding: 10px 15px;
+	text-align: center;
+	text-transform: uppercase;
+
+	&:hover {
+		cursor: pointer;
+	}
+}

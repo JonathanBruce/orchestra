@@ -1,0 +1,19 @@
+@mixin mintGreen {
+	background-color: $mint-green;
+	border: 2px solid $mint-green-dark;
+	color: $pure-white;
+
+	&:hover {
+		background-color: $mint-green-dark;
+	}
+}
+
+@mixin powderBlue {
+	background-color: $powder-blue;
+	border: 2px solid $powder-blue-dark;
+	color: $pure-white;
+
+	&:hover {
+		background-color: $powder-blue-dark;
+	}
+}
