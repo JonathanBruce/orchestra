@@ -9,7 +9,7 @@ module.exports = {
 
 	output: {
 		path: __dirname,
-		filename: 'ui.js',
+		filename: 'ui.build.js',
 		libraryTarget: 'commonjs2'
 	},
 
