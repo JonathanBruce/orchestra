@@ -4,6 +4,7 @@
   "description": "Insightpool's official UI kit",
   "main": "ui.build.js",
   "files": [
+  	"src",
     "ui.build.js"
   ],
   "scripts": {
