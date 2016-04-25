@@ -8,7 +8,7 @@ module.exports = {
 	entry: path.join(sourceDir, 'ui.js'),
 
 	output: {
-		path: __dirname,
+		path: path.join(__dirname, 'dist'),
 		filename: 'ui.build.js',
 		libraryTarget: 'commonjs2'
 	},

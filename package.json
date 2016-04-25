@@ -2,10 +2,10 @@
   "name": "orchestra",
   "version": "0.0.1",
   "description": "Insightpool's official UI kit",
-  "main": "ui.build.js",
+  "main": "dist/ui.build.js",
   "files": [
-    "src",
-    "ui.build.js"
+    "dist",
+    "src"
   ],
   "scripts": {
     "build-icons": "node src/lib/icons.js .",
