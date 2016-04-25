@@ -9,6 +9,13 @@
 	}
 }
 
+@mixin disabledButton {
+	background-color: $silver !important;
+	border-color: $silver-dark !important;
+	color: $silver-dark !important;
+	cursor: default !important;
+}
+
 @mixin mintGreenButton {
 	background-color: $mint-green;
 	border: 2px solid $mint-green-dark;

@@ -13,7 +13,7 @@ class PrimaryButton extends React.Component {
 
 	render() {
 		return (
-			<BaseButton className='primary'>{ this.props.children }</BaseButton>
+			<BaseButton { ...this.props } className='primary'>{ this.props.children }</BaseButton>
 		);
 	}
 }

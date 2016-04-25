@@ -18,16 +18,6 @@ define([
 			.then(function (className) {
 				assert.equal(className, 'female', 'class names should be equal');
 			});
-		},
-
-		'should render correct text': function () {
-			return this.remote.get(require.toUrl(url))
-				.findById('female-button')
-					.findByTagName('button')
-					.getVisibleText()
-			.then(function (text) {
-				assert.equal(text, 'FEMALE', 'text content should be equal');
-			});
 		}
 	});
 });

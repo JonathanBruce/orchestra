@@ -10,6 +10,16 @@ define([
 	registerSuite({
 		name: 'functional/base/Button',
 
+		'should be able to add other attributes': function () {
+			return this.remote.get(require.toUrl(url))
+				.findById('base-button-data-foo')
+					.findByTagName('button')
+					.getAttribute('data-foo')
+			.then(function (foo) {
+				assert.equal(foo, 'foo', 'data-foo states should be equal');
+			});
+		},
+
 		'should have no default class': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('base-button')

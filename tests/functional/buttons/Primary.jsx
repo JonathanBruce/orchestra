@@ -3,4 +3,4 @@
 import 'sass/test-ui.scss';
 import PrimaryButton from 'components/buttons/Primary.jsx';
 
-ReactDOM.render(<PrimaryButton>Primary</PrimaryButton>, document.getElementById('primary-button'));
+ReactDOM.render(<PrimaryButton className='fuck'>Primary</PrimaryButton>, document.getElementById('primary-button'));

@@ -13,7 +13,7 @@ class ActionButton extends React.Component {
 
 	render() {
 		return (
-			<BaseButton className='action'>{ this.props.children }</BaseButton>
+			<BaseButton { ...this.props } className='action'>{ this.props.children }</BaseButton>
 		);
 	}
 }

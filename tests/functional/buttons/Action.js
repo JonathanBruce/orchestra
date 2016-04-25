@@ -18,16 +18,6 @@ define([
 			.then(function (className) {
 				assert.equal(className, 'action', 'class names should be equal');
 			});
-		},
-
-		'should render correct text': function () {
-			return this.remote.get(require.toUrl(url))
-				.findById('action-button')
-					.findByTagName('button')
-					.getVisibleText()
-			.then(function (text) {
-				assert.equal(text, 'ACTION', 'text content should be equal');
-			});
 		}
 	});
 });

@@ -13,7 +13,7 @@ class MaleButton extends React.Component {
 
 	render() {
 		return (
-			<BaseButton className='male'>MALE</BaseButton>
+			<BaseButton { ...this.props } className='male'>MALE</BaseButton>
 		);
 	}
 }

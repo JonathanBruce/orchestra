@@ -13,7 +13,7 @@ class BrandButton extends React.Component {
 
 	render() {
 		return (
-			<BaseButton className='brand'>BRAND</BaseButton>
+			<BaseButton { ...this.props } className='brand'>BRAND</BaseButton>
 		);
 	}
 }
