@@ -10,10 +10,21 @@ define([
 	registerSuite({
 		name: 'functional/buttons/Primary',
 
+		'should have the primary class by default': function () {
+			return this.remote.get(require.toUrl(url))
+				.findById('primary-button')
+					.findByTagName('button')
+					.getAttribute('class')
+			.then(function (className) {
+				assert.equal(className, 'primary', 'class names should be equal');
+			});
+		},
+
 		'should render correct text': function () {
 			return this.remote.get(require.toUrl(url))
-				.findByClassName('primary')
-				.getVisibleText()
+				.findById('primary-button')
+					.findByTagName('button')
+					.getVisibleText()
 			.then(function (text) {
 				assert.equal(text, 'PRIMARY', 'text content should be equal');
 			});

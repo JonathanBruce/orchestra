@@ -3,14 +3,15 @@
 class Button extends React.Component {
 	static propTypes = {
 		className: React.PropTypes.string,
-		children: React.PropTypes.func.required
+		children: React.PropTypes.oneOfType([
+			React.PropTypes.array,
+			React.PropTypes.string
+		])
 	};
 
 	render() {
-		const { className } = this.props;
-
 		return (
-			<button className={ className || '' }>
+			<button { ...this.props }>
 				{ this.props.children }
 			</button>
 		);
