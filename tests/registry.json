@@ -1,7 +1,10 @@
 {
 	"files": [
-		"functional/base/Button",
 		"functional/buttons/Action",
+		"functional/base/Button",
+		"functional/buttons/Brand",
+		"functional/buttons/Female",
+		"functional/buttons/Male",
 		"functional/buttons/Primary"
 	]
 }

@@ -1,0 +1,11 @@
+button {
+	&.brand {
+		@include genderButton();
+
+		&.active {
+			background-color: $dusk-blue;
+			border-color: $dusk-blue-dark;
+			color: $pure-white;
+		}
+	}
+}

@@ -1,4 +1,15 @@
-@mixin mintGreen {
+@mixin genderButton {
+	background-color: $arctic-blue;
+	border: 2px solid $arctic-blue-dark;
+	color: $cloudy-blue-grey;
+
+	&:hover {
+		background-color: $arctic-blue-dark;
+		color: $dusk-blue;
+	}
+}
+
+@mixin mintGreenButton {
 	background-color: $mint-green;
 	border: 2px solid $mint-green-dark;
 	color: $pure-white;
@@ -8,7 +19,7 @@
 	}
 }
 
-@mixin powderBlue {
+@mixin powderBlueButton {
 	background-color: $powder-blue;
 	border: 2px solid $powder-blue-dark;
 	color: $pure-white;
