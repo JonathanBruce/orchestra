@@ -52,7 +52,9 @@ module.exports = {
 	resolve: {
 		root: [
 			path.join(sourceDir, 'js'),
+			path.join(sourceDir, 'icons'),
 			path.join(sourceDir, 'sass'),
+			path.join(sourceDir, 'svg'),
 			sourceDir
 		]
 	}

@@ -4,10 +4,11 @@
   "description": "Insightpool's official UI kit",
   "main": "ui.build.js",
   "files": [
-  	"src",
+    "src",
     "ui.build.js"
   ],
   "scripts": {
+    "build-icons": "node src/lib/icons.js .",
     "build-ui": "webpack --config webpack.config.js",
     "build-test-ui": "webpack --config webpack.test.js",
     "build-intern-tests": "node tests/support/intern.js ./tests/functional",
@@ -34,11 +35,13 @@
     "file-loader": "^0.8.5",
     "intern": "^3.0.6",
     "markdown-include": "^0.4.3",
+    "mkdirp": "^0.5.1",
     "node-sass": "^3.4.2",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.1",
+    "svgo": "^0.6.6",
     "webpack": "^1.13.0"
   }
 }
