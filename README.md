@@ -9,9 +9,16 @@ To get up and running, do the following:
 * Install selenium-standalone from npm with `npm i -g selenium-standalone`
 * Install selenium-standalone with `selenium-standalone install`
 * Start selenium-standalone with `npm run selenium`
-* Install local npm modules for orchestra with `npm install`
+* Install local npm modules for Orchestra with `npm install`
 * In a new terminal window, run `npm run test` to run the functional tests
-* To build for production run `npm run build-ui`
+* To build for production run `npm run build:ui`
+
+Other commands include:
+
+* `npm run build:example` to build an example page with all available components
+* `npm run build:icons` to rebuild the icons directory
+* `npm run intern` to re-run intern test (you should use `npm run test` to rebuild and re-run)
+* `npm run build:test-ui` to build the test UI for the intern tests
 
 ## Contributing
 
