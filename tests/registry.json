@@ -1,10 +1,12 @@
 {
 	"files": [
-		"functional/buttons/Action",
-		"functional/base/Button",
 		"functional/buttons/Brand",
 		"functional/buttons/Female",
 		"functional/buttons/Male",
-		"functional/buttons/Primary"
+		"functional/base/PrimaryButton",
+		"functional/buttons/PrimaryNeutral",
+		"functional/buttons/PrimaryPositive",
+		"functional/base/SecondaryButton",
+		"functional/buttons/SecondaryPositive"
 	]
 }

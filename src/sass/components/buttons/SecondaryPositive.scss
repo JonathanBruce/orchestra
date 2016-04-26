@@ -1,0 +1,7 @@
+button {
+	&.secondary {
+		&.positive {
+			@include mintGreenSecondaryButton();
+		}
+	}
+}

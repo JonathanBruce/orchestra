@@ -1,9 +1,17 @@
 /**
+ * Import base component styles
+ */
+
+@import './components/base/PrimaryButton.scss';
+@import './components/base/SecondaryButton.scss';
+
+/**
  * Import button component styles
  */
 
-@import './components/buttons/Action.scss';
 @import './components/buttons/Brand.scss';
 @import './components/buttons/Female.scss';
 @import './components/buttons/Male.scss';
-@import './components/buttons/Primary.scss';
+@import './components/buttons/PrimaryNeutral.scss';
+@import './components/buttons/PrimaryPositive.scss';
+@import './components/buttons/SecondaryPositive.scss';

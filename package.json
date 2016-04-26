@@ -8,13 +8,14 @@
     "src"
   ],
   "scripts": {
-    "build-icons": "node src/lib/icons.js .",
-    "build-ui": "webpack --config webpack.config.js",
-    "build-test-ui": "webpack --config webpack.test.js",
-    "build-intern-tests": "node tests/support/intern.js ./tests/functional",
-    "intern-tests": "./node_modules/intern/bin/intern-runner.js config=tests/intern.js",
+    "build:example": "webpack --config webpack.example.js",
+    "build:icons": "node src/lib/icons.js .",
+    "build:intern": "node tests/support/intern.js ./tests/functional",
+    "build:ui": "webpack --config webpack.config.js",
+    "build:test-ui": "webpack --config webpack.test.js",
+    "intern": "./node_modules/intern/bin/intern-runner.js config=tests/intern.js",
     "selenium": "selenium-standalone start",
-    "test": "npm run build-test-ui && npm run build-intern-tests && npm run intern-tests"
+    "test": "npm run build:test-ui && npm run build:intern && npm run intern"
   },
   "author": "",
   "license": "ISC",

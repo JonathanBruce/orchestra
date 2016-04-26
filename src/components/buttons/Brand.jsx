@@ -1,10 +1,9 @@
 /* global React */
 
-import BaseButton from 'components/base/Button.jsx';
+import PrimaryButton from 'components/base/PrimaryButton.jsx';
 
 class BrandButton extends React.Component {
 	static propTypes = {
-		className: React.PropTypes.string,
 		children: React.PropTypes.oneOfType([
 			React.PropTypes.array,
 			React.PropTypes.string
@@ -13,7 +12,7 @@ class BrandButton extends React.Component {
 
 	render() {
 		return (
-			<BaseButton { ...this.props } className='brand'>BRAND</BaseButton>
+			<PrimaryButton { ...this.props } className='brand'>BRAND</PrimaryButton>
 		);
 	}
 }

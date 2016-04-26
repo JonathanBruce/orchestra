@@ -1,0 +1,15 @@
+button {
+	&.primary {
+		background-color: transparent;
+		border: none;
+		font-size: 13px;
+		letter-spacing: 3px;
+		padding: 10px 15px;
+		text-align: center;
+		text-transform: uppercase;
+
+		&:disabled {
+			@include disabledButton();
+		}
+	}
+}

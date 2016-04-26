@@ -10,13 +10,13 @@ define([
 	registerSuite({
 		name: 'functional/buttons/Male',
 
-		'should have the male class by default': function () {
+		'should have the primary and male class by default': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('male-button')
 					.findByTagName('button')
 					.getAttribute('class')
 			.then(function (className) {
-				assert.equal(className, 'male', 'class names should be equal');
+				assert.equal(className, 'primary male', 'class names should be equal');
 			});
 		}
 	});

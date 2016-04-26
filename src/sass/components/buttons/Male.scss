@@ -1,11 +1,13 @@
 button {
-	&.male {
-		@include genderButton();
+	&.primary {
+		&.male {
+			@include genderButton();
 
-		&.active {
-			background-color: $male-blue;
-			border-color: $male-blue-dark;
-			color: $pure-white;
+			&.active {
+				background-color: $male-blue;
+				border-color: $male-blue-dark;
+				color: $pure-white;
+			}
 		}
 	}
 }
