@@ -1,9 +1,11 @@
 /* global React */
 
 import Component from 'components/extensions/Component.jsx';
+import classnames from 'classnames';
 
 class PrimaryButton extends Component {
 	static propTypes = {
+		active: React.PropTypes.bool,
 		className: React.PropTypes.string,
 		children: React.PropTypes.oneOfType([
 			React.PropTypes.array,
@@ -12,8 +14,13 @@ class PrimaryButton extends Component {
 	};
 
 	render() {
+		const classes = classnames({
+			active: this.props.active,
+			primary: true
+		});
+
 		return (
-			<button { ...this.props } className={ this.mergeClasses('primary', this.props.className) }>
+			<button { ...this.props } className={ this.mergeClasses(classes, this.props.className) }>
 				{ this.props.children }
 			</button>
 		);

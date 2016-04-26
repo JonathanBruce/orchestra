@@ -39,6 +39,10 @@ function buildIcons() {
 		}
 
 		for (const file of files) {
+			if (file.startsWith('.')) {
+				continue;
+			}
+
 			fs.readFile(path.join(`${__dirname}/../svg/${file}`), (readFileErr, data) => {
 				if (readFileErr) {
 					throw new Error(readFileErr);

@@ -2,25 +2,24 @@ button {
 	&.secondary {
 		background-color: transparent;
 		border: none;
-		font-family: $lato-regular;
+		box-sizing: border-box;
 		font-size: 14px;
-		height: 34px;
-		padding: 6px 12px;
+		padding: 4px 10px;
 
-		.icon,
 		.text {
-			display: inline-block;
-			float: left;
+			padding-left: 5px;
 		}
 
-		.icon {
+		svg {
 			border-right: 2px solid $cloudy-blue-grey;
 			padding-right: 10px;
-			width: 20px;
+			height: 22px;
+			vertical-align: middle;
+			width: 22px;
 		}
 
-		.text {
-			padding-left: 10px;
+		&:disabled {
+			@include disabledButton();
 		}
 	}
 }

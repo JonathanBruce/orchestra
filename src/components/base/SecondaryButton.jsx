@@ -15,8 +15,7 @@ class SecondaryButton extends Component {
 	render() {
 		return (
 			<button { ...this.props } className={ this.mergeClasses('secondary', this.props.className) }>
-				<div className='icon'>{ this.props.icon }</div>
-				<div className='text'>{ this.props.children }</div>
+				{ this.props.icon } <span className='text'>{ this.props.children }</span>
 			</button>
 		);
 	}

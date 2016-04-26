@@ -10,6 +10,16 @@ define([
 	registerSuite({
 		name: 'functional/base/PrimaryButton',
 
+		'should be able to add the active attribute': function () {
+			return this.remote.get(require.toUrl(url))
+				.findById('primary-active-button')
+					.findByTagName('button')
+					.getAttribute('class')
+			.then(function (classNames) {
+				assert.equal(classNames, 'active primary', 'classnames should be equal');
+			});
+		},
+
 		'should be able to add other attributes': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('primary-button-data-foo')

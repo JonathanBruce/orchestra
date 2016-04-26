@@ -3,6 +3,12 @@
 	border-color: $silver-dark !important;
 	color: $silver-dark !important;
 	cursor: default !important;
+
+	svg {
+		path {
+			stroke: $silver-dark !important;
+		}
+	}
 }
 
 @mixin genderButton {
