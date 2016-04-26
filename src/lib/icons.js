@@ -7,6 +7,7 @@ const fs = require('fs');
 const path = require('path');
 const spawn = require('child_process').spawn;
 const mkdirp = require('mkdirp');
+const removeIconsDir = spawn('rm', [ '-rf', './src/icons' ]);
 
 function buildClassDefinition(className, body) {
 	return `
@@ -53,7 +54,7 @@ function buildIcons() {
 
 				if (hyphens && hyphens.length) {
 					for (const hyphen of hyphens) {
-						const index = file.indexOf(hyphen);
+						const index = className ? className.indexOf(hyphen) : file.indexOf(hyphen);
 
 						className = capitalizeWithHyphens(className ? className : file, index);
 					}
@@ -69,21 +70,23 @@ function buildIcons() {
 						throw new Error(writeFileErr);
 					}
 
-					console.log(`${className}.jsx made`);
+					console.log(`${className}.jsx file created!`);
 				});
 			});
 		}
 	});
 }
 
-mkdirp(`${__dirname}/../icons/`, (err) => {
-	if (err) {
-		throw new Error(err);
-	}
+removeIconsDir.on('close', () => {
+	mkdirp(`${__dirname}/../icons/`, (err) => {
+		if (err) {
+			throw new Error(err);
+		}
 
-	const svgMinify = spawn('./node_modules/svgo/bin/svgo', [ '-f', 'src/svg/' ]);
+		const svgMinify = spawn('./node_modules/svgo/bin/svgo', [ '-f', 'src/svg/' ]);
 
-	svgMinify.on('close', () => {
-		buildIcons();
+		svgMinify.on('close', () => {
+			buildIcons();
+		});
 	});
 });
