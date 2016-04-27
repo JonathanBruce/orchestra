@@ -3,14 +3,14 @@
 var path = require('path');
 var webpack = require('webpack');
 var sourceDir = path.join(__dirname, '/src');
-var examplesDir = path.join(__dirname, '/examples');
+var examplesDir = path.join(__dirname, '/example');
 
 module.exports = {
-	entry: path.join(examplesDir, 'style.js'),
+	entry: path.join(examplesDir, 'example.js'),
 
 	output: {
 		path: examplesDir,
-		filename: 'style.build.js'
+		filename: 'example.build.js'
 	},
 
 	module: {
