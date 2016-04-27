@@ -22,7 +22,17 @@
 	}
 }
 
-@mixin mintGreenButton {
+@mixin primaryNeutralButton {
+	background-color: $powder-blue;
+	border: 2px solid $powder-blue-dark;
+	color: $pure-white;
+
+	&:hover {
+		background-color: $powder-blue-dark;
+	}
+}
+
+@mixin primaryPositiveButton {
 	background-color: $mint-green;
 	border: 2px solid $mint-green-dark;
 	color: $pure-white;
@@ -32,7 +42,7 @@
 	}
 }
 
-@mixin mintGreenSecondaryButton {
+@mixin secondaryPositiveButton {
 	border: 2px solid $mint-green-dark;
 	color: $dusk-blue;
 
@@ -41,12 +51,11 @@
 	}
 }
 
-@mixin powderBlueButton {
-	background-color: $powder-blue;
-	border: 2px solid $powder-blue-dark;
-	color: $pure-white;
+@mixin secondaryNeutralButton {
+	border: 2px solid $cloudy-blue-grey;
+	color: $dusk-blue;
 
 	&:hover {
-		background-color: $powder-blue-dark;
+		background-color: $arctic-blue;
 	}
 }

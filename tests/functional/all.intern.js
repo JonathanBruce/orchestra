@@ -8,5 +8,6 @@ define([
 	'tests/functional/buttons/PrimaryNeutral',
 	'tests/functional/buttons/PrimaryPositive',
 	'tests/functional/base/SecondaryButton',
+	'tests/functional/buttons/SecondaryNeutral',
 	'tests/functional/buttons/SecondaryPositive'
 ]);
