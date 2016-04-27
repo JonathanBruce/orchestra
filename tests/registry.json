@@ -9,6 +9,9 @@
 		"functional/buttons/PrimaryPositive",
 		"functional/base/SecondaryButton",
 		"functional/buttons/SecondaryNeutral",
-		"functional/buttons/SecondaryPositive"
+		"functional/buttons/SecondaryPositive",
+		"functional/buttons/TertiaryNegative",
+		"functional/buttons/TertiaryNeutral",
+		"functional/buttons/TertiaryPositive"
 	]
 }

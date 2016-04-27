@@ -13,9 +13,10 @@ button {
 		svg {
 			border-right: 2px solid $cloudy-blue-grey;
 			padding-right: 10px;
-			height: 22px;
+			height: 24px;
+			stroke-width: 1.5px;
 			vertical-align: middle;
-			width: 22px;
+			width: 24px;
 		}
 
 		&:disabled {

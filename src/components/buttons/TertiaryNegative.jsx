@@ -4,10 +4,7 @@ import TertiaryButton from 'components/base/TertiaryButton.jsx';
 
 class TertiaryNegativeButton extends React.Component {
 	static propTypes = {
-		children: React.PropTypes.oneOfType([
-			React.PropTypes.array,
-			React.PropTypes.string
-		])
+		children: React.PropTypes.element
 	};
 
 	render() {

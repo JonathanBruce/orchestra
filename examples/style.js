@@ -17,8 +17,8 @@ import TertiaryNeutralButton from 'components/buttons/TertiaryNeutral.jsx';
 import TertiaryPositiveButton from 'components/buttons/TertiaryPositive.jsx';
 
 import GoBack from 'icons/GoBack.jsx';
-import Links from 'icons/Links.jsx';
-import Verified from 'icons/Verified.jsx';
+import Download from 'icons/Download.jsx';
+import Information from 'icons/Information.jsx';
 
 ReactDOM.render(<BrandButton />, document.getElementById('brand-button'));
 ReactDOM.render(<BrandButton active />, document.getElementById('brand-active-button'));
@@ -44,11 +44,11 @@ ReactDOM.render(<PrimaryPositiveButton disabled>Primary Positive Disabled Button
 ReactDOM.render(<SecondaryButton>Secondary Button</SecondaryButton>, document.getElementById('secondary-button'));
 ReactDOM.render(<SecondaryButton disabled>Secondary Button Disabled</SecondaryButton>, document.getElementById('secondary-disabled-button'));
 
-ReactDOM.render(<SecondaryNeutralButton icon={ <Verified /> }>Secondary Neutral Button</SecondaryNeutralButton>, document.getElementById('secondary-neutral-button'));
-ReactDOM.render(<SecondaryNeutralButton icon={ <Verified /> } disabled>Secondary Neutral Disabled Button</SecondaryNeutralButton>, document.getElementById('secondary-neutral-disabled-button'));
+ReactDOM.render(<SecondaryNeutralButton icon={ <Information /> }>Secondary Neutral Button</SecondaryNeutralButton>, document.getElementById('secondary-neutral-button'));
+ReactDOM.render(<SecondaryNeutralButton icon={ <Information /> } disabled>Secondary Neutral Disabled Button</SecondaryNeutralButton>, document.getElementById('secondary-neutral-disabled-button'));
 
-ReactDOM.render(<SecondaryPositiveButton icon={ <Links /> }>Secondary Positive Button</SecondaryPositiveButton>, document.getElementById('secondary-positive-button'));
-ReactDOM.render(<SecondaryPositiveButton icon={ <Links /> } disabled>Secondary Positive Disabled Button</SecondaryPositiveButton>, document.getElementById('secondary-positive-disabled-button'));
+ReactDOM.render(<SecondaryPositiveButton icon={ <Download /> }>Secondary Positive Button</SecondaryPositiveButton>, document.getElementById('secondary-positive-button'));
+ReactDOM.render(<SecondaryPositiveButton icon={ <Download /> } disabled>Secondary Positive Disabled Button</SecondaryPositiveButton>, document.getElementById('secondary-positive-disabled-button'));
 
 ReactDOM.render(<TertiaryButton><GoBack /></TertiaryButton>, document.getElementById('tertiary-button'));
 ReactDOM.render(<TertiaryButton disabled><GoBack /></TertiaryButton>, document.getElementById('tertiary-disabled-button'));
