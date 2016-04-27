@@ -1,0 +1,7 @@
+button {
+	&.tertiary {
+		&.positive {
+			@include primaryPositive();
+		}
+	}
+}

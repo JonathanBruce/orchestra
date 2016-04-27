@@ -30,6 +30,12 @@
 	&:hover {
 		background-color: $arctic-blue;
 	}
+
+	svg {
+		path {
+			stroke: $powder-blue;
+		}
+	}
 }
 
 @mixin primaryNeutral {
@@ -40,6 +46,12 @@
 	&:hover {
 		background-color: $powder-blue-dark;
 	}
+
+	svg {
+		path {
+			stroke: $pure-white;
+		}
+	}
 }
 
 @mixin primaryPositive {
@@ -49,6 +61,12 @@
 
 	&:hover {
 		background-color: $mint-green-dark;
+	}
+
+	svg {
+		path {
+			stroke: $pure-white;
+		}
 	}
 }
 
