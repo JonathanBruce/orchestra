@@ -1,0 +1,21 @@
+.alert {
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	color: $pure-white;
+	font-family: $lato-light;
+	font-size: 16px;
+	padding: 20px 30px;
+	width: 100%;
+
+	&.danger {
+		background-color: $watermelon;
+	}
+
+	&.information {
+		background-color: $IP-blue-alt;
+	}
+
+	&.success {
+		background-color: $mint-green;
+	}
+}

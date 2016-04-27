@@ -1,7 +1,7 @@
 button {
 	&.primary {
 		&.female {
-			@include primaryNegativeAlt();
+			@include primaryNegativeAlternativeItem();
 
 			&.active {
 				background-color: $female-pink;

@@ -1,6 +1,7 @@
 /* global document, React, ReactDOM */
 
 import 'sass/ui.scss';
+import Alert from 'components/base/Alert.jsx';
 import BrandButton from 'components/buttons/Brand.jsx';
 import FemaleButton from 'components/buttons/Female.jsx';
 import MaleButton from 'components/buttons/Male.jsx';
@@ -19,6 +20,10 @@ import TertiaryPositiveButton from 'components/buttons/TertiaryPositive.jsx';
 import GoBack from 'icons/GoBack.jsx';
 import Download from 'icons/Download.jsx';
 import Information from 'icons/Information.jsx';
+
+ReactDOM.render(<Alert icon={ <Download /> } alert={ { kind: 'danger', message: 'There was an error in the campaign.  Please resolve any highlighted field and relaunch it.' } } />, document.getElementById('alert-danger'));
+ReactDOM.render(<Alert icon={ <Download /> } alert={ { kind: 'information', message: 'You are receiving some sort of informational message.' } } />, document.getElementById('alert-information'));
+ReactDOM.render(<Alert icon={ <Download /> } alert={ { kind: 'success', message: 'You successfully launched the campaign!' } } />, document.getElementById('alert-success'));
 
 ReactDOM.render(<BrandButton />, document.getElementById('brand-button'));
 ReactDOM.render(<BrandButton active />, document.getElementById('brand-active-button'));

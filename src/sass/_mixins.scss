@@ -1,3 +1,15 @@
+@mixin arcticBlueWrapper {
+	background-color: $pure-white;
+	border: 2px solid $arctic-blue;
+	color: $dusk-blue;
+}
+
+@mixin cloudyBlueGreyWrapper {
+	background-color: $pure-white;
+	border: 2px solid $cloudy-blue-grey;
+	color: $dusk-blue;
+}
+
 @mixin disabled {
 	background-color: $silver !important;
 	border-color: $silver-dark !important;
@@ -5,13 +17,20 @@
 	cursor: default !important;
 
 	svg {
+		border-color: $silver-dark !important;
+
+		ellipse,
 		path {
 			stroke: $silver-dark !important;
+		}
+
+		text {
+			fill: $silver-dark !important;
 		}
 	}
 }
 
-@mixin primaryNegativeAlt {
+@mixin primaryNegativeAlternativeItem {
 	background-color: $arctic-blue;
 	border: 2px solid $arctic-blue-dark;
 	color: $cloudy-blue-grey;
@@ -22,7 +41,7 @@
 	}
 }
 
-@mixin primaryNegative {
+@mixin primaryNegativeItem {
 	background-color: $pure-white;
 	border: 2px solid $powder-blue;
 	color: $powder-blue;
@@ -38,7 +57,7 @@
 	}
 }
 
-@mixin primaryNeutral {
+@mixin primaryNeutralItem {
 	background-color: $powder-blue;
 	border: 2px solid $powder-blue-dark;
 	color: $pure-white;
@@ -54,7 +73,7 @@
 	}
 }
 
-@mixin primaryPositive {
+@mixin primaryPositiveItem {
 	background-color: $mint-green;
 	border: 2px solid $mint-green-dark;
 	color: $pure-white;
@@ -70,7 +89,7 @@
 	}
 }
 
-@mixin secondaryPositive {
+@mixin secondaryPositiveItem {
 	border: 2px solid $mint-green-dark;
 	color: $dusk-blue;
 
@@ -79,7 +98,7 @@
 	}
 }
 
-@mixin secondaryNeutral {
+@mixin secondaryNeutralItem {
 	border: 2px solid $cloudy-blue-grey;
 	color: $dusk-blue;
 

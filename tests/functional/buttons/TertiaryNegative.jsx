@@ -1,6 +1,6 @@
 /* global document, React, ReactDOM */
 
-import 'sass/test-ui.scss';
+import 'sass/ui.scss';
 import GoBack from 'icons/GoBack.jsx';
 import TertiaryNegativeButton from 'components/buttons/TertiaryNegative.jsx';
 

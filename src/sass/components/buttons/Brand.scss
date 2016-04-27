@@ -1,7 +1,7 @@
 button {
 	&.primary {
 		&.brand {
-			@include primaryNegativeAlt();
+			@include primaryNegativeAlternativeItem();
 
 			&.active {
 				background-color: $dusk-blue;

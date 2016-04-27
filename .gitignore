@@ -2,3 +2,7 @@ node_modules
 .idea
 **/*.entry.js
 icons
+**/*.eot
+**/*.ttf
+**/*.woff
+**/*.woff2

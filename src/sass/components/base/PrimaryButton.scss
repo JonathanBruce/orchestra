@@ -2,8 +2,9 @@ button {
 	&.primary {
 		background-color: transparent;
 		border: none;
+		font-family: $lato-regular;
 		font-size: 13px;
-		letter-spacing: 3px;
+		letter-spacing: 4px;
 		padding: 10px 15px;
 		text-align: center;
 		text-transform: uppercase;

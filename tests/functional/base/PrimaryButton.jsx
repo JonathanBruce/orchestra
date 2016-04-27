@@ -1,6 +1,6 @@
 /* global document, React, ReactDOM */
 
-import 'sass/test-ui.scss';
+import 'sass/ui.scss';
 import PrimaryButton from 'components/base/PrimaryButton.jsx';
 
 ReactDOM.render(<PrimaryButton active>Primary</PrimaryButton>, document.getElementById('primary-active-button'));
