@@ -5,6 +5,7 @@ define([
 	'tests/functional/buttons/Female',
 	'tests/functional/buttons/Male',
 	'tests/functional/base/PrimaryButton',
+	'tests/functional/buttons/PrimaryNegative',
 	'tests/functional/buttons/PrimaryNeutral',
 	'tests/functional/buttons/PrimaryPositive',
 	'tests/functional/base/SecondaryButton',

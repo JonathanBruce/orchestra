@@ -9,7 +9,7 @@ button {
 		text-transform: uppercase;
 
 		&:disabled {
-			@include disabledButton();
+			@include disabled();
 		}
 	}
 }

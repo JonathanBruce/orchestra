@@ -19,7 +19,7 @@ button {
 		}
 
 		&:disabled {
-			@include disabledButton();
+			@include disabled();
 		}
 	}
 }

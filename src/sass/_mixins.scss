@@ -1,4 +1,4 @@
-@mixin disabledButton {
+@mixin disabled {
 	background-color: $silver !important;
 	border-color: $silver-dark !important;
 	color: $silver-dark !important;
@@ -11,7 +11,7 @@
 	}
 }
 
-@mixin genderButton {
+@mixin primaryNegativeAlt {
 	background-color: $arctic-blue;
 	border: 2px solid $arctic-blue-dark;
 	color: $cloudy-blue-grey;
@@ -22,7 +22,17 @@
 	}
 }
 
-@mixin primaryNeutralButton {
+@mixin primaryNegative {
+	background-color: $pure-white;
+	border: 2px solid $powder-blue;
+	color: $powder-blue;
+
+	&:hover {
+		background-color: $arctic-blue;
+	}
+}
+
+@mixin primaryNeutral {
 	background-color: $powder-blue;
 	border: 2px solid $powder-blue-dark;
 	color: $pure-white;
@@ -32,7 +42,7 @@
 	}
 }
 
-@mixin primaryPositiveButton {
+@mixin primaryPositive {
 	background-color: $mint-green;
 	border: 2px solid $mint-green-dark;
 	color: $pure-white;
@@ -42,7 +52,7 @@
 	}
 }
 
-@mixin secondaryPositiveButton {
+@mixin secondaryPositive {
 	border: 2px solid $mint-green-dark;
 	color: $dusk-blue;
 
@@ -51,7 +61,7 @@
 	}
 }
 
-@mixin secondaryNeutralButton {
+@mixin secondaryNeutral {
 	border: 2px solid $cloudy-blue-grey;
 	color: $dusk-blue;
 

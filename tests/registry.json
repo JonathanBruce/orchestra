@@ -4,6 +4,7 @@
 		"functional/buttons/Female",
 		"functional/buttons/Male",
 		"functional/base/PrimaryButton",
+		"functional/buttons/PrimaryNegative",
 		"functional/buttons/PrimaryNeutral",
 		"functional/buttons/PrimaryPositive",
 		"functional/base/SecondaryButton",

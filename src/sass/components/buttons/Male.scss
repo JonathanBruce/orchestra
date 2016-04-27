@@ -1,7 +1,7 @@
 button {
 	&.primary {
 		&.male {
-			@include genderButton();
+			@include primaryNegativeAlt();
 
 			&.active {
 				background-color: $male-blue;
