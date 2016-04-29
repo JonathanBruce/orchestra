@@ -24,8 +24,8 @@ module.exports = {
 				}
 			},
 			{
-				test: /\.(ttf|woff|woff2|eot|png|jpg|svg)$/,
-				loaders: [ 'file' ]
+				loader: 'file?name=/../dist/[hash].[ext]',
+				test: /\.(ttf|woff|woff2|eot|png|jpg|svg)$/
 			},
 			{
 				test: /\.scss$/,

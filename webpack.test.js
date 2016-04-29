@@ -10,7 +10,8 @@ module.exports = {
 
 	output: {
 		path: testsDir,
-		filename: './[name].entry.js'
+		filename: './[name].entry.js',
+		publicPath: testsDir
 	},
 
 	module: {
@@ -24,8 +25,8 @@ module.exports = {
 				}
 			},
 			{
-				test: /\.(ttf|woff|woff2|eot|png|jpg|svg)$/,
-				loaders: [ 'file' ]
+				loader: 'file?name=/../dist/[hash].[ext]',
+				test: /\.(ttf|woff|woff2|eot|png|jpg|svg)$/
 			},
 			{
 				test: /\.scss$/,
@@ -53,6 +54,7 @@ module.exports = {
 	resolve: {
 		root: [
 			path.join(__dirname, '/src'),
+			path.join(__dirname, '/dist'),
 			testsDir
 		]
 	}

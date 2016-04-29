@@ -1,4 +1,5 @@
-/* global document, React, ReactDOM */
+/* eslint-disable */
+/* global document, React, ReactDOM, window */
 
 import 'sass/ui.scss';
 import BrandButton from 'components/buttons/Brand.jsx';
