@@ -3,4 +3,23 @@
 import 'sass/ui.scss';
 import PrimaryNegativeButton from 'components/buttons/PrimaryNegative.jsx';
 
-ReactDOM.render(<PrimaryNegativeButton>Primary</PrimaryNegativeButton>, document.getElementById('primary-negative-button'));
+class PrimaryNegativeButtonTest extends React.Component {
+	onClick = () => {
+		const text = this.refs.text;
+
+		text.textContent = 'primary negative button';
+	};
+
+	render() {
+		return (
+			<div id='primary-negative-button'>
+				<div ref='text' className='text'></div>
+				<PrimaryNegativeButton onClick={ this.onClick }>
+					Primary Negative Button
+				</PrimaryNegativeButton>
+			</div>
+		);
+	}
+}
+
+ReactDOM.render(<PrimaryNegativeButtonTest />, document.getElementById('test'));

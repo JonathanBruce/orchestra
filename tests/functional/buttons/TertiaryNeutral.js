@@ -10,6 +10,20 @@ define([
 	registerSuite({
 		name: 'functional/buttons/TertiaryNeutral',
 
+		'should allow onClick events': function () {
+			return this.remote.get(require.toUrl(url))
+				.findById('test')
+					.findById('tertiary-neutral-button')
+						.findByTagName('button')
+						.click()
+						.end()
+						.findByClassName('text')
+						.getVisibleText()
+			.then(function (value) {
+				assert.equal(value, 'tertiary neutral button', 'values should be equal');
+			});
+		},
+
 		'should have the tertiary and neutral class by default': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('tertiary-neutral-button')

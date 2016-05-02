@@ -12,9 +12,10 @@ define([
 
 		'should be able to add the active attribute': function () {
 			return this.remote.get(require.toUrl(url))
-				.findById('primary-active-button')
-					.findByTagName('button')
-					.getAttribute('class')
+				.findById('primary-button')
+					.findByClassName('active')
+						.findByTagName('button')
+						.getAttribute('class')
 			.then(function (classNames) {
 				assert.equal(classNames, 'active primary', 'classnames should be equal');
 			});
@@ -22,9 +23,10 @@ define([
 
 		'should be able to add other attributes': function () {
 			return this.remote.get(require.toUrl(url))
-				.findById('primary-button-data-foo')
-					.findByTagName('button')
-					.getAttribute('data-foo')
+				.findById('primary-button')
+					.findByClassName('data-foo')
+						.findByTagName('button')
+						.getAttribute('data-foo')
 			.then(function (foo) {
 				assert.equal(foo, 'foo', 'data-foo states should be equal');
 			});
@@ -33,8 +35,9 @@ define([
 		'should have the primary class': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('primary-button')
-					.findByTagName('button')
-					.getAttribute('class')
+					.findByClassName('inactive')
+						.findByTagName('button')
+						.getAttribute('class')
 			.then(function (className) {
 				assert.equal(className, 'primary', 'class names should be equal');
 			});
@@ -42,8 +45,10 @@ define([
 
 		'should render correct text': function () {
 			return this.remote.get(require.toUrl(url))
-				.findByTagName('button')
-				.getVisibleText()
+				.findById('primary-button')
+					.findByClassName('inactive')
+						.findByTagName('button')
+						.getVisibleText()
 			.then(function (text) {
 				assert.equal(text, 'PRIMARY', 'text content should be equal');
 			});

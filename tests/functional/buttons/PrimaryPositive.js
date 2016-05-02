@@ -10,6 +10,20 @@ define([
 	registerSuite({
 		name: 'functional/buttons/PrimaryPositive',
 
+		'should allow onClick events': function () {
+			return this.remote.get(require.toUrl(url))
+				.findById('test')
+					.findById('primary-positive-button')
+						.findByTagName('button')
+						.click()
+						.end()
+						.findByClassName('text')
+						.getVisibleText()
+			.then(function (value) {
+				assert.equal(value, 'primary positive button', 'values should be equal');
+			});
+		},
+
 		'should have the primary and positive class by default': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('primary-positive-button')

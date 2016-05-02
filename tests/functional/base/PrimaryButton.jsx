@@ -3,6 +3,24 @@
 import 'sass/ui.scss';
 import PrimaryButton from 'components/base/PrimaryButton.jsx';
 
-ReactDOM.render(<PrimaryButton active>Primary</PrimaryButton>, document.getElementById('primary-active-button'));
-ReactDOM.render(<PrimaryButton>Primary</PrimaryButton>, document.getElementById('primary-button'));
-ReactDOM.render(<PrimaryButton data-foo='foo'>Primary</PrimaryButton>, document.getElementById('primary-button-data-foo'));
+class PrimaryButtonTest extends React.Component {
+	render() {
+		return (
+			<div id='primary-button'>
+				<div className='inactive'>
+					<PrimaryButton>Primary</PrimaryButton>
+				</div>
+
+				<div className='active'>
+					<PrimaryButton active>Primary</PrimaryButton>
+				</div>
+
+				<div className='data-foo'>
+					<PrimaryButton data-foo='foo'>Primary</PrimaryButton>
+				</div>
+			</div>
+		);
+	}
+}
+
+ReactDOM.render(<PrimaryButtonTest />, document.getElementById('test'));
