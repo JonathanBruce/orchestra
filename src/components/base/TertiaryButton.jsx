@@ -5,7 +5,7 @@ import Component from 'components/extensions/Component.jsx';
 class TertiaryButton extends Component {
 	static propTypes = {
 		className: React.PropTypes.string,
-		children: React.PropTypes.element
+		children: React.PropTypes.element.required
 	};
 
 	render() {

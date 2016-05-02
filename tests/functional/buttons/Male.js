@@ -12,11 +12,10 @@ define([
 
 		'should allow onClick events': function () {
 			return this.remote.get(require.toUrl(url))
-				.findById('test')
-					.findById('male-button')
-						.findByTagName('button')
-						.click()
-						.getAttribute('class')
+				.findById('male-button')
+					.findByTagName('button')
+					.click()
+					.getAttribute('class')
 			.then(function (className) {
 				assert.equal(className, 'active primary male', 'class names should be equal');
 			});
