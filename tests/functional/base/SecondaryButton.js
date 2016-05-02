@@ -10,6 +10,17 @@ define([
 	registerSuite({
 		name: 'functional/base/SecondaryButton',
 
+		'should be able to take an icon property': function () {
+			return this.remote.get(require.toUrl(url))
+				.findById('test')
+					.findById('secondary-button')
+						.findByTagName('button')
+						.findByTagName('svg')
+			.then(function (svg) {
+				assert.isNotNull(svg, 'svg should not be null');
+			});
+		},
+
 		'should have the secondary class': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('secondary-button')

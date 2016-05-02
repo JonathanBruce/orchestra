@@ -16,7 +16,7 @@ class TertiaryNegativeButtonTest extends React.Component {
 			<div id='tertiary-negative-button'>
 				<div ref='text' className='text'></div>
 				<TertiaryNegativeButton onClick={ this.onClick }>
-					Tertiary Negative Button
+					<GoBack />
 				</TertiaryNegativeButton>
 			</div>
 		);

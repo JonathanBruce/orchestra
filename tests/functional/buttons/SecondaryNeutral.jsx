@@ -1,6 +1,7 @@
 /* global document, React, ReactDOM */
 
 import 'sass/ui.scss';
+import Links from 'icons/Links.jsx';
 import SecondaryNeutralButton from 'components/buttons/SecondaryNeutral.jsx';
 
 class SecondaryNeutralButtonTest extends React.Component {
@@ -14,7 +15,8 @@ class SecondaryNeutralButtonTest extends React.Component {
 		return (
 			<div id='secondary-neutral-button'>
 				<div ref='text' className='text'></div>
-				<SecondaryNeutralButton onClick={ this.onClick }>
+				<SecondaryNeutralButton icon={ <Links /> }
+					onClick={ this.onClick }>
 					Secondary Neutral Button
 				</SecondaryNeutralButton>
 			</div>

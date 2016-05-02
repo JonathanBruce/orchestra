@@ -24,6 +24,17 @@ define([
 			});
 		},
 
+		'should be able to take an icon property': function () {
+			return this.remote.get(require.toUrl(url))
+				.findById('test')
+					.findById('secondary-neutral-button')
+						.findByTagName('button')
+							.findByTagName('svg')
+			.then(function (svg) {
+				assert.isNotNull(svg, 'svg should not be null');
+			});
+		},
+
 		'should have the secondary and neutral class by default': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('secondary-neutral-button')

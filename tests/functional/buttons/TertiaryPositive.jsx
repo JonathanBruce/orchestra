@@ -16,7 +16,7 @@ class TertiaryPositiveButtonTest extends React.Component {
 			<div id='tertiary-positive-button'>
 				<div ref='text' className='text'></div>
 				<TertiaryPositiveButton onClick={ this.onClick }>
-					Tertiary Positive Button
+					<GoBack />
 				</TertiaryPositiveButton>
 			</div>
 		);
