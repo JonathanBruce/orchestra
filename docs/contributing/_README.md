@@ -1,4 +1,4 @@
-## Contributing !heading
+# Contributing !heading
 
 Please fork this repository to make changes.
 

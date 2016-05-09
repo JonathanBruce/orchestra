@@ -6,8 +6,22 @@
     * [Installing Dependencies](#installing-dependencies)
     * [Selenium](#selenium)
   * [Testing](#testing)
-  * [Commands](#commands)
-  * [Contributing](#contributing)
+* [API](#api)
+  * [In A Nutshell](#in-a-nutshell)
+  * [Buttons](#buttons)
+    * [`BrandButton`](#brandbutton)
+    * [`FemaleButton`](#femalebutton)
+    * [`MaleButton`](#malebutton)
+    * [`PrimaryNegativeButton`](#primarynegativebutton)
+    * [`PrimaryNeutralButton`](#primaryneutralbutton)
+    * [`PrimaryPositiveButton`](#primarypositivebutton)
+    * [`SecondaryNeutralButton`](#secondaryneutralbutton)
+    * [`SecondaryPositiveButton`](#secondarypositivebutton)
+    * [`TertiaryNegativeButton`](#tertiarynegativebutton)
+    * [`TertiaryNeutralButton`](#tertiaryneutralbutton)
+    * [`TertiaryPositiveButton`](#tertiarypositivebutton)
+* [Commands](#commands)
+* [Contributing](#contributing)
 
 
 # Orchestra
@@ -28,7 +42,7 @@ Orchestra uses the following technologies:
 
 ## Setting Up
 
-Follow these intructions to set up Orchestra development environment.
+Follow these intructions to set up the Orchestra development environment.
 
 ### Installing Dependencies
 
@@ -50,10 +64,394 @@ As stated previously, Orchestra leverages Intern to functional testing.  To find
 
 Intern also leverages Leadfoot as the API to drive the browser.  To find out more about Leadfoot please refer to this architecture section of these docs.  There you will find the API of Leadfoot.
 
-To run the functional tests, run `npm run test` at the project root.
+To run the functional tests, run `npm run test` at the project root.  The selenium standalone server must be running for these tests to work.
 
 
-## Commands
+# API
+
+Below you can find Orchestra's API for it's components as well as how it's often used.
+
+## In A Nutshell
+
+The idea behind Orchestra is simple: reusable bits of UI functionality that can easily plug into your Redux powered application.  For example, considering the following:
+
+```javascript
+import { PrimaryPositiveButton } from 'orchestra';
+
+class MyComponent extends React.Component {
+	render() {
+		return (
+			<PrimaryPositiveButton>Hello!</PrimaryPositiveButton>
+		);
+	}
+}
+```
+
+This would render Orchestra's `PrimaryPositiveButton` component that is simply a button with certain style attributes and has it's own API attached to it.  Since this is a button built with React you can pass all the usual suspects you would expect to pass to a React component like `onClick`, `onKeyUp`, etc...
+
+
+
+## Buttons
+
+The following describes all of the buttons available for use in Orchestra.
+
+### `BrandButton`
+
+* __Internal components used:__ `PrimaryButton.jsx`
+* __HTML tag extended:__ `<button></button>`
+* __CSS class(es) used:__ `brand`
+* __Located at__: `src/components/buttons/Brand.jsx`
+
+**Props:**
+
+| Name          | Type          | Desciption                                    |
+| ------------- |---------------| ----------------------------------------------|
+| `active`      | `boolean`     | Gives the component an active class           |
+| `disabled`    | `boolean`     | Disables the component                        |
+
+**Reason for existing:**
+
+The BrandButton is used in conjunction with Insightpool searches.
+
+**Usage:**
+
+```javascript
+import { BrandButton } from 'orchestra';
+
+class MyComponent extends React.Component {
+	render() {
+		return (
+			<BrandButton active={ true } />
+		);
+	}
+}
+```
+
+
+### `FemaleButton`
+
+* __Internal components used:__ `PrimaryButton.jsx`
+* __HTML tag extended:__ `<button></button>`
+* __CSS class(es) used:__ `female`
+* __Located at__: `src/components/buttons/Female.jsx`
+
+**Props:**
+
+| Name          | Type          | Desciption                                    |
+| ------------- |---------------| ----------------------------------------------|
+| `active`      | `boolean`     | Gives the component an active class           |
+| `disabled`    | `boolean`     | Disables the component                        |
+
+**Reason for existing:**
+
+The FemaleButton is used in conjunction with Insightpool searches.
+
+**Usage:**
+
+```javascript
+import { FemaleButton } from 'orchestra';
+
+class MyComponent extends React.Component {
+	render() {
+		return (
+			<FemaleButton active={ true } />
+		);
+	}
+}
+```
+
+
+### `MaleButton`
+
+* __Internal components used:__ `PrimaryButton.jsx`
+* __HTML tag extended:__ `<button></button>`
+* __CSS class(es) used:__ `male`
+* __Located at__: `src/components/buttons/Male.jsx`
+
+**Props:**
+
+| Name          | Type          | Desciption                                    |
+| ------------- |---------------| ----------------------------------------------|
+| `active`      | `boolean`     | Gives the component an active class           |
+| `disabled`    | `boolean`     | Disables the component                        |
+
+**Reason for existing:**
+
+The MaleButton is used in conjunction with Insightpool searches.
+
+**Usage:**
+
+```javascript
+import { MaleButton } from 'orchestra';
+
+class MyComponent extends React.Component {
+	render() {
+		return (
+			<MaleButton active={ true } />
+		);
+	}
+}
+```
+
+
+### `PrimaryNegativeButton`
+
+* __Internal components used:__ `PrimaryButton.jsx`
+* __HTML tag extended:__ `<button></button>`
+* __CSS class(es) used:__ `primary`, `negative`
+* __Located at__: `src/components/buttons/PrimaryNegative.jsx`
+
+**Props:**
+
+| Name          | Type          | Desciption                                    |
+| ------------- |---------------| ----------------------------------------------|
+| `disabled`    | `boolean`     | Disables the component                        |
+
+**Reason for existing:**
+
+The PrimaryNegativeButton is used in various places in the Insightpool application.
+
+**Usage:**
+
+```javascript
+import { PrimaryNegativeButton } from 'orchestra';
+
+class MyComponent extends React.Component {
+	render() {
+		return (
+			<PrimaryNegativeButton>Hello World!</PrimaryNegativeButton>
+		);
+	}
+}
+```
+
+
+### `PrimaryNeutralButton`
+
+* __Internal components used:__ `PrimaryButton.jsx`
+* __HTML tag extended:__ `<button></button>`
+* __CSS class(es) used:__ `primary`, `neutral`
+* __Located at__: `src/components/buttons/PrimaryNeutral.jsx`
+
+**Props:**
+
+| Name          | Type          | Desciption                                    |
+| ------------- |---------------| ----------------------------------------------|
+| `disabled`    | `boolean`     | Disables the component                        |
+
+**Reason for existing:**
+
+The PrimaryNeutralButton is used in various places in the Insightpool application.
+
+**Usage:**
+
+```javascript
+import { PrimaryNeutralButton } from 'orchestra';
+
+class MyComponent extends React.Component {
+	render() {
+		return (
+			<PrimaryNeutralButton>Hello World!</PrimaryNeutralButton>
+		);
+	}
+}
+```
+### `PrimaryPositiveButton`
+
+* __Internal components used:__ `PrimaryButton.jsx`
+* __HTML tag extended:__ `<button></button>`
+* __CSS class(es) used:__ `primary`, `positive`
+* __Located at__: `src/components/buttons/PrimaryPositive.jsx`
+
+**Props:**
+
+| Name          | Type                        | Desciption                                    |
+| ------------- |-----------------------------| ----------------------------------------------|
+| `disabled`    | `boolean`                   | Disables the component                        |
+| `icon`        | `object<react.element>`     | React icon element                            |
+
+**Reason for existing:**
+
+The PrimaryPositiveButton is used in various places in the Insightpool application.
+
+**Usage:**
+
+```javascript
+import { PrimaryPositiveButton } from 'orchestra';
+
+class MyComponent extends React.Component {
+	render() {
+		return (
+			<PrimaryPositiveButton>Hello World!</PrimaryPositiveButton>
+		);
+	}
+}
+```
+
+
+### `SecondaryNeutralButton`
+
+* __Internal components used:__ `SecondaryButton.jsx`
+* __HTML tag extended:__ `<button></button>`
+* __CSS class(es) used:__ `secondary`, `neutral`
+* __Located at__: `src/components/buttons/SecondaryNeutral.jsx`
+
+**Props:**
+
+| Name          | Type                        | Desciption                                    |
+| ------------- |-----------------------------| ----------------------------------------------|
+| `disabled`    | `boolean`                   | Disables the component                        |
+| `icon`        | `object<react.element>`     | React icon element                            |
+
+**Reason for existing:**
+
+The SecondaryNeutralButton is used in various places in the Insightpool application.
+
+**Usage:**
+
+```javascript
+import { SecondaryNeutralButton } from 'orchestra';
+
+class MyComponent extends React.Component {
+	render() {
+		return (
+			<SecondaryNeutralButton>Hello world!</SecondaryNeutralButton>
+		);
+	}
+}
+```
+
+
+### `SecondaryPositiveButton`
+
+* __Internal components used:__ `SecondaryButton.jsx`
+* __HTML tag extended:__ `<button></button>`
+* __CSS class(es) used:__ `secondary`, `positive`
+* __Located at__: `src/components/buttons/SecondaryNegative.jsx`
+
+**Props:**
+
+| Name          | Type                        | Desciption                                    |
+| ------------- |-----------------------------| ----------------------------------------------|
+| `disabled`    | `boolean`                   | Disables the component                        |
+| `icon`        | `object<react.element>`     | React icon element                            |
+
+**Reason for existing:**
+
+The SecondaryPositiveButton is used in various places in the Insightpool application.
+
+**Usage:**
+
+```javascript
+import { SecondaryPositiveButton } from 'orchestra';
+
+class MyComponent extends React.Component {
+	render() {
+		return (
+			<SecondaryPositiveButton>Hello world!</SecondaryPositiveButton>
+		);
+	}
+}
+```
+
+
+### `TertiaryNegativeButton`
+
+* __Internal components used:__ `TertiaryButton.jsx`
+* __HTML tag extended:__ `<button></button>`
+* __CSS class(es) used:__ `tertiary`, `negative`
+* __Located at__: `src/components/buttons/TertiaryNegative.jsx`
+
+**Props:**
+
+| Name          | Type          | Desciption                                    |
+| ------------- |---------------| ----------------------------------------------|
+| `disabled`    | `boolean`     | Disables the component                        |
+
+**Reason for existing:**
+
+The TertiaryNegativeButton is used in various places in the Insightpool application.
+
+**Usage:**
+
+```javascript
+import { TertiaryNegativeButton } from 'orchestra';
+
+class MyComponent extends React.Component {
+	render() {
+		return (
+			<TertiaryNegativeButton>Hello world!</TertiaryNegativeButton>
+		);
+	}
+}
+```
+
+
+### `TertiaryNeutralButton`
+
+* __Internal components used:__ `TertiaryButton.jsx`
+* __HTML tag extended:__ `<button></button>`
+* __CSS class(es) used:__ `tertiary`, `negative`
+* __Located at__: `src/components/buttons/TertiaryNegative.jsx`
+
+**Props:**
+
+| Name          | Type          | Desciption                                    |
+| ------------- |---------------| ----------------------------------------------|
+| `disabled`    | `boolean`     | Disables the component                        |
+
+**Reason for existing:**
+
+The TertiaryNeutralButton is used in various places in the Insightpool application.
+
+**Usage:**
+
+```javascript
+import { TertiaryNeutralButton } from 'orchestra';
+
+class MyComponent extends React.Component {
+	render() {
+		return (
+			<TertiaryNeutralButton>Hello world!</TertiaryNeutralButton>
+		);
+	}
+}
+```
+
+
+### `TertiaryPositiveButton`
+
+* __Internal components used:__ `TertiaryButton.jsx`
+* __HTML tag extended:__ `<button></button>`
+* __CSS class(es) used:__ `tertiary`, `positive`
+* __Located at__: `src/components/buttons/TertiaryPositive.jsx`
+
+**Props:**
+
+| Name          | Type          | Desciption                                    |
+| ------------- |---------------| ----------------------------------------------|
+| `disabled`    | `boolean`     | Disables the component                        |
+
+**Reason for existing:**
+
+The TertiaryPositiveButton is used in various places in the Insightpool application.
+
+**Usage:**
+
+```javascript
+import { TertiaryPositiveButton } from 'orchestra';
+
+class MyComponent extends React.Component {
+	render() {
+		return (
+			<TertiaryPositiveButton>Hello world!</TertiaryPositiveButton>
+		);
+	}
+}
+```
+
+
+# Commands
 
 Orchestra comes with a plethora of commands for you to use in conjunction with npm.
 
@@ -68,7 +466,7 @@ Orchestra comes with a plethora of commands for you to use in conjunction with n
 * `npm run test` to run the functional testing suite
 
 
-## Contributing
+# Contributing
 
 Please fork this repository to make changes.
 

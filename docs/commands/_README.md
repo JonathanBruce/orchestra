@@ -1,4 +1,4 @@
-## Commands !heading
+# Commands !heading
 
 Orchestra comes with a plethora of commands for you to use in conjunction with npm.
 
