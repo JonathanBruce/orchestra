@@ -4,9 +4,17 @@ Below you can find Orchestra's API for it's components as well as how it's often
 
 #include "./docs/api/in_a_nutshell.md"
 
+## Base !heading
+
+The following describes all of the internal base components available for use in Orchestra.
+
+#include "./docs/api/primary_button.md"
+#include "./docs/api/secondary_button.md"
+#include "./docs/api/tertiary_button.md"
+
 ## Buttons !heading
 
-The following describes all of the buttons available for use in Orchestra.
+The following describes all of the button components available for use in Orchestra.
 
 #include "./docs/api/brand.md"
 #include "./docs/api/female.md"

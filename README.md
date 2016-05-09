@@ -8,6 +8,10 @@
   * [Testing](#testing)
 * [API](#api)
   * [In A Nutshell](#in-a-nutshell)
+  * [Base](#base)
+    * [`PrimaryButton`](#primarybutton)
+    * [`SecondaryButton`](#secondarybutton)
+    * [`PrimaryButton`](#primarybutton)
   * [Buttons](#buttons)
     * [`BrandButton`](#brandbutton)
     * [`FemaleButton`](#femalebutton)
@@ -91,9 +95,65 @@ This would render Orchestra's `PrimaryPositiveButton` component that is simply a
 
 
 
+## Base
+
+The following describes all of the internal base components available for use in Orchestra.
+
+### `PrimaryButton`
+
+* __HTML tag extended:__ `<button></button>`
+* __CSS class(es) used:__ `primary`
+* __Located at__: `src/components/base/Primary.jsx`
+
+**Props:**
+
+| Name          | Type          | Desciption                                    |
+| ------------- |---------------| ----------------------------------------------|
+| `disabled`    | `boolean`     | Disables the component                        |
+
+**Reason for existing:**
+
+The PrimaryButton is used as a base for primary buttons internally to build more complex buttons for the Insightpool application.
+
+
+### `SecondaryButton`
+
+* __HTML tag extended:__ `<button></button>`
+* __CSS class(es) used:__ `secondary`
+* __Located at__: `src/components/base/Secondary.jsx`
+
+**Props:**
+
+| Name          | Type          | Desciption                                    |
+| ------------- |---------------| ----------------------------------------------|
+| `disabled`    | `boolean`     | Disables the component                        |
+
+**Reason for existing:**
+
+The SecondaryButton is used as a base for secondary buttons internally to build more complex buttons for the Insightpool application.
+
+
+### `PrimaryButton`
+
+* __HTML tag extended:__ `<button></button>`
+* __CSS class(es) used:__ `tertiary`
+* __Located at__: `src/components/base/Tertiary.jsx`
+
+**Props:**
+
+| Name          | Type          | Desciption                                    |
+| ------------- |---------------| ----------------------------------------------|
+| `disabled`    | `boolean`     | Disables the component                        |
+
+**Reason for existing:**
+
+The TertiaryButton is used as a base for primary buttons internally to build more complex buttons for the Insightpool application.
+
+
+
 ## Buttons
 
-The following describes all of the buttons available for use in Orchestra.
+The following describes all of the button components available for use in Orchestra.
 
 ### `BrandButton`
 
@@ -277,12 +337,15 @@ The PrimaryPositiveButton is used in various places in the Insightpool applicati
 **Usage:**
 
 ```javascript
-import { PrimaryPositiveButton } from 'orchestra';
+import {
+	Icons,
+	PrimaryPositiveButton
+} from 'orchestra';
 
 class MyComponent extends React.Component {
 	render() {
 		return (
-			<PrimaryPositiveButton>Hello World!</PrimaryPositiveButton>
+			<PrimaryPositiveButton icon={ <Icons.MyIcon /> } />Hello World!</PrimaryPositiveButton>
 		);
 	}
 }
@@ -310,12 +373,15 @@ The SecondaryNeutralButton is used in various places in the Insightpool applicat
 **Usage:**
 
 ```javascript
-import { SecondaryNeutralButton } from 'orchestra';
+import {
+	Icons,
+	SecondaryNeutralButton
+} from 'orchestra';
 
 class MyComponent extends React.Component {
 	render() {
 		return (
-			<SecondaryNeutralButton>Hello world!</SecondaryNeutralButton>
+			<SecondaryNeutralButton icon={ <Icons.MyIcon /> } />Hello world!</SecondaryNeutralButton>
 		);
 	}
 }
@@ -343,12 +409,15 @@ The SecondaryPositiveButton is used in various places in the Insightpool applica
 **Usage:**
 
 ```javascript
-import { SecondaryPositiveButton } from 'orchestra';
+import {
+	Icons,
+	SecondaryPositiveButton
+} from 'orchestra';
 
 class MyComponent extends React.Component {
 	render() {
 		return (
-			<SecondaryPositiveButton>Hello world!</SecondaryPositiveButton>
+			<SecondaryPositiveButton icon={ <Icons.MyIcon /> } />Hello world!</SecondaryPositiveButton>
 		);
 	}
 }
@@ -380,7 +449,7 @@ import { TertiaryNegativeButton } from 'orchestra';
 class MyComponent extends React.Component {
 	render() {
 		return (
-			<TertiaryNegativeButton>Hello world!</TertiaryNegativeButton>
+			<TertiaryNegativeButton icon={ <Icons.MyIcon /> } />
 		);
 	}
 }
@@ -412,7 +481,7 @@ import { TertiaryNeutralButton } from 'orchestra';
 class MyComponent extends React.Component {
 	render() {
 		return (
-			<TertiaryNeutralButton>Hello world!</TertiaryNeutralButton>
+			<TertiaryNeutralButton icon={ <Icons.MyIcon /> } />
 		);
 	}
 }
@@ -439,12 +508,15 @@ The TertiaryPositiveButton is used in various places in the Insightpool applicat
 **Usage:**
 
 ```javascript
-import { TertiaryPositiveButton } from 'orchestra';
+import {
+	Icons,
+	TertiaryPositiveButton
+} from 'orchestra';
 
 class MyComponent extends React.Component {
 	render() {
 		return (
-			<TertiaryPositiveButton>Hello world!</TertiaryPositiveButton>
+			<TertiaryPositiveButton icon={ <Icons.MyIcon /> } />
 		);
 	}
 }
