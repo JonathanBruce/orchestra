@@ -1,69 +1,113 @@
 /* global document, React, ReactDOM */
 
-import 'sass/ui.scss';
-import Alert from 'components/base/Alert.jsx';
-import BrandButton from 'components/buttons/Brand.jsx';
-import FemaleButton from 'components/buttons/Female.jsx';
-import MaleButton from 'components/buttons/Male.jsx';
-import PrimaryButton from 'components/base/PrimaryButton.jsx';
-import PrimaryNegativeButton from 'components/buttons/PrimaryNegative.jsx';
-import PrimaryNeutralButton from 'components/buttons/PrimaryNeutral.jsx';
-import PrimaryPositiveButton from 'components/buttons/PrimaryPositive.jsx';
-import SecondaryButton from 'components/base/SecondaryButton.jsx';
-import SecondaryNeutralButton from 'components/buttons/SecondaryNeutral.jsx';
-import SecondaryPositiveButton from 'components/buttons/SecondaryPositive.jsx';
-import TertiaryButton from 'components/base/TertiaryButton.jsx';
-import TertiaryNegativeButton from 'components/buttons/TertiaryNegative.jsx';
-import TertiaryNeutralButton from 'components/buttons/TertiaryNeutral.jsx';
-import TertiaryPositiveButton from 'components/buttons/TertiaryPositive.jsx';
+import '../src/sass/_example.scss';
+import {
+	Three,
+	Twelve,
+	Container,
+	Alert,
+	BrandButton,
+	FemaleButton,
+	Icons,
+	MaleButton,
+	PrimaryNegativeButton,
+	PrimaryNeutralButton,
+	PrimaryPositiveButton,
+	SecondaryNeutralButton,
+	SecondaryPositiveButton,
+	TertiaryNegativeButton,
+	TertiaryNeutralButton,
+	TertiaryPositiveButton
+} from '../src/ui';
 
-import GoBack from 'icons/GoBack.jsx';
-import Download from 'icons/Download.jsx';
-import Information from 'icons/Information.jsx';
+class Example extends React.Component {
+	render() {
+		return (
+			<div>
+				<Container>
+					<Twelve>
+						<h1>Orchestra Example Page</h1>
+					</Twelve>
 
-ReactDOM.render(<Alert icon={ <Download /> } alert={ { kind: 'danger', message: 'There was an error in the campaign.  Please resolve any highlighted field and relaunch it.' } } />, document.getElementById('alert-danger'));
-ReactDOM.render(<Alert icon={ <Download /> } alert={ { kind: 'information', message: 'You are receiving some sort of informational message.' } } />, document.getElementById('alert-information'));
-ReactDOM.render(<Alert icon={ <Download /> } alert={ { kind: 'success', message: 'You successfully launched the campaign!' } } />, document.getElementById('alert-success'));
+					<Twelve>
+						<Alert alert={ { kind: 'danger', message: 'There was an error in the campaign.  Please resolve any highlighted field and relaunch it.' } } />
+					</Twelve>
 
-ReactDOM.render(<BrandButton />, document.getElementById('brand-button'));
-ReactDOM.render(<BrandButton active />, document.getElementById('brand-active-button'));
+					<Twelve>
+						<Alert alert={ { kind: 'information', message: 'You are receiving some sort of informational message.' } } />
+					</Twelve>
 
-ReactDOM.render(<FemaleButton />, document.getElementById('female-button'));
-ReactDOM.render(<FemaleButton active />, document.getElementById('female-active-button'));
+					<Twelve>
+						<Alert alert={ { kind: 'success', message: 'You successfully launched the campaign!' } } />
+					</Twelve>
 
-ReactDOM.render(<MaleButton />, document.getElementById('male-button'));
-ReactDOM.render(<MaleButton active />, document.getElementById('male-active-button'));
+					<Three>
+						<BrandButton />
+					</Three>
 
-ReactDOM.render(<PrimaryButton>Primary Button</PrimaryButton>, document.getElementById('primary-button'));
-ReactDOM.render(<PrimaryButton disabled>Primary Disabled Button</PrimaryButton>, document.getElementById('primary-disabled-button'));
+					<Three>
+						<BrandButton active />
+					</Three>
 
-ReactDOM.render(<PrimaryNegativeButton>Primary Negative Button</PrimaryNegativeButton>, document.getElementById('primary-negative-button'));
-ReactDOM.render(<PrimaryNegativeButton disabled>Primary Negative Disabled Button</PrimaryNegativeButton>, document.getElementById('primary-negative-disabled-button'));
+					<Three>
+						<FemaleButton />
+					</Three>
 
-ReactDOM.render(<PrimaryNeutralButton>Primary Neutral Button</PrimaryNeutralButton>, document.getElementById('primary-neutral-button'));
-ReactDOM.render(<PrimaryNeutralButton disabled>Primary Neutral Disabled Button</PrimaryNeutralButton>, document.getElementById('primary-neutral-disabled-button'));
+					<Three>
+						<FemaleButton active />
+					</Three>
 
-ReactDOM.render(<PrimaryPositiveButton>Primary Positive Button</PrimaryPositiveButton>, document.getElementById('primary-positive-button'));
-ReactDOM.render(<PrimaryPositiveButton disabled>Primary Positive Disabled Button</PrimaryPositiveButton>, document.getElementById('primary-positive-disabled-button'));
+					<Three>
+						<MaleButton />
+					</Three>
 
-ReactDOM.render(<SecondaryButton>Secondary Button</SecondaryButton>, document.getElementById('secondary-button'));
-ReactDOM.render(<SecondaryButton disabled>Secondary Button Disabled</SecondaryButton>, document.getElementById('secondary-disabled-button'));
+					<Three>
+						<MaleButton active />
+					</Three>
 
-ReactDOM.render(<SecondaryNeutralButton icon={ <Information /> }>Secondary Neutral Button</SecondaryNeutralButton>, document.getElementById('secondary-neutral-button'));
-ReactDOM.render(<SecondaryNeutralButton icon={ <Information /> } disabled>Secondary Neutral Disabled Button</SecondaryNeutralButton>, document.getElementById('secondary-neutral-disabled-button'));
+					<Three>
+						<PrimaryNegativeButton>Primary Negative</PrimaryNegativeButton>
+					</Three>
 
-ReactDOM.render(<SecondaryPositiveButton icon={ <Download /> }>Secondary Positive Button</SecondaryPositiveButton>, document.getElementById('secondary-positive-button'));
-ReactDOM.render(<SecondaryPositiveButton icon={ <Download /> } disabled>Secondary Positive Disabled Button</SecondaryPositiveButton>, document.getElementById('secondary-positive-disabled-button'));
+					<Three>
+						<PrimaryNeutralButton>Primary Neutral</PrimaryNeutralButton>
+					</Three>
 
-ReactDOM.render(<TertiaryButton><GoBack /></TertiaryButton>, document.getElementById('tertiary-button'));
-ReactDOM.render(<TertiaryButton disabled><GoBack /></TertiaryButton>, document.getElementById('tertiary-disabled-button'));
+					<Three>
+						<PrimaryPositiveButton>Primary Positive</PrimaryPositiveButton>
+					</Three>
 
-ReactDOM.render(<TertiaryNegativeButton><GoBack /></TertiaryNegativeButton>, document.getElementById('tertiary-negative-button'));
-ReactDOM.render(<TertiaryNegativeButton disabled><GoBack /></TertiaryNegativeButton>, document.getElementById('tertiary-negative-disabled-button'));
+					<Three>
+						<PrimaryPositiveButton disabled>Primary Positive</PrimaryPositiveButton>
+					</Three>
 
-ReactDOM.render(<TertiaryNeutralButton><GoBack /></TertiaryNeutralButton>, document.getElementById('tertiary-neutral-button'));
-ReactDOM.render(<TertiaryNeutralButton disabled><GoBack /></TertiaryNeutralButton>, document.getElementById('tertiary-neutral-disabled-button'));
+					<Three>
+						<SecondaryNeutralButton icon={ <Icons.Links /> } >Secondary Neutral</SecondaryNeutralButton>
+					</Three>
 
-ReactDOM.render(<TertiaryPositiveButton><GoBack /></TertiaryPositiveButton>, document.getElementById('tertiary-positive-button'));
-ReactDOM.render(<TertiaryPositiveButton disabled><GoBack /></TertiaryPositiveButton>, document.getElementById('tertiary-positive-disabled-button'));
+					<Three>
+						<SecondaryPositiveButton icon={ <Icons.Links /> } >Secondary Positive</SecondaryPositiveButton>
+					</Three>
 
+					<Three>
+						<TertiaryNegativeButton><Icons.GoBack /></TertiaryNegativeButton>
+					</Three>
+
+					<Three>
+						<TertiaryNeutralButton><Icons.GoBack /></TertiaryNeutralButton>
+					</Three>
+
+					<Three>
+						<TertiaryPositiveButton><Icons.GoBack /></TertiaryPositiveButton>
+					</Three>
+
+					<Three>
+						<TertiaryPositiveButton disabled><Icons.GoBack /></TertiaryPositiveButton>
+					</Three>
+				</Container>
+			</div>
+		);
+	}
+}
+
+ReactDOM.render(<Example />, document.getElementById('example'));

@@ -1,0 +1,19 @@
+#example {
+	margin-top: 20px;
+	margin-bottom: 20px;
+
+	h1 {
+		color: #aecfeb;
+		font-family: 'Lato-bold';
+		font-size: 32pt;
+	}
+
+	.container-12 {
+		> div {
+			border-bottom: 1px solid #ccd4e1;
+			height: 100px;
+			padding-top: 50px;
+			text-align: center;
+		}
+	}
+}

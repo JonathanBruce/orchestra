@@ -1,4 +1,4 @@
-### `PrimaryButton` !heading
+### `TertiaryButton` !heading
 
 * __HTML tag extended:__ `<button></button>`
 * __CSS class(es) used:__ `tertiary`
