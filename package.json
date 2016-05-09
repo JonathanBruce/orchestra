@@ -9,10 +9,10 @@
   ],
   "scripts": {
     "build:example": "npm run build:icons && webpack --config webpack.example.js",
-    "build:icons": "node src/lib/icons.js .",
+    "build:icons": "node src/lib/buildIcons.js && node src/lib/combineIcons.js",
     "build:intern": "node tests/support/intern.js ./tests/functional",
-    "build:ui": "npm run build:icons && webpack --config webpack.config.js",
     "build:test-ui": "npm run build:icons && webpack --config webpack.test.js",
+    "build:ui": "npm run build:icons && webpack --config webpack.config.js",
     "intern": "./node_modules/intern/bin/intern-runner.js config=tests/intern.js",
     "selenium": "selenium-standalone start",
     "test": "npm run build:test-ui && npm run build:intern && npm run intern"

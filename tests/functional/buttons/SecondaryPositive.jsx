@@ -1,7 +1,7 @@
 /* global document, React, ReactDOM */
 
 import 'sass/ui.scss';
-import Links from 'icons/Links.jsx';
+import Icons from 'icons/_all';
 import SecondaryPositiveButton from 'components/buttons/SecondaryPositive.jsx';
 
 class SecondaryPositiveButtonTest extends React.Component {
@@ -15,7 +15,7 @@ class SecondaryPositiveButtonTest extends React.Component {
 		return (
 			<div id='secondary-positive-button'>
 				<div ref='text' className='text'></div>
-				<SecondaryPositiveButton icon={ <Links /> }
+				<SecondaryPositiveButton icon={ <Icons.Links /> }
 					onClick={ this.onClick }>
 					Secondary Positive Button
 				</SecondaryPositiveButton>

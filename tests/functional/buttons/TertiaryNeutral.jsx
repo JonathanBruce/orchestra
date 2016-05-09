@@ -1,7 +1,7 @@
 /* global document, React, ReactDOM */
 
 import 'sass/ui.scss';
-import GoBack from 'icons/GoBack.jsx';
+import Icons from 'icons/_all';
 import TertiaryNeutralButton from 'components/buttons/TertiaryNeutral.jsx';
 
 class TertiaryNeutralButtonTest extends React.Component {
@@ -16,7 +16,7 @@ class TertiaryNeutralButtonTest extends React.Component {
 			<div id='tertiary-neutral-button'>
 				<div ref='text' className='text'></div>
 				<TertiaryNeutralButton onClick={ this.onClick }>
-					<GoBack />
+					<Icons.GoBack />
 				</TertiaryNeutralButton>
 			</div>
 		);
