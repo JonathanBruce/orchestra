@@ -11,7 +11,7 @@
   * [Base](#base)
     * [`PrimaryButton`](#primarybutton)
     * [`SecondaryButton`](#secondarybutton)
-    * [`PrimaryButton`](#primarybutton)
+    * [`TertiaryButton`](#tertiarybutton)
   * [Buttons](#buttons)
     * [`BrandButton`](#brandbutton)
     * [`FemaleButton`](#femalebutton)
@@ -133,7 +133,7 @@ The PrimaryButton is used as a base for primary buttons internally to build more
 The SecondaryButton is used as a base for secondary buttons internally to build more complex buttons for the Insightpool application.
 
 
-### `PrimaryButton`
+### `TertiaryButton`
 
 * __HTML tag extended:__ `<button></button>`
 * __CSS class(es) used:__ `tertiary`
