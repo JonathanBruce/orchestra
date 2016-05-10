@@ -3,11 +3,6 @@ node_modules
 .idea
 **/*.entry.js
 icons
-example/*.eot
-example/*.ttf
-example/*.woff
-example/*.woff2
-tests/*.eot
-tests/*.ttf
-tests/*.woff
-tests/*.woff2
+example/example.build.js
+example/fonts/
+tests/fonts/

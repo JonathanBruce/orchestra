@@ -33,6 +33,17 @@ function capitalizeWithHyphens(str, index) {
 	return str.substring(0, index) + str[ index + 1 ].toUpperCase() + str.substring(index + 2);
 }
 
+function svgPostProcessing(str) {
+	const match = {
+		'stroke-width': 'strokeWidth',
+		'stroke-linecap': 'strokeLinecap'
+	};
+
+	return str.replace(/stroke-width|stroke-linecap/gi, (matched) => {
+		return match[ matched ];
+	});
+}
+
 function buildIcons() {
 	fs.readdir(path.join(`${__dirname}/../svg`), (readDirErr, files) => {
 		if (readDirErr) {
@@ -63,7 +74,8 @@ function buildIcons() {
 				className = capitalize(className ? className : file).replace('.svg', '');
 
 				const svg = data.toString().replace(/"/g, '\'');
-				const classDefinition = buildClassDefinition(className, svg);
+				const svgProcessed = svgPostProcessing(svg);
+				const classDefinition = buildClassDefinition(className, svgProcessed);
 
 				fs.writeFile(`${__dirname}/../icons/${className}.jsx`, classDefinition, (writeFileErr) => {
 					if (writeFileErr) {

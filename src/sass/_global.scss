@@ -3,10 +3,14 @@ button {
 	&:hover {
 		cursor: pointer;
 	}
+
+	&::-moz-focus-inner {
+		border: 0;
+	}
 }
 
 button {
-	border-radius: 3px;
+	@include borderRadius();
 	padding: 0px;
 	outline: none;
 }

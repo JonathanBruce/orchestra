@@ -25,7 +25,7 @@ module.exports = {
 				}
 			},
 			{
-				loader: 'file?name=/../dist/[hash].[ext]',
+				loader: 'file?name=fonts/[hash].[ext]',
 				test: /\.(ttf|woff|woff2|eot|png|jpg|svg)$/
 			},
 			{

@@ -1,7 +1,7 @@
 button {
 	&.primary {
 		&.negative {
-			@include primaryNegativeItem();
+			@include primaryNegative();
 		}
 	}
 }

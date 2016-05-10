@@ -1,10 +1,16 @@
 @mixin arcticBlueWrapper {
+	@include borderRadius();
 	background-color: $pure-white;
 	border: 2px solid $arctic-blue;
 	color: $dusk-blue;
 }
 
+@mixin borderRadius {
+	border-radius: 3px;
+}
+
 @mixin cloudyBlueGreyWrapper {
+	@include borderRadius();
 	background-color: $pure-white;
 	border: 2px solid $cloudy-blue-grey;
 	color: $dusk-blue;
@@ -30,7 +36,7 @@
 	}
 }
 
-@mixin primaryNegativeAlternativeItem {
+@mixin primaryNegativeAlternative {
 	background-color: $arctic-blue;
 	border: 2px solid $arctic-blue-dark;
 	color: $cloudy-blue-grey;
@@ -41,7 +47,7 @@
 	}
 }
 
-@mixin primaryNegativeItem {
+@mixin primaryNegative {
 	background-color: $pure-white;
 	border: 2px solid $powder-blue;
 	color: $powder-blue;
@@ -57,7 +63,7 @@
 	}
 }
 
-@mixin primaryNeutralItem {
+@mixin primaryNeutral {
 	background-color: $powder-blue;
 	border: 2px solid $powder-blue-dark;
 	color: $pure-white;
@@ -73,7 +79,7 @@
 	}
 }
 
-@mixin primaryPositiveItem {
+@mixin primaryPositive {
 	background-color: $mint-green;
 	border: 2px solid $mint-green-dark;
 	color: $pure-white;
@@ -89,7 +95,7 @@
 	}
 }
 
-@mixin secondaryPositiveItem {
+@mixin secondaryPositive {
 	border: 2px solid $mint-green-dark;
 	color: $dusk-blue;
 
@@ -98,7 +104,7 @@
 	}
 }
 
-@mixin secondaryNeutralItem {
+@mixin secondaryNeutral {
 	border: 2px solid $cloudy-blue-grey;
 	color: $dusk-blue;
 

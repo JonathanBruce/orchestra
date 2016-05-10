@@ -6,6 +6,7 @@ class One extends Component {
 	static propTypes = {
 		children: React.PropTypes.oneOfType([
 			React.PropTypes.array,
+			React.PropTypes.element,
 			React.PropTypes.string
 		])
 	};

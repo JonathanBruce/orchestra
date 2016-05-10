@@ -1,7 +1,7 @@
 button {
 	&.primary {
 		&.male {
-			@include primaryNegativeAlternativeItem();
+			@include primaryNegativeAlternative();
 
 			&.active {
 				background-color: $male-blue;

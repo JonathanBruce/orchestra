@@ -1,7 +1,7 @@
 button {
 	&.tertiary {
 		&.neutral {
-			@include primaryNeutralItem();
+			@include primaryNeutral();
 		}
 	}
 }

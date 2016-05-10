@@ -24,7 +24,7 @@ module.exports = {
 				}
 			},
 			{
-				loader: 'file?name=/../dist/[hash].[ext]',
+				loader: 'file?name=fonts/[hash].[ext]',
 				test: /\.(ttf|woff|woff2|eot|png|jpg|svg)$/
 			},
 			{
@@ -47,11 +47,6 @@ module.exports = {
 		new webpack.ProvidePlugin({
 			React: 'react',
 			ReactDOM: 'react-dom'
-		}),
-		new webpack.optimize.UglifyJsPlugin({
-			compress: {
-				warnings: false
-			}
 		})
 	],
 

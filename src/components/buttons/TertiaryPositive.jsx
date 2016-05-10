@@ -4,7 +4,7 @@ import TertiaryButton from 'components/base/TertiaryButton.jsx';
 
 class TertiaryPositiveButton extends React.Component {
 	static propTypes = {
-		children: React.PropTypes.element.required
+		children: React.PropTypes.element.isRequired
 	};
 
 	render() {
