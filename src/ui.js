@@ -40,3 +40,9 @@ export SecondaryPositiveButton from 'components/buttons/SecondaryPositive.jsx';
 export TertiaryNegativeButton from 'components/buttons/TertiaryNegative.jsx';
 export TertiaryNeutralButton from 'components/buttons/TertiaryNeutral.jsx';
 export TertiaryPositiveButton from 'components/buttons/TertiaryPositive.jsx';
+
+/**
+ * Export form
+ */
+
+export Input from 'components/form/Input.jsx';

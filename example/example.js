@@ -9,6 +9,7 @@ import {
 	BrandButton,
 	FemaleButton,
 	Icons,
+	Input,
 	MaleButton,
 	PrimaryNegativeButton,
 	PrimaryNeutralButton,
@@ -103,6 +104,26 @@ class Example extends React.Component {
 
 					<Three>
 						<TertiaryPositiveButton disabled><Icons.GoBack /></TertiaryPositiveButton>
+					</Three>
+
+					<Three>
+						<Input icon={ <Icons.SmallUser /> }
+							placeholder='Username'
+							type='text' />
+					</Three>
+
+					<Three>
+						<Input error={ true }
+							icon={ <Icons.SmallUser /> }
+							placeholder='Username'
+							type='text' />
+					</Three>
+
+					<Three>
+						<Input disabled={ true }
+							icon={ <Icons.SmallUser /> }
+							placeholder='Username'
+							type='text' />
 					</Three>
 				</Container>
 			</div>

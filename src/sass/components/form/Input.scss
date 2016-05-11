@@ -1,0 +1,34 @@
+.input {
+	&.secondary {
+		@include arcticBlueDarkWrapper();
+
+		&:hover {
+			@include powderBlueWrapper();
+		}
+	}
+
+	input {
+		color: $dusk-blue;
+		font-family: $lato-regular;
+		font-size: 14px;
+
+		&::-webkit-input-placeholder,
+		&::-moz-placeholder,
+		&:-ms-input-placeholder,
+		&:-moz-input-placeholder {
+			color: $cloudy-blue-grey;
+		}
+	}
+
+	&.disabled {
+		@include disabled($pure-white);
+	}
+
+	&.error {
+		@include watermelonWrapper();
+
+		&:hover {
+			@include watermelonWrapper();
+		}
+	}
+}

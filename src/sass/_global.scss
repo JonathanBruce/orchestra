@@ -10,8 +10,13 @@ button {
 }
 
 button {
-	@include borderRadius();
+	@include border();
 	padding: 0px;
+	outline: none;
+}
+
+input {
+	border: none;
 	outline: none;
 }
 
@@ -19,4 +24,73 @@ svg {
 	stroke-linejoin: round;
 	stroke-linecap: round;
 	stroke-width: 2px;
+}
+
+.primary {
+	background-color: transparent;
+	border: none;
+	font-family: $lato-bold;
+	font-size: 12px;
+	letter-spacing: 3px;
+	padding: 8px 15px;
+	text-align: center;
+	text-transform: uppercase;
+
+	&:disabled {
+		@include disabled();
+	}
+}
+
+.secondary {
+	background-color: transparent;
+	border: none;
+	box-sizing: border-box;
+	font-family: $lato-regular;
+	font-size: 14px;
+	padding: 3px 10px;
+
+	.item,
+	.text,
+	svg {
+		display: inline;
+		float: left;
+	}
+
+	.item,
+	.text {
+		line-height: 24px;
+		padding-left: 7px;
+	}
+
+	svg {
+		border-right: 2px solid $cloudy-blue-grey;
+		padding-right: 10px;
+		height: 24px;
+		stroke-width: 1.5px;
+		vertical-align: middle;
+		width: 24px;
+	}
+
+	&:disabled {
+		@include disabled();
+	}
+}
+
+.tertiary {
+	background-color: transparent;
+	border: none;
+	height: 34px;
+	outline: none;
+	width: 44px;
+
+	svg {
+		height: 24px;
+		stroke-width: 1.5px;
+		vertical-align: middle;
+		width: 24px;
+	}
+
+	&:disabled {
+		@include disabled();
+	}
 }

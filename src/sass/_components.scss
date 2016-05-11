@@ -3,9 +3,6 @@
  */
 
 @import './components/base/Alert.scss';
-@import './components/base/PrimaryButton.scss';
-@import './components/base/SecondaryButton.scss';
-@import './components/base/TertiaryButton.scss';
 
 /**
  * Import button component styles
@@ -22,3 +19,9 @@
 @import './components/buttons/TertiaryNegative.scss';
 @import './components/buttons/TertiaryNeutral.scss';
 @import './components/buttons/TertiaryPositive.scss';
+
+/**
+ * Import form component styles
+ */
+
+@import './components/form/Input.scss';

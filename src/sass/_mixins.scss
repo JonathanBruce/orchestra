@@ -1,23 +1,14 @@
-@mixin arcticBlueWrapper {
-	@include borderRadius();
-	background-color: $pure-white;
-	border: 2px solid $arctic-blue;
-	color: $dusk-blue;
-}
+/**
+ * Helpers
+ */
 
-@mixin borderRadius {
+@mixin border {
+	border: 2px solid;
 	border-radius: 3px;
 }
 
-@mixin cloudyBlueGreyWrapper {
-	@include borderRadius();
-	background-color: $pure-white;
-	border: 2px solid $cloudy-blue-grey;
-	color: $dusk-blue;
-}
-
-@mixin disabled {
-	background-color: $silver !important;
+@mixin disabled($background: $silver) {
+	background-color: #{$background} !important;
 	border-color: $silver-dark !important;
 	color: $silver-dark !important;
 	cursor: default !important;
@@ -36,10 +27,58 @@
 	}
 }
 
+/**
+ * Content wrappers
+ */
+
+@mixin arcticBlueDarkWrapper($background: $pure-white, $color: $dusk-blue) {
+	@include border();
+	background-color: #{$background};
+	border-color: $arctic-blue-dark;
+	color: #{$color};
+}
+
+@mixin cloudyBlueGreyWrapper($background: $pure-white, $color: $dusk-blue) {
+	@include border();
+	background-color: #{$background};
+	border-color: $cloudy-blue-grey;
+	color: #{$color};
+}
+
+@mixin mintGreenDarkWrapper($background: $pure-white, $color: $dusk-blue) {
+	@include border();
+	background-color: #{$background};
+	border-color: $mint-green-dark;
+	color: #{$color};
+}
+
+@mixin powderBlueWrapper($background: $pure-white, $color: $dusk-blue) {
+	@include border();
+	background-color: #{$background};
+	border-color: $powder-blue;
+	color: #{$color};
+}
+
+@mixin powderBlueDarkWrapper($background: $pure-white, $color: $dusk-blue) {
+	@include border();
+	background-color: #{$background};
+	border-color: $powder-blue-dark;
+	color: #{$color};
+}
+
+@mixin watermelonWrapper($background: $pure-white, $color: $dusk-blue) {
+	@include border();
+	background-color: #{$background};
+	border-color: $watermelon;
+	color: #{$color};
+}
+
+/**
+ * Primary patterns
+ */
+
 @mixin primaryNegativeAlternative {
-	background-color: $arctic-blue;
-	border: 2px solid $arctic-blue-dark;
-	color: $cloudy-blue-grey;
+	@include arcticBlueDarkWrapper($arctic-blue, $cloudy-blue-grey);
 
 	&:hover {
 		background-color: $arctic-blue-dark;
@@ -48,11 +87,10 @@
 }
 
 @mixin primaryNegative {
-	background-color: $pure-white;
-	border: 2px solid $powder-blue;
-	color: $powder-blue;
+	@include powderBlueWrapper($pure-white, $powder-blue);
 
 	&:hover {
+		border-color: $powder-blue;
 		background-color: $arctic-blue;
 	}
 
@@ -64,11 +102,10 @@
 }
 
 @mixin primaryNeutral {
-	background-color: $powder-blue;
-	border: 2px solid $powder-blue-dark;
-	color: $pure-white;
+	@include powderBlueDarkWrapper($powder-blue, $pure-white);
 
 	&:hover {
+		border-color: $powder-blue-dark;
 		background-color: $powder-blue-dark;
 	}
 
@@ -80,11 +117,10 @@
 }
 
 @mixin primaryPositive {
-	background-color: $mint-green;
-	border: 2px solid $mint-green-dark;
-	color: $pure-white;
+	@include mintGreenDarkWrapper($mint-green, $pure-white);
 
 	&:hover {
+		border-color: $mint-green-dark;
 		background-color: $mint-green-dark;
 	}
 
@@ -95,18 +131,20 @@
 	}
 }
 
-@mixin secondaryPositive {
-	border: 2px solid $mint-green-dark;
-	color: $dusk-blue;
+/**
+ * Secondary patterns
+ */
+
+@mixin secondaryNeutral {
+	@include cloudyBlueGreyWrapper($color: $dusk-blue);
 
 	&:hover {
 		background-color: $arctic-blue;
 	}
 }
 
-@mixin secondaryNeutral {
-	border: 2px solid $cloudy-blue-grey;
-	color: $dusk-blue;
+@mixin secondaryPositive {
+	@include mintGreenDarkWrapper($color: $dusk-blue);
 
 	&:hover {
 		background-color: $arctic-blue;
