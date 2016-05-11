@@ -6,3 +6,4 @@ Orchestra leverages the Intern testing suite for functional testing, which also 
 * One the npm pacakage is installed, install `selenium-standalone` with `selenium-standalone install`
 * Start selenium-standalone with `selenium-standalone start`
 
+Additionally, Selenium requires the JRE to run.  Make sure you've installed the JRE on your system.
