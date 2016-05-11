@@ -8,6 +8,7 @@
     "src"
   ],
   "scripts": {
+  	"build:all": "npm run build:icons && webpack --config webpack.config.js && webpack --config webpack.example.js && webpack --config webpack.test.js",
     "build:docs": "./node_modules/.bin/markdown-include markdown.json",
     "build:example": "npm run build:icons && webpack --config webpack.example.js",
     "build:icons": "node src/lib/buildIcons.js && node src/lib/combineIcons.js",
@@ -15,7 +16,6 @@
     "build:test-ui": "npm run build:icons && webpack --config webpack.test.js",
     "build:ui": "npm run build:icons && webpack --config webpack.config.js",
     "intern": "./node_modules/intern/bin/intern-runner.js config=tests/intern.js",
-    "selenium": "selenium-standalone start",
     "test": "npm run build:test-ui && npm run build:intern && npm run intern"
   },
   "author": "",

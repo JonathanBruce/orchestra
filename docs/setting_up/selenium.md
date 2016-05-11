@@ -4,5 +4,5 @@ Orchestra leverages the Intern testing suite for functional testing, which also 
 
 * Install the npm `selenium-standalone` package with `npm i -g selenium-standalone`
 * One the npm pacakage is installed, install `selenium-standalone` with `selenium-standalone install`
-* Start selenium-standalone with `npm run selenium`
+* Start selenium-standalone with `selenium-standalone start`
 
