@@ -18,6 +18,7 @@ button {
 input {
 	border: none;
 	outline: none;
+	padding: 0px;
 }
 
 svg {
@@ -58,8 +59,12 @@ svg {
 
 	.item,
 	.text {
-		line-height: 24px;
+		height: 24px;
 		padding-left: 7px;
+	}
+
+	.text {
+		line-height: 24px;
 	}
 
 	svg {

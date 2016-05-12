@@ -11,6 +11,8 @@
 		color: $dusk-blue;
 		font-family: $lato-regular;
 		font-size: 14px;
+		height: inherit;
+		padding: 0px;
 
 		&::-webkit-input-placeholder,
 		&::-moz-placeholder,

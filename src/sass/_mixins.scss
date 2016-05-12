@@ -13,6 +13,17 @@
 	color: $silver-dark !important;
 	cursor: default !important;
 
+	input {
+		background-color: $pure-white;
+
+		&::-webkit-input-placeholder,
+		&::-moz-placeholder,
+		&:-ms-input-placeholder,
+		&:-moz-input-placeholder {
+			color: $silver-dark;
+		}
+	}
+
 	svg {
 		border-color: $silver-dark !important;
 

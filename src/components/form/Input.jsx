@@ -11,6 +11,12 @@ class Input extends React.Component {
 		type: React.PropTypes.string.isRequired
 	};
 
+	focus = () => {
+		const { input } = this.refs;
+
+		input.focus();
+	};
+
 	render() {
 		const {
 			disabled,
@@ -28,10 +34,13 @@ class Input extends React.Component {
 		});
 
 		return (
-			<div className={ inputClassnames }>
+			<div className={ inputClassnames }
+				onClick={ this.focus }>
 				{ icon }
 				<div className='item'>
-					<input placeholder={ placeholder }
+					<input disabled={ disabled }
+						placeholder={ placeholder }
+						ref='input'
 						type={ type } />
 				</div>
 			</div>
