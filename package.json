@@ -16,8 +16,10 @@
     "build:intern": "node tests/support/intern.js ./tests/functional",
     "build:test-ui": "npm run build:icons && webpack --config webpack.test.js",
     "build:ui": "npm run build:icons && webpack --config webpack.config.js",
-    "intern": "./node_modules/intern/bin/intern-runner.js config=tests/intern.js",
-    "test": "npm run build:test-ui && npm run build:intern && npm run intern"
+    "intern:browserstack": "./node_modules/intern/bin/intern-runner.js config=tests/intern.browserstack.js",
+    "intern:local": "./node_modules/intern/bin/intern-runner.js config=tests/intern.js",
+    "test:browserstack": "npm run build:test-ui && npm run build:intern && npm run intern:browserstack",
+    "test:local": "npm run build:test-ui && npm run build:intern && npm run intern:local"
   },
   "author": "",
   "license": "ISC",

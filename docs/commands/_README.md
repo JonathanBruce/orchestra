@@ -8,6 +8,8 @@ Orchestra comes with a plethora of commands for you to use in conjunction with n
 * `npm run build:intern` to rebuild the intern tests
 * `npm run build:test-ui` to build the test UI for the intern tests
 * `npm run build:ui` to build the production version of the UI for consumption (consumed as an `npm` module)
-* `npm run intern` to re-run intern test (you should use `npm run test` to rebuild and re-run)
-* `npm run test` to run the functional testing suite
+* `npm run intern:browserstack` to re-run the last built intern test on browserstack (you should use `npm run test:browserstack` to rebuild and re-run)
+* `npm run intern:local` to re-run the last built intern test locally (you should use `npm run test:local` to rebuild and re-run)
+* `npm run test:browserstack` to run the functional testing suite on browserstack
+* `npm run test:local` to run the functional testing suite on your local selenium server
 

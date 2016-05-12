@@ -34,6 +34,12 @@ define({
 		 */
 	],
 
+	tunnel: 'BrowserStackTunnel',
+	tunnelOptions: {
+		username: 'insightpool1',
+		accessKey: 'PPnDxw34X5RqUxVEszvR'
+	},
+
 	// Maximum number of simultaneous integration tests that should be executed on the remote WebDriver service
 	maxConcurrency: 3,
 
