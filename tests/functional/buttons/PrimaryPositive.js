@@ -29,7 +29,8 @@ define([
 					.findByTagName('button')
 					.getAttribute('class')
 			.then(function (className) {
-				assert.equal(className, 'primary positive', 'class names should be equal');
+				assert.include(className, 'primary', 'class names should include primary');
+				assert.include(className, 'positive', 'class names should include positive');
 			});
 		}
 	});

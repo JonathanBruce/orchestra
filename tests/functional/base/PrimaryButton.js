@@ -17,7 +17,7 @@ define([
 						.findByTagName('button')
 						.getAttribute('class')
 			.then(function (classNames) {
-				assert.equal(classNames, 'active primary', 'classnames should be equal');
+				assert.include(classNames, 'active primary', 'class name should include active and primary');
 			});
 		},
 
@@ -39,7 +39,7 @@ define([
 						.findByTagName('button')
 						.getAttribute('class')
 			.then(function (className) {
-				assert.equal(className, 'primary', 'class names should be equal');
+				assert.include(className, 'primary', 'class name should include primary');
 			});
 		},
 

@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 class Input extends React.Component {
 	static propTypes = {
+		defaultValue: React.PropTypes.string,
 		disabled: React.PropTypes.bool,
 		error: React.PropTypes.bool,
 		icon: React.PropTypes.element.isRequired,
@@ -19,16 +20,13 @@ class Input extends React.Component {
 
 	render() {
 		const {
-			disabled,
-			error,
-			placeholder,
 			icon,
-			type
+			...props
 		} = this.props;
 		const inputClassnames = classnames({
 			clearfix: true,
-			disabled,
-			error,
+			disabled: props.disabled,
+			error: props.error,
 			input: true,
 			secondary: true
 		});
@@ -38,10 +36,7 @@ class Input extends React.Component {
 				onClick={ this.focus }>
 				{ icon }
 				<div className='item'>
-					<input disabled={ disabled }
-						placeholder={ placeholder }
-						ref='input'
-						type={ type } />
+					<input { ...props } ref='input' />
 				</div>
 			</div>
 		);

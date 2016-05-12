@@ -12,6 +12,7 @@
 		"functional/buttons/SecondaryPositive",
 		"functional/buttons/TertiaryNegative",
 		"functional/buttons/TertiaryNeutral",
-		"functional/buttons/TertiaryPositive"
+		"functional/buttons/TertiaryPositive",
+		"functional/form/Input"
 	]
 }
