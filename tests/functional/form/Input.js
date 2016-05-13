@@ -39,10 +39,10 @@ define([
 						.findByTagName('input')
 							.click()
 							.clearValue()
-							.type('A New Default Value')
+							.type('Test')
 							.getProperty('value')
 				.then(function (value) {
-					assert.equal(value, 'A New Default Value', 'values should be equal');
+					assert.equal(value, 'Test', 'values should be equal');
 				});
 		},
 

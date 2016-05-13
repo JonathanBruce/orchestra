@@ -11,6 +11,7 @@ import {
 	Icons,
 	Input,
 	MaleButton,
+	PillToggle,
 	PrimaryNegativeButton,
 	PrimaryNeutralButton,
 	PrimaryPositiveButton,
@@ -124,6 +125,14 @@ class Example extends React.Component {
 							icon={ <Icons.SmallUser /> }
 							placeholder='Username'
 							type='text' />
+					</Three>
+
+					<Three>
+						<PillToggle items={ [
+							{ active: false, value: 'User' },
+							{ active: true, value: 'Accounts' },
+							{ active: false, value: 'Orgs' }
+						] } />
 					</Three>
 				</Container>
 			</div>

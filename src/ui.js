@@ -7,7 +7,7 @@ import 'sass/ui.scss';
 export Icons from 'icons/_all';
 
 /**
- * Export grid
+ * Export grid blocks
  */
 
 export Container from 'components/grid/Container.jsx';
@@ -42,7 +42,13 @@ export TertiaryNeutralButton from 'components/buttons/TertiaryNeutral.jsx';
 export TertiaryPositiveButton from 'components/buttons/TertiaryPositive.jsx';
 
 /**
- * Export form
+ * Export form elements
  */
 
 export Input from 'components/form/Input.jsx';
+
+/**
+ * Export headers
+ */
+
+export PillToggle from 'components/misc/PillToggle.jsx';

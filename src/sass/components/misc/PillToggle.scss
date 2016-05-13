@@ -1,0 +1,40 @@
+.pill-toggle {
+	.item,
+	.item:first-child,
+	.item:last-child,
+	.item.active {
+		border: 2px solid;
+	}
+
+	.item {
+		border-color: $cloudy-blue-grey;
+		border-bottom: 2px solid;
+		border-top: 2px solid;
+		color: $cloudy-blue-grey;
+		display: inline-block;
+		float: left;
+		font-family: $lato-regular;
+		font-size: 14px;
+		padding: 8px 20px;
+
+		&.active {
+			@include mintGreenDarkWrapper($mint-green, $pure-white, null);
+		}
+
+		&:first-child {
+			border-bottom-left-radius: 50px;
+			border-top-left-radius: 50px;
+		}
+
+		&:last-child {
+			border-bottom-right-radius: 50px;
+			border-top-right-radius: 50px;
+		}
+
+		&:not(.active):hover {
+			background-color: $arctic-blue;
+			color: $steel-blue;
+			cursor: pointer;
+		}
+	}
+}
