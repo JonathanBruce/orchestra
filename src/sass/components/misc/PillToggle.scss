@@ -1,24 +1,27 @@
 .pill-toggle {
-	.item,
-	.item:first-child,
-	.item:last-child,
-	.item.active {
-		border: 2px solid;
-	}
+	height: 32px;
 
 	.item {
-		border-color: $cloudy-blue-grey;
 		border-bottom: 2px solid;
+		border-color: $cloudy-blue-grey;
+		border-left: 2px solid;
 		border-top: 2px solid;
+		box-sizing: border-box;
 		color: $cloudy-blue-grey;
 		display: inline-block;
-		float: left;
 		font-family: $lato-regular;
 		font-size: 14px;
-		padding: 8px 20px;
+		height: inherit;
+		line-height: 30px;
+		padding: 0px 20px;
 
 		&.active {
 			@include mintGreenDarkWrapper($mint-green, $pure-white, null);
+
+			& ~ div {
+				border-left: 0px;
+				border-right: 2px solid;
+			}
 		}
 
 		&:first-child {
@@ -33,6 +36,7 @@
 
 		&:not(.active):hover {
 			background-color: $arctic-blue;
+			border-color: $cloudy-blue-grey;
 			color: $steel-blue;
 			cursor: pointer;
 		}
