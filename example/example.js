@@ -155,7 +155,7 @@ class Example extends React.Component {
 									}
 								}
 							}
-						} />
+						} other='something'/>
 					</Three>
 				</Container>
 			</div>

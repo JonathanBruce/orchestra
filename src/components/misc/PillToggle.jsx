@@ -21,7 +21,7 @@ class PillToggle extends React.Component {
 			return (
 				<div className={ itemClasses }
 					key={ i }
-					onClick={ onClick }>
+					onClick={ !active && onClick }>
 					{ value }
 				</div>
 			);
