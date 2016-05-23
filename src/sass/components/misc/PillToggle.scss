@@ -16,7 +16,7 @@
 		padding: 0px 20px;
 
 		&.active {
-			@include mintGreenDarkWrapper($mint-green, $pure-white, null);
+			@include duskBlueWrapper($steel-blue, $pure-white, null);
 
 			& ~ div {
 				border-left: 0px;

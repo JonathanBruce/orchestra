@@ -56,6 +56,13 @@
 	color: #{$color};
 }
 
+@mixin duskBlueWrapper($background-color: $pure-white, $color: $dusk-blue, $border-radius: 3px) {
+	@include border(#{$border-radius});
+	background-color: #{$background-color};
+	border-color: $dusk-blue;
+	color: #{$color};
+}
+
 @mixin mintGreenDarkWrapper($background-color: $pure-white, $color: $dusk-blue, $border-radius: 3px) {
 	@include border(#{$border-radius});
 	background-color: #{$background-color};
@@ -87,15 +94,6 @@
 /**
  * Primary patterns
  */
-
-@mixin primaryNegativeAlternative {
-	@include arcticBlueDarkWrapper($arctic-blue, $cloudy-blue-grey);
-
-	&:hover {
-		background-color: $arctic-blue-dark;
-		color: $dusk-blue;
-	}
-}
 
 @mixin primaryNegative {
 	@include powderBlueWrapper($pure-white, $powder-blue);
@@ -159,5 +157,18 @@
 
 	&:hover {
 		background-color: $arctic-blue;
+	}
+}
+
+/**
+ * Misc patterns
+ */
+
+@mixin filter {
+	@include arcticBlueDarkWrapper($arctic-blue, $cloudy-blue-grey);
+
+	&:hover {
+		background-color: $arctic-blue-dark;
+		color: $dusk-blue;
 	}
 }

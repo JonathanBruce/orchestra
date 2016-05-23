@@ -1,7 +1,7 @@
 button {
 	&.primary {
 		&.female {
-			@include primaryNegativeAlternative();
+			@include filter();
 
 			&.active {
 				background-color: $female-pink;

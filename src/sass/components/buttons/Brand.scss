@@ -1,7 +1,7 @@
 button {
 	&.primary {
 		&.brand {
-			@include primaryNegativeAlternative();
+			@include filter();
 
 			&.active {
 				background-color: $dusk-blue;
