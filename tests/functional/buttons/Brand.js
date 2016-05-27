@@ -17,17 +17,17 @@ define([
 					.click()
 					.getAttribute('class')
 			.then(function (className) {
-				assert.equal(className, 'active primary brand', 'class names should be equal');
+				assert.equal(className, 'active orch-primary brand', 'class names should be equal');
 			});
 		},
 
-		'should have the primary and brand class by default': function () {
+		'should have the orch-primary and brand class by default': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('brand-button')
 					.findByTagName('button')
 					.getAttribute('class')
 			.then(function (className) {
-				assert.equal(className, 'primary brand', 'class names should be equal');
+				assert.equal(className, 'orch-primary brand', 'class names should be equal');
 			});
 		}
 	});

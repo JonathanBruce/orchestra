@@ -17,17 +17,17 @@ define([
 					.click()
 					.getAttribute('class')
 			.then(function (className) {
-				assert.equal(className, 'active primary male', 'class names should be equal');
+				assert.equal(className, 'active orch-primary male', 'class names should be equal');
 			});
 		},
 
-		'should have the primary and male class by default': function () {
+		'should have the orch-primary and male class by default': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('male-button')
 					.findByTagName('button')
 					.getAttribute('class')
 			.then(function (className) {
-				assert.equal(className, 'primary male', 'class names should be equal');
+				assert.equal(className, 'orch-primary male', 'class names should be equal');
 			});
 		}
 	});

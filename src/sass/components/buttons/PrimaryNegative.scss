@@ -1,5 +1,5 @@
 button {
-	&.primary {
+	&.orch-primary {
 		&.negative {
 			@include primaryNegative();
 		}

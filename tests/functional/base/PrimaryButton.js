@@ -17,7 +17,7 @@ define([
 						.findByTagName('button')
 						.getAttribute('class')
 			.then(function (classNames) {
-				assert.include(classNames, 'active primary', 'class name should include active and primary');
+				assert.include(classNames, 'active orch-primary', 'class name should include active and orch-primary');
 			});
 		},
 
@@ -32,14 +32,14 @@ define([
 			});
 		},
 
-		'should have the primary class': function () {
+		'should have the orch-primary class': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('primary-button')
 					.findByClassName('inactive')
 						.findByTagName('button')
 						.getAttribute('class')
 			.then(function (className) {
-				assert.include(className, 'primary', 'class name should include primary');
+				assert.include(className, 'orch-primary', 'class name should include orch-primary');
 			});
 		},
 

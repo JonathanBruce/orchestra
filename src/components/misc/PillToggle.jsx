@@ -30,7 +30,7 @@ class PillToggle extends React.Component {
 
 	render() {
 		return (
-			<div className='pill-toggle clearfix'>
+			<div className='orch-pill-toggle clearfix'>
 				{ this.renderItems() }
 			</div>
 		);

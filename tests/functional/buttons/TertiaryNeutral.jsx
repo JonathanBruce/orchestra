@@ -8,7 +8,7 @@ class TertiaryNeutralButtonTest extends React.Component {
 	onClick = () => {
 		const text = this.refs.text;
 
-		text.textContent = 'tertiary neutral button';
+		text.textContent = 'orch-tertiary neutral button';
 	};
 
 	render() {

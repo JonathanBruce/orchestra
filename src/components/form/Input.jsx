@@ -27,8 +27,8 @@ class Input extends React.Component {
 			clearfix: true,
 			disabled: props.disabled,
 			error: props.error,
-			input: true,
-			secondary: true
+			'orch-input': true,
+			'orch-secondary': true
 		});
 
 		return (

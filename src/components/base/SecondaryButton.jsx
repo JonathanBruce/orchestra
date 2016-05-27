@@ -14,7 +14,7 @@ class SecondaryButton extends Component {
 
 	render() {
 		return (
-			<button { ...this.props } className={ this.mergeClasses('secondary clearfix', this.props.className) }>
+			<button { ...this.props } className={ this.mergeClasses('orch-secondary clearfix', this.props.className) }>
 				{ this.props.icon }
 				<div className='text'>{ this.props.children }</div>
 			</button>

@@ -7,7 +7,7 @@ class PrimaryNeutralButtonTest extends React.Component {
 	onClick = () => {
 		const text = this.refs.text;
 
-		text.textContent = 'primary neutral button';
+		text.textContent = 'orch-primary neutral button';
 	};
 
 	render() {

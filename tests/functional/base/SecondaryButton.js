@@ -20,13 +20,13 @@ define([
 			});
 		},
 
-		'should have the secondary class': function () {
+		'should have the orch-secondary class': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('secondary-button')
 					.findByTagName('button')
 					.getAttribute('class')
 			.then(function (className) {
-				assert.include(className, 'secondary', 'class name should include secondary');
+				assert.include(className, 'orch-secondary', 'class name should include orch-secondary');
 			});
 		}
 	});

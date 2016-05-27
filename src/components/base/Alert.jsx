@@ -11,7 +11,7 @@ class Alert extends Component {
 		const { alert } = this.props;
 
 		return (
-			<div { ...this.props } className={ `alert ${alert.kind}` }>
+			<div { ...this.props } className={ `orch-alert ${alert.kind}` }>
 				{ alert.message }
 			</div>
 		);

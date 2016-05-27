@@ -16,7 +16,7 @@ class PrimaryButton extends Component {
 	render() {
 		const classes = classnames({
 			active: this.props.active,
-			primary: true
+			'orch-primary': true
 		});
 
 		return (

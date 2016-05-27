@@ -8,7 +8,7 @@ class TertiaryNegativeButtonTest extends React.Component {
 	onClick = () => {
 		const text = this.refs.text;
 
-		text.textContent = 'tertiary negative button';
+		text.textContent = 'orch-tertiary negative button';
 	};
 
 	render() {

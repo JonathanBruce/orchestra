@@ -19,7 +19,7 @@ define([
 					.findByClassName('text')
 					.getVisibleText()
 			.then(function (value) {
-				assert.equal(value, 'tertiary negative button', 'values should be equal');
+				assert.equal(value, 'orch-tertiary negative button', 'values should be equal');
 			});
 		},
 
@@ -33,13 +33,13 @@ define([
 			});
 		},
 
-		'should have the tertiary and negative class by default': function () {
+		'should have the orch-tertiary and negative class by default': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('tertiary-negative-button')
 					.findByTagName('button')
 					.getAttribute('class')
 			.then(function (className) {
-				assert.include(className, 'tertiary', 'class names should include tertiary');
+				assert.include(className, 'orch-tertiary', 'class names should include orch-tertiary');
 				assert.include(className, 'negative', 'class names should include negative');
 			});
 		}

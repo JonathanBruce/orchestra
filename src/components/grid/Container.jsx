@@ -13,7 +13,7 @@ class Container extends Component {
 
 	render() {
 		return (
-			<div className='container-12 clearfix'>
+			<div className='orch-container-12 clearfix'>
 				{ this.props.children }
 			</div>
 		);

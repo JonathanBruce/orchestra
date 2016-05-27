@@ -10,7 +10,7 @@ class TertiaryButton extends Component {
 
 	render() {
 		return (
-			<button { ...this.props } className={ this.mergeClasses('tertiary', this.props.className) }>
+			<button { ...this.props } className={ this.mergeClasses('orch-tertiary', this.props.className) }>
 				{ this.props.children }
 			</button>
 		);

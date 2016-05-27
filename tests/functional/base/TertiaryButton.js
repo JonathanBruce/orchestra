@@ -10,13 +10,13 @@ define([
 	registerSuite({
 		name: 'functional/base/TertiaryButton',
 
-		'should have the tertiary class': function () {
+		'should have the orch-tertiary class': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('tertiary-button')
 					.findByTagName('button')
 					.getAttribute('class')
 			.then(function (className) {
-				assert.include(className, 'tertiary', 'class name should include tertiary');
+				assert.include(className, 'orch-tertiary', 'class name should include orch-tertiary');
 			});
 		}
 	});

@@ -19,17 +19,17 @@ define([
 					.findByClassName('text')
 					.getVisibleText()
 			.then(function (value) {
-				assert.equal(value, 'primary neutral button', 'values should be equal');
+				assert.equal(value, 'orch-primary neutral button', 'values should be equal');
 			});
 		},
 
-		'should have the primary and neutral class by default': function () {
+		'should have the orch-primary and neutral class by default': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('primary-neutral-button')
 					.findByTagName('button')
 					.getAttribute('class')
 			.then(function (className) {
-				assert.include(className, 'primary', 'class names should include primary');
+				assert.include(className, 'orch-primary', 'class names should include orch-primary');
 				assert.include(className, 'neutral', 'class names should include neutral');
 			});
 		}

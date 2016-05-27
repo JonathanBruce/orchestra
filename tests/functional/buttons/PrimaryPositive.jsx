@@ -7,7 +7,7 @@ class PrimaryPositiveButtonTest extends React.Component {
 	onClick = () => {
 		const text = this.refs.text;
 
-		text.textContent = 'primary positive button';
+		text.textContent = 'orch-primary positive button';
 	};
 
 	render() {

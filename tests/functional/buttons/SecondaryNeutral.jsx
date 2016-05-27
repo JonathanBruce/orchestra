@@ -8,7 +8,7 @@ class SecondaryNeutralButtonTest extends React.Component {
 	onClick = () => {
 		const text = this.refs.text;
 
-		text.textContent = 'secondary neutral button';
+		text.textContent = 'orch-secondary neutral button';
 	};
 
 	render() {

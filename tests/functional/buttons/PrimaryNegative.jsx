@@ -7,7 +7,7 @@ class PrimaryNegativeButtonTest extends React.Component {
 	onClick = () => {
 		const text = this.refs.text;
 
-		text.textContent = 'primary negative button';
+		text.textContent = 'orch-primary negative button';
 	};
 
 	render() {
