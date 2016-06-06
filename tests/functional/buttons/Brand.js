@@ -10,7 +10,7 @@ define([
 	registerSuite({
 		name: 'functional/buttons/Brand',
 
-		'should allow onClick events': function () {
+		'it should allow onClick events': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('brand-button')
 					.findByTagName('button')
@@ -21,7 +21,7 @@ define([
 			});
 		},
 
-		'should have the orch-primary and brand class by default': function () {
+		'it should have the orch-primary and brand class by default': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('brand-button')
 					.findByTagName('button')

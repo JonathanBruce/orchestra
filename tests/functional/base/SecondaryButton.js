@@ -10,7 +10,7 @@ define([
 	registerSuite({
 		name: 'functional/base/SecondaryButton',
 
-		'should be able to take an icon property': function () {
+		'it should be able to take an icon property': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('secondary-button')
 					.findByTagName('button')
@@ -20,7 +20,7 @@ define([
 			});
 		},
 
-		'should have the orch-secondary class': function () {
+		'it should have the orch-secondary class': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('secondary-button')
 					.findByTagName('button')

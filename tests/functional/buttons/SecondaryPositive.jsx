@@ -14,7 +14,7 @@ class SecondaryPositiveButtonTest extends React.Component {
 	render() {
 		return (
 			<div id='secondary-positive-button'>
-				<div ref='text' className='text'></div>
+				<span ref='text' className='text'></span>
 				<SecondaryPositiveButton icon={ <Icons.Links /> }
 					onClick={ this.onClick }>
 					Secondary Positive Button

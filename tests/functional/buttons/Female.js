@@ -10,7 +10,7 @@ define([
 	registerSuite({
 		name: 'functional/buttons/Female',
 
-		'should allow onClick events': function () {
+		'it should allow onClick events': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('test')
 					.findById('female-button')
@@ -22,7 +22,7 @@ define([
 			});
 		},
 
-		'should have the orch-primary and female class by default': function () {
+		'it should have the orch-primary and female class by default': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('female-button')
 					.findByTagName('button')

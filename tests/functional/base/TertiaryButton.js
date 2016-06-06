@@ -10,7 +10,7 @@ define([
 	registerSuite({
 		name: 'functional/base/TertiaryButton',
 
-		'should have the orch-tertiary class': function () {
+		'it should have the orch-tertiary class': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('tertiary-button')
 					.findByTagName('button')

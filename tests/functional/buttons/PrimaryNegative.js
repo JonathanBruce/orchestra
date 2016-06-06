@@ -10,7 +10,7 @@ define([
 	registerSuite({
 		name: 'functional/buttons/PrimaryNegative',
 
-		'should allow onClick events': function () {
+		'it should allow onClick events': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('primary-negative-button')
 					.findByTagName('button')
@@ -23,7 +23,7 @@ define([
 			});
 		},
 
-		'should have the orch-primary and neutral class by default': function () {
+		'it should have the orch-primary and neutral class by default': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('primary-negative-button')
 					.findByTagName('button')

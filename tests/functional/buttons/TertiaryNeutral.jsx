@@ -14,7 +14,7 @@ class TertiaryNeutralButtonTest extends React.Component {
 	render() {
 		return (
 			<div id='tertiary-neutral-button'>
-				<div ref='text' className='text'></div>
+				<span ref='text' className='text'></span>
 				<TertiaryNeutralButton onClick={ this.onClick }>
 					<Icons.GoBack />
 				</TertiaryNeutralButton>

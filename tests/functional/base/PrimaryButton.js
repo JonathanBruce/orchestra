@@ -10,7 +10,7 @@ define([
 	registerSuite({
 		name: 'functional/base/PrimaryButton',
 
-		'should be able to add the active attribute': function () {
+		'it should be able to add the active attribute': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('primary-button')
 					.findByClassName('active')
@@ -21,7 +21,7 @@ define([
 			});
 		},
 
-		'should be able to add other attributes': function () {
+		'it should be able to add other attributes': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('primary-button')
 					.findByClassName('data-foo')
@@ -32,7 +32,7 @@ define([
 			});
 		},
 
-		'should have the orch-primary class': function () {
+		'it should have the orch-primary class': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('primary-button')
 					.findByClassName('inactive')
@@ -43,7 +43,7 @@ define([
 			});
 		},
 
-		'should render correct text': function () {
+		'it should render correct text': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('primary-button')
 					.findByClassName('inactive')

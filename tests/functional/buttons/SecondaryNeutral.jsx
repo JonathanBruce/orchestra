@@ -14,7 +14,7 @@ class SecondaryNeutralButtonTest extends React.Component {
 	render() {
 		return (
 			<div id='secondary-neutral-button'>
-				<div ref='text' className='text'></div>
+				<span ref='text' className='text'></span>
 				<SecondaryNeutralButton icon={ <Icons.Links /> }
 					onClick={ this.onClick }>
 					Secondary Neutral Button

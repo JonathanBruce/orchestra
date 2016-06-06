@@ -10,7 +10,7 @@ define([
 	registerSuite({
 		name: 'functional/buttons/TertiaryPositive',
 
-		'should allow onClick events': function () {
+		'it should allow onClick events': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('tertiary-positive-button')
 					.findByTagName('button')
@@ -23,7 +23,7 @@ define([
 			});
 		},
 
-		'should be able to take an icon property': function () {
+		'it should be able to take an icon property': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('tertiary-positive-button')
 					.findByTagName('button')
@@ -33,7 +33,7 @@ define([
 			});
 		},
 
-		'should have the orch-tertiary and positive class by default': function () {
+		'it should have the orch-tertiary and positive class by default': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('tertiary-positive-button')
 					.findByTagName('button')

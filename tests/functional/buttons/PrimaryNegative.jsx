@@ -13,7 +13,7 @@ class PrimaryNegativeButtonTest extends React.Component {
 	render() {
 		return (
 			<div id='primary-negative-button'>
-				<div ref='text' className='text'></div>
+				<span ref='text' className='text'></span>
 				<PrimaryNegativeButton onClick={ this.onClick }>
 					Primary Negative Button
 				</PrimaryNegativeButton>

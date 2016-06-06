@@ -13,7 +13,7 @@ class PrimaryNeutralButtonTest extends React.Component {
 	render() {
 		return (
 			<div id='primary-neutral-button'>
-				<div ref='text' className='text'></div>
+				<span ref='text' className='text'></span>
 				<PrimaryNeutralButton onClick={ this.onClick }>
 					Primary Neutral Button
 				</PrimaryNeutralButton>

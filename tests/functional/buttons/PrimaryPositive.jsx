@@ -13,7 +13,7 @@ class PrimaryPositiveButtonTest extends React.Component {
 	render() {
 		return (
 			<div id='primary-positive-button'>
-				<div ref='text' className='text'></div>
+				<span ref='text' className='text'></span>
 				<PrimaryPositiveButton onClick={ this.onClick }>
 					Primary Positive Button
 				</PrimaryPositiveButton>

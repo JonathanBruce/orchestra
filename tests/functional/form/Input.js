@@ -10,7 +10,7 @@ define([
 	registerSuite({
 		name: 'functional/form/Input',
 
-		'should be able to disable input': function () {
+		'it should be able to disable input': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('disabled-input')
 					.findByClassName('orch-input')
@@ -21,7 +21,7 @@ define([
 				});
 		},
 
-		'should allow default value': function () {
+		'it should allow default value': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('enabled-input')
 					.findByClassName('orch-input')
@@ -32,7 +32,7 @@ define([
 				});
 		},
 
-		'should allow editing of value': function () {
+		'it should allow editing of value': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('enabled-input')
 					.findByClassName('orch-input')
@@ -46,7 +46,7 @@ define([
 				});
 		},
 
-		'should allow a placeholder': function () {
+		'it should allow a placeholder': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('placeholder-input')
 					.findByClassName('orch-input')
