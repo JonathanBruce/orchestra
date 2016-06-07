@@ -41,13 +41,17 @@
 @mixin focus() {
 	border-color: $pure-white !important;
 	outline: none !important;
-	box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.15) !important;
-	-webkit-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.15) !important;
+	@include shadow();
 
 	&:hover {
 		border-color: $pure-white !important;
 		outline: none !important;
 	}
+}
+
+@mixin shadow($blur: 10px, $spread: 5px) {
+	box-shadow: 0px 0px $blur $spread rgba(0, 0, 0, 0.15) !important;
+	-webkit-box-shadow: 0px 0px $blur $spread rgba(0, 0, 0, 0.15) !important;
 }
 
 /**
@@ -72,6 +76,13 @@
 	@include border(#{$border-radius});
 	background-color: #{$background-color};
 	border-color: $dusk-blue;
+	color: #{$color};
+}
+
+@mixin ipBlueDarkWrapper($background-color: $pure-white, $color: $dusk-blue, $border-radius: 3px) {
+	@include border(#{$border-radius});
+	background-color: #{$background-color};
+	border-color: $IP-blue-dark;
 	color: #{$color};
 }
 

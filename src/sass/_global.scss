@@ -4,10 +4,11 @@
 
 a,
 button {
-	&:hover {
-		cursor: pointer;
-	}
+	cursor: pointer;
+}
 
+a,
+button {
 	&::-moz-focus-inner {
 		border: 0;
 	}
@@ -22,6 +23,7 @@ button {
 input {
 	border: none;
 	outline: none;
+	margin: 0px;
 	padding: 0px;
 }
 

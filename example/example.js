@@ -2,11 +2,10 @@
 
 import '../src/sass/_example.scss';
 import {
-	Three,
-	Twelve,
-	Container,
 	Alert,
 	BrandButton,
+	CheckBox,
+	Container,
 	FemaleButton,
 	Icons,
 	Input,
@@ -19,7 +18,9 @@ import {
 	SecondaryPositiveButton,
 	TertiaryNegativeButton,
 	TertiaryNeutralButton,
-	TertiaryPositiveButton
+	TertiaryPositiveButton,
+	Three,
+	Twelve
 } from '../src/ui';
 
 class Example extends React.Component {
@@ -148,6 +149,10 @@ class Example extends React.Component {
 								console.log(value);
 							}
 						} />
+					</Three>
+
+					<Three>
+						<CheckBox />
 					</Three>
 				</Container>
 			</div>

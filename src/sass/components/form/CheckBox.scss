@@ -1,0 +1,27 @@
+.orch-checkbox {
+	@include arcticBlueDarkWrapper();
+	cursor: pointer;
+	height: 24px;
+	width: 24px;
+
+	&.checked {
+		@include ipBlueDarkWrapper($IP-blue);
+		@include shadow($spread: 1px);
+
+		&:hover {
+			@include ipBlueDarkWrapper($IP-blue-dark);
+		}
+	}
+
+	&:hover {
+		@include powderBlueWrapper();
+	}
+
+	input {
+		appearance: none;
+		cursor: pointer;
+		height: inherit;
+		-webkit-appearance: none;
+		width: inherit;
+	}
+}
