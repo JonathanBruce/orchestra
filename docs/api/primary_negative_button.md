@@ -2,7 +2,7 @@
 
 * __Internal components used:__ `PrimaryButton.jsx`
 * __HTML tag extended:__ `<button></button>`
-* __CSS class(es) used:__ `primary`, `negative`
+* __CSS class(es) used:__ `orch-primary`, `orch-negative`
 * __Located at__: `src/components/buttons/PrimaryNegative.jsx`
 
 **Props:**

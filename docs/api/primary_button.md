@@ -1,7 +1,7 @@
 ### `PrimaryButton` !heading
 
 * __HTML tag extended:__ `<button></button>`
-* __CSS class(es) used:__ `primary`
+* __CSS class(es) used:__ `orch-primary`
 * __Located at__: `src/components/base/Primary.jsx`
 
 **Props:**

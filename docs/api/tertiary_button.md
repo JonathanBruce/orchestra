@@ -1,7 +1,7 @@
 ### `TertiaryButton` !heading
 
 * __HTML tag extended:__ `<button></button>`
-* __CSS class(es) used:__ `tertiary`
+* __CSS class(es) used:__ `orch-tertiary`
 * __Located at__: `src/components/base/Tertiary.jsx`
 
 **Props:**

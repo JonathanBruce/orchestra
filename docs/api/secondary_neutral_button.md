@@ -2,7 +2,7 @@
 
 * __Internal components used:__ `SecondaryButton.jsx`
 * __HTML tag extended:__ `<button></button>`
-* __CSS class(es) used:__ `secondary`, `neutral`
+* __CSS class(es) used:__ `orch-secondary`, `orch-neutral`
 * __Located at__: `src/components/buttons/SecondaryNeutral.jsx`
 
 **Props:**

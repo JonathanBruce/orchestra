@@ -24,6 +24,10 @@
     * [`TertiaryNegativeButton`](#tertiarynegativebutton)
     * [`TertiaryNeutralButton`](#tertiaryneutralbutton)
     * [`TertiaryPositiveButton`](#tertiarypositivebutton)
+  * [Form](#form)
+    * [`Input`](#input)
+  * [Miscellaneous](#miscellaneous)
+    * [`PillToggle`](#pilltoggle)
 * [Commands](#commands)
 * [Contributing](#contributing)
 
@@ -48,6 +52,8 @@ Orchestra uses the following technologies:
 
 Follow these intructions to set up the Orchestra development environment.
 
+If you would rather have a push button start, run `setup.sh` that will everything for you.
+
 ### Installing Dependencies
 
 Once you have pulled down the project you must install dependencies via npm.  This can be done by running `npm install` at the project root.
@@ -59,16 +65,18 @@ Orchestra leverages the Intern testing suite for functional testing, which also 
 
 * Install the npm `selenium-standalone` package with `npm i -g selenium-standalone`
 * One the npm pacakage is installed, install `selenium-standalone` with `selenium-standalone install`
-* Start selenium-standalone with `npm run selenium`
+* Start selenium-standalone with `selenium-standalone start`
 
-
+Additionally, Selenium requires the JRE to run.  Make sure you've installed the JRE on your system.
 ## Testing
 
 As stated previously, Orchestra leverages Intern to functional testing.  To find out more about Intern please refer to the architecture section of these docs.  There you will find examples of how to write functional tests.
 
 Intern also leverages Leadfoot as the API to drive the browser.  To find out more about Leadfoot please refer to this architecture section of these docs.  There you will find the API of Leadfoot.
 
-To run the functional tests, run `npm run test` at the project root.  The selenium standalone server must be running for these tests to work.
+To run the functional tests against the browserstack selenium server, run `npm run test:browserstack` at the project root.
+
+To run the functional tests against your local selenium server, run `npm run test:local` at the project root.  The selenium standalone server must be running for these tests to work.
 
 
 # API
@@ -102,7 +110,7 @@ The following describes all of the internal base components available for use in
 ### `PrimaryButton`
 
 * __HTML tag extended:__ `<button></button>`
-* __CSS class(es) used:__ `primary`
+* __CSS class(es) used:__ `orch-primary`
 * __Located at__: `src/components/base/Primary.jsx`
 
 **Props:**
@@ -119,7 +127,7 @@ The PrimaryButton is used as a base for primary buttons internally to build more
 ### `SecondaryButton`
 
 * __HTML tag extended:__ `<button></button>`
-* __CSS class(es) used:__ `secondary`
+* __CSS class(es) used:__ `orch-secondary`
 * __Located at__: `src/components/base/Secondary.jsx`
 
 **Props:**
@@ -136,7 +144,7 @@ The SecondaryButton is used as a base for secondary buttons internally to build 
 ### `TertiaryButton`
 
 * __HTML tag extended:__ `<button></button>`
-* __CSS class(es) used:__ `tertiary`
+* __CSS class(es) used:__ `orch-tertiary`
 * __Located at__: `src/components/base/Tertiary.jsx`
 
 **Props:**
@@ -159,7 +167,7 @@ The following describes all of the button components available for use in Orches
 
 * __Internal components used:__ `PrimaryButton.jsx`
 * __HTML tag extended:__ `<button></button>`
-* __CSS class(es) used:__ `brand`
+* __CSS class(es) used:__ `orch-brand`
 * __Located at__: `src/components/buttons/Brand.jsx`
 
 **Props:**
@@ -192,7 +200,7 @@ class MyComponent extends React.Component {
 
 * __Internal components used:__ `PrimaryButton.jsx`
 * __HTML tag extended:__ `<button></button>`
-* __CSS class(es) used:__ `female`
+* __CSS class(es) used:__ `orch-female`
 * __Located at__: `src/components/buttons/Female.jsx`
 
 **Props:**
@@ -258,7 +266,7 @@ class MyComponent extends React.Component {
 
 * __Internal components used:__ `PrimaryButton.jsx`
 * __HTML tag extended:__ `<button></button>`
-* __CSS class(es) used:__ `primary`, `negative`
+* __CSS class(es) used:__ `orch-primary`, `orch-negative`
 * __Located at__: `src/components/buttons/PrimaryNegative.jsx`
 
 **Props:**
@@ -290,7 +298,7 @@ class MyComponent extends React.Component {
 
 * __Internal components used:__ `PrimaryButton.jsx`
 * __HTML tag extended:__ `<button></button>`
-* __CSS class(es) used:__ `primary`, `neutral`
+* __CSS class(es) used:__ `orch-primary`, `orch-neutral`
 * __Located at__: `src/components/buttons/PrimaryNeutral.jsx`
 
 **Props:**
@@ -320,7 +328,7 @@ class MyComponent extends React.Component {
 
 * __Internal components used:__ `PrimaryButton.jsx`
 * __HTML tag extended:__ `<button></button>`
-* __CSS class(es) used:__ `primary`, `positive`
+* __CSS class(es) used:__ `orch-primary`, `orch-positive`
 * __Located at__: `src/components/buttons/PrimaryPositive.jsx`
 
 **Props:**
@@ -356,7 +364,7 @@ class MyComponent extends React.Component {
 
 * __Internal components used:__ `SecondaryButton.jsx`
 * __HTML tag extended:__ `<button></button>`
-* __CSS class(es) used:__ `secondary`, `neutral`
+* __CSS class(es) used:__ `orch-secondary`, `orch-neutral`
 * __Located at__: `src/components/buttons/SecondaryNeutral.jsx`
 
 **Props:**
@@ -392,7 +400,7 @@ class MyComponent extends React.Component {
 
 * __Internal components used:__ `SecondaryButton.jsx`
 * __HTML tag extended:__ `<button></button>`
-* __CSS class(es) used:__ `secondary`, `positive`
+* __CSS class(es) used:__ `orch-secondary`, `orch-positive`
 * __Located at__: `src/components/buttons/SecondaryNegative.jsx`
 
 **Props:**
@@ -428,7 +436,7 @@ class MyComponent extends React.Component {
 
 * __Internal components used:__ `TertiaryButton.jsx`
 * __HTML tag extended:__ `<button></button>`
-* __CSS class(es) used:__ `tertiary`, `negative`
+* __CSS class(es) used:__ `orch-tertiary`, `orch-negative`
 * __Located at__: `src/components/buttons/TertiaryNegative.jsx`
 
 **Props:**
@@ -460,7 +468,7 @@ class MyComponent extends React.Component {
 
 * __Internal components used:__ `TertiaryButton.jsx`
 * __HTML tag extended:__ `<button></button>`
-* __CSS class(es) used:__ `tertiary`, `negative`
+* __CSS class(es) used:__ `orch-tertiary`, `orch-negative`
 * __Located at__: `src/components/buttons/TertiaryNegative.jsx`
 
 **Props:**
@@ -492,7 +500,7 @@ class MyComponent extends React.Component {
 
 * __Internal components used:__ `TertiaryButton.jsx`
 * __HTML tag extended:__ `<button></button>`
-* __CSS class(es) used:__ `tertiary`, `positive`
+* __CSS class(es) used:__ `orch-tertiary`, `orch-positive`
 * __Located at__: `src/components/buttons/TertiaryPositive.jsx`
 
 **Props:**
@@ -523,6 +531,106 @@ class MyComponent extends React.Component {
 ```
 
 
+
+## Form
+
+The following describes all of the form components available for use in Orchestra.
+
+### `Input`
+
+* __Internal components used:__ `Input.jsx`
+* __HTML tag extended:__ `<input />`
+* __CSS class(es) used:__ `orch-input orch-secondary`
+* __Located at__: `src/components/form/Input.jsx`
+
+**Props:**
+
+| Name          | Type          | Desciption                                    |
+| ------------- |---------------| ----------------------------------------------|
+| `disabled`    | `boolean`     | Disables the component                        |
+| `error`       | `boolean`     | Puts the input in an error state              |
+| `icon`        | `object`      | Icon to use (use orchestra Icons)             |
+
+**Reason for existing:**
+
+The Input is used in conjunction with Insightpool searches.  This component takes all of the usual suspects that regular HTML input tags take.
+
+**Usage:**
+
+```javascript
+import {
+	Icons,
+	Input
+} from 'orchestra';
+
+class MyComponent extends React.Component {
+	render() {
+		return (
+			<Input defaultValue='Username' icon={ <Icons.SmallUser /> } />
+		);
+	}
+}
+```
+
+
+
+## Miscellaneous
+
+The following describes all of the miscellaneous components available for use in Orchestra.
+
+### `PillToggle`
+
+* __HTML tag extended:__ `<div></div>`
+* __CSS class(es) used:__ `orch-pill-toggle`
+* __Located at__: `src/components/misc/PillToggle.jsx`
+
+**Props:**
+
+| Name          | Type          | Desciption                                                                                     |
+| ------------- |---------------| -----------------------------------------------------------------------------------------------|
+| `item`        | `obj`         | Object of items to render the key of which serves as the value of the item                     |
+| `item.active` | `boolean`     | If item is active it will disable onclick events                                               |
+| `onClick`     | `function`    | An onClick event which is bound to the value of an item when clicked                           |
+
+**Reason for existing:**
+
+The PillToggle is used as a button toggler for a series of items for the Insightpool application.
+
+**Usage:**
+
+```javascript
+import { PillToggle } from 'orchestra';
+
+class MyComponent extends React.Component {
+	onItemClick = (val) => {
+		switch (val) {
+			case 'A':
+				console.log('A!');
+				break;
+			default:
+				console.log('Not A!');
+				breal;
+		}
+	};
+
+	render() {
+		const items = {
+			A: {
+				active: true
+			},
+			B: {
+				active: false
+			}
+		};
+
+		return (
+			<PillToggle items={ items } onClick={ onItemClick }>Hello World!</PillToggle>
+		);
+	}
+}
+```
+
+
 # Commands
 
 Orchestra comes with a plethora of commands for you to use in conjunction with npm.
@@ -533,9 +641,10 @@ Orchestra comes with a plethora of commands for you to use in conjunction with n
 * `npm run build:intern` to rebuild the intern tests
 * `npm run build:test-ui` to build the test UI for the intern tests
 * `npm run build:ui` to build the production version of the UI for consumption (consumed as an `npm` module)
-* `npm run intern` to re-run intern test (you should use `npm run test` to rebuild and re-run)
-* `npm run selenium` to run the selenium server (shortcut for `selenium-standlone start`)
-* `npm run test` to run the functional testing suite
+* `npm run intern:browserstack` to re-run the last built intern test on browserstack (you should use `npm run test:browserstack` to rebuild and re-run)
+* `npm run intern:local` to re-run the last built intern test locally (you should use `npm run test:local` to rebuild and re-run)
+* `npm run test:browserstack` to run the functional testing suite on browserstack
+* `npm run test:local` to run the functional testing suite on your local selenium server
 
 
 # Contributing

@@ -27,3 +27,15 @@ The following describes all of the button components available for use in Orches
 #include "./docs/api/tertiary_negative_button.md"
 #include "./docs/api/tertiary_neutral_button.md"
 #include "./docs/api/tertiary_positive_button.md"
+
+## Form !heading
+
+The following describes all of the form components available for use in Orchestra.
+
+#include "./docs/api/input.md"
+
+## Miscellaneous !heading
+
+The following describes all of the miscellaneous components available for use in Orchestra.
+
+#include "./docs/api/pill_toggle.md"

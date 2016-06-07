@@ -2,7 +2,7 @@
 
 * __Internal components used:__ `PrimaryButton.jsx`
 * __HTML tag extended:__ `<button></button>`
-* __CSS class(es) used:__ `brand`
+* __CSS class(es) used:__ `orch-brand`
 * __Located at__: `src/components/buttons/Brand.jsx`
 
 **Props:**

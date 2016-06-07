@@ -2,7 +2,7 @@
 
 * __Internal components used:__ `TertiaryButton.jsx`
 * __HTML tag extended:__ `<button></button>`
-* __CSS class(es) used:__ `tertiary`, `positive`
+* __CSS class(es) used:__ `orch-tertiary`, `orch-positive`
 * __Located at__: `src/components/buttons/TertiaryPositive.jsx`
 
 **Props:**
