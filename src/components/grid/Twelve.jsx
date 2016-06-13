@@ -13,7 +13,7 @@ class Twelve extends Component {
 
 	render() {
 		return (
-			<div className='grid-12'>
+			<div className='orch-grid-12'>
 				{ this.props.children }
 			</div>
 		);
