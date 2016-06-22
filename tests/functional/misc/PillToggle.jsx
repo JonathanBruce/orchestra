@@ -2,7 +2,7 @@
 /* global document, React, ReactDOM, window */
 
 import 'sass/ui.scss';
-import { APP } from 'constants/APP';
+import APP from 'constants/APP';
 import PillToggle from 'components/misc/PillToggle.jsx';
 import Icons from 'icons/_all';
 
