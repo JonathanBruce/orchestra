@@ -28,6 +28,7 @@
 		}
 
 		.notification {
+			box-sizing: border-box;
 			font-size: 12px;
 			height: 24px;
 			line-height: 20px;
@@ -43,7 +44,7 @@
 			}
 
 			&.information {
-				@include arcticBlueWrapper($border-radius: 24px);
+				@include arcticBlueDarkWrapper($border-radius: 24px);
 			}
 		}
 

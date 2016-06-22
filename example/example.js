@@ -155,7 +155,29 @@ class Example extends React.Component {
 					</Three>
 
 					<Three>
-						<CheckBox />
+						<CheckBox callback={
+							(value) => {
+								console.log(value);
+							}
+						} />
+
+						<CheckBox checked callback= {
+							(value) => {
+								console.log(value);
+							}
+						} />
+
+						<CheckBox disabled callback= {
+							(value) => {
+								console.log(value);
+							}
+						} />
+
+						<CheckBox checked disabled callback= {
+							(value) => {
+								console.log(value);
+							}
+						} />
 					</Three>
 				</Container>
 			</div>

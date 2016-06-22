@@ -14,6 +14,10 @@ function buildClassDefinition(className, body) {
 /* eslint-disable */
 
 class ${className} extends React.Component {
+	constructor(props) {
+		super(props);
+	}
+
 	render() {
 		return (
 			${body}
@@ -36,10 +40,11 @@ function capitalizeWithHyphens(str, index) {
 function svgPostProcessing(str) {
 	const match = {
 		'stroke-width': 'strokeWidth',
-		'stroke-linecap': 'strokeLinecap'
+		'stroke-linecap': 'strokeLinecap',
+		'<svg': '<svg { ...this.props }'
 	};
 
-	return str.replace(/stroke-width|stroke-linecap/gi, (matched) => {
+	return str.replace(/stroke-width|stroke-linecap|<svg/gi, (matched) => {
 		return match[ matched ];
 	});
 }

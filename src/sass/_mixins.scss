@@ -5,17 +5,21 @@
 @mixin border($border: 3px) {
 	border: 2px solid;
 	border-radius: #{$border};
-	box-sizing: border-box;
 }
 
-@mixin disabled($background: $silver) {
-	background-color: #{$background} !important;
+@mixin disabled($background-color: $silver,
+	$input-background-color: $pure-white,
+	$svg-fill-color: $silver-dark,
+	$svg-path-color: $silver-dark) {
+	background-color: #{$background-color} !important;
 	border-color: $silver-dark !important;
 	color: $silver-dark !important;
 	cursor: default !important;
+	pointer-events: none;
 
 	input {
-		background-color: $pure-white;
+		background-color: #{$input-background-color};
+		cursor: default !important;
 
 		&::-webkit-input-placeholder,
 		&::-moz-placeholder,
@@ -26,15 +30,15 @@
 	}
 
 	svg {
-		border-color: $silver-dark !important;
+		border-color: #{$svg-path-color} !important;
 
 		ellipse,
 		path {
-			stroke: $silver-dark !important;
+			stroke: #{$svg-path-color} !important;
 		}
 
 		text {
-			fill: $silver-dark !important;
+			fill: #{$svg-fill-color} !important;
 		}
 	}
 }

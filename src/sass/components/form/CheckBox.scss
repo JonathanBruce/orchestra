@@ -1,7 +1,9 @@
 .orch-checkbox {
 	@include arcticBlueDarkWrapper();
 	cursor: pointer;
+	display: inline-block;
 	height: 24px;
+	position: relative;
 	width: 24px;
 
 	&.checked {
@@ -13,8 +15,12 @@
 		}
 	}
 
+	&.disabled {
+		@include disabled($input-background-color: $silver, $svg-path-color: $pure-white);
+	}
+
 	&:hover {
-		@include powderBlueWrapper();
+		@include arcticBlueDarkWrapper($arctic-blue-dark);
 	}
 
 	input {
@@ -23,5 +29,11 @@
 		height: inherit;
 		-webkit-appearance: none;
 		width: inherit;
+	}
+
+	svg {
+		left: 6px;
+		position: absolute;
+		top: 7px;
 	}
 }

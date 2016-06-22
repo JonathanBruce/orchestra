@@ -1,9 +1,11 @@
 /* global React */
 
 import classnames from 'classnames';
+import Checkmark from 'icons/Checkmark.jsx';
 
 class CheckBox extends React.Component {
 	static propTypes = {
+		callback: React.PropTypes.func.isRequired,
 		checked: React.PropTypes.bool,
 		disabled: React.PropTypes.bool,
 		onClick: React.PropTypes.func
@@ -17,23 +19,35 @@ class CheckBox extends React.Component {
 		};
 	}
 
-	onInputClick = () => {
-		this.setState({
-			checked: !this.state.checked
-		});
+	onInputChange = () => {
+		const { callback, disabled } = this.props;
+
+		if (!disabled) {
+			this.setState({
+				checked: !this.state.checked
+			}, () => {
+				callback(this.state.checked);
+			});
+		}
 	};
 
 	render() {
-		const { checked, disabled } = this.props;
+		const { disabled } = this.props;
+		const { checked } = this.state;
 		const containerClassnames = classnames({
-			checked: checked || this.state.checked,
+			checked,
 			disabled,
 			'orch-checkbox': true
 		});
 
 		return (
-			<div className={ containerClassnames } onClick={ this.onInputClick }>
-				<input checked={ checked } type='checkbox' />
+			<div className={ containerClassnames }>
+				<input checked={ checked }
+					disabled={ disabled }
+					onChange={ this.onInputChange }
+					ref='input'
+					type='checkbox' />
+				{ checked && <Checkmark onClick={ this.onInputChange } /> }
 			</div>
 		);
 	}

@@ -14,6 +14,7 @@ define([
 	'tests/functional/buttons/TertiaryNegative',
 	'tests/functional/buttons/TertiaryNeutral',
 	'tests/functional/buttons/TertiaryPositive',
+	'tests/functional/form/Checkbox',
 	'tests/functional/form/Input',
 	'tests/functional/misc/PillToggle'
 ]);
