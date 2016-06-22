@@ -1,19 +1,21 @@
 .orch-pill-toggle {
-	height: 32px;
+	height: 34px;
 
 	.item {
+		background-color: $arctic-blue;
 		border-bottom: 2px solid;
-		border-color: $cloudy-blue-grey;
+		border-color: $arctic-blue-dark;
 		border-left: 2px solid;
 		border-top: 2px solid;
 		box-sizing: border-box;
 		color: $cloudy-blue-grey;
 		display: inline-block;
 		font-family: $lato-regular;
-		font-size: 14px;
+		font-size: 12px;
 		height: inherit;
 		line-height: 30px;
 		padding: 0px 20px;
+		position: relative;
 
 		&.active {
 			@include duskBlueWrapper($steel-blue, $pure-white, null);
@@ -21,6 +23,26 @@
 			& ~ div {
 				border-left: 0px;
 				border-right: 2px solid;
+				border-color: $arctic-blue-dark;
+			}
+		}
+
+		.notification {
+			font-size: 12px;
+			height: 24px;
+			line-height: 21px;
+			min-width: 24px;
+			padding: 0 4px;
+			position: absolute;
+			right: 0px;
+			top: -13px;
+
+			&.error {
+				@include watermelonDarkWrapper($background-color: $watermelon, $border-radius: 24px);
+			}
+
+			&.information {
+				@include arcticBlueWrapper($border-radius: 24px);
 			}
 		}
 
@@ -35,9 +57,9 @@
 		}
 
 		&:not(.active):hover {
-			background-color: $arctic-blue;
-			border-color: $cloudy-blue-grey;
-			color: $steel-blue;
+			background-color: $arctic-blue-dark;
+			border-color: $arctic-blue-dark;
+			color: $dusk-blue;
 			cursor: pointer;
 		}
 	}

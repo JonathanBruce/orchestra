@@ -3,6 +3,7 @@
 import '../src/sass/_example.scss';
 import {
 	Alert,
+	APP,
 	BrandButton,
 	CheckBox,
 	Container,
@@ -135,10 +136,12 @@ class Example extends React.Component {
 									active: true
 								},
 								B: {
-									active: false
+									active: false,
+									notifications: [ 12, APP.ERROR ]
 								},
 								C: {
-									active: false
+									active: false,
+									notifications: [ 12, APP.INFORMATION ]
 								},
 								D: {
 									active: false

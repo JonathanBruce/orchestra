@@ -5,6 +5,7 @@
 @mixin border($border: 3px) {
 	border: 2px solid;
 	border-radius: #{$border};
+	box-sizing: border-box;
 }
 
 @mixin disabled($background: $silver) {
@@ -58,6 +59,13 @@
  * Content wrappers
  */
 
+@mixin arcticBlueWrapper($background-color: $pure-white, $color: $dusk-blue, $border-radius: 3px) {
+	@include border(#{$border-radius});
+	background-color: #{$background-color};
+	border-color: $arctic-blue;
+	color: #{$color};
+}
+
 @mixin arcticBlueDarkWrapper($background-color: $pure-white, $color: $dusk-blue, $border-radius: 3px) {
 	@include border(#{$border-radius});
 	background-color: #{$background-color};
@@ -107,10 +115,17 @@
 	color: #{$color};
 }
 
-@mixin watermelonWrapper($background-color: $pure-white, $color: $dusk-blue, $border-radius: 3px) {
+@mixin watermelonWrapper($background-color: $pure-white, $color: $pure-white, $border-radius: 3px) {
 	@include border(#{$border-radius});
 	background-color: #{$background-color};
 	border-color: $watermelon;
+	color: #{$color};
+}
+
+@mixin watermelonDarkWrapper($background-color: $pure-white, $color: $pure-white, $border-radius: 3px) {
+	@include border(#{$border-radius});
+	background-color: #{$background-color};
+	border-color: $watermelon-dark;
 	color: #{$color};
 }
 

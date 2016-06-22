@@ -1,6 +1,12 @@
 import 'sass/ui.scss';
 
 /**
+ * Export constants
+ */
+
+export APP from 'constants/APP';
+
+/**
  * Export icons
  */
 

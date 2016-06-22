@@ -20,7 +20,7 @@ class PillToggle extends React.Component {
 
 		return keys.map((value, i) => {
 			const item = items[ value ];
-			const { active } = item;
+			const { active, notifications } = item;
 			const itemClasses = classnames({
 				active,
 				item: true
@@ -30,10 +30,29 @@ class PillToggle extends React.Component {
 				<div className={ itemClasses }
 					key={ i }
 					onClick={ !active && this.onClick.bind(this, value) }>
+					{ this.renderNotifications(notifications) }
 					{ value }
 				</div>
 			);
 		});
+	};
+
+	renderNotifications = (notifications = []) => {
+		if (notifications.length) {
+			const [ count, color ] = notifications;
+			const notificationsClasses = classnames({
+				[ color ]: true,
+				notification: true
+			});
+
+			return (
+				<div className={ notificationsClasses }>
+					{ count }
+				</div>
+			);
+		}
+
+		return null;
 	};
 
 	render() {
