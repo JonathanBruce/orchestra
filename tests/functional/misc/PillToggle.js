@@ -41,7 +41,7 @@ define([
 				.findByClassName('value')
 				.getVisibleText()
 			.then(function (value) {
-				assert.include(value, '', 'values should match');
+				assert.equal(value, '', 'values should match');
 			});
 		},
 
@@ -56,7 +56,31 @@ define([
 				.findByClassName('value')
 				.getVisibleText()
 			.then(function (value) {
-				assert.include(value, 'B', 'values should match');
+				assert.equal(value, 'B', 'values should match');
+			});
+		},
+
+		'it should render notification count on items': function () {
+			return this.remote.get(require.toUrl(url))
+				.findById('pill-toggle')
+					.findByClassName('orch-pill-toggle')
+						.findByCssSelector('.item:not(.active)')
+							.findByClassName('notification')
+							.getVisibleText()
+			.then(function (count) {
+				assert.equal(count, 1, 'count should match');
+			});
+		},
+
+		'it should render notification color based on constant': function () {
+			return this.remote.get(require.toUrl(url))
+				.findById('pill-toggle')
+					.findByClassName('orch-pill-toggle')
+						.findByCssSelector('.item:not(.active)')
+							.findByClassName('notification')
+							.getAttribute('class')
+			.then(function (className) {
+				assert.include(className, 'error', 'classes should match');
 			});
 		}
 	});

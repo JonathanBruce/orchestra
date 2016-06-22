@@ -30,11 +30,12 @@
 		.notification {
 			font-size: 12px;
 			height: 24px;
-			line-height: 21px;
+			line-height: 20px;
 			min-width: 24px;
 			padding: 0 4px;
 			position: absolute;
 			right: 0px;
+			text-align: center;
 			top: -13px;
 
 			&.error {

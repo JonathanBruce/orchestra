@@ -2,8 +2,9 @@
 /* global document, React, ReactDOM, window */
 
 import 'sass/ui.scss';
+import { APP } from 'constants/APP';
 import PillToggle from 'components/misc/PillToggle.jsx';
-import Icons from 'icons/_all.js';
+import Icons from 'icons/_all';
 
 class PillToggleTest extends React.Component {
 	constructor() {
@@ -12,7 +13,7 @@ class PillToggleTest extends React.Component {
 		this.state = {
 			items: {
 				A: { active: true },
-				B: { active: false },
+				B: { active: false, notifications: [ 1, APP.ERROR ] },
 				C: { active: false },
 				D: { active: false }
 			}

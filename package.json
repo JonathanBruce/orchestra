@@ -9,7 +9,7 @@
     "src"
   ],
   "scripts": {
-  	"build:all": "npm run build:icons && webpack --config webpack.config.js && webpack --config webpack.example.js && webpack --config webpack.test.js",
+    "build:all": "npm run build:icons /&& webpack --config webpack.config.js && webpack --config webpack.example.js && webpack --config webpack.test.js && npm run build:docs",
     "build:docs": "./node_modules/.bin/markdown-include markdown.json",
     "build:example": "npm run build:icons && webpack --config webpack.example.js",
     "build:icons": "node src/lib/buildIcons.js && node src/lib/combineIcons.js",

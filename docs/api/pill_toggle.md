@@ -6,11 +6,12 @@
 
 **Props:**
 
-| Name          | Type          | Desciption                                                                                     |
-| ------------- |---------------| -----------------------------------------------------------------------------------------------|
-| `item`        | `obj`         | Object of items to render the key of which serves as the value of the item                     |
-| `item.active` | `boolean`     | If item is active it will disable onclick events                                               |
-| `onClick`     | `function`    | An onClick event which is bound to the value of an item when clicked                           |
+| Name                 | Type          | Desciption                                                                                     |
+| ---------------------|---------------| -----------------------------------------------------------------------------------------------|
+| `item`               | `obj`         | Object of items to render the key of which serves as the value of the item                     |
+| `item.active`        | `boolean`     | If item is active it will disable onclick events                                               |
+| `item.notifications` | `array`       | Takes count in first index and type in second index                                            |
+| `onClick`            | `function`    | An onClick event which is bound to the value of an item when clicked                           |
 
 **Reason for existing:**
 
@@ -19,7 +20,7 @@ The PillToggle is used as a button toggler for a series of items for the Insight
 **Usage:**
 
 ```javascript
-import { PillToggle } from 'orchestra';
+import { APP, PillToggle } from 'orchestra';
 
 class MyComponent extends React.Component {
 	onItemClick = (val) => {
@@ -39,7 +40,8 @@ class MyComponent extends React.Component {
 				active: true
 			},
 			B: {
-				active: false
+				active: false,
+				notifications: [ 12, APP.ERROR ]
 			}
 		};
 
