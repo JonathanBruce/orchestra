@@ -586,12 +586,13 @@ The following describes all of the miscellaneous components available for use in
 
 **Props:**
 
-| Name                 | Type          | Desciption                                                                                     |
-| ---------------------|---------------| -----------------------------------------------------------------------------------------------|
-| `item`               | `obj`         | Object of items to render the key of which serves as the value of the item                     |
-| `item.active`        | `boolean`     | If item is active it will disable onclick events                                               |
-| `item.notifications` | `array`       | Takes count in first index and type in second index                                            |
-| `onClick`            | `function`    | An onClick event which is bound to the value of an item when clicked                           |
+| Name                 | Type            | Desciption                                                                                     |
+| ---------------------|-----------------| -----------------------------------------------------------------------------------------------|
+| `item`               | `obj`           | Object of items to render the key of which serves as the value of the item                     |
+| `item.active`        | `boolean`       | If item is active it will disable onclick events                                               |
+| `item.notifications` | `array`         | Takes count in first index and type in second index                                            |
+| `item.value`         | `string|number` | Overrides the item's label as the designated value                                             |
+| `onClick`            | `function`      | An onClick event which is bound to the value of an item when clicked                           |
 
 **Reason for existing:**
 
@@ -621,7 +622,8 @@ class MyComponent extends React.Component {
 			},
 			B: {
 				active: false,
-				notifications: [ 12, APP.ERROR ]
+				notifications: [ 12, APP.ERROR ],
+				value: 'foo'
 			}
 		};
 
