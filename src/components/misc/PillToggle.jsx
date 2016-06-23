@@ -18,13 +18,14 @@ class PillToggle extends React.Component {
 		const { items } = this.props;
 		const keys = Object.keys(items);
 
-		return keys.map((value, i) => {
-			const item = items[ value ];
+		return keys.map((key, i) => {
+			const item = items[ key ];
 			const { active, notifications } = item;
 			const itemClasses = classnames({
 				active,
 				item: true
 			});
+			const value = item.value || key;
 
 			return (
 				<div className={ itemClasses }
