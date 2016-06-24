@@ -5,22 +5,37 @@ import 'sass/ui.scss';
 import CheckBox from 'components/form/CheckBox.jsx';
 
 class CheckBoxTest extends React.Component {
-	onCheckBoxChange = (bool) => {
-		const { text } = this.refs;
+	onDisabledCheckboxChange = (bool) => {
+		const disabledText = this.refs[ 'disabled-text' ];
 
-		text.textContent = bool;
+		this.onCheckBoxChange(disabledText, bool);
+	};
+
+	onEnabledCheckboxChange = (bool) => {
+		const enabledText = this.refs[ 'enabled-text' ];
+
+		this.onCheckBoxChange(enabledText, bool);
+	};
+
+	onCheckBoxChange = (ref, bool) => {
+		ref.textContent = bool;
 	};
 
 	render() {
 		return (
 			<div id='checkbox'>
 				<div id='disabled-checkbox'>
-					<CheckBox disabled />
+					<div className='disabled-text' ref='disabled-text'></div>
+					<CheckBox callback={ this.onDisabledCheckboxChange }
+						disabled
+						label='Option B' />
 				</div>
 
 				<div id='enabled-checkbox'>
-					<div className='text' ref='text'></div>
-					<CheckBox checked callback={ this.onCheckBoxChange } />
+					<div className='enabled-text' ref='enabled-text'></div>
+					<CheckBox callback={ this.onEnabledCheckboxChange }
+						checked
+						label='Option A' />
 				</div>
 			</div>
 		);

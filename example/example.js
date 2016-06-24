@@ -167,25 +167,25 @@ class Example extends React.Component {
 							(value) => {
 								console.log(value);
 							}
-						} />
+						} label='Option A' />
 
 						<CheckBox checked callback= {
 							(value) => {
 								console.log(value);
 							}
-						} />
+						} label='Option B' />
 
 						<CheckBox disabled callback= {
 							(value) => {
 								console.log(value);
 							}
-						} />
+						} label='Option C' />
 
 						<CheckBox checked disabled callback= {
 							(value) => {
 								console.log(value);
 							}
-						} />
+						} label='Option D' />
 					</Three>
 				</Container>
 			</div>

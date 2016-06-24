@@ -1,39 +1,60 @@
 .orch-checkbox {
-	@include arcticBlueDarkWrapper();
-	cursor: pointer;
 	display: inline-block;
-	height: 24px;
-	position: relative;
-	width: 24px;
 
-	&.checked {
-		@include ipBlueDarkWrapper($IP-blue);
-		@include shadow($spread: 1px);
+	.checkbox {
+		@include arcticBlueDarkWrapper();
+		cursor: pointer;
+		display: inline-block;
+		height: 20px;
+		margin-right: 20px;
+		position: relative;
+		width: 20px;
+		vertical-align: middle;
+
+		& + label {
+			color: $steel-blue;
+			cursor: pointer;
+			font-family: $lato-regular;
+			font-size: 14px;
+		}
+
+		&.checked {
+			@include ipBlueDarkWrapper($IP-blue);
+			@include shadow($spread: 1px);
+
+			&:hover {
+				@include ipBlueDarkWrapper($IP-blue-dark);
+			}
+
+			& + label {
+				color: $dusk-blue;
+			}
+
+			&.disabled {
+				@include disabled($input-background-color: $silver, $svg-path-color: $pure-white);
+			}
+		}
+
+		&.disabled {
+			@include disabled($input-background-color: $pure-white);
+		}
 
 		&:hover {
-			@include ipBlueDarkWrapper($IP-blue-dark);
+			@include arcticBlueDarkWrapper($arctic-blue-dark);
 		}
-	}
 
-	&.disabled {
-		@include disabled($input-background-color: $silver, $svg-path-color: $pure-white);
-	}
+		input {
+			appearance: none;
+			cursor: pointer;
+			height: inherit;
+			-webkit-appearance: none;
+			width: inherit;
+		}
 
-	&:hover {
-		@include arcticBlueDarkWrapper($arctic-blue-dark);
-	}
-
-	input {
-		appearance: none;
-		cursor: pointer;
-		height: inherit;
-		-webkit-appearance: none;
-		width: inherit;
-	}
-
-	svg {
-		left: 6px;
-		position: absolute;
-		top: 7px;
+		svg {
+			left: 5px;
+			position: absolute;
+			top: 5px;
+		}
 	}
 }

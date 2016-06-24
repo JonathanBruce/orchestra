@@ -29,6 +29,13 @@
 		}
 	}
 
+	label,
+	& + label {
+		color: $silver-dark;
+		cursor: default !important;
+		pointer-events: none;
+	}
+
 	svg {
 		border-color: #{$svg-path-color} !important;
 

@@ -8,6 +8,7 @@ class CheckBox extends React.Component {
 		callback: React.PropTypes.func.isRequired,
 		checked: React.PropTypes.bool,
 		disabled: React.PropTypes.bool,
+		label: React.PropTypes.string,
 		onClick: React.PropTypes.func
 	};
 
@@ -32,22 +33,26 @@ class CheckBox extends React.Component {
 	};
 
 	render() {
-		const { disabled } = this.props;
+		const { disabled, label } = this.props;
 		const { checked } = this.state;
-		const containerClassnames = classnames({
+		const checkboxClassnames = classnames({
+			checkbox: true,
 			checked,
-			disabled,
-			'orch-checkbox': true
+			disabled
 		});
 
 		return (
-			<div className={ containerClassnames }>
-				<input checked={ checked }
-					disabled={ disabled }
-					onChange={ this.onInputChange }
-					ref='input'
-					type='checkbox' />
-				{ checked && <Checkmark onClick={ this.onInputChange } /> }
+			<div className='orch-checkbox'>
+				<div className={ checkboxClassnames }>
+					<input checked={ checked }
+						disabled={ disabled }
+						onChange={ this.onInputChange }
+						ref='input'
+						type='checkbox' />
+					{ checked && <Checkmark onClick={ this.onInputChange } /> }
+				</div>
+
+				<label onClick={ this.onInputChange }>{ label }</label>
 			</div>
 		);
 	}
