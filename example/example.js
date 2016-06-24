@@ -131,22 +131,30 @@ class Example extends React.Component {
 
 					<Three>
 						<PillToggle items={
-							{
-								A: {
-									active: true
+							[
+								{
+									active: true,
+									name: 'A',
+									value: 'a'
 								},
-								B: {
+								{
 									active: false,
-									notifications: [ 12, APP.ERROR ]
+									name: 'B',
+									notifications: [ 12, APP.ERROR ],
+									value: 'b'
 								},
-								C: {
+								{
 									active: false,
-									notifications: [ 12, APP.INFORMATION ]
+									name: 'C',
+									notifications: [ 12, APP.INFORMATION ],
+									value: 'c'
 								},
-								D: {
-									active: false
+								{
+									active: false,
+									name: 'D',
+									value: 'd'
 								}
-							}
+							]
 						} onClick={
 							(value) => {
 								console.log(value);

@@ -11,12 +11,30 @@ class PillToggleTest extends React.Component {
 		super();
 
 		this.state = {
-			items: {
-				A: { active: true },
-				B: { active: false, notifications: [ 1, APP.ERROR ] },
-				C: { active: false },
-				D: { active: false }
-			}
+			items: [
+				{
+					active: true,
+					name: 'A',
+					value: 'a'
+				},
+				{
+					active: false,
+					name: 'B',
+					notifications: [ 1, APP.ERROR ],
+					value: 'b'
+				},
+				{
+					active: false,
+					name: 'C',
+					value: 'c'
+				},
+				{
+					active: false,
+					name: 'D',
+					notifications: [ 12, APP.INFORMATION ],
+					value: 'd'
+				}
+			]
 		}
 	}
 

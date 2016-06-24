@@ -588,10 +588,11 @@ The following describes all of the miscellaneous components available for use in
 
 | Name                 | Type            | Desciption                                                                                     |
 | ---------------------|-----------------| -----------------------------------------------------------------------------------------------|
-| `item`               | `obj`           | Object of items to render the key of which serves as the value of the item                     |
+| `items[ <Object> ]`               | `array`         | Array of object items to render the items to be toggled |
 | `item.active`        | `boolean`       | If item is active it will disable onclick events                                               |
+| `item.name`          | `string`        | Actual name of the item to be toggled and rendered |
 | `item.notifications` | `array`         | Takes count in first index and type in second index                                            |
-| `item.value`         | `string|number` | Overrides the item's label as the designated value                                             |
+| `item.value`         | `string|number` | Actual value to send to the `onClick` handler when a item is clicked |
 | `onClick`            | `function`      | An onClick event which is bound to the value of an item when clicked                           |
 
 **Reason for existing:**
@@ -606,26 +607,29 @@ import { APP, PillToggle } from 'orchestra';
 class MyComponent extends React.Component {
 	onItemClick = (val) => {
 		switch (val) {
-			case 'A':
-				console.log('A!');
+			case 'a':
+				console.log('a!');
 				break;
 			default:
-				console.log('Not A!');
-				breal;
+				console.log('Not a!');
+				break;
 		}
 	};
 
 	render() {
-		const items = {
-			A: {
-				active: true
+		const items = [
+			{
+				active: true,
+				name: 'A',
+				value: 'a'
 			},
-			B: {
+			{
 				active: false,
+				name: 'B',
 				notifications: [ 12, APP.ERROR ],
-				value: 'foo'
+				value: 'b'
 			}
-		};
+		];
 
 		return (
 			<PillToggle items={ items } onClick={ onItemClick }>Hello World!</PillToggle>

@@ -4,7 +4,17 @@ import classnames from 'classnames';
 
 class PillToggle extends React.Component {
 	static propTypes = {
-		items: React.PropTypes.object.isRequired,
+		items: React.PropTypes.arrayOf(
+			React.PropTypes.shape({
+				active: React.PropTypes.bool.isRequired,
+				name: React.PropTypes.string.isRequired,
+				notifications: React.PropTypes.array,
+				value: React.PropTypes.oneOfType(
+					React.PropTypes.string,
+					React.PropTypes.number
+				).isRequired
+			})
+		),
 		onClick: React.PropTypes.func.isRequired
 	};
 
@@ -16,23 +26,25 @@ class PillToggle extends React.Component {
 
 	renderItems = () => {
 		const { items } = this.props;
-		const keys = Object.keys(items);
 
-		return keys.map((key, i) => {
-			const item = items[ key ];
-			const { active, notifications } = item;
+		return items.map((obj, i) => {
+			const {
+				active,
+				name,
+				notifications,
+				value
+			} = obj;
 			const itemClasses = classnames({
 				active,
 				item: true
 			});
-			const value = item.value || key;
 
 			return (
 				<div className={ itemClasses }
 					key={ i }
 					onClick={ !active && this.onClick.bind(this, value) }>
 					{ this.renderNotifications(notifications) }
-					{ value }
+					{ name }
 				</div>
 			);
 		});

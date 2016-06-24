@@ -56,7 +56,7 @@ define([
 				.findByClassName('value')
 				.getVisibleText()
 			.then(function (value) {
-				assert.equal(value, 'B', 'values should match');
+				assert.equal(value, 'b', 'values should match');
 			});
 		},
 
