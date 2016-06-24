@@ -5,12 +5,12 @@ define([
 	'intern/chai!assert',
 	'require'
 ], function (registerSuite, assert, require) {
-	var url = './Checkbox.html';
+	var url = './CheckBox.html';
 
 	registerSuite({
-		name: 'functional/form/Checkbox',
+		name: 'functional/form/CheckBox',
 
-		'it should be able to disable checkbox': function () {
+		'it should be able to disable the checkbox': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('disabled-checkbox')
 					.findByClassName('orch-checkbox')

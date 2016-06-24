@@ -2,10 +2,10 @@
 /* global document, React, ReactDOM, window */
 
 import 'sass/ui.scss';
-import Checkbox from 'components/form/Checkbox.jsx';
+import CheckBox from 'components/form/CheckBox.jsx';
 
-class InputTest extends React.Component {
-	onCheckboxChange = (bool) => {
+class CheckBoxTest extends React.Component {
+	onCheckBoxChange = (bool) => {
 		const { text } = this.refs;
 
 		text.textContent = bool;
@@ -15,16 +15,16 @@ class InputTest extends React.Component {
 		return (
 			<div id='checkbox'>
 				<div id='disabled-checkbox'>
-					<Checkbox disabled />
+					<CheckBox disabled />
 				</div>
 
 				<div id='enabled-checkbox'>
 					<div className='text' ref='text'></div>
-					<Checkbox checked callback={ this.onCheckboxChange } />
+					<CheckBox checked callback={ this.onCheckBoxChange } />
 				</div>
 			</div>
 		);
 	}
 }
 
-ReactDOM.render(<InputTest />, document.getElementById('test'));
+ReactDOM.render(<CheckBoxTest />, document.getElementById('test'));

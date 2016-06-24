@@ -13,7 +13,7 @@
 		"functional/buttons/TertiaryNegative",
 		"functional/buttons/TertiaryNeutral",
 		"functional/buttons/TertiaryPositive",
-		"functional/form/Checkbox",
+		"functional/form/CheckBox",
 		"functional/form/Input",
 		"functional/misc/PillToggle"
 	]
