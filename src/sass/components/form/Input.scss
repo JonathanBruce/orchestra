@@ -1,4 +1,6 @@
 .orch-input {
+	cursor: pointer;
+
 	&.orch-secondary {
 		@include arcticBlueDarkWrapper();
 
