@@ -1,7 +1,7 @@
 ### `Input` !heading
 
 * __Internal components used:__ `Input.jsx`
-* __HTML tag extended:__ `<input />`
+* __HTML tag extended:__ `<input type='text' />`
 * __CSS class(es) used:__ `orch-input orch-secondary`
 * __Located at__: `src/components/form/Input.jsx`
 
@@ -15,7 +15,7 @@
 
 **Reason for existing:**
 
-The Input is used in conjunction with Insightpool searches.  This component takes all of the usual suspects that regular HTML input tags take.
+This component takes all of the usual suspects that regular HTML input tags take.
 
 **Usage:**
 

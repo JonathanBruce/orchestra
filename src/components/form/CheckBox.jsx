@@ -5,11 +5,10 @@ import Checkmark from 'icons/Checkmark.jsx';
 
 class CheckBox extends React.Component {
 	static propTypes = {
-		callback: React.PropTypes.func.isRequired,
 		checked: React.PropTypes.bool,
 		disabled: React.PropTypes.bool,
 		label: React.PropTypes.string,
-		onClick: React.PropTypes.func
+		onClick: React.PropTypes.func.isRequired
 	};
 
 	constructor(props) {
@@ -21,13 +20,13 @@ class CheckBox extends React.Component {
 	}
 
 	onInputChange = () => {
-		const { callback, disabled } = this.props;
+		const { onClick, disabled } = this.props;
 
 		if (!disabled) {
 			this.setState({
 				checked: !this.state.checked
 			}, () => {
-				callback(this.state.checked);
+				onClick(this.state.checked);
 			});
 		}
 	};

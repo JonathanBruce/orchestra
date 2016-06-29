@@ -9,10 +9,10 @@ class PillToggle extends React.Component {
 				active: React.PropTypes.bool.isRequired,
 				name: React.PropTypes.string.isRequired,
 				notifications: React.PropTypes.array,
-				value: React.PropTypes.oneOfType(
+				value: React.PropTypes.oneOfType([
 					React.PropTypes.string,
 					React.PropTypes.number
-				).isRequired
+				]).isRequired
 			})
 		),
 		onClick: React.PropTypes.func.isRequired

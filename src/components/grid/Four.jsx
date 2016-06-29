@@ -1,5 +1,6 @@
 /* global React */
 
+import Column from 'components/base/Column.jsx';
 import Component from 'components/extensions/Component.jsx';
 
 class Four extends Component {
@@ -13,9 +14,7 @@ class Four extends Component {
 
 	render() {
 		return (
-			<div className='grid-4'>
-				{ this.props.children }
-			</div>
+			<Column { ...this.props } size='4'>{ this.props.children }</Column>
 		);
 	}
 }

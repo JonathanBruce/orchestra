@@ -26,6 +26,7 @@
     * [`TertiaryPositiveButton`](#tertiarypositivebutton)
   * [Form](#form)
     * [`Input`](#input)
+    * [`Checkbox`](#checkbox)
   * [Miscellaneous](#miscellaneous)
     * [`PillToggle`](#pilltoggle)
 * [Commands](#commands)
@@ -539,7 +540,7 @@ The following describes all of the form components available for use in Orchestr
 ### `Input`
 
 * __Internal components used:__ `Input.jsx`
-* __HTML tag extended:__ `<input />`
+* __HTML tag extended:__ `<input type='text' />`
 * __CSS class(es) used:__ `orch-input orch-secondary`
 * __Located at__: `src/components/form/Input.jsx`
 
@@ -553,7 +554,7 @@ The following describes all of the form components available for use in Orchestr
 
 **Reason for existing:**
 
-The Input is used in conjunction with Insightpool searches.  This component takes all of the usual suspects that regular HTML input tags take.
+This component takes all of the usual suspects that regular HTML input tags take.
 
 **Usage:**
 
@@ -567,6 +568,44 @@ class MyComponent extends React.Component {
 	render() {
 		return (
 			<Input defaultValue='Username' icon={ <Icons.SmallUser /> } />
+		);
+	}
+}
+```
+
+
+### `Checkbox`
+
+* __Internal components used:__ `Checkbox.jsx`
+* __HTML tag extended:__ `<input type='checkbox' />`
+* __CSS class(es) used:__ `orch-checkbox`
+* __Located at__: `src/components/form/Checkbox.jsx`
+
+**Props:**
+
+| Name          | Type          | Desciption                                    |
+| ------------- |---------------| ----------------------------------------------|
+| `checked`     | `boolean`     | For initial checked state                     |
+| `disabled`    | `boolean`     | Disables the component                        |
+| `onClick(val)`| `function`    | What to do on a click, bool provided          |
+
+**Reason for existing:**
+
+This component takes all of the usual suspects that regular HTML checkbox tags take.
+
+**Usage:**
+
+```javascript
+import { Checkbox } from 'orchestra';
+
+class MyComponent extends React.Component {
+	render() {
+		return (
+			<Checkbox checked onClick={
+				(val) => {
+					console.log('hello world!')
+				}
+			} />
 		);
 	}
 }

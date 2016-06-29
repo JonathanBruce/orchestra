@@ -33,6 +33,7 @@ The following describes all of the button components available for use in Orches
 The following describes all of the form components available for use in Orchestra.
 
 #include "./docs/api/input.md"
+#include "./docs/api/checkbox.md"
 
 ## Miscellaneous !heading
 

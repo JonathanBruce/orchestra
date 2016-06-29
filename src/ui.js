@@ -13,10 +13,16 @@ export APP from 'constants/APP';
 export Icons from 'icons/_all';
 
 /**
- * Export grid blocks
+ * Export base components
  */
 
-export Container from 'components/grid/Container.jsx';
+export Alert from 'components/base/Alert.jsx';
+export Container from 'components/base/Container.jsx';
+
+/**
+ * Export grid components
+ */
+
 export One from 'components/grid/One.jsx';
 export Two from 'components/grid/Two.jsx';
 export Three from 'components/grid/Three.jsx';
@@ -31,10 +37,9 @@ export Eleven from 'components/grid/Eleven.jsx';
 export Twelve from 'components/grid/Twelve.jsx';
 
 /**
- * Export buttons
+ * Export button components
  */
 
-export Alert from 'components/base/Alert.jsx';
 export BrandButton from 'components/buttons/Brand.jsx';
 export FemaleButton from 'components/buttons/Female.jsx';
 export MaleButton from 'components/buttons/Male.jsx';
@@ -48,14 +53,14 @@ export TertiaryNeutralButton from 'components/buttons/TertiaryNeutral.jsx';
 export TertiaryPositiveButton from 'components/buttons/TertiaryPositive.jsx';
 
 /**
- * Export form elements
+ * Export form components
  */
 
 export CheckBox from 'components/form/CheckBox.jsx';
 export Input from 'components/form/Input.jsx';
 
 /**
- * Export headers
+ * Export header components
  */
 
 export PillToggle from 'components/misc/PillToggle.jsx';

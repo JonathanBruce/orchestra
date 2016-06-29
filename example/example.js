@@ -163,25 +163,25 @@ class Example extends React.Component {
 					</Three>
 
 					<Three>
-						<CheckBox callback={
+						<CheckBox onClick={
 							(value) => {
 								console.log(value);
 							}
 						} label='Option A' />
 
-						<CheckBox checked callback= {
+						<CheckBox checked onClick={
 							(value) => {
 								console.log(value);
 							}
 						} label='Option B' />
 
-						<CheckBox disabled callback= {
+						<CheckBox disabled onClick={
 							(value) => {
 								console.log(value);
 							}
 						} label='Option C' />
 
-						<CheckBox checked disabled callback= {
+						<CheckBox checked disabled onClick={
 							(value) => {
 								console.log(value);
 							}
