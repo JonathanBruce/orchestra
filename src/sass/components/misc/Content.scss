@@ -1,0 +1,39 @@
+.orch-content {
+	@include arcticBlueDarkWrapper();
+	width: inherit;
+
+	header {
+		background-color: $arctic-blue;
+		border-bottom: 2px solid $arctic-blue-dark;
+		padding: 12px 20px;
+
+		svg,
+		.title,
+		.widget {
+			display: inline-block;
+		}
+
+		> svg,
+		.title {
+			float: left;
+		}
+
+		.title {
+			color: $dusk-blue;
+			font-family: $lato-regular;
+			font-size: 18px;
+			line-height: 30px;
+		}
+
+		> svg {
+			height: 32px;
+			margin-right: 20px;
+			vertical-align: middle;
+			width: 32px;
+		}
+
+		.widget {
+			float: right;
+		}
+	}
+}

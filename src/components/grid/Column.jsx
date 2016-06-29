@@ -32,6 +32,7 @@ class Column extends Component {
 		const columnsClassnames = classnames({
 			alpha,
 			omega,
+			[ 'orch-column' ]: true,
 			[ `grid-${size}` ]: size
 		});
 

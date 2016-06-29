@@ -16,5 +16,6 @@ define([
 	'tests/functional/buttons/TertiaryPositive',
 	'tests/functional/form/CheckBox',
 	'tests/functional/form/Input',
+	'tests/functional/grid/Column',
 	'tests/functional/misc/PillToggle'
 ]);

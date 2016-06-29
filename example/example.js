@@ -7,6 +7,7 @@ import {
 	BrandButton,
 	CheckBox,
 	Container,
+	Content,
 	FemaleButton,
 	Icons,
 	Input,
@@ -43,6 +44,18 @@ class Example extends React.Component {
 
 					<Twelve>
 						<Alert alert={ { kind: 'success', message: 'You successfully launched the campaign!' } } />
+					</Twelve>
+
+					<Twelve>
+						<Content icon={ <Icons.TwitterAccounts /> }
+							title='Twitter Accounts'
+							widget={
+								<SecondaryPositiveButton icon={ <Icons.Links /> } >
+									Connect New
+								</SecondaryPositiveButton>
+							}>
+							List of accounts
+						</Content>
 					</Twelve>
 
 					<Three>

@@ -15,6 +15,7 @@
 		"functional/buttons/TertiaryPositive",
 		"functional/form/CheckBox",
 		"functional/form/Input",
+		"functional/grid/Column",
 		"functional/misc/PillToggle"
 	]
 }

@@ -8,8 +8,8 @@ class SecondaryButton extends Component {
 		children: React.PropTypes.oneOfType([
 			React.PropTypes.array,
 			React.PropTypes.string
-		]),
-		icon: React.PropTypes.any
+		]).isRequired,
+		icon: React.PropTypes.any.isRequired
 	};
 
 	render() {

@@ -1,6 +1,6 @@
 /* global React */
 
-import Column from 'components/base/Column.jsx';
+import Column from 'components/grid/Column.jsx';
 import Component from 'components/extensions/Component.jsx';
 
 class Six extends Component {

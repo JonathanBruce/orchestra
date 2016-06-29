@@ -2,9 +2,12 @@
  * Helpers
  */
 
-@mixin border($border: 3px) {
-	border: 2px solid;
-	border-radius: #{$border};
+@mixin border($border: 2px, $color: transparent, $radius: 0px) {
+	border: #{$border} solid #{$color};
+
+	@if $radius {
+		border-radius: #{$radius};
+	}
 }
 
 @mixin disabled($background-color: $silver,
@@ -72,70 +75,70 @@
  */
 
 @mixin arcticBlueWrapper($background-color: $pure-white, $color: $dusk-blue, $border-radius: 3px) {
-	@include border(#{$border-radius});
+	@include border($radius: #{$border-radius});
 	background-color: #{$background-color};
 	border-color: $arctic-blue;
 	color: #{$color};
 }
 
 @mixin arcticBlueDarkWrapper($background-color: $pure-white, $color: $dusk-blue, $border-radius: 3px) {
-	@include border(#{$border-radius});
+	@include border($radius: #{$border-radius});
 	background-color: #{$background-color};
 	border-color: $arctic-blue-dark;
 	color: #{$color};
 }
 
 @mixin cloudyBlueGreyWrapper($background-color: $pure-white, $color: $dusk-blue, $border-radius: 3px) {
-	@include border(#{$border-radius});
+	@include border($radius: #{$border-radius});
 	background-color: #{$background-color};
 	border-color: $cloudy-blue-grey;
 	color: #{$color};
 }
 
 @mixin duskBlueWrapper($background-color: $pure-white, $color: $dusk-blue, $border-radius: 3px) {
-	@include border(#{$border-radius});
+	@include border($radius: #{$border-radius});
 	background-color: #{$background-color};
 	border-color: $dusk-blue;
 	color: #{$color};
 }
 
 @mixin ipBlueDarkWrapper($background-color: $pure-white, $color: $dusk-blue, $border-radius: 3px) {
-	@include border(#{$border-radius});
+	@include border($radius: #{$border-radius});
 	background-color: #{$background-color};
 	border-color: $IP-blue-dark;
 	color: #{$color};
 }
 
 @mixin mintGreenDarkWrapper($background-color: $pure-white, $color: $dusk-blue, $border-radius: 3px) {
-	@include border(#{$border-radius});
+	@include border($radius: #{$border-radius});
 	background-color: #{$background-color};
 	border-color: $mint-green-dark;
 	color: #{$color};
 }
 
 @mixin powderBlueWrapper($background-color: $pure-white, $color: $dusk-blue, $border-radius: 3px) {
-	@include border(#{$border-radius});
+	@include border($radius: #{$border-radius});
 	background-color: #{$background-color};
 	border-color: $powder-blue;
 	color: #{$color};
 }
 
 @mixin powderBlueDarkWrapper($background-color: $pure-white, $color: $dusk-blue, $border-radius: 3px) {
-	@include border(#{$border-radius});
+	@include border($radius: #{$border-radius});
 	background-color: #{$background-color};
 	border-color: $powder-blue-dark;
 	color: #{$color};
 }
 
 @mixin watermelonWrapper($background-color: $pure-white, $color: $pure-white, $border-radius: 3px) {
-	@include border(#{$border-radius});
+	@include border($radius: #{$border-radius});
 	background-color: #{$background-color};
 	border-color: $watermelon;
 	color: #{$color};
 }
 
 @mixin watermelonDarkWrapper($background-color: $pure-white, $color: $pure-white, $border-radius: 3px) {
-	@include border(#{$border-radius});
+	@include border($radius: #{$border-radius});
 	background-color: #{$background-color};
 	border-color: $watermelon-dark;
 	color: #{$color};
