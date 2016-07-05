@@ -4,6 +4,10 @@ import Component from 'components/extensions/Component.jsx';
 
 class Content extends Component {
 	static propTypes = {
+		children: React.PropTypes.oneOfType([
+			React.PropTypes.array,
+			React.PropTypes.string
+		]),
 		icon: React.PropTypes.element.isRequired,
 		title: React.PropTypes.string.isRequired,
 		widget: React.PropTypes.element
@@ -24,7 +28,9 @@ class Content extends Component {
 					<div className='widget'>{ widget }</div>
 				</header>
 
-				{ this.props.children }
+				<div className='content'>
+					{ this.props.children }
+				</div>
 			</div>
 		);
 	}
