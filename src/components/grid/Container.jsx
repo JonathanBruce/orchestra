@@ -4,6 +4,7 @@ import Component from 'components/extensions/Component.jsx';
 
 class Container extends Component {
 	static propTypes = {
+		className: React.PropTypes.string,
 		children: React.PropTypes.oneOfType([
 			React.PropTypes.array,
 			React.PropTypes.element,
@@ -12,8 +13,10 @@ class Container extends Component {
 	};
 
 	render() {
+		const { className } = this.props;
+
 		return (
-			<div className='orch-container-12 clearfix'>
+			<div className={ this.mergeClasses('orch-container-12 clearfix', className) }>
 				{ this.props.children }
 			</div>
 		);

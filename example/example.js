@@ -29,8 +29,8 @@ class Example extends React.Component {
 	render() {
 		return (
 			<div>
-				<Container>
-					<Twelve>
+				<Container className='example-container'>
+					<Twelve className='title'>
 						<h1>Orchestra Example Page</h1>
 					</Twelve>
 
@@ -47,7 +47,7 @@ class Example extends React.Component {
 					</Twelve>
 
 					<Twelve>
-						<Content icon={ <Icons.TwitterAccounts /> }
+						<Content icon={ <Icons.Accounts /> }
 							title='Twitter Accounts'
 							widget={
 								<SecondaryPositiveButton icon={ <Icons.Links /> } >

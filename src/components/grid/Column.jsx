@@ -11,6 +11,7 @@ class Column extends Component {
 			React.PropTypes.element,
 			React.PropTypes.string
 		]).isRequired,
+		className: React.PropTypes.string,
 		omega: React.PropTypes.string,
 		size: React.PropTypes.string.isRequired
 	};
@@ -26,6 +27,7 @@ class Column extends Component {
 	render() {
 		const {
 			alpha,
+			className,
 			omega,
 			size
 		} = this.props;
@@ -37,7 +39,7 @@ class Column extends Component {
 		});
 
 		return (
-			<div className={ columnsClassnames }>{ this.props.children }</div>
+			<div className={ this.mergeClasses(columnsClassnames, className) }>{ this.props.children }</div>
 		);
 	}
 }
