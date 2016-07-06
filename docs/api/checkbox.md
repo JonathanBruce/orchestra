@@ -1,6 +1,5 @@
 ### `Checkbox` !heading
 
-* __Internal components used:__ `Checkbox.jsx`
 * __HTML tag extended:__ `<input type='checkbox' />`
 * __CSS class(es) used:__ `orch-checkbox`
 * __Located at__: `src/components/form/Checkbox.jsx`

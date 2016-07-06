@@ -39,4 +39,5 @@ The following describes all of the form components available for use in Orchestr
 
 The following describes all of the miscellaneous components available for use in Orchestra.
 
+#include "./docs/api/content.md"
 #include "./docs/api/pill_toggle.md"
