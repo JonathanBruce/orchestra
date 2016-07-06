@@ -7,6 +7,10 @@ var sourceDir = path.join(__dirname, '/src');
 module.exports = {
 	entry: path.join(sourceDir, 'ui.js'),
 
+	externals: {
+		react: 'react'
+	},
+
 	output: {
 		path: path.join(__dirname, 'dist'),
 		filename: 'ui.build.js',
