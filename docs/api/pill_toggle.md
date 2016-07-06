@@ -8,11 +8,11 @@
 
 | Name                 | Type            | Desciption                                                                                     |
 | ---------------------|-----------------| -----------------------------------------------------------------------------------------------|
-| `items[ <Object> ]`               | `array`         | Array of object items to render the items to be toggled |
+| `items[ <Object> ]`  | `array`         | Array of object items to render the items to be toggled                                        |
 | `item.active`        | `boolean`       | If item is active it will disable onclick events                                               |
-| `item.name`          | `string`        | Actual name of the item to be toggled and rendered |
+| `item.label`         | `string`        | Actual label of the item to be toggled and rendered                                            |
 | `item.notifications` | `array`         | Takes count in first index and type in second index                                            |
-| `item.value`         | `string|number` | Actual value to send to the `onClick` handler when a item is clicked |
+| `item.value`         | `string|number` | Actual value to send to the `onClick` handler when a item is clicked                           |
 | `onClick`            | `function`      | An onClick event which is bound to the value of an item when clicked                           |
 
 **Reason for existing:**

@@ -153,24 +153,24 @@ class Example extends React.Component {
 							[
 								{
 									active: true,
-									name: 'A',
+									label: 'A',
 									value: 'a'
 								},
 								{
 									active: false,
-									name: 'B',
+									label: 'B',
 									notifications: [ 12, APP.ERROR ],
 									value: 'b'
 								},
 								{
 									active: false,
-									name: 'C',
+									label: 'C',
 									notifications: [ 12, APP.INFORMATION ],
 									value: 'c'
 								},
 								{
 									active: false,
-									name: 'D',
+									label: 'D',
 									value: 'd'
 								}
 							]

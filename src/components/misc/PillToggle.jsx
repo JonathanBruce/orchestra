@@ -7,7 +7,7 @@ class PillToggle extends React.Component {
 		items: React.PropTypes.arrayOf(
 			React.PropTypes.shape({
 				active: React.PropTypes.bool.isRequired,
-				name: React.PropTypes.string.isRequired,
+				label: React.PropTypes.string.isRequired,
 				notifications: React.PropTypes.array,
 				value: React.PropTypes.oneOfType([
 					React.PropTypes.string,
@@ -30,7 +30,7 @@ class PillToggle extends React.Component {
 		return items.map((obj, i) => {
 			const {
 				active,
-				name,
+				label,
 				notifications,
 				value
 			} = obj;
@@ -44,7 +44,7 @@ class PillToggle extends React.Component {
 					key={ i }
 					onClick={ !active && this.onClick.bind(this, value) }>
 					{ this.renderNotifications(notifications) }
-					{ name }
+					{ label }
 				</div>
 			);
 		});
