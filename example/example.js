@@ -47,7 +47,8 @@ class Example extends React.Component {
 					</Twelve>
 
 					<Twelve>
-						<Content icon={ <Icons.Accounts /> }
+						<Content bloat
+							icon={ <Icons.Accounts /> }
 							title='Twitter Accounts'
 							widget={
 								<SecondaryPositiveButton icon={ <Icons.Links /> } >
