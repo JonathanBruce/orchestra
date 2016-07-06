@@ -49,6 +49,11 @@ class Example extends React.Component {
 					<Twelve>
 						<Content bloat
 							icon={ <Icons.Accounts /> }
+							onScrollBottom={
+								() => {
+									console.log('hit the bottom');
+								}
+							}
 							title='Twitter Accounts'
 							widget={
 								<SecondaryPositiveButton icon={ <Icons.Links /> } >
