@@ -5,9 +5,10 @@ import classnames from 'classnames';
 
 class Content extends Component {
 	static propTypes = {
-		bloat: React.PropTypes.boolean,
+		bloat: React.PropTypes.bool,
 		children: React.PropTypes.oneOfType([
 			React.PropTypes.array,
+			React.PropTypes.element,
 			React.PropTypes.string
 		]),
 		icon: React.PropTypes.element.isRequired,
