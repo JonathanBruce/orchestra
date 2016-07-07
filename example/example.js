@@ -11,6 +11,7 @@ import {
 	FemaleButton,
 	Icons,
 	Input,
+	LinksSubHeader,
 	MaleButton,
 	PillToggle,
 	PrimaryNegativeButton,
@@ -22,6 +23,7 @@ import {
 	TertiaryNeutralButton,
 	TertiaryPositiveButton,
 	Three,
+	TitleSubHeader,
 	Twelve
 } from '../src/ui';
 
@@ -47,8 +49,7 @@ class Example extends React.Component {
 					</Twelve>
 
 					<Twelve>
-						<Content bloat
-							icon={ <Icons.Accounts /> }
+						<Content icon={ <Icons.Accounts /> }
 							onScrollBottom={
 								() => {
 									console.log('hit the bottom');
@@ -62,6 +63,31 @@ class Example extends React.Component {
 							}>
 							List of accounts
 						</Content>
+					</Twelve>
+
+					<Twelve>
+						<LinksSubHeader links={
+							[
+								{
+									active: true,
+									label: 'Hello',
+									value: 'hello'
+								},
+								{
+									active: false,
+									label: 'World',
+									value: 'world'
+								}
+							]
+						} onClick={
+							(value) => {
+								console.log(value);
+							}
+						}/>
+					</Twelve>
+
+					<Twelve>
+						<TitleSubHeader title='Hello world' />
 					</Twelve>
 
 					<Three>

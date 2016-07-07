@@ -1,6 +1,5 @@
 ### `Input` !heading
 
-* __Internal components used:__ `Input.jsx`
 * __HTML tag extended:__ `<input type='text' />`
 * __CSS class(es) used:__ `orch-input orch-secondary`
 * __Located at__: `src/components/form/Input.jsx`

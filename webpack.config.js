@@ -8,7 +8,8 @@ module.exports = {
 	entry: path.join(sourceDir, 'ui.js'),
 
 	externals: {
-		react: 'react'
+		react: 'react',
+		'react-dom': 'react-dom'
 	},
 
 	output: {

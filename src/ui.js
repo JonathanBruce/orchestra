@@ -55,6 +55,13 @@ export CheckBox from 'components/form/CheckBox.jsx';
 export Input from 'components/form/Input.jsx';
 
 /**
+ * Export header components
+ */
+
+export LinksSubHeader from 'components/headers/LinksSubHeader.jsx';
+export TitleSubHeader from 'components/headers/TitleSubHeader.jsx';
+
+/**
  * Export misc components
  */
 

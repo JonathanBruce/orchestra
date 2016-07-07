@@ -1,0 +1,8 @@
+.orch-sub-header {
+	@include arcticBlueDarkWrapper();
+	font-family: $lato-regular;
+	font-size: 14px;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	width: inherit;
+}

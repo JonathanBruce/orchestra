@@ -4,6 +4,7 @@
 
 @import './components/base/PrimaryButton.scss';
 @import './components/base/SecondaryButton.scss';
+@import './components/base/SubHeader.scss';
 @import './components/base/TertiaryButton.scss';
 
 /**
@@ -28,6 +29,13 @@
 
 @import './components/form/CheckBox.scss';
 @import './components/form/Input.scss';
+
+/**
+ * Import header component styles
+ */
+
+@import './components/headers/LinksSubHeader.scss';
+@import './components/headers/TitleSubHeader.scss';
 
 /**
  * Import misc component styles

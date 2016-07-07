@@ -74,73 +74,83 @@
  * Content wrappers
  */
 
-@mixin arcticBlueWrapper($background-color: $pure-white, $color: $dusk-blue, $border-radius: 3px) {
+@mixin arcticBlueWrapper($background-color: $pure-white, $color: $dusk-blue, $border-radius: 3px, $box-sizing: 'border-box') {
 	@include border($radius: #{$border-radius});
 	background-color: #{$background-color};
 	border-color: $arctic-blue;
+	box-sizing: #{$box-sizing};
 	color: #{$color};
 }
 
-@mixin arcticBlueDarkWrapper($background-color: $pure-white, $color: $dusk-blue, $border-radius: 3px) {
+@mixin arcticBlueDarkWrapper($background-color: $pure-white, $color: $dusk-blue, $border-radius: 3px, $box-sizing: 'border-box') {
 	@include border($radius: #{$border-radius});
 	background-color: #{$background-color};
 	border-color: $arctic-blue-dark;
+	box-sizing: #{$box-sizing};
 	color: #{$color};
 }
 
-@mixin cloudyBlueGreyWrapper($background-color: $pure-white, $color: $dusk-blue, $border-radius: 3px) {
+@mixin cloudyBlueGreyWrapper($background-color: $pure-white, $color: $dusk-blue, $border-radius: 3px, $box-sizing: 'border-box') {
 	@include border($radius: #{$border-radius});
 	background-color: #{$background-color};
 	border-color: $cloudy-blue-grey;
+	box-sizing: #{$box-sizing};
 	color: #{$color};
 }
 
-@mixin duskBlueWrapper($background-color: $pure-white, $color: $dusk-blue, $border-radius: 3px) {
+@mixin duskBlueWrapper($background-color: $pure-white, $color: $dusk-blue, $border-radius: 3px, $box-sizing: 'border-box') {
 	@include border($radius: #{$border-radius});
 	background-color: #{$background-color};
 	border-color: $dusk-blue;
+	box-sizing: #{$box-sizing};
 	color: #{$color};
 }
 
-@mixin ipBlueDarkWrapper($background-color: $pure-white, $color: $dusk-blue, $border-radius: 3px) {
+@mixin ipBlueDarkWrapper($background-color: $pure-white, $color: $dusk-blue, $border-radius: 3px, $box-sizing: 'border-box') {
 	@include border($radius: #{$border-radius});
 	background-color: #{$background-color};
 	border-color: $IP-blue-dark;
+	box-sizing: #{$box-sizing};
 	color: #{$color};
 }
 
-@mixin mintGreenDarkWrapper($background-color: $pure-white, $color: $dusk-blue, $border-radius: 3px) {
+@mixin mintGreenDarkWrapper($background-color: $pure-white, $color: $dusk-blue, $border-radius: 3px, $box-sizing: 'border-box') {
 	@include border($radius: #{$border-radius});
 	background-color: #{$background-color};
 	border-color: $mint-green-dark;
+	box-sizing: #{$box-sizing};
 	color: #{$color};
 }
 
-@mixin powderBlueWrapper($background-color: $pure-white, $color: $dusk-blue, $border-radius: 3px) {
+@mixin powderBlueWrapper($background-color: $pure-white, $color: $dusk-blue, $border-radius: 3px, $box-sizing: 'border-box') {
 	@include border($radius: #{$border-radius});
 	background-color: #{$background-color};
 	border-color: $powder-blue;
+	box-sizing: #{$box-sizing};
 	color: #{$color};
 }
 
-@mixin powderBlueDarkWrapper($background-color: $pure-white, $color: $dusk-blue, $border-radius: 3px) {
+@mixin powderBlueDarkWrapper($background-color: $pure-white, $color: $dusk-blue, $border-radius: 3px, $box-sizing: 'border-box') {
 	@include border($radius: #{$border-radius});
 	background-color: #{$background-color};
 	border-color: $powder-blue-dark;
+	box-sizing: #{$box-sizing};
 	color: #{$color};
 }
 
-@mixin watermelonWrapper($background-color: $pure-white, $color: $pure-white, $border-radius: 3px) {
+@mixin watermelonWrapper($background-color: $pure-white, $color: $pure-white, $border-radius: 3px, $box-sizing: 'border-box') {
 	@include border($radius: #{$border-radius});
 	background-color: #{$background-color};
 	border-color: $watermelon;
+	box-sizing: #{$box-sizing};
 	color: #{$color};
 }
 
-@mixin watermelonDarkWrapper($background-color: $pure-white, $color: $pure-white, $border-radius: 3px) {
+@mixin watermelonDarkWrapper($background-color: $pure-white, $color: $pure-white, $border-radius: 3px, $box-sizing: 'border-box') {
 	@include border($radius: #{$border-radius});
 	background-color: #{$background-color};
 	border-color: $watermelon-dark;
+	box-sizing: #{$box-sizing};
 	color: #{$color};
 }
 
