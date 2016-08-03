@@ -13,7 +13,11 @@ class LinksSubHeader extends Component {
 				value: React.PropTypes.string
 			})
 		).isRequired,
-		onClick: React.PropTypes.func.isRequired
+		onClick: React.PropTypes.func.isRequired,
+		widgets: React.PropTypes.oneOfType([
+			React.PropTypes.array,
+			React.PropTypes.element
+		])
 	};
 
 	onClick = (value) => {
@@ -23,10 +27,13 @@ class LinksSubHeader extends Component {
 	};
 
 	render() {
-		const { links } = this.props;
+		const {
+			links,
+			widgets
+		} = this.props;
 
 		return (
-			<SubHeader className='orch-links-sub-header'>
+			<SubHeader className='orch-links-sub-header' widgets={ widgets }>
 				<ul className='links'>
 					{
 						links.map((obj, index) => {

@@ -10,6 +10,7 @@
 | ------------------|---------------| ----------------------------------------------|
 | `icon`            | `object`      | Icon for content block                        |
 | `onScrollBottom`  | `function`    | Action to fire when scrolled to the bottom    |
+| `subHeader`       | `string`      | Sub header of content block if applicable     |
 | `title`           | `string`      | Title of the content block                    |
 | `widget`          | `object`      | Widget for the content block                  |
 

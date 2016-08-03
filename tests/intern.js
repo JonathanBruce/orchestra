@@ -23,6 +23,7 @@ define({
 	// capabilities options specified for an environment will be copied as-is
 	environments: [
 		{ browserName: 'chrome' }
+
 		/*
 		// Uncomment these for more testing!
 		{ browserName: 'internet explorer', version: '10', platform: 'Windows 8' },

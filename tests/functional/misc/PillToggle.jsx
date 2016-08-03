@@ -14,23 +14,23 @@ class PillToggleTest extends React.Component {
 			items: [
 				{
 					active: true,
-					name: 'A',
+					label: 'A',
 					value: 'a'
 				},
 				{
 					active: false,
-					name: 'B',
+					label: 'B',
 					notifications: [ 1, APP.ERROR ],
 					value: 'b'
 				},
 				{
 					active: false,
-					name: 'C',
+					label: 'C',
 					value: 'c'
 				},
 				{
 					active: false,
-					name: 'D',
+					label: 'D',
 					notifications: [ 12, APP.INFORMATION ],
 					value: 'd'
 				}

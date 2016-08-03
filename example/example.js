@@ -83,11 +83,24 @@ class Example extends React.Component {
 							(value) => {
 								console.log(value);
 							}
+						} widgets={
+							[
+								<SecondaryPositiveButton icon={ <Icons.Links /> }>
+									First Widget
+								</SecondaryPositiveButton>,
+								<SecondaryPositiveButton icon={ <Icons.Links /> }>
+									Second Widget
+								</SecondaryPositiveButton>
+							]
 						}/>
 					</Twelve>
 
 					<Twelve>
-						<TitleSubHeader title='Hello world' />
+						<TitleSubHeader title='Hello world' widgets={
+							<SecondaryPositiveButton icon={ <Icons.Links /> }>
+								Connect New
+							</SecondaryPositiveButton>
+						} />
 					</Twelve>
 
 					<Three>

@@ -72,6 +72,17 @@ define([
 			});
 		},
 
+		'it should render the correct label': function () {
+			return this.remote.get(require.toUrl(url))
+				.findById('pill-toggle')
+					.findByClassName('orch-pill-toggle')
+						.findByCssSelector('.item:not(.active)')
+							.getVisibleText()
+			.then(function (label) {
+				assert.include(label, 'B', 'values should match');
+			});
+		},
+
 		'it should render notification color based on constant': function () {
 			return this.remote.get(require.toUrl(url))
 				.findById('pill-toggle')

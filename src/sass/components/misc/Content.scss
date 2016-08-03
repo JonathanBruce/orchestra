@@ -5,7 +5,7 @@
 	header {
 		background-color: $arctic-blue;
 		border-bottom: 2px solid $arctic-blue-dark;
-		padding: 15px 20px;
+		padding: 14px 20px;
 
 		svg,
 		.title,
@@ -35,6 +35,15 @@
 		.widget {
 			float: right;
 		}
+	}
+
+	.sub-header {
+		border-bottom: 2px solid $arctic-blue-dark;
+		color: $steel-blue;
+		font-family: $lato-regular;
+		letter-spacing: 3px;
+		padding: 14px 20px;
+		text-transform: uppercase;
 	}
 
 	.content {
