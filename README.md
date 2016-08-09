@@ -27,6 +27,7 @@
   * [Form](#form)
     * [`Input`](#input)
     * [`Checkbox`](#checkbox)
+    * [`Dropdown`](#dropdown)
   * [Miscellaneous](#miscellaneous)
     * [`Content`](#content)
     * [`PillToggle`](#pilltoggle)
@@ -66,10 +67,12 @@ Once you have pulled down the project you must install dependencies via npm.  Th
 Orchestra leverages the Intern testing suite for functional testing, which also uses selenium to drive the browser and automate UI interactions.  You must install selenium separately for this to work properly.  Follow these steps to do so via `npm`:
 
 * Install the npm `selenium-standalone` package with `npm i -g selenium-standalone`
-* One the npm pacakage is installed, install `selenium-standalone` with `selenium-standalone install`
+* To run selenium on Safari, you will need to install the `SafariDriver` which you can find [here](http://selenium-release.storage.googleapis.com/index.html?path=2.45/)
+* Once the npm package is installed, install `selenium-standalone` with `selenium-standalone install`
 * Start selenium-standalone with `selenium-standalone start`
 
 Additionally, Selenium requires the JRE to run.  Make sure you've installed the JRE on your system.
+
 ## Testing
 
 As stated previously, Orchestra leverages Intern to functional testing.  To find out more about Intern please refer to the architecture section of these docs.  There you will find examples of how to write functional tests.
@@ -611,6 +614,62 @@ class MyComponent extends React.Component {
 ```
 
 
+### `Dropdown`
+
+* __HTML tag extended:__ `<div></div>`
+* __CSS class(es) used:__ `orch-dropdown`
+* __Located at__: `src/components/form/Dropdown.jsx`
+
+**Props:**
+
+| Name                 | Type            | Desciption                                                                                     |
+| ---------------------|-----------------| -----------------------------------------------------------------------------------------------|
+| `active`             | `boolean`       | Boolean which determines whether the dropdown list is shown or not                             |
+| `disabled`           | `boolean`       | Boolean which determines whether the component is disabled or not                              |
+| `options[ <Object> ]`  | `array`         | Array of object options to render the options in the dropdown                                      |
+| `option.label`         | `string`        | Actual label of the item to be toggled and rendered                                            |
+| `option.value`         | `any`           | Actual value to send to the `onChange` handler when an item is selected                        |
+| `label`              | `string`        | Default label when no item is selected                                                         |
+| `onChange`           | `function`      | An onChange event which is bound to the value of an item when selected                         |
+| `onToggle`           | `function`      | A function which is called when the dropdown list is toggled.                                  |
+| `selected`           | `any`           | Value which is currently selected. Will need to be updated in `onChange` handler               |
+
+**Reason for existing:**
+
+The Dropdown is used for dropdown lists of selectable options.
+
+**Usage:**
+
+```javascript
+import { Dropdown } from 'orchestra';
+
+class MyComponent extends React.Component {
+	onChange = (value) => {
+		console.log(value);
+	}
+	
+	onToggle = () => {
+		console.log('toggled');
+	}
+	
+	render() {
+		const { selected } = this.props.state;
+		const options = [
+			{ label: 'one', value: 1 },
+			{ label: 'two', value: 2 }
+		];
+
+		return (
+			<Dropdown 
+				label='two'
+				onChange={ this.onChange }
+				options={ options } 
+				selected={ selected } />
+		);
+	}
+}
+```
+
 
 ## Miscellaneous
 
@@ -715,6 +774,7 @@ class MyComponent extends React.Component {
 	}
 }
 ```
+
 
 
 # Commands

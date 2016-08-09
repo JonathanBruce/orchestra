@@ -53,6 +53,7 @@ export TertiaryPositiveButton from 'components/buttons/TertiaryPositive.jsx';
 
 export CheckBox from 'components/form/CheckBox.jsx';
 export Input from 'components/form/Input.jsx';
+export DropDown from 'components/form/DropDown.jsx';
 
 /**
  * Export header components

@@ -1,0 +1,108 @@
+.orch-dropdown {
+	color: $dusk-blue;
+	cursor: pointer;
+	position: relative;
+
+	.selector {
+		@include arcticBlueDarkWrapper();
+
+		box-sizing: border-box;
+		font-family: $lato-regular;
+		font-size: 14px;
+		height: 34px;
+		padding-left: 15px;
+		padding-right: 10px;
+		position: relative;
+		width: 100%;
+
+		.text {
+			box-sizing: border-box;
+			float: left;
+			line-height: 30px;
+			overflow: hidden;
+			text-align: left;
+			text-overflow: ellipsis;
+			user-select: none;
+			white-space: nowrap;
+		}
+	}
+
+	.chevron {
+		float: right;
+		transform: rotate(180deg);
+		width: 24px;
+		height: 100%;
+
+		&.flip {
+			transform: rotate(180deg);
+		}
+
+		svg {
+			height: inherit;
+
+			path {
+				stroke: $cloudy-blue-grey;
+			}
+		}
+	}
+
+	.list {
+		@include shadow();
+
+		border-radius: 3px;
+		left: 0px;
+		overflow: hidden;
+		padding-top: 34px;
+		position: absolute;
+		top: 0px;
+		width: 100%;
+
+		.options div {
+			background: $pure-white;
+			box-sizing: border-box;
+			color: $steel-blue;
+			font-size: 14px;
+			font-family: $lato-regular;
+			height: 34px;
+			line-height: 34px;
+			padding-left: 15px;
+			position: relative;
+			text-align: left;
+			user-select: none;
+			width: 100%;
+
+			&:hover {
+				background: $arctic-blue-dark;
+				color: $dusk-blue
+			}
+		}
+	}
+
+	&.active {
+		.selector {
+			border: none;
+		}
+
+		.chevron {
+			transform: rotate(0deg);
+
+			svg {
+				path {
+					stroke: $dusk-blue;
+				}
+			}
+		}
+	}
+
+	&.disabled {
+		.selector{
+			@include disabled($pure-white);
+		}
+	}
+
+	&:hover {
+		.selector {
+			border-color: $powder-blue;
+		}
+	}
+}

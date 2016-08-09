@@ -22,7 +22,9 @@ define({
 	// OnDemand. Options that will be permutated are browserName, version, platform, and platformVersion; any other
 	// capabilities options specified for an environment will be copied as-is
 	environments: [
-		{ browserName: 'chrome' }
+		{ browserName: 'chrome' },
+		{ browserName: 'safari', platform: 'Mac' },
+		{ browserName: 'firefox' }
 
 		/*
 		// Uncomment these for more testing!
@@ -44,7 +46,7 @@ define({
 		packages: []
 	},
 
-	reporters: [ 'Console' ],
+	reporters: [ 'Pretty' ],
 	// Non-functional test suite(s) to run in each browser
 	suites: [],
 

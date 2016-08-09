@@ -34,6 +34,7 @@ The following describes all of the form components available for use in Orchestr
 
 #include "./docs/api/input.md"
 #include "./docs/api/checkbox.md"
+#include "./docs/api/dropdown.md"
 
 ## Miscellaneous !heading
 

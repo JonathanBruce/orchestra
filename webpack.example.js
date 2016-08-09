@@ -1,5 +1,6 @@
 /* eslint-env node */
 
+var autoprefixer = require('autoprefixer');
 var path = require('path');
 var webpack = require('webpack');
 var sourceDir = path.join(__dirname, '/src');
@@ -12,6 +13,7 @@ module.exports = {
 		path: examplesDir,
 		filename: 'example.build.js'
 	},
+	postcss: [ autoprefixer ],
 
 	module: {
 		loaders: [
@@ -30,7 +32,7 @@ module.exports = {
 			{
 				test: /\.scss$/,
 				exclude: /node_modules/,
-				loaders: [ 'style', 'css', 'sass' ]
+				loaders: [ 'style', 'css', 'postcss', 'sass' ]
 			}
 		],
 
