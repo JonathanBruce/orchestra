@@ -5,6 +5,11 @@ import classnames from 'classnames';
 
 class SubHeader extends Component {
 	static propTypes = {
+		children: React.PropTypes.oneOfType([
+			React.PropTypes.array,
+			React.PropTypes.element,
+			React.PropTypes.string
+		]),
 		className: React.PropTypes.string,
 		title: React.PropTypes.oneOfType([
 			React.PropTypes.array,

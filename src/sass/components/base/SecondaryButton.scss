@@ -1,10 +1,13 @@
+$svgWidth: 24px;
+$orchPaddingLeftAndRight: 10px;
+
 .orch-secondary {
 	background-color: transparent;
 	border: none;
 	box-sizing: border-box;
 	font-family: $lato-regular;
 	font-size: 14px;
-	padding: 3px 10px;
+	padding: 3px $orchPaddingLeftAndRight;
 
 	.item,
 	.text,
@@ -19,6 +22,12 @@
 		padding-left: 7px;
 	}
 
+	.item {
+		width: calc(100% - #{$orchPaddingLeftAndRight * 2} - #{$svgWidth});
+		width: -moz-calc(100% - #{$orchPaddingLeftAndRight * 2} - #{$svgWidth});
+		width: -webkit-calc(100% - #{$orchPaddingLeftAndRight * 2} - #{$svgWidth});
+	}
+
 	.text {
 		line-height: 24px;
 	}
@@ -29,7 +38,7 @@
 		height: 24px;
 		stroke-width: 1.5px;
 		vertical-align: middle;
-		width: 24px;
+		width: $svgWidth;
 	}
 
 	&:disabled {

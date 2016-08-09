@@ -44,6 +44,7 @@
 		border-color: #{$svg-path-color} !important;
 
 		ellipse,
+		g,
 		path {
 			stroke: #{$svg-path-color} !important;
 		}
@@ -62,6 +63,23 @@
 	&:hover {
 		border-color: $pure-white !important;
 		outline: none !important;
+	}
+}
+
+@mixin scrollbar() {
+	&::-webkit-scrollbar {
+		width: 6px;
+
+		&:hover {
+			margin-right: 5px;
+		}
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: $arctic-blue-dark;
+		border-radius: 3px;
+		-webkit-border-radius: 3px;
+		width: 8px;
 	}
 }
 
@@ -110,6 +128,14 @@
 	@include border($radius: #{$border-radius});
 	background-color: #{$background-color};
 	border-color: $IP-blue-dark;
+	box-sizing: #{$box-sizing};
+	color: #{$color};
+}
+
+@mixin mintGreenWrapper($background-color: $pure-white, $color: $dusk-blue, $border-radius: 3px, $box-sizing: 'border-box') {
+	@include border($radius: #{$border-radius});
+	background-color: #{$background-color};
+	border-color: $mint-green;
 	box-sizing: #{$box-sizing};
 	color: #{$color};
 }

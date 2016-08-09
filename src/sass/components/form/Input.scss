@@ -1,5 +1,6 @@
 .orch-input {
 	cursor: pointer;
+	width: inherit;
 
 	&.orch-secondary {
 		@include arcticBlueDarkWrapper();
@@ -10,11 +11,13 @@
 	}
 
 	input {
+		background-color: $pure-white;
 		color: $dusk-blue;
 		font-family: $lato-regular;
 		font-size: 14px;
 		height: inherit;
 		padding: 0px;
+		width: 100%;
 
 		&::-webkit-input-placeholder,
 		&::-moz-placeholder,

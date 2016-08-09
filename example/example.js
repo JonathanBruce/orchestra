@@ -1,4 +1,5 @@
-/* global document, React, ReactDOM */
+/* eslint-disable no-console */
+/* global console, document, React, ReactDOM */
 
 import '../src/sass/_example.scss';
 import {
@@ -13,6 +14,8 @@ import {
 	Input,
 	LinksSubHeader,
 	MaleButton,
+	PaginationApprove,
+	PaginationControls,
 	PillToggle,
 	PrimaryNegativeButton,
 	PrimaryNeutralButton,
@@ -55,6 +58,7 @@ class Example extends React.Component {
 									console.log('hit the bottom');
 								}
 							}
+							subHeader='Sub Header'
 							title='Twitter Accounts'
 							widget={
 								<SecondaryPositiveButton icon={ <Icons.Links /> } >
@@ -244,6 +248,92 @@ class Example extends React.Component {
 								console.log(value);
 							}
 						} label='Option D' />
+					</Three>
+
+					<Three>
+						<PaginationControls
+							onDecreaseClick={
+								() => {
+									console.log('decreasing');
+								}
+							}
+							onIncreaseClick={
+								() => {
+									console.log('increasing');
+								}
+							}
+							decreaseDisabled={ 1 === 2 }
+							increaseDisabled={ true } />
+
+						<PaginationControls
+							onDecreaseClick={
+								() => {
+									console.log('decreasing');
+								}
+							}
+							onIncreaseClick={
+								() => {
+									console.log('increasing');
+								}
+							}
+							decreaseDisabled={ false }
+							increaseDisabled={ false } />
+
+						<PaginationControls
+							onDecreaseClick={
+								() => {
+									console.log('decreasing');
+								}
+							}
+							onIncreaseClick={
+								() => {
+									console.log('increasing');
+								}
+							}
+							decreaseDisabled={ true }
+							increaseDisabled={ true } />
+					</Three>
+
+					<Three>
+						<PaginationApprove
+							approveDisabled={ false }
+							onApproveClick={
+								() => {
+									console.log('approving');
+								}
+							}
+							currentPage={ 1 }
+							onDecreaseClick={
+								() => {
+									console.log('decreasing');
+								}
+							}
+							onIncreaseClick={
+								() => {
+									console.log('increasing');
+								}
+							}
+							totalPages={ 5 } />
+
+						<PaginationApprove
+							approveDisabled={ true }
+							onApproveClick={
+								() => {
+									console.log('approving');
+								}
+							}
+							currentPage={ 5 }
+							onDecreaseClick={
+								() => {
+									console.log('decreasing');
+								}
+							}
+							onIncreaseClick={
+								() => {
+									console.log('increasing');
+								}
+							}
+							totalPages={ 5 } />
 					</Three>
 				</Container>
 			</div>

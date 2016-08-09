@@ -5,6 +5,7 @@
 	header {
 		background-color: $arctic-blue;
 		border-bottom: 2px solid $arctic-blue-dark;
+		height: 34px;
 		padding: 14px 20px;
 
 		svg,
@@ -22,7 +23,7 @@
 			color: $dusk-blue;
 			font-family: $lato-regular;
 			font-size: 18px;
-			line-height: 30px;
+			line-height: 33px;
 		}
 
 		> svg {
@@ -41,12 +42,14 @@
 		border-bottom: 2px solid $arctic-blue-dark;
 		color: $steel-blue;
 		font-family: $lato-regular;
+		font-size: 12px;
 		letter-spacing: 3px;
 		padding: 14px 20px;
 		text-transform: uppercase;
 	}
 
 	.content {
+		@include scrollbar();
 		padding: 20px;
 	}
 }

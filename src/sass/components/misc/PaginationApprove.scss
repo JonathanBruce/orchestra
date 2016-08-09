@@ -1,0 +1,55 @@
+.orch-pagination-approve {
+	.approve,
+	.counts {
+		float: left;
+		display: inline-block;
+		height: 34px;
+	}
+
+	.approve {
+		@include mintGreenWrapper();
+		cursor: pointer;
+		padding: 3px 2px;
+		width: 32px;
+
+		&:hover {
+			background-color: $arctic-blue-dark;
+		}
+
+		&.disabled {
+			@include disabled($background-color: $pure-white,
+				$svg-fill-color: $cloudy-blue-grey,
+				$svg-path-color: $cloudy-blue-grey);
+		}
+
+		svg {
+			g,
+			path {
+				stroke: $mint-green;
+			}
+		}
+	}
+
+	.counts {
+		@include cloudyBlueGreyWrapper();
+		border-right: none;
+		border-bottom-right-radius: 0px;
+		border-top-right-radius: 0px;
+		font-size: 14px;
+		padding: 8px 20px;
+
+		.current-page {
+			font-family: $lato-bold;
+			margin-right: 5px;
+		}
+
+		.slash {
+			margin-left: 5px;
+			margin-right: 5px;
+		}
+
+		.total-pages {
+			font-family: $lato-regular;
+		}
+	}
+}
