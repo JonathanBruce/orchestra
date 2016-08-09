@@ -9,14 +9,14 @@
 		padding: 3px 2px;
 		width: 32px;
 
-		&:hover {
-			background-color: $arctic-blue-dark;
-		}
-
 		&.disabled {
 			@include disabled($background-color: $pure-white,
 				$svg-fill-color: $cloudy-blue-grey,
 				$svg-path-color: $cloudy-blue-grey);
+		}
+
+		&:hover {
+			background-color: $arctic-blue-dark;
 		}
 	}
 

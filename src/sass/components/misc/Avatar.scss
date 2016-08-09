@@ -1,0 +1,22 @@
+.orch-avatar {
+	display: inline;
+
+	img,
+	svg {
+		height: inherit;
+		width: inherit;
+	}
+
+	img {
+		border: 2px solid $pure-white;
+		box-sizing: border-box;
+	}
+
+	svg {
+		path {
+			&:nth-child(2) {
+				fill: transparent;
+			}
+		}
+	}
+}

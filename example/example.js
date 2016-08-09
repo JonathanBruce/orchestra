@@ -5,6 +5,7 @@ import '../src/sass/_example.scss';
 import {
 	Alert,
 	APP,
+	Avatar,
 	BrandButton,
 	CheckBox,
 	Container,
@@ -334,6 +335,13 @@ class Example extends React.Component {
 								}
 							}
 							totalPages={ 5 } />
+					</Three>
+
+					<Three>
+						<Avatar />
+						<Avatar
+							image='https://pbs.twimg.com/profile_images/489091337690419200/L_r1zbKT_400x400.png'
+							size={ 68 } />
 					</Three>
 				</Container>
 			</div>
