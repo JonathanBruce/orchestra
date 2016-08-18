@@ -11,8 +11,14 @@ class CheckBoxTest extends React.Component {
 		this.onCheckBoxChange(disabledText, bool);
 	};
 
-	onEnabledCheckboxChange = (bool) => {
-		const enabledText = this.refs[ 'enabled-text' ];
+	onCheckedCheckboxChange = (bool) => {
+		const enabledText = this.refs[ 'checked-text' ];
+
+		this.onCheckBoxChange(enabledText, bool);
+	};
+
+	onUncheckedCheckboxChange = (bool) => {
+		const enabledText = this.refs[ 'unchecked-text' ];
 
 		this.onCheckBoxChange(enabledText, bool);
 	};
@@ -31,10 +37,16 @@ class CheckBoxTest extends React.Component {
 						label='Option B' />
 				</div>
 
-				<div id='enabled-checkbox'>
-					<div className='enabled-text' ref='enabled-text'></div>
-					<CheckBox onClick={ this.onEnabledCheckboxChange }
+				<div id='enabled-checkbox-checked'>
+					<div className='checked-text' ref='checked-text'></div>
+					<CheckBox onClick={ this.onCheckedCheckboxChange }
 						checked
+						label='Option A' />
+				</div>
+
+				<div id='enabled-checkbox-unchecked'>
+					<div className='unchecked-text' ref='unchecked-text'></div>
+					<CheckBox onClick={ this.onUncheckedCheckboxChange }
 						label='Option A' />
 				</div>
 			</div>

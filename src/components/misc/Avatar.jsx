@@ -4,7 +4,7 @@ import Icons from 'icons/_all';
 
 class Avatar extends React.Component {
 	static propTypes = {
-		image: React.PropTypes.string.isRequired,
+		image: React.PropTypes.string,
 		size: React.PropTypes.number
 	};
 

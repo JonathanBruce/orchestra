@@ -173,7 +173,8 @@ class Example extends React.Component {
 					</Three>
 
 					<Three>
-						<Input icon={ <Icons.SmallUser /> }
+						<Input defaultValue='Error text'
+							icon={ <Icons.SmallUser /> }
 							placeholder='Username'
 							type='text' />
 					</Three>
@@ -186,7 +187,8 @@ class Example extends React.Component {
 					</Three>
 
 					<Three>
-						<Input disabled={ true }
+						<Input defaultValue='Disabled text'
+							disabled={ true }
 							icon={ <Icons.SmallUser /> }
 							placeholder='Username'
 							type='text' />

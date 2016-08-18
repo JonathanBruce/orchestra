@@ -34,9 +34,9 @@ define([
 							});
 		},
 
-		'it should be able to uncheck a checked and enabled checkbox': function () {
+		'it should be able to get a true value from an checked checkbox': function () {
 			return this.remote.get(require.toUrl(url))
-				.findById('enabled-checkbox')
+				.findById('enabled-checkbox-checked')
 					.findByClassName('orch-checkbox')
 						.findByClassName('checkbox')
 							.findByTagName('input')
@@ -45,29 +45,29 @@ define([
 							.click()
 						.end()
 					.end()
-				.findByClassName('enabled-text')
-				.getVisibleText()
-				.then(function (value) {
-					assert.equal(value, 'false', 'values should be equal');
-				});
-		},
-
-		'it should be able to check an unchecked and enabled checkbox': function () {
-			return this.remote.get(require.toUrl(url))
-				.findById('enabled-checkbox')
-					.findByClassName('orch-checkbox')
-						.findByClassName('checkbox')
-							.findByTagName('input')
-							.moveMouseTo(2, 2)
-							.end()
-							.click()
-							.click()
-						.end()
-					.end()
-				.findByClassName('enabled-text')
+				.findByClassName('checked-text')
 				.getVisibleText()
 				.then(function (value) {
 					assert.equal(value, 'true', 'values should be equal');
+				});
+		},
+
+		'it should be able to get a false value from an unchecked checkbox': function () {
+			return this.remote.get(require.toUrl(url))
+				.findById('enabled-checkbox-unchecked')
+					.findByClassName('orch-checkbox')
+						.findByClassName('checkbox')
+							.findByTagName('input')
+							.moveMouseTo(2, 2)
+							.end()
+							.click()
+							.click()
+						.end()
+					.end()
+				.findByClassName('unchecked-text')
+				.getVisibleText()
+				.then(function (value) {
+					assert.equal(value, 'false', 'values should be equal');
 				});
 		}
 	});

@@ -23,6 +23,7 @@
 
 	input {
 		background-color: #{$input-background-color};
+		color: $silver-dark !important;
 		cursor: default !important;
 
 		&::-webkit-input-placeholder,

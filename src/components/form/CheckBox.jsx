@@ -11,29 +11,24 @@ class CheckBox extends React.Component {
 		onClick: React.PropTypes.func.isRequired
 	};
 
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			checked: props.checked || false
-		};
-	}
-
 	onInputChange = () => {
-		const { onClick, disabled } = this.props;
+		const {
+			checked,
+			disabled,
+			onClick
+		} = this.props;
 
 		if (!disabled) {
-			this.setState({
-				checked: !this.state.checked
-			}, () => {
-				onClick(this.state.checked);
-			});
+			onClick(checked || false);
 		}
 	};
 
 	render() {
-		const { disabled, label } = this.props;
-		const { checked } = this.state;
+		const {
+			checked,
+			disabled,
+			label
+		} = this.props;
 		const checkboxClassnames = classnames({
 			checkbox: true,
 			checked,
