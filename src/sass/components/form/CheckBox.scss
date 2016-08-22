@@ -2,7 +2,7 @@
 	display: inline-block;
 
 	.checkbox {
-		@include arcticBlueDarkWrapper($box-sizing: 'none');
+		@include arcticBlueDarkWrapper($box-sizing: 'content-box');
 		cursor: pointer;
 		display: inline-block;
 		height: 20px;
@@ -19,11 +19,11 @@
 		}
 
 		&.checked {
-			@include ipBlueDarkWrapper($IP-blue, $box-sizing: 'none');
+			@include ipBlueDarkWrapper($IP-blue, $box-sizing: 'content-box');
 			@include shadow($spread: 1px);
 
 			&:hover {
-				@include ipBlueDarkWrapper($IP-blue-dark, $box-sizing: 'none');
+				@include ipBlueDarkWrapper($IP-blue-dark, $box-sizing: 'content-box');
 			}
 
 			& + label {
@@ -40,7 +40,7 @@
 		}
 
 		&:hover {
-			@include arcticBlueDarkWrapper($arctic-blue-dark, $box-sizing: 'none');
+			@include arcticBlueDarkWrapper($arctic-blue-dark, $box-sizing: 'content-box');
 		}
 
 		input {
