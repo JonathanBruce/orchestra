@@ -71,33 +71,24 @@ class Example extends React.Component {
 					</Twelve>
 
 					<Twelve>
-						<LinksSubHeader links={
-							[
-								{
-									active: true,
-									label: 'Hello',
-									value: 'hello'
-								},
-								{
-									active: false,
-									label: 'World',
-									value: 'world'
+						<LinksSubHeader
+							onClick={
+								(value) => {
+									console.log(value);
 								}
-							]
-						} onClick={
-							(value) => {
-								console.log(value);
-							}
-						} widgets={
-							[
-								<SecondaryPositiveButton icon={ <Icons.Links /> }>
-									First Widget
-								</SecondaryPositiveButton>,
-								<SecondaryPositiveButton icon={ <Icons.Links /> }>
-									Second Widget
-								</SecondaryPositiveButton>
-							]
-						}/>
+							} widgets={
+								[
+									<SecondaryPositiveButton icon={ <Icons.Links /> }>
+										First Widget
+									</SecondaryPositiveButton>,
+									<SecondaryPositiveButton icon={ <Icons.Links /> }>
+										Second Widget
+									</SecondaryPositiveButton>
+								]
+							}>
+							<a href='#' className='active'>Hello</a>
+							<a href='#'>World</a>
+						</LinksSubHeader>
 					</Twelve>
 
 					<Twelve>
@@ -173,21 +164,24 @@ class Example extends React.Component {
 					</Three>
 
 					<Three>
-						<Input defaultValue='Error text'
+						<Input
 							icon={ <Icons.SmallUser /> }
 							placeholder='Username'
 							type='text' />
 					</Three>
 
 					<Three>
-						<Input error={ true }
+						<Input
+							defaultValue='Error Text'
+							error={ true }
 							icon={ <Icons.SmallUser /> }
 							placeholder='Username'
 							type='text' />
 					</Three>
 
 					<Three>
-						<Input defaultValue='Disabled text'
+						<Input
+							defaultValue='Disabled text'
 							disabled={ true }
 							icon={ <Icons.SmallUser /> }
 							placeholder='Username'

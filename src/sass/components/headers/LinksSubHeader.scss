@@ -1,26 +1,19 @@
 .orch-links-sub-header {
-	ul.links {
+	a {
+		color: $arctic-blue-dark;
+		cursor: pointer;
 		display: inline-block;
-		list-style-type: none;
-		margin: 0px;
-		padding: 0px;
+		padding: 19px 20px;
+		text-decoration: none;
 
-		li {
-			padding: 19px 20px;
+		&.active {
+			border-bottom: 4px solid $IP-blue;
+			color: $dusk-blue;
+			cursor: default;
+		}
 
-			&.active {
-				border-bottom: 4px solid $IP-blue;
-				color: $dusk-blue;
-				cursor: default;
-			}
-
-			color: $arctic-blue-dark;
-			cursor: pointer;
-			display: inline-block;
-
-			&:hover {
-				color: $dusk-blue;
-			}
+		&:hover {
+			color: $dusk-blue;
 		}
 	}
 
