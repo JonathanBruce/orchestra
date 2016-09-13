@@ -14,6 +14,7 @@
 		"functional/buttons/TertiaryNeutral",
 		"functional/buttons/TertiaryPositive",
 		"functional/form/CheckBox",
+		"functional/form/DropDown",
 		"functional/form/Input",
 		"functional/grid/Column",
 		"functional/misc/PillToggle"

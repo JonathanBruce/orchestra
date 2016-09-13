@@ -8,6 +8,7 @@ import {
 	Avatar,
 	BrandButton,
 	CheckBox,
+	DropDown,
 	Container,
 	Content,
 	FemaleButton,
@@ -164,8 +165,77 @@ class Example extends React.Component {
 					</Three>
 
 					<Three>
-						<Input
-							icon={ <Icons.SmallUser /> }
+						<DropDown
+							label='DropDown'
+							onChange={
+								(value) => {
+									console.log(value);
+								}
+							}
+							onToggle={
+								() => {
+									console.log('toggled');
+								}
+							}
+							options={
+								[
+									{ label: 'one', value: 1 },
+									{ label: 'two', value: 2 },
+									{ label: 'three', value: 3 }
+								]
+							}
+							selected={ 1 } />
+					</Three>
+
+					<Three>
+						<DropDown
+							active
+							label='DropDown'
+							onChange={
+								(value) => {
+									console.log(value);
+								}
+							}
+							onToggle={
+								() => {
+									console.log('toggled');
+								}
+							}
+							options={
+								[
+									{ label: 'one', value: 1 },
+									{ label: 'two', value: 2 },
+									{ label: 'three', value: 3 }
+								]
+							}
+							selected={ 1 } />
+					</Three>
+
+					<Three>
+						<DropDown
+							disabled
+							label='Disabled DropDown'
+							onChange={
+								(value) => {
+									console.log(value);
+								}
+							}
+							onToggle={
+								() => {
+									console.log('toggled');
+								}
+							}
+							options={
+								[
+									{ label: 'one', value: 1 },
+									{ label: 'two', value: 2 },
+									{ label: 'three', value: 3 }
+								]
+							} />
+					</Three>
+
+					<Three>
+						<Input icon={ <Icons.SmallUser /> }
 							placeholder='Username'
 							type='text' />
 					</Three>
