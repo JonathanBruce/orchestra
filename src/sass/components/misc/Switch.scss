@@ -1,0 +1,57 @@
+.orch-switch {
+	cursor: pointer;
+	height: 23px;
+	position: relative;
+
+	.knob {
+		@include powderBlueWrapper($background-color: $arctic-blue-dark, $border-radius: 23px);
+
+		height: inherit;
+		left: 0px;
+		position: absolute;
+		top: 0px;
+		-webkit-transition: all 50ms ease-in-out;
+		-moz-transition: all 50ms ease-in-out;
+		-o-transition: all 50ms ease-in-out;
+		-ms-transition: all 50ms ease-in-out;
+		transition: all 50ms ease-in-out;
+		width: 23px;
+		z-index: 2;
+	}
+
+	.track {
+		@include arcticBlueDarkWrapper();
+
+		height: 13px;
+		left: 8px;
+		position: absolute;
+		top: 5px;
+		width: 27px;
+		z-index: 1;
+	}
+
+	&:hover {
+		.track {
+			@include arcticBlueDarkWrapper($background-color: $arctic-blue-dark);
+		}
+	}
+
+	&.active {
+		.knob {
+			@include ipBlueDarkWrapper($background-color: $IP-blue, $border-radius: 23px);
+			@include shadow();
+
+			left: 20px;
+		}
+
+		.track {
+			@include powderBlueDarkWrapper($background-color: $powder-blue);
+		}
+
+		&:hover {
+			.track {
+				@include powderBlueDarkWrapper($background-color: $powder-blue-dark);
+			}
+		}
+	}
+}

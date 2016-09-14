@@ -1,13 +1,9 @@
 /* global React */
 
-import classnames from 'classnames';
-import Icons from 'icons/_all';
 import PaginationControls from './PaginationControls.jsx';
 
-class PaginationApprove extends React.Component {
+class PaginationPaging extends React.Component {
 	static propTypes = {
-		approveDisabled: React.PropTypes.bool.isRequired,
-		onApproveClick: React.PropTypes.func.isRequired,
 		currentPage: React.PropTypes.oneOfType([
 			React.PropTypes.number,
 			React.PropTypes.string
@@ -22,22 +18,16 @@ class PaginationApprove extends React.Component {
 
 	render() {
 		const {
-			approveDisabled,
 			currentPage,
-			onApproveClick,
 			onDecreaseClick,
 			onIncreaseClick,
 			totalPages
 		} = this.props;
-		const approveClasses = classnames({
-			approve: true,
-			disabled: approveDisabled
-		});
 		const decreaseDisabled = currentPage === 1;
 		const increaseDisabled = currentPage === totalPages;
 
 		return (
-			<div className='orch-pagination-approve'>
+			<div className='orch-pagination-paging'>
 				<div className='counts'>
 					<span className='current-page'>Page { currentPage }</span>
 					<span className='slash'>/</span>
@@ -49,14 +39,9 @@ class PaginationApprove extends React.Component {
 					onIncreaseClick={ onIncreaseClick }
 					decreaseDisabled={ decreaseDisabled }
 					increaseDisabled={ increaseDisabled } />
-
-				<div className={ approveClasses }
-					onClick={ onApproveClick }>
-					<Icons.ApproveAll />
-				</div>
 			</div>
 		);
 	}
 }
 
-export default PaginationApprove;
+export default PaginationPaging;

@@ -16,14 +16,15 @@ import {
 	Input,
 	LinksSubHeader,
 	MaleButton,
-	PaginationApprove,
 	PaginationControls,
+	PaginationPaging,
 	PillToggle,
 	PrimaryNegativeButton,
 	PrimaryNeutralButton,
 	PrimaryPositiveButton,
 	SecondaryNeutralButton,
 	SecondaryPositiveButton,
+	Switch,
 	TertiaryNegativeButton,
 	TertiaryNeutralButton,
 	TertiaryPositiveButton,
@@ -362,13 +363,7 @@ class Example extends React.Component {
 					</Three>
 
 					<Three>
-						<PaginationApprove
-							approveDisabled={ false }
-							onApproveClick={
-								() => {
-									console.log('approving');
-								}
-							}
+						<PaginationPaging
 							currentPage={ 1 }
 							onDecreaseClick={
 								() => {
@@ -382,13 +377,7 @@ class Example extends React.Component {
 							}
 							totalPages={ 5 } />
 
-						<PaginationApprove
-							approveDisabled={ true }
-							onApproveClick={
-								() => {
-									console.log('approving');
-								}
-							}
+						<PaginationPaging
 							currentPage={ 5 }
 							onDecreaseClick={
 								() => {
@@ -408,6 +397,23 @@ class Example extends React.Component {
 						<Avatar
 							image='https://pbs.twimg.com/profile_images/489091337690419200/L_r1zbKT_400x400.png'
 							size={ 68 } />
+					</Three>
+
+					<Three>
+						<Switch
+							onClick={
+								(value) => {
+									console.log(value);
+								}
+							} />
+
+						<Switch
+							active
+							onClick={
+								(value) => {
+									console.log(value);
+								}
+							} />
 					</Three>
 				</Container>
 			</div>

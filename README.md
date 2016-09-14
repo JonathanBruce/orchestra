@@ -626,11 +626,11 @@ class MyComponent extends React.Component {
 | ---------------------|-----------------| -----------------------------------------------------------------------------------------------|
 | `active`             | `boolean`       | Boolean which determines whether the dropdown list is shown or not                             |
 | `disabled`           | `boolean`       | Boolean which determines whether the component is disabled or not                              |
-| `options[ <Object> ]`| `array`         | Array of object options to render the options in the dropdown                                      |
+| `options[ <Object> ]`| `array`         | Array of object options to render the options in the dropdown                                  |
 | `option.label`       | `string`        | Actual label of the item to be toggled and rendered                                            |
 | `option.value`       | `any`           | Actual value to send to the `onChange` handler when an item is selected                        |
 | `label`              | `string`        | Default label when no item is selected                                                         |
-| `onChange`           | `function`      | An onChange event which is bound to the value of an item when selected                         |
+| `onChange(val)`      | `function`      | An onChange event which is bound to the value of an item when selected, val provided           |
 | `onToggle`           | `function`      | A function which is called when the dropdown list is toggled.                                  |
 | `selected`           | `any`           | Value which is currently selected. Will need to be updated in `onChange` handler               |
 
@@ -653,7 +653,7 @@ class MyComponent extends React.Component {
 	};
 	
 	render() {
-		const { selected } = this.props.state;
+		const { selected } = this.props;
 		const options = [
 			{ label: 'one', value: 1 },
 			{ label: 'two', value: 2 }
