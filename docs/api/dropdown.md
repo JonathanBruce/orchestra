@@ -13,7 +13,7 @@
 | `options[ <Object> ]`| `array`         | Array of object options to render the options in the dropdown                                  |
 | `option.label`       | `string`        | Actual label of the item to be toggled and rendered                                            |
 | `option.value`       | `any`           | Actual value to send to the `onChange` handler when an item is selected                        |
-| `label`              | `string`        | Default label when no item is selected                                                         |
+| `label`              | `string`        | Label for the DropDown. Default is the label of the currently selected option                  |
 | `onChange(val)`      | `function`      | An onChange event which is bound to the value of an item when selected, val provided           |
 | `onToggle`           | `function`      | A function which is called when the dropdown list is toggled.                                  |
 | `selected`           | `any`           | Value which is currently selected. Will need to be updated in `onChange` handler               |
