@@ -57,23 +57,30 @@
 		top: 0px;
 		width: 100%;
 
-		.options div {
-			background: $pure-white;
-			box-sizing: border-box;
-			color: $steel-blue;
-			font-size: 14px;
-			font-family: $lato-regular;
-			height: 34px;
-			line-height: 34px;
-			padding-left: 15px;
-			position: relative;
-			text-align: left;
-			user-select: none;
-			width: 100%;
+		.options {
+			@include scrollbar();
 
-			&:hover {
-				background: $arctic-blue-dark;
-				color: $dusk-blue
+			background: $pure-white;
+			max-height: 102px;
+			overflow-y: scroll;
+
+			div {
+				box-sizing: border-box;
+				color: $steel-blue;
+				font-size: 14px;
+				font-family: $lato-regular;
+				height: 34px;
+				line-height: 34px;
+				padding-left: 15px;
+				position: relative;
+				text-align: left;
+				user-select: none;
+				width: 100%;
+
+				&:hover {
+					background: $arctic-blue-dark;
+					color: $dusk-blue
+				}
 			}
 		}
 	}
@@ -81,6 +88,8 @@
 	&.active {
 		.selector {
 			border: none;
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
 		}
 
 		.chevron {

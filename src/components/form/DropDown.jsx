@@ -13,7 +13,7 @@ class DropDown extends React.Component {
 				value: React.PropTypes.any.isRequired
 			})
 		).isRequired,
-		label: React.PropTypes.string.isRequired,
+		label: React.PropTypes.string,
 		onChange: React.PropTypes.func.isRequired,
 		onToggle: React.PropTypes.func.isRequired,
 		selected: React.PropTypes.any
@@ -97,7 +97,8 @@ class DropDown extends React.Component {
 			selected
 		} = this.props;
 		const currentOption = options.find((option) => (option.value === selected));
-		const currentText = currentOption && !active ? currentOption.label : label;
+		const currentLabel = label || currentOption && currentOption.label;
+		const currentText = currentOption && !active ? currentOption.label : currentLabel;
 
 		return (
 			<div className='selector' onClick={ this.showList }>
