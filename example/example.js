@@ -205,6 +205,29 @@ class Example extends React.Component {
 								[
 									{ label: 'one', value: 1 },
 									{ label: 'two', value: 2 },
+									{ label: 'three', value: 3 }
+								]
+							}
+							selected={ 1 } />
+					</Three>
+
+					<Three>
+						<DropDown
+							active
+							onChange={
+								(value) => {
+									console.log(value);
+								}
+							}
+							onToggle={
+								() => {
+									console.log('toggled');
+								}
+							}
+							options={
+								[
+									{ label: 'one extremely long label that should be cut off if it knows what is good for it', value: 1 },
+									{ label: 'two', value: 2 },
 									{ label: 'three', value: 3 },
 									{ label: 'four', value: 4 }
 								]
