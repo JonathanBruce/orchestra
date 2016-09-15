@@ -1,4 +1,5 @@
-.orch-pagination-paging {
+.orch-pagination-approve {
+	.approve,
 	.counts {
 		float: left;
 		display: inline-block;
@@ -25,6 +26,30 @@
 
 		.total-pages {
 			font-family: $lato-regular;
+		}
+	}
+
+	.approve {
+		@include mintGreenWrapper();
+		cursor: pointer;
+		padding: 3px 2px;
+		width: 32px;
+
+		&.disabled {
+			@include disabled($background-color: $pure-white,
+				$svg-fill-color: $cloudy-blue-grey,
+				$svg-path-color: $cloudy-blue-grey);
+		}
+
+		&:hover {
+			background-color: $arctic-blue-dark;
+		}
+
+		svg {
+			g,
+			path {
+				stroke: $mint-green;
+			}
 		}
 	}
 }

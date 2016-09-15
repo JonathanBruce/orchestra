@@ -16,8 +16,8 @@ import {
 	Input,
 	LinksSubHeader,
 	MaleButton,
+	PaginationApprove,
 	PaginationControls,
-	PaginationPaging,
 	PillToggle,
 	PrimaryNegativeButton,
 	PrimaryNeutralButton,
@@ -386,8 +386,14 @@ class Example extends React.Component {
 					</Three>
 
 					<Three>
-						<PaginationPaging
+						<PaginationApprove
+							approveDisabled={ false }
 							currentPage={ 1 }
+							onApproveClick={
+								() => {
+									console.log('approving');
+								}
+							}
 							onDecreaseClick={
 								() => {
 									console.log('decreasing');
@@ -400,8 +406,34 @@ class Example extends React.Component {
 							}
 							totalPages={ 5 } />
 
-						<PaginationPaging
+						<PaginationApprove
+							approveDisabled={ false }
 							currentPage={ 5 }
+							onApproveClick={
+								() => {
+									console.log('approving');
+								}
+							}
+							onDecreaseClick={
+								() => {
+									console.log('decreasing');
+								}
+							}
+							onIncreaseClick={
+								() => {
+									console.log('increasing');
+								}
+							}
+							totalPages={ 5 } />
+
+						<PaginationApprove
+							approveDisabled={ false }
+							currentPage={ 2 }
+							onApproveClick={
+								() => {
+									console.log('approving');
+								}
+							}
 							onDecreaseClick={
 								() => {
 									console.log('decreasing');
