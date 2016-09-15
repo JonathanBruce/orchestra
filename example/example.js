@@ -428,7 +428,7 @@ class Example extends React.Component {
 
 						<PaginationApprove
 							approveDisabled={ false }
-							currentPage={ 2 }
+							currentPage={ 0 }
 							onApproveClick={
 								() => {
 									console.log('approving');

@@ -33,13 +33,14 @@ class PaginationApprove extends React.Component {
 			approve: true,
 			disabled: approveDisabled
 		});
-		const decreaseDisabled = currentPage === 1;
-		const increaseDisabled = currentPage === totalPages;
+		const pageNumber = currentPage || 1;
+		const decreaseDisabled = pageNumber === 1;
+		const increaseDisabled = pageNumber === totalPages;
 
 		return (
 			<div className='orch-pagination-approve'>
 				<div className='counts'>
-					<span className='current-page'>Page { currentPage }</span>
+					<span className='current-page'>Page { pageNumber }</span>
 					<span className='slash'>/</span>
 					<span className='total-pages'>{ totalPages }</span>
 				</div>
