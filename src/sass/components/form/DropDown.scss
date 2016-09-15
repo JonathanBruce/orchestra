@@ -2,6 +2,7 @@
 	color: $dusk-blue;
 	cursor: pointer;
 	position: relative;
+	z-index: 5;
 
 	.selector {
 		@include arcticBlueDarkWrapper();
@@ -24,6 +25,7 @@
 			text-overflow: ellipsis;
 			user-select: none;
 			white-space: nowrap;
+			width: 100%;
 		}
 	}
 
@@ -58,23 +60,30 @@
 		width: 100%;
 
 		.options {
-			@include scrollbar();
-
 			background: $pure-white;
 			max-height: 102px;
-			overflow-y: scroll;
+
+			&.scrollbar {
+				@include scrollbar();
+
+				overflow-x: hidden;
+				overflow-y: scroll;
+			}
 
 			div {
 				box-sizing: border-box;
 				color: $steel-blue;
-				font-size: 14px;
 				font-family: $lato-regular;
+				font-size: 14px;
 				height: 34px;
 				line-height: 34px;
+				overflow: hidden;
 				padding-left: 15px;
 				position: relative;
 				text-align: left;
+				text-overflow: ellipsis;
 				user-select: none;
+				white-space: nowrap;
 				width: 100%;
 
 				&:hover {

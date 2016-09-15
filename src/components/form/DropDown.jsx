@@ -34,7 +34,7 @@ class DropDown extends React.Component {
 		const { options } = this.refs;
 		const { target } = event;
 
-		if (!options.contains(target) && active) {
+		if (options && !options.contains(target) && active) {
 			onToggle();
 			document.body.removeEventListener('click', this.hideList);
 		}
@@ -49,6 +49,7 @@ class DropDown extends React.Component {
 
 		onChange(selected);
 		onToggle();
+		document.body.removeEventListener('click', this.hideList);
 	};
 
 	/**
@@ -69,10 +70,13 @@ class DropDown extends React.Component {
 	 */
 	renderDropDownOptions = () => {
 		const { options } = this.props;
+		const className = classnames('options', {
+			scrollbar: options.length > 3
+		});
 
 		return (
 			<div className='list'>
-				<div className='options' ref='options'>
+				<div className={ className } ref='options'>
 					{
 						options.map((option, index) => (
 							<div key={ index } onClick={ this.onOptionChange.bind(this, option.value) }>
