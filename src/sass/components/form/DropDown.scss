@@ -1,3 +1,6 @@
+$dropdown-height: 34px;
+$chevron-width: 24px;
+
 .orch-dropdown {
 	color: $dusk-blue;
 	cursor: pointer;
@@ -10,7 +13,7 @@
 		box-sizing: border-box;
 		font-family: $lato-regular;
 		font-size: 14px;
-		height: 34px;
+		height: $dropdown-height;
 		padding-left: 15px;
 		padding-right: 10px;
 		position: relative;
@@ -25,14 +28,14 @@
 			text-overflow: ellipsis;
 			user-select: none;
 			white-space: nowrap;
-			width: 100%;
+			width: calc(100% - #{$chevron-width});
 		}
 	}
 
 	.chevron {
 		float: right;
 		transform: rotate(180deg);
-		width: 24px;
+		width: $chevron-width;
 		height: 100%;
 
 		&.flip {
@@ -54,14 +57,14 @@
 		border-radius: 3px;
 		left: 0px;
 		overflow: hidden;
-		padding-top: 34px;
+		padding-top: $dropdown-height;
 		position: absolute;
 		top: 0px;
 		width: 100%;
 
 		.options {
 			background: $pure-white;
-			max-height: 102px;
+			max-height: $dropdown-height * 3;
 
 			&.scrollbar {
 				@include scrollbar();
@@ -75,8 +78,8 @@
 				color: $steel-blue;
 				font-family: $lato-regular;
 				font-size: 14px;
-				height: 34px;
-				line-height: 34px;
+				height: $dropdown-height;
+				line-height: $dropdown-height;
 				overflow: hidden;
 				padding-left: 15px;
 				position: relative;
