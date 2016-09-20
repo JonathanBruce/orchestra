@@ -8,37 +8,55 @@ Below you can find Orchestra's API for it's components as well as how it's often
 
 The following describes all of the internal base components available for use in Orchestra.
 
-#include "./docs/api/primary_button.md"
-#include "./docs/api/secondary_button.md"
-#include "./docs/api/tertiary_button.md"
+#include "./docs/api/base/primary_button.md"
+#include "./docs/api/base/secondary_button.md"
+#include "./docs/api/base/tertiary_button.md"
 
 ## Buttons !heading
 
 The following describes all of the button components available for use in Orchestra.
 
-#include "./docs/api/brand.md"
-#include "./docs/api/female.md"
-#include "./docs/api/male.md"
-#include "./docs/api/primary_negative_button.md"
-#include "./docs/api/primary_neutral_button.md"
-#include "./docs/api/primary_positive_button.md"
-#include "./docs/api/secondary_neutral_button.md"
-#include "./docs/api/secondary_positive_button.md"
-#include "./docs/api/tertiary_negative_button.md"
-#include "./docs/api/tertiary_neutral_button.md"
-#include "./docs/api/tertiary_positive_button.md"
+#include "./docs/api/buttons/brand.md"
+#include "./docs/api/buttons/female.md"
+#include "./docs/api/buttons/male.md"
+#include "./docs/api/buttons/primary_negative_button.md"
+#include "./docs/api/buttons/primary_neutral_button.md"
+#include "./docs/api/buttons/primary_positive_button.md"
+#include "./docs/api/buttons/secondary_neutral_button.md"
+#include "./docs/api/buttons/secondary_positive_button.md"
+#include "./docs/api/buttons/tertiary_negative_button.md"
+#include "./docs/api/buttons/tertiary_neutral_button.md"
+#include "./docs/api/buttons/tertiary_positive_button.md"
 
 ## Form !heading
 
 The following describes all of the form components available for use in Orchestra.
 
-#include "./docs/api/input.md"
-#include "./docs/api/checkbox.md"
-#include "./docs/api/dropdown.md"
+#include "./docs/api/form/input.md"
+#include "./docs/api/form/checkbox.md"
+#include "./docs/api/form/dropdown.md"
+
+## Grid !heading
+
+The following describes all of the form components available for use in Orchestra.
+
+#include "./docs/api/grid/container.md"
+#include "./docs/api/grid/one.md"
+#include "./docs/api/grid/two.md"
+#include "./docs/api/grid/three.md"
+#include "./docs/api/grid/four.md"
+#include "./docs/api/grid/five.md"
+#include "./docs/api/grid/six.md"
+#include "./docs/api/grid/seven.md"
+#include "./docs/api/grid/eight.md"
+#include "./docs/api/grid/nine.md"
+#include "./docs/api/grid/ten.md"
+#include "./docs/api/grid/eleven.md"
+#include "./docs/api/grid/twelve.md"
 
 ## Miscellaneous !heading
 
 The following describes all of the miscellaneous components available for use in Orchestra.
 
-#include "./docs/api/content.md"
-#include "./docs/api/pill_toggle.md"
+#include "./docs/api/misc/content.md"
+#include "./docs/api/misc/pill_toggle.md"
