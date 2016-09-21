@@ -1,0 +1,26 @@
+.orch-stat {
+	@include arcticBlueDarkWrapper();
+
+	height: 150px;
+	padding: 33.5px 0px;
+
+	.name,
+	.number {
+		text-align: center;
+	}
+
+	.name {
+		color: $IP-blue;
+		font-family: $lato-regular;
+		font-size: 14px;
+		letter-spacing: 3px;
+		text-transform: uppercase;
+	}
+
+	.number {
+		color: $dusk-blue;
+		font-family: $lato-bold;
+		font-size: 45px;
+		margin-bottom: 8px;
+	}
+}

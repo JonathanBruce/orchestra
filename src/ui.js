@@ -72,4 +72,5 @@ export Content from 'components/misc/Content.jsx';
 export PaginationApprove from 'components/misc/PaginationApprove.jsx';
 export PaginationControls from 'components/misc/PaginationControls.jsx';
 export PillToggle from 'components/misc/PillToggle.jsx';
+export Stat from 'components/misc/Stat.jsx';
 export Switch from 'components/misc/Switch.jsx';

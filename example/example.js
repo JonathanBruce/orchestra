@@ -24,6 +24,7 @@ import {
 	PrimaryPositiveButton,
 	SecondaryNeutralButton,
 	SecondaryPositiveButton,
+	Stat,
 	Switch,
 	TertiaryNegativeButton,
 	TertiaryNeutralButton,
@@ -469,6 +470,12 @@ class Example extends React.Component {
 									console.log(value);
 								}
 							} />
+					</Three>
+
+					<Three>
+						<Stat
+							name='Stat'
+							number={ 104 } />
 					</Three>
 				</Container>
 			</div>
