@@ -14,7 +14,6 @@ class Content extends Component {
 		]),
 		icon: React.PropTypes.element.isRequired,
 		onScrollBottom: React.PropTypes.func,
-		subHeader: React.PropTypes.string,
 		title: React.PropTypes.string.isRequired,
 		widget: React.PropTypes.element
 	};
@@ -45,8 +44,8 @@ class Content extends Component {
 
 	render() {
 		const {
+			children,
 			icon,
-			subHeader,
 			title,
 			widget
 		} = this.props;
@@ -59,10 +58,8 @@ class Content extends Component {
 					<div className='widget'>{ widget }</div>
 				</header>
 
-				{ subHeader && <div className='sub-header'>{ subHeader }</div> }
-
 				<div className='content' ref='content'>
-					{ this.props.children }
+					{ children }
 				</div>
 			</div>
 		);

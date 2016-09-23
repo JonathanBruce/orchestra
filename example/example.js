@@ -24,6 +24,7 @@ import {
 	PrimaryPositiveButton,
 	SecondaryNeutralButton,
 	SecondaryPositiveButton,
+	Six,
 	Stat,
 	Switch,
 	TertiaryNegativeButton,
@@ -62,7 +63,6 @@ class Example extends React.Component {
 									console.log('hit the bottom');
 								}
 							}
-							subHeader='Sub Header'
 							title='Twitter Accounts'
 							widget={
 								<SecondaryPositiveButton icon={ <Icons.Links /> } >
@@ -472,11 +472,11 @@ class Example extends React.Component {
 							} />
 					</Three>
 
-					<Three>
+					<Six>
 						<Stat
-							name='Stat'
-							number={ 104 } />
-					</Three>
+							name='Total People Engaged'
+							number={ '5,000,000' } />
+					</Six>
 				</Container>
 			</div>
 		);

@@ -40,7 +40,8 @@ class PaginationApprove extends React.Component {
 		return (
 			<div className='orch-pagination-approve'>
 				<div className='counts'>
-					<span className='current-page'>Page { pageNumber }</span>
+					<span className='page'>Page</span>
+					<span className='page-number'>{ pageNumber }</span>
 					<span className='slash'>/</span>
 					<span className='total-pages'>{ totalPages }</span>
 				</div>

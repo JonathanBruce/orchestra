@@ -38,16 +38,6 @@
 		}
 	}
 
-	.sub-header {
-		border-bottom: 2px solid $arctic-blue-dark;
-		color: $steel-blue;
-		font-family: $lato-regular;
-		font-size: 12px;
-		letter-spacing: 3px;
-		padding: 14px 20px;
-		text-transform: uppercase;
-	}
-
 	.content {
 		@include scrollbar();
 		padding: 20px;

@@ -2,7 +2,6 @@
 	.approve,
 	.counts {
 		float: left;
-		display: inline-block;
 		height: 34px;
 	}
 
@@ -15,7 +14,12 @@
 		font-size: 14px;
 		padding: 8px 20px;
 
-		.current-page {
+		.page {
+			font-family: $lato-bold;
+			margin-right: 10px
+		}
+
+		.page-number {
 			font-family: $lato-bold;
 			margin-right: 5px;
 		}
