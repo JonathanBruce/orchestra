@@ -5,14 +5,14 @@ import classnames from 'classnames';
 
 class Column extends Component {
 	static propTypes = {
-		alpha: React.PropTypes.boolean,
+		alpha: React.PropTypes.bool,
 		children: React.PropTypes.oneOfType([
 			React.PropTypes.array,
 			React.PropTypes.element,
 			React.PropTypes.string
 		]).isRequired,
 		className: React.PropTypes.string,
-		omega: React.PropTypes.boolean,
+		omega: React.PropTypes.bool,
 		size: React.PropTypes.string.isRequired
 	};
 
