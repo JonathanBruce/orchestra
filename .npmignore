@@ -1,0 +1,11 @@
+docs/
+example/
+src/
+tests/
+.editorconfig
+.eslintrc
+markdown.json
+setup.sh
+webpack.config.js
+webpack.example.js
+webpack.test.js

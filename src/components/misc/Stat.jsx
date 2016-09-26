@@ -1,3 +1,5 @@
+/* global React */
+
 import classnames from 'classnames';
 
 class Stat extends React.Component {
