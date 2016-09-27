@@ -6,7 +6,7 @@ define({
 	proxyPort: 9000,
 
 	// A fully qualified URL to the Intern proxy
-	proxyUrl: 'http://localhost:9000/',
+	proxyUrl: 'http://192.168.1.71:9000/',
 
 	// Default desired capabilities for all environments. Individual capabilities can be overridden by any of the
 	// specified browser environments in the `environments` array below as well. See
@@ -15,17 +15,15 @@ define({
 	// Note that the `build` capability will be filled in with the current commit ID from the Travis CI environment
 	// automatically
 	capabilities: {
-		'selenium-version': '2.45.0'
+		'selenium-version': '2.53.0'
 	},
 
 	// Browsers to run integration testing against. Note that version numbers must be strings if used with Sauce
 	// OnDemand. Options that will be permutated are browserName, version, platform, and platformVersion; any other
 	// capabilities options specified for an environment will be copied as-is
 	environments: [
-		{ browserName: 'firefox' },
 		{ browserName: 'chrome' },
-		{ browserName: 'internet explorer', version: '11' },
-		{ browserName: 'safari' }
+		{ browserName: 'firefox' }
 
 		/*
 		// Uncomment these for more testing!
@@ -36,10 +34,10 @@ define({
 		 */
 	],
 
-	tunnel: 'BrowserStackTunnel',
+	tunnel: 'NullTunnel',
 	tunnelOptions: {
-		username: 'insightpool1',
-		accessKey: 'PPnDxw34X5RqUxVEszvR'
+		hostname: '192.168.1.79',
+		port: 4444
 	},
 
 	// Maximum number of simultaneous integration tests that should be executed on the remote WebDriver service

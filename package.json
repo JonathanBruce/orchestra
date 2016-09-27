@@ -17,9 +17,11 @@
     "build:test-ui": "npm run build:icons && webpack --config webpack.test.js",
     "build:ui": "npm run build:icons && webpack --config webpack.config.js",
     "intern:browserstack": "./node_modules/intern/bin/intern-runner.js config=tests/intern.browserstack.js",
-    "intern:local": "./node_modules/intern/bin/intern-runner.js config=tests/intern.js",
+    "intern:local": "./node_modules/intern/bin/intern-runner.js config=tests/intern.local.js",
+    "intern:grid": "./node_modules/intern/bin/intern-runner.js config=tests/intern.grid.js",
     "test:browserstack": "npm run build:test-ui && npm run build:intern && npm run intern:browserstack",
-    "test:local": "npm run build:test-ui && npm run build:intern && npm run intern:local"
+    "test:local": "npm run build:test-ui && npm run build:intern && npm run intern:local",
+    "test:grid": "npm run build:test-ui && npm run build:intern && npm run intern:grid"
   },
   "author": "",
   "license": "ISC",
