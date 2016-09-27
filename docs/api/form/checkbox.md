@@ -1,4 +1,4 @@
-### `Checkbox` !heading
+### `CheckBox` !heading
 
 * __HTML tag extended:__ `<input type='checkbox' />`
 * __CSS class(es) used:__ `orch-checkbox`

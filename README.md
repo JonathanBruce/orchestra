@@ -26,7 +26,7 @@
     * [`TertiaryPositiveButton`](#tertiarypositivebutton)
   * [Form](#form)
     * [`Input`](#input)
-    * [`Checkbox`](#checkbox)
+    * [`CheckBox`](#checkbox)
     * [`DropDown`](#dropdown)
   * [Grid](#grid)
     * [`Container`](#container)
@@ -591,7 +591,7 @@ class MyComponent extends React.Component {
 ```
 
 
-### `Checkbox`
+### `CheckBox`
 
 * __HTML tag extended:__ `<input type='checkbox' />`
 * __CSS class(es) used:__ `orch-checkbox`
