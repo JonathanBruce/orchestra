@@ -50,7 +50,7 @@ define({
 		packages: []
 	},
 
-	reporters: [ 'Console' ],
+	reporters: [ 'Pretty' ],
 	// Non-functional test suite(s) to run in each browser
 	suites: [],
 
