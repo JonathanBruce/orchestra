@@ -1,6 +1,6 @@
 {
   "name": "orchestra",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Insightpool's official UI kit",
   "repository": "https://github.com/insightpool/orchestra",
   "main": "dist/ui.build.js",
