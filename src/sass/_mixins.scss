@@ -125,6 +125,22 @@
 	color: #{$color};
 }
 
+@mixin duskBlueDarkWrapper($background-color: $pure-white, $color: $dusk-blue, $border-radius: 3px, $box-sizing: 'border-box') {
+	@include border($radius: #{$border-radius});
+	background-color: #{$background-color};
+	border-color: $dusk-blue-dark;
+	box-sizing: #{$box-sizing};
+	color: #{$color};
+}
+
+@mixin ipBlueWrapper($background-color: $pure-white, $color: $dusk-blue, $border-radius: 3px, $box-sizing: 'border-box') {
+	@include border($radius: #{$border-radius});
+	background-color: #{$background-color};
+	border-color: $IP-blue;
+	box-sizing: #{$box-sizing};
+	color: #{$color};
+}
+
 @mixin ipBlueDarkWrapper($background-color: $pure-white, $color: $dusk-blue, $border-radius: 3px, $box-sizing: 'border-box') {
 	@include border($radius: #{$border-radius});
 	background-color: #{$background-color};
@@ -182,7 +198,7 @@
 }
 
 /**
- * Primary patterns
+ * Primary buttons (DEPRECATED AND WILL BE TAKEN OUT)
  */
 
 @mixin primaryNegative {
@@ -231,7 +247,7 @@
 }
 
 /**
- * Secondary patterns
+ * Secondary patterns (DEPRECATED AND WILL BE TAKEN OUT)
  */
 
 @mixin secondaryNeutral {
@@ -247,6 +263,54 @@
 
 	&:hover {
 		background-color: $arctic-blue;
+	}
+}
+
+/**
+ * Full buttons
+ */
+
+@mixin fullPrimary {
+	@include mintGreenDarkWrapper($mint-green, $pure-white);
+
+	&:hover {
+		border-color: $mint-green-dark;
+		background-color: $mint-green-dark;
+	}
+
+	svg {
+		path {
+			stroke: $pure-white;
+		}
+	}
+}
+
+@mixin fullSecondary {
+	@include duskBlueDarkWrapper($dusk-blue, $pure-white);
+
+	&:hover {
+		border-color: $dusk-blue-dark;
+		background-color: $dusk-blue-dark;
+	}
+
+	svg {
+		path {
+			stroke: $pure-white;
+		}
+	}
+}
+
+@mixin fullTertiary {
+	@include ipBlueWrapper($pure-white, $IP-blue);
+
+	&:hover {
+		background-color: $arctic-blue-dark;
+	}
+
+	svg {
+		path {
+			stroke: $IP-blue;
+		}
 	}
 }
 

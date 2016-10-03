@@ -1,0 +1,7 @@
+button {
+	&.orch-partial {
+		&.secondary {
+			@include fullSecondary();
+		}
+	}
+}

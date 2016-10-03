@@ -3,6 +3,8 @@
 		"functional/buttons/Brand",
 		"functional/buttons/Female",
 		"functional/buttons/Male",
+		"functional/base/FullButton",
+		"functional/base/PartialButton",
 		"functional/base/PrimaryButton",
 		"functional/buttons/PrimaryNegative",
 		"functional/buttons/PrimaryNeutral",

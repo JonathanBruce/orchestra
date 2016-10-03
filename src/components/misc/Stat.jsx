@@ -5,7 +5,10 @@ import classnames from 'classnames';
 class Stat extends React.Component {
 	static propTypes = {
 		name: React.PropTypes.string,
-		number: React.PropTypes.number,
+		number: React.PropTypes.oneOfType([
+			React.PropTypes.number,
+			React.PropTypes.string
+		]),
 		widgets: React.PropTypes.oneOfType([
 			React.PropTypes.array,
 			React.PropTypes.element

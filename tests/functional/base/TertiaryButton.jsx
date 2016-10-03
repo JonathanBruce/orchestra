@@ -7,7 +7,7 @@ import TertiaryButton from 'components/base/TertiaryButton.jsx';
 class TertiaryButtonTest extends React.Component {
 	render() {
 		return (
-			<div id='Tertiary-button'>
+			<div id='tertiary-button'>
 				<TertiaryButton><GoBack /></TertiaryButton>
 			</div>
 		);

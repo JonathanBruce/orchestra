@@ -10,6 +10,10 @@ class SecondaryNeutralButton extends React.Component {
 		])
 	};
 
+	componentDidMount() {
+		console.warn('SecondaryNeutralButton has been deprecated and should be replaced with FullTertiaryButton');
+	}
+
 	render() {
 		return (
 			<SecondaryButton { ...this.props } className='neutral'>{ this.props.children }</SecondaryButton>

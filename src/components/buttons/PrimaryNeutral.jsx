@@ -10,6 +10,10 @@ class PrimaryNeutralButton extends React.Component {
 		])
 	};
 
+	componentDidMount() {
+		console.warn('PrimaryNeutralButton has been deprecated and should be replaced with FullSecondaryButton');
+	}
+
 	render() {
 		return (
 			<PrimaryButton { ...this.props } className='neutral'>{ this.props.children }</PrimaryButton>

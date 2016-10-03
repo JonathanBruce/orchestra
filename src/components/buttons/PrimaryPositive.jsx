@@ -10,6 +10,10 @@ class PrimaryPositiveButton extends React.Component {
 		])
 	};
 
+	componentDidMount() {
+		console.warn('PrimaryPositiveButton has been deprecated and should be replaced with FullPrimaryButton');
+	}
+
 	render() {
 		return (
 			<PrimaryButton { ...this.props } className='positive'>{ this.props.children }</PrimaryButton>

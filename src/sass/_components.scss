@@ -2,6 +2,8 @@
  * Import base component styles
  */
 
+@import './components/base/FullButton.scss';
+@import './components/base/PartialButton.scss';
 @import './components/base/PrimaryButton.scss';
 @import './components/base/SecondaryButton.scss';
 @import './components/base/SubHeader.scss';
@@ -14,6 +16,12 @@
 @import './components/buttons/Brand.scss';
 @import './components/buttons/Female.scss';
 @import './components/buttons/Male.scss';
+@import './components/buttons/FullPrimary.scss';
+@import './components/buttons/FullSecondary.scss';
+@import './components/buttons/FullTertiary.scss';
+@import './components/buttons/PartialPrimary.scss';
+@import './components/buttons/PartialSecondary.scss';
+@import './components/buttons/PartialTertiary.scss';
 @import './components/buttons/PrimaryNegative.scss';
 @import './components/buttons/PrimaryNeutral.scss';
 @import './components/buttons/PrimaryPositive.scss';

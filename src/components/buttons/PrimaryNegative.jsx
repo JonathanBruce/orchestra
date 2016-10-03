@@ -10,6 +10,10 @@ class PrimaryNegativeButton extends React.Component {
 		])
 	};
 
+	componentDidMount() {
+		console.warn('PrimaryNegativeButton has been deprecated and should be replaced with FullTertiaryButton');
+	}
+
 	render() {
 		return (
 			<PrimaryButton { ...this.props } className='negative'>{ this.props.children }</PrimaryButton>

@@ -10,6 +10,10 @@ class SecondaryPositiveButton extends React.Component {
 		])
 	};
 
+	componentDidMount() {
+		console.warn('SecondaryPositiveButton has been deprecated and should be replaced with FullTertiaryButton');
+	}
+
 	render() {
 		return (
 			<SecondaryButton { ...this.props } className='positive'>{ this.props.children }</SecondaryButton>

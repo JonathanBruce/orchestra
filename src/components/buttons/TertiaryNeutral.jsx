@@ -7,6 +7,10 @@ class TertiaryNeutralButton extends React.Component {
 		children: React.PropTypes.element.isRequired
 	};
 
+	componentDidMount() {
+		console.warn('TertiaryNeutralButton has been deprecated and should be replaced with PartialSecondaryButton');
+	}
+
 	render() {
 		return (
 			<TertiaryButton { ...this.props } className='neutral'>{ this.props.children }</TertiaryButton>

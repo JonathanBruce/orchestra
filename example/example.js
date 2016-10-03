@@ -12,12 +12,18 @@ import {
 	Container,
 	Content,
 	FemaleButton,
+	FullPrimaryButton,
+	FullSecondaryButton,
+	FullTertiaryButton,
 	Icons,
 	Input,
 	LinksSubHeader,
 	MaleButton,
 	PaginationApprove,
 	PaginationControls,
+	PartialPrimaryButton,
+	PartialSecondaryButton,
+	PartialTertiaryButton,
 	PillToggle,
 	PrimaryNegativeButton,
 	PrimaryNeutralButton,
@@ -81,10 +87,14 @@ class Example extends React.Component {
 								}
 							} widgets={
 								[
-									<SecondaryPositiveButton icon={ <Icons.Links /> }>
+									<SecondaryPositiveButton
+										icon={ <Icons.Links /> }
+										key={ 1 }>
 										First Widget
 									</SecondaryPositiveButton>,
-									<SecondaryPositiveButton icon={ <Icons.Links /> }>
+									<SecondaryPositiveButton
+										icon={ <Icons.Links /> }
+										key={ 2 }>
 										Second Widget
 									</SecondaryPositiveButton>
 								]
@@ -124,6 +134,30 @@ class Example extends React.Component {
 
 					<Three>
 						<MaleButton active />
+					</Three>
+
+					<Three>
+						<FullPrimaryButton>Full Primary</FullPrimaryButton>
+					</Three>
+
+					<Three>
+						<FullSecondaryButton>Full Secondary</FullSecondaryButton>
+					</Three>
+
+					<Three>
+						<FullTertiaryButton>Full Tertiary</FullTertiaryButton>
+					</Three>
+
+					<Three>
+						<PartialPrimaryButton><Icons.Links /></PartialPrimaryButton>
+					</Three>
+
+					<Three>
+						<PartialSecondaryButton><Icons.Links /></PartialSecondaryButton>
+					</Three>
+
+					<Three>
+						<PartialTertiaryButton><Icons.Links /></PartialTertiaryButton>
 					</Three>
 
 					<Three>

@@ -7,6 +7,10 @@ class TertiaryNegativeButton extends React.Component {
 		children: React.PropTypes.element.isRequired
 	};
 
+	componentDidMount() {
+		console.warn('TertiaryNegativeButton has been deprecated and should be replaced with PartialTertiaryButton');
+	}
+
 	render() {
 		return (
 			<TertiaryButton { ...this.props } className='negative'>{ this.props.children }</TertiaryButton>

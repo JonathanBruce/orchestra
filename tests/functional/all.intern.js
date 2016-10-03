@@ -4,6 +4,8 @@ define([
 	'tests/functional/buttons/Brand',
 	'tests/functional/buttons/Female',
 	'tests/functional/buttons/Male',
+	'tests/functional/base/FullButton',
+	'tests/functional/base/PartialButton',
 	'tests/functional/base/PrimaryButton',
 	'tests/functional/buttons/PrimaryNegative',
 	'tests/functional/buttons/PrimaryNeutral',

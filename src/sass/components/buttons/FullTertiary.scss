@@ -1,0 +1,7 @@
+button {
+	&.orch-full {
+		&.tertiary {
+			@include fullTertiary();
+		}
+	}
+}
