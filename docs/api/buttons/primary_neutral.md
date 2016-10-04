@@ -1,9 +1,9 @@
-### `TertiaryNeutralButton` !heading
+### `PrimaryNeutralButton (deprecated)` !heading
 
-* __Internal components used:__ `TertiaryButton.jsx`
+* __Internal components used:__ `PrimaryButton.jsx`
 * __HTML tag extended:__ `<button></button>`
-* __CSS class(es) used:__ `orch-tertiary`, `orch-negative`
-* __Located at__: `src/components/buttons/TertiaryNegative.jsx`
+* __CSS class(es) used:__ `orch-primary`, `orch-neutral`
+* __Located at__: `src/components/buttons/PrimaryNeutral.jsx`
 
 **Props:**
 
@@ -13,19 +13,18 @@
 
 **Reason for existing:**
 
-The TertiaryNeutralButton is used in various places in the Insightpool application.
+The PrimaryNeutralButton is used in various places in the Insightpool application.
 
 **Usage:**
 
 ```javascript
-import { TertiaryNeutralButton } from 'orchestra';
+import { PrimaryNeutralButton } from 'orchestra';
 
 class MyComponent extends React.Component {
 	render() {
 		return (
-			<TertiaryNeutralButton icon={ <Icons.MyIcon /> } />
+			<PrimaryNeutralButton>Hello World!</PrimaryNeutralButton>
 		);
 	}
 }
 ```
-

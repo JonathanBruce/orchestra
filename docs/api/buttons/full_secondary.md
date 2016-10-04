@@ -1,9 +1,9 @@
-### `PrimaryNeutralButton` !heading
+### `FullSecondaryButton` !heading
 
-* __Internal components used:__ `PrimaryButton.jsx`
+* __Internal components used:__ `FullButton.jsx`
 * __HTML tag extended:__ `<button></button>`
-* __CSS class(es) used:__ `orch-primary`, `orch-neutral`
-* __Located at__: `src/components/buttons/PrimaryNeutral.jsx`
+* __CSS class(es) used:__ `orch-full`, `secondary`
+* __Located at__: `src/components/buttons/FullSecondary.jsx`
 
 **Props:**
 
@@ -13,18 +13,19 @@
 
 **Reason for existing:**
 
-The PrimaryNeutralButton is used in various places in the Insightpool application.
+The FullSecondaryButton is used in various places in the Insightpool application.
 
 **Usage:**
 
 ```javascript
-import { PrimaryNeutralButton } from 'orchestra';
+import { FullSecondaryButton } from 'orchestra';
 
 class MyComponent extends React.Component {
 	render() {
 		return (
-			<PrimaryNeutralButton>Hello World!</PrimaryNeutralButton>
+			<FullSecondaryButton>Hello World!</FullSecondaryButton>
 		);
 	}
 }
 ```
+

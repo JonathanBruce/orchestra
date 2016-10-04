@@ -1,9 +1,9 @@
-### `SecondaryPositiveButton` !heading
+### `PrimaryPositiveButton (deprecated)` !heading
 
-* __Internal components used:__ `SecondaryButton.jsx`
+* __Internal components used:__ `PrimaryButton.jsx`
 * __HTML tag extended:__ `<button></button>`
-* __CSS class(es) used:__ `orch-secondary`, `orch-positive`
-* __Located at__: `src/components/buttons/SecondaryNegative.jsx`
+* __CSS class(es) used:__ `orch-primary`, `orch-positive`
+* __Located at__: `src/components/buttons/PrimaryPositive.jsx`
 
 **Props:**
 
@@ -14,20 +14,20 @@
 
 **Reason for existing:**
 
-The SecondaryPositiveButton is used in various places in the Insightpool application.
+The PrimaryPositiveButton is used in various places in the Insightpool application.
 
 **Usage:**
 
 ```javascript
 import {
 	Icons,
-	SecondaryPositiveButton
+	PrimaryPositiveButton
 } from 'orchestra';
 
 class MyComponent extends React.Component {
 	render() {
 		return (
-			<SecondaryPositiveButton icon={ <Icons.MyIcon /> } />Hello world!</SecondaryPositiveButton>
+			<PrimaryPositiveButton icon={ <Icons.MyIcon /> } />Hello World!</PrimaryPositiveButton>
 		);
 	}
 }

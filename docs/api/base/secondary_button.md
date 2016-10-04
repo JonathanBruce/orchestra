@@ -1,8 +1,8 @@
-### `SecondaryButton` !heading
+### `SecondaryButton (deprecated)` !heading
 
 * __HTML tag extended:__ `<button></button>`
 * __CSS class(es) used:__ `orch-secondary`
-* __Located at__: `src/components/base/Secondary.jsx`
+* __Located at__: `src/components/base/SecondaryButton.jsx`
 
 **Props:**
 

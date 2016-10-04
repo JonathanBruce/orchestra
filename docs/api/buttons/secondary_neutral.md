@@ -1,4 +1,4 @@
-### `SecondaryNeutralButton` !heading
+### `SecondaryNeutralButton (deprecated)` !heading
 
 * __Internal components used:__ `SecondaryButton.jsx`
 * __HTML tag extended:__ `<button></button>`

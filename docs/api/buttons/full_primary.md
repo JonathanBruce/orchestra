@@ -1,9 +1,9 @@
-### `PrimaryNegativeButton` !heading
+### `FullPrimaryButton` !heading
 
 * __Internal components used:__ `PrimaryButton.jsx`
 * __HTML tag extended:__ `<button></button>`
-* __CSS class(es) used:__ `orch-primary`, `orch-negative`
-* __Located at__: `src/components/buttons/PrimaryNegative.jsx`
+* __CSS class(es) used:__ `orch-full`, `primary`
+* __Located at__: `src/components/buttons/FullPrimary.jsx`
 
 **Props:**
 
@@ -13,17 +13,17 @@
 
 **Reason for existing:**
 
-The PrimaryNegativeButton is used in various places in the Insightpool application.
+The FullPrimaryButton is used in various places in the Insightpool application.
 
 **Usage:**
 
 ```javascript
-import { PrimaryNegativeButton } from 'orchestra';
+import { FullPrimaryButton } from 'orchestra';
 
 class MyComponent extends React.Component {
 	render() {
 		return (
-			<PrimaryNegativeButton>Hello World!</PrimaryNegativeButton>
+			<FullPrimaryButton>Hello World!</FullPrimaryButton>
 		);
 	}
 }

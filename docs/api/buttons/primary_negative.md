@@ -1,9 +1,9 @@
-### `TertiaryPositiveButton` !heading
+### `PrimaryNegativeButton (deprecated)` !heading
 
-* __Internal components used:__ `TertiaryButton.jsx`
+* __Internal components used:__ `PrimaryButton.jsx`
 * __HTML tag extended:__ `<button></button>`
-* __CSS class(es) used:__ `orch-tertiary`, `orch-positive`
-* __Located at__: `src/components/buttons/TertiaryPositive.jsx`
+* __CSS class(es) used:__ `orch-primary`, `orch-negative`
+* __Located at__: `src/components/buttons/PrimaryNegative.jsx`
 
 **Props:**
 
@@ -13,20 +13,17 @@
 
 **Reason for existing:**
 
-The TertiaryPositiveButton is used in various places in the Insightpool application.
+The PrimaryNegativeButton is used in various places in the Insightpool application.
 
 **Usage:**
 
 ```javascript
-import {
-	Icons,
-	TertiaryPositiveButton
-} from 'orchestra';
+import { PrimaryNegativeButton } from 'orchestra';
 
 class MyComponent extends React.Component {
 	render() {
 		return (
-			<TertiaryPositiveButton icon={ <Icons.MyIcon /> } />
+			<PrimaryNegativeButton>Hello World!</PrimaryNegativeButton>
 		);
 	}
 }

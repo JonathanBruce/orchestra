@@ -9,21 +9,29 @@
 * [API](#api)
   * [In A Nutshell](#in-a-nutshell)
   * [Base](#base)
-    * [`PrimaryButton`](#primarybutton)
-    * [`SecondaryButton`](#secondarybutton)
-    * [`TertiaryButton`](#tertiarybutton)
+    * [`FullButton`](#fullbutton)
+    * [`PartialButton`](#partialbutton)
+    * [`PrimaryButton (deprecated)`](#primarybutton-(deprecated))
+    * [`SecondaryButton (deprecated)`](#secondarybutton-(deprecated))
+    * [`TertiaryButton (deprecated)`](#tertiarybutton-(deprecated))
   * [Buttons](#buttons)
     * [`BrandButton`](#brandbutton)
     * [`FemaleButton`](#femalebutton)
+    * [`FullPrimaryButton`](#fullprimarybutton)
+    * [`FullSecondaryButton`](#fullsecondarybutton)
+    * [`FullTertiaryButton`](#fulltertiarybutton)
     * [`MaleButton`](#malebutton)
-    * [`PrimaryNegativeButton`](#primarynegativebutton)
-    * [`PrimaryNeutralButton`](#primaryneutralbutton)
-    * [`PrimaryPositiveButton`](#primarypositivebutton)
-    * [`SecondaryNeutralButton`](#secondaryneutralbutton)
-    * [`SecondaryPositiveButton`](#secondarypositivebutton)
-    * [`TertiaryNegativeButton`](#tertiarynegativebutton)
-    * [`TertiaryNeutralButton`](#tertiaryneutralbutton)
-    * [`TertiaryPositiveButton`](#tertiarypositivebutton)
+    * [`PartialPrimaryButton`](#partialprimarybutton)
+    * [`PartialSecondaryButton`](#partialsecondarybutton)
+    * [`PartialTertiaryButton`](#partialtertiarybutton)
+    * [`PrimaryNegativeButton (deprecated)`](#primarynegativebutton-(deprecated))
+    * [`PrimaryNeutralButton (deprecated)`](#primaryneutralbutton-(deprecated))
+    * [`PrimaryPositiveButton (deprecated)`](#primarypositivebutton-(deprecated))
+    * [`SecondaryNeutralButton (deprecated)`](#secondaryneutralbutton-(deprecated))
+    * [`SecondaryPositiveButton (deprecated)`](#secondarypositivebutton-(deprecated))
+    * [`TertiaryNegativeButton (deprecated)`](#tertiarynegativebutton-(deprecated))
+    * [`TertiaryNeutralButton (deprecated)`](#tertiaryneutralbutton-(deprecated))
+    * [`TertiaryPositiveButton (deprecated)`](#tertiarypositivebutton-(deprecated))
   * [Form](#form)
     * [`Input`](#input)
     * [`CheckBox`](#checkbox)
@@ -126,11 +134,45 @@ This would render Orchestra's `PrimaryPositiveButton` component that is simply a
 
 The following describes all of the internal base components available for use in Orchestra.
 
-### `PrimaryButton`
+### `FullButton`
+
+* __HTML tag extended:__ `<button></button>`
+* __CSS class(es) used:__ `orch-full`
+* __Located at__: `src/components/base/FullButton.jsx`
+
+**Props:**
+
+| Name          | Type          | Desciption                                    |
+| ------------- |---------------| ----------------------------------------------|
+| `disabled`    | `boolean`     | Disables the component                        |
+
+**Reason for existing:**
+
+The FullButton is used as a base for primary buttons internally to build more complex buttons for the Insightpool application.
+
+
+### `PartialButton`
+
+* __HTML tag extended:__ `<button></button>`
+* __CSS class(es) used:__ `orch-partial`
+* __Located at__: `src/components/base/PartialButton.jsx`
+
+**Props:**
+
+| Name          | Type          | Desciption                                    |
+| ------------- |---------------| ----------------------------------------------|
+| `disabled`    | `boolean`     | Disables the component                        |
+
+**Reason for existing:**
+
+The PartialButton is used as a base for partial buttons internally to build more complex buttons for the Insightpool application.
+
+
+### `PrimaryButton (deprecated)`
 
 * __HTML tag extended:__ `<button></button>`
 * __CSS class(es) used:__ `orch-primary`
-* __Located at__: `src/components/base/Primary.jsx`
+* __Located at__: `src/components/base/PrimaryButton.jsx`
 
 **Props:**
 
@@ -143,11 +185,11 @@ The following describes all of the internal base components available for use in
 The PrimaryButton is used as a base for primary buttons internally to build more complex buttons for the Insightpool application.
 
 
-### `SecondaryButton`
+### `SecondaryButton (deprecated)`
 
 * __HTML tag extended:__ `<button></button>`
 * __CSS class(es) used:__ `orch-secondary`
-* __Located at__: `src/components/base/Secondary.jsx`
+* __Located at__: `src/components/base/SecondaryButton.jsx`
 
 **Props:**
 
@@ -160,11 +202,11 @@ The PrimaryButton is used as a base for primary buttons internally to build more
 The SecondaryButton is used as a base for secondary buttons internally to build more complex buttons for the Insightpool application.
 
 
-### `TertiaryButton`
+### `TertiaryButton (deprecated)`
 
 * __HTML tag extended:__ `<button></button>`
 * __CSS class(es) used:__ `orch-tertiary`
-* __Located at__: `src/components/base/Tertiary.jsx`
+* __Located at__: `src/components/base/TertiaryButton.jsx`
 
 **Props:**
 
@@ -248,6 +290,102 @@ class MyComponent extends React.Component {
 ```
 
 
+### `FullPrimaryButton`
+
+* __Internal components used:__ `PrimaryButton.jsx`
+* __HTML tag extended:__ `<button></button>`
+* __CSS class(es) used:__ `orch-full`, `primary`
+* __Located at__: `src/components/buttons/FullPrimary.jsx`
+
+**Props:**
+
+| Name          | Type          | Desciption                                    |
+| ------------- |---------------| ----------------------------------------------|
+| `disabled`    | `boolean`     | Disables the component                        |
+
+**Reason for existing:**
+
+The FullPrimaryButton is used in various places in the Insightpool application.
+
+**Usage:**
+
+```javascript
+import { FullPrimaryButton } from 'orchestra';
+
+class MyComponent extends React.Component {
+	render() {
+		return (
+			<FullPrimaryButton>Hello World!</FullPrimaryButton>
+		);
+	}
+}
+```
+
+
+### `FullSecondaryButton`
+
+* __Internal components used:__ `FullButton.jsx`
+* __HTML tag extended:__ `<button></button>`
+* __CSS class(es) used:__ `orch-full`, `secondary`
+* __Located at__: `src/components/buttons/FullSecondary.jsx`
+
+**Props:**
+
+| Name          | Type          | Desciption                                    |
+| ------------- |---------------| ----------------------------------------------|
+| `disabled`    | `boolean`     | Disables the component                        |
+
+**Reason for existing:**
+
+The FullSecondaryButton is used in various places in the Insightpool application.
+
+**Usage:**
+
+```javascript
+import { FullSecondaryButton } from 'orchestra';
+
+class MyComponent extends React.Component {
+	render() {
+		return (
+			<FullSecondaryButton>Hello World!</FullSecondaryButton>
+		);
+	}
+}
+```
+
+
+### `FullTertiaryButton`
+
+* __Internal components used:__ `FullButton.jsx`
+* __HTML tag extended:__ `<button></button>`
+* __CSS class(es) used:__ `orch-full`, `tertiary`
+* __Located at__: `src/components/buttons/FullTertiary.jsx`
+
+**Props:**
+
+| Name          | Type          | Desciption                                    |
+| ------------- |---------------| ----------------------------------------------|
+| `disabled`    | `boolean`     | Disables the component                        |
+
+**Reason for existing:**
+
+The FullTertiaryButton is used in various places in the Insightpool application.
+
+**Usage:**
+
+```javascript
+import { FullTertiaryButton } from 'orchestra';
+
+class MyComponent extends React.Component {
+	render() {
+		return (
+			<FullTertiaryButton>Hello World!</FullTertiaryButton>
+		);
+	}
+}
+```
+
+
 ### `MaleButton`
 
 * __Internal components used:__ `PrimaryButton.jsx`
@@ -281,7 +419,114 @@ class MyComponent extends React.Component {
 ```
 
 
-### `PrimaryNegativeButton`
+### `PartialPrimaryButton`
+
+* __Internal components used:__ `PartialButton.jsx`
+* __HTML tag extended:__ `<button></button>`
+* __CSS class(es) used:__ `orch-partial`, `primary`
+* __Located at__: `src/components/buttons/PartialPrimary.jsx`
+
+**Props:**
+
+| Name          | Type          | Desciption                                    |
+| ------------- |---------------| ----------------------------------------------|
+| `disabled`    | `boolean`     | Disables the component                        |
+
+**Reason for existing:**
+
+The PartialPrimaryButton is used in various places in the Insightpool application.
+
+**Usage:**
+
+The `children` you pass to this compnent is expected to be a React element.  The use case in the example below is an icon, which is what this component was made for.
+
+```javascript
+import {
+	Icons,
+	PartialPrimaryButton
+} from 'orchestra';
+
+class MyComponent extends React.Component {
+	render() {
+		return (
+			<PartialPrimaryButton><Icons.MyIcon /></PartialPrimaryButton />
+		);
+	}
+}
+```
+
+
+### `PartialSecondaryButton`
+
+* __Internal components used:__ `PartialButton.jsx`
+* __HTML tag extended:__ `<button></button>`
+* __CSS class(es) used:__ `orch-partial`, `secondary`
+* __Located at__: `src/components/buttons/PartialSecondary.jsx`
+
+**Props:**
+
+| Name          | Type          | Desciption                                    |
+| ------------- |---------------| ----------------------------------------------|
+| `disabled`    | `boolean`     | Disables the component                        |
+
+**Reason for existing:**
+
+The PartialSecondaryButton is used in various places in the Insightpool application.
+
+**Usage:**
+
+The `children` you pass to this compnent is expected to be a React element.  The use case in the example below is an icon, which is what this component was made for.
+
+```javascript
+import {
+	Icons,
+	PartialSecondaryButton
+} from 'orchestra';
+
+class MyComponent extends React.Component {
+	render() {
+		return (
+			<PartialSecondaryButton><Icons.MyIcon /></PartialSecondaryButton />
+		);
+	}
+}
+```
+
+
+### `PartialTertiaryButton`
+
+* __Internal components used:__ `PartialButton.jsx`
+* __HTML tag extended:__ `<button></button>`
+* __CSS class(es) used:__ `orch-partial`, `tertiary`
+* __Located at__: `src/components/buttons/PartialTertiary.jsx`
+
+**Props:**
+
+| Name          | Type          | Desciption                                    |
+| ------------- |---------------| ----------------------------------------------|
+| `disabled`    | `boolean`     | Disables the component                        |
+
+**Reason for existing:**
+
+The PartialTertiaryButton is used in various places in the Insightpool application.
+
+**Usage:**
+
+```javascript
+import {
+	Icons,
+	PartialTertiaryButton
+} from 'orchestra';
+
+class MyComponent extends React.Component {
+	render() {
+		return (
+			<PartialTertiaryButton><Icons.MyIcon /></PartialTertiaryButton />
+		);
+	}
+}
+```
+### `PrimaryNegativeButton (deprecated)`
 
 * __Internal components used:__ `PrimaryButton.jsx`
 * __HTML tag extended:__ `<button></button>`
@@ -313,7 +558,7 @@ class MyComponent extends React.Component {
 ```
 
 
-### `PrimaryNeutralButton`
+### `PrimaryNeutralButton (deprecated)`
 
 * __Internal components used:__ `PrimaryButton.jsx`
 * __HTML tag extended:__ `<button></button>`
@@ -343,7 +588,7 @@ class MyComponent extends React.Component {
 	}
 }
 ```
-### `PrimaryPositiveButton`
+### `PrimaryPositiveButton (deprecated)`
 
 * __Internal components used:__ `PrimaryButton.jsx`
 * __HTML tag extended:__ `<button></button>`
@@ -379,7 +624,7 @@ class MyComponent extends React.Component {
 ```
 
 
-### `SecondaryNeutralButton`
+### `SecondaryNeutralButton (deprecated)`
 
 * __Internal components used:__ `SecondaryButton.jsx`
 * __HTML tag extended:__ `<button></button>`
@@ -415,7 +660,7 @@ class MyComponent extends React.Component {
 ```
 
 
-### `SecondaryPositiveButton`
+### `SecondaryPositiveButton (deprecated)`
 
 * __Internal components used:__ `SecondaryButton.jsx`
 * __HTML tag extended:__ `<button></button>`
@@ -451,7 +696,7 @@ class MyComponent extends React.Component {
 ```
 
 
-### `TertiaryNegativeButton`
+### `TertiaryNegativeButton (deprecated)`
 
 * __Internal components used:__ `TertiaryButton.jsx`
 * __HTML tag extended:__ `<button></button>`
@@ -476,14 +721,14 @@ import { TertiaryNegativeButton } from 'orchestra';
 class MyComponent extends React.Component {
 	render() {
 		return (
-			<TertiaryNegativeButton icon={ <Icons.MyIcon /> } />
+			<TertiaryNegativeButton><Icons.MyIcon /></TertiaryNegativeButton>
 		);
 	}
 }
 ```
 
 
-### `TertiaryNeutralButton`
+### `TertiaryNeutralButton (deprecated)`
 
 * __Internal components used:__ `TertiaryButton.jsx`
 * __HTML tag extended:__ `<button></button>`
@@ -508,14 +753,14 @@ import { TertiaryNeutralButton } from 'orchestra';
 class MyComponent extends React.Component {
 	render() {
 		return (
-			<TertiaryNeutralButton icon={ <Icons.MyIcon /> } />
+			<TertiaryNeutralButton><Icons.MyIcon /></TertiaryNeutralButton />
 		);
 	}
 }
 ```
 
 
-### `TertiaryPositiveButton`
+### `TertiaryPositiveButton (deprecated)`
 
 * __Internal components used:__ `TertiaryButton.jsx`
 * __HTML tag extended:__ `<button></button>`
@@ -543,7 +788,7 @@ import {
 class MyComponent extends React.Component {
 	render() {
 		return (
-			<TertiaryPositiveButton icon={ <Icons.MyIcon /> } />
+			<TertiaryPositiveButton><Icons.MyIcon /></TertiaryPositiveButton />
 		);
 	}
 }

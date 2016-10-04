@@ -1,8 +1,8 @@
-### `TertiaryButton (deprecated)` !heading
+### `FullButton` !heading
 
 * __HTML tag extended:__ `<button></button>`
-* __CSS class(es) used:__ `orch-tertiary`
-* __Located at__: `src/components/base/TertiaryButton.jsx`
+* __CSS class(es) used:__ `orch-full`
+* __Located at__: `src/components/base/FullButton.jsx`
 
 **Props:**
 
@@ -12,5 +12,5 @@
 
 **Reason for existing:**
 
-The TertiaryButton is used as a base for primary buttons internally to build more complex buttons for the Insightpool application.
+The FullButton is used as a base for primary buttons internally to build more complex buttons for the Insightpool application.
 

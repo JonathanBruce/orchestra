@@ -8,6 +8,8 @@ Below you can find Orchestra's API for it's components as well as how it's often
 
 The following describes all of the internal base components available for use in Orchestra.
 
+#include "./docs/api/base/full_button.md"
+#include "./docs/api/base/partial_button.md"
 #include "./docs/api/base/primary_button.md"
 #include "./docs/api/base/secondary_button.md"
 #include "./docs/api/base/tertiary_button.md"
@@ -18,15 +20,21 @@ The following describes all of the button components available for use in Orches
 
 #include "./docs/api/buttons/brand.md"
 #include "./docs/api/buttons/female.md"
+#include "./docs/api/buttons/full_primary.md"
+#include "./docs/api/buttons/full_secondary.md"
+#include "./docs/api/buttons/full_tertiary.md"
 #include "./docs/api/buttons/male.md"
-#include "./docs/api/buttons/primary_negative_button.md"
-#include "./docs/api/buttons/primary_neutral_button.md"
-#include "./docs/api/buttons/primary_positive_button.md"
-#include "./docs/api/buttons/secondary_neutral_button.md"
-#include "./docs/api/buttons/secondary_positive_button.md"
-#include "./docs/api/buttons/tertiary_negative_button.md"
-#include "./docs/api/buttons/tertiary_neutral_button.md"
-#include "./docs/api/buttons/tertiary_positive_button.md"
+#include "./docs/api/buttons/partial_primary.md"
+#include "./docs/api/buttons/partial_secondary.md"
+#include "./docs/api/buttons/partial_tertiary.md"
+#include "./docs/api/buttons/primary_negative.md"
+#include "./docs/api/buttons/primary_neutral.md"
+#include "./docs/api/buttons/primary_positive.md"
+#include "./docs/api/buttons/secondary_neutral.md"
+#include "./docs/api/buttons/secondary_positive.md"
+#include "./docs/api/buttons/tertiary_negative.md"
+#include "./docs/api/buttons/tertiary_neutral.md"
+#include "./docs/api/buttons/tertiary_positive.md"
 
 ## Form !heading
 
