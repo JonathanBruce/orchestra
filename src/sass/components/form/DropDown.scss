@@ -5,7 +5,10 @@ $chevron-width: 24px;
 	color: $dusk-blue;
 	cursor: pointer;
 	position: relative;
-	z-index: 5;
+
+	&.active {
+		z-index: 100;
+	}
 
 	.selector {
 		@include arcticBlueDarkWrapper();
