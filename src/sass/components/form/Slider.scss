@@ -1,0 +1,77 @@
+.orch-slider {
+	width: 200px;
+
+	.slider {
+		box-sizing: border-box;
+		float: left;
+		height: 18px;
+		position: relative;
+		top: 6px;
+		width: 150px;
+
+		.knob {
+			@include ipBlueDarkWrapper($background-color: $IP-blue, $border-radius: 18px);
+			@include shadow(4px, 0px, 0px, 3px);
+
+			cursor: pointer;
+			height: 18px;
+			margin-left: -9px;
+			width: 18px;
+		}
+
+		.track {
+			@include arcticBlueDarkWrapper($arctic-blue-dark);
+
+			border: 0;
+			cursor: pointer;
+			height: 5px;
+			overflow: hidden;
+			position: absolute;
+			top: 6px;
+			width: 150px;
+
+			.cover {
+				@include ipBlueWrapper($IP-blue);
+
+				border: 0;
+				padding-right: 5px;
+				position: absolute;
+				height: 5px;
+				width: 0px;
+			}
+		}
+	}
+
+	.slider-display {
+		float: left;
+		margin-left: 11px;
+		text-align: center;
+
+		.orch-input {
+			padding: 0;
+
+			.item {
+				height: 25px;
+				padding: 0;
+				width: 35px;
+
+				input {
+					display: inline-block;
+					height: 100%;
+					text-align: center;
+					width: 100%;
+				}
+			}
+		}
+
+		label {
+			color: $steel-blue;
+			font-family: $lato-regular;
+			font-size: 12px;
+		}
+	}
+
+	&.disabled {
+		opacity: 0.25;
+	}
+}

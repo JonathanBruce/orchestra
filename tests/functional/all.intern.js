@@ -25,6 +25,7 @@ define([
 	'tests/functional/form/CheckBox',
 	'tests/functional/form/DropDown',
 	'tests/functional/form/Input',
+	'tests/functional/form/Slider',
 	'tests/functional/grid/Column',
 	'tests/functional/misc/PillToggle'
 ]);

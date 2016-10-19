@@ -31,6 +31,7 @@ import {
 	SecondaryNeutralButton,
 	SecondaryPositiveButton,
 	Six,
+	Slider,
 	Stat,
 	Switch,
 	TertiaryNegativeButton,
@@ -42,6 +43,14 @@ import {
 } from '../src/ui';
 
 class Example extends React.Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			sliderValue: 0
+		};
+	}
+
 	render() {
 		return (
 			<div>
@@ -502,6 +511,36 @@ class Example extends React.Component {
 							onClick={
 								(value) => {
 									console.log(value);
+								}
+							} />
+					</Three>
+
+					<Three>
+						<Slider
+							defaultValue={ 40 }
+							disabled
+							label='foo'
+							max={ 365 }
+							min={ 0 } />
+						<Slider
+							defaultValue={ this.state.sliderValue }
+							interval={ 5 }
+							label='bar'
+							max={ 20 }
+							min={ 0 }
+							onDragChange={
+								(sliderValue) => {
+									this.setState({ sliderValue });
+								}
+							}
+							onDragEnd={
+								(value) => {
+									console.log('on drag end', value);
+								}
+							}
+							onDragStart={
+								(sliderValue) => {
+									this.setState({ sliderValue });
 								}
 							} />
 					</Three>
