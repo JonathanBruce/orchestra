@@ -7,8 +7,8 @@ class Input extends React.Component {
 		defaultValue: React.PropTypes.string,
 		disabled: React.PropTypes.bool,
 		error: React.PropTypes.bool,
-		icon: React.PropTypes.element.isRequired,
-		placeholder: React.PropTypes.string.isRequired,
+		icon: React.PropTypes.element,
+		placeholder: React.PropTypes.string,
 		type: React.PropTypes.string.isRequired
 	};
 

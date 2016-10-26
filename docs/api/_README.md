@@ -43,6 +43,7 @@ The following describes all of the form components available for use in Orchestr
 #include "./docs/api/form/input.md"
 #include "./docs/api/form/checkbox.md"
 #include "./docs/api/form/dropdown.md"
+#include "./docs/api/form/slider.md"
 
 ## Grid !heading
 
