@@ -35,31 +35,31 @@ import { Slider } from 'orchestra';
 import { INTERVAL, MIN_VALUE, MAX_VALUE } from 'EXAMPLE_CONSTANT';
 
 class MyComponent extends React.Component {
-    onChange = (value) => {
-        console.log(value);
-    };
-    
-    onDragStart = (value) => {
-        console.log('drag started', value);
-    };
-    
-    onDragEnd = (value) => {
-        console.log('drag ended', value);
-    };
-    
-    render() {
-        const { value } = this.props;
-        
-        return (
-            <Slider
-                defaultValue={ value }
-                interval={ INTERVAL }
-                max={ MAX_VALUE }
-                min={ MIN_VALUE }
-                onChange={ this.onChange }  
-                onDragEnd={ this.onDragEnd }  
-                onDragStart={ this.onDragStart } />  
-        );
-    }
+	onChange = (value) => {
+		console.log(value);
+	};
+	
+	onDragStart = (value) => {
+		console.log('drag started', value);
+	};
+	
+	onDragEnd = (value) => {
+		console.log('drag ended', value);
+	};
+	
+	render() {
+		const { value } = this.props;
+		
+		return (
+			<Slider
+				defaultValue={ value }
+				interval={ INTERVAL }
+				max={ MAX_VALUE }
+				min={ MIN_VALUE }
+				onChange={ this.onChange }  
+				onDragEnd={ this.onDragEnd }  
+				onDragStart={ this.onDragStart } />  
+		);
+	}
 }
 ```

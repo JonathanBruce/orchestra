@@ -52,7 +52,11 @@ class MyComponent extends React.Component {
 		];
 
 		return (
-			<PillToggle items={ items } onClick={ onItemClick }>Hello World!</PillToggle>
+			<PillToggle
+				items={ items }
+				onClick={ onItemClick }>
+				Hello World!
+			</PillToggle>
 		);
 	}
 }

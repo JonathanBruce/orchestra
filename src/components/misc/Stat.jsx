@@ -9,6 +9,10 @@ class Stat extends React.Component {
 			React.PropTypes.number,
 			React.PropTypes.string
 		]),
+		value: React.PropTypes.oneOfType([
+			React.PropTypes.number,
+			React.PropTypes.string
+		]),
 		widgets: React.PropTypes.oneOfType([
 			React.PropTypes.array,
 			React.PropTypes.element
@@ -19,6 +23,7 @@ class Stat extends React.Component {
 		const {
 			number,
 			name,
+			value,
 			widgets
 		} = this.props;
 		const adjustTop = {
@@ -29,12 +34,12 @@ class Stat extends React.Component {
 			'with-widgets': widgets
 		});
 		const nameClasses = classnames('name', adjustTop);
-		const numberClasses = classnames('number', adjustTop);
+		const valueClasses = classnames('value', adjustTop);
 
 		return (
 			<div className={ orchStatClasses }>
 				<div className='stat'>
-					<div className={ numberClasses }>{ number }</div>
+					<div className={ valueClasses }>{ number || value }</div>
 					<div className={ nameClasses }>{ name }</div>
 				</div>
 

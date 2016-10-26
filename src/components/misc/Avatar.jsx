@@ -23,11 +23,12 @@ class Avatar extends React.Component {
 
 	renderImage = () => {
 		const { image, size } = this.props;
+		const { imageError } = this.state;
 		const imageStyles = {
 			'border-radius': (size / 2)
 		};
 
-		if (!this.state.imageError && image) {
+		if (!imageError && image) {
 			return (
 				<img onError={ this.onImageError }
 					src={ image }

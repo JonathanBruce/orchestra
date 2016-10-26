@@ -23,7 +23,9 @@ import { Container, Six } from 'orchestra';
 class MyComponent extends React.Component {
 	render() {
 		return (
-			<Container items={ items } onClick={ onItemClick }>
+			<Container
+				items={ items }
+				onClick={ onItemClick }>
 				<Six />
 				<Six />
 			</Container>

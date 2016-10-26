@@ -27,7 +27,9 @@ import {
 class MyComponent extends React.Component {
 	render() {
 		return (
-			<Input defaultValue='Username' icon={ <Icons.SmallUser /> } />
+			<Input
+				defaultValue='Username'
+				icon={ <Icons.SmallUser /> } />
 		);
 	}
 }

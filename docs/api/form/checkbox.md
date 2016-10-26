@@ -24,11 +24,13 @@ import { Checkbox } from 'orchestra';
 class MyComponent extends React.Component {
 	render() {
 		return (
-			<Checkbox checked onClick={
-				(val) => {
-					console.log('hello world!')
-				}
-			} />
+			<Checkbox
+				checked 
+				onClick={
+					(val) => {
+						console.log('hello world!')
+					}
+				} />
 		);
 	}
 }

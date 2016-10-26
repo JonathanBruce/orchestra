@@ -61,6 +61,7 @@ export CheckBox from 'components/form/CheckBox.jsx';
 export Input from 'components/form/Input.jsx';
 export DropDown from 'components/form/DropDown.jsx';
 export Slider from 'components/form/Slider.jsx';
+export Switch from 'components/form/Switch.jsx';
 
 /**
  * Export header components
@@ -80,4 +81,3 @@ export PaginationApprove from 'components/misc/PaginationApprove.jsx';
 export PaginationControls from 'components/misc/PaginationControls.jsx';
 export PillToggle from 'components/misc/PillToggle.jsx';
 export Stat from 'components/misc/Stat.jsx';
-export Switch from 'components/misc/Switch.jsx';

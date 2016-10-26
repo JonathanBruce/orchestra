@@ -26,7 +26,8 @@ import { Content, Icons } from 'orchestra';
 class MyComponent extends React.Component {
 	render() {
 		return (
-			<Content icon={ <Icons.Links /> }
+			<Content
+				icon={ <Icons.Links /> }
 				onScrollBottom={ this.action() }
 				title='My Content'
 				widget={ this.renderButton() }>

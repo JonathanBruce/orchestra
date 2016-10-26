@@ -11,7 +11,8 @@ $padding: 20px;
 		padding: 39px $padding;
 
 		.name,
-		.number {
+		.number,
+		.value {
 			text-align: center;
 		}
 
@@ -23,7 +24,8 @@ $padding: 20px;
 			text-transform: uppercase;
 		}
 
-		.number {
+		.number,
+		.value {
 			color: $dusk-blue;
 			font-family: $lato-bold;
 			font-size: 45px;
@@ -42,7 +44,8 @@ $padding: 20px;
 			width: calc(100% / 2 - (#{$padding} * 2));
 
 			.name,
-			.number {
+			.number,
+			.value {
 				text-align: left;
 
 				&.adjust-top {

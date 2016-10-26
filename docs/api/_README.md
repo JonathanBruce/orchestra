@@ -44,6 +44,7 @@ The following describes all of the form components available for use in Orchestr
 #include "./docs/api/form/checkbox.md"
 #include "./docs/api/form/dropdown.md"
 #include "./docs/api/form/slider.md"
+#include "./docs/api/form/switch.md"
 
 ## Grid !heading
 
@@ -67,5 +68,9 @@ The following describes all of the form components available for use in Orchestr
 
 The following describes all of the miscellaneous components available for use in Orchestra.
 
+#include "./docs/api/misc/avatar.md"
 #include "./docs/api/misc/content.md"
+#include "./docs/api/misc/pagination_approve.md"
+#include "./docs/api/misc/pagination_controls.md"
 #include "./docs/api/misc/pill_toggle.md"
+#include "./docs/api/misc/stat.md"

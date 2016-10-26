@@ -2,7 +2,7 @@
 
 * __HTML tag extended:__ `<div></div>`
 * __CSS class(es) used:__ `orch-Switch`
-* __Located at__: `src/components/misc/Switch.jsx`
+* __Located at__: `src/components/form/Switch.jsx`
 
 **Props:**
 

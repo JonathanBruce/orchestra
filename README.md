@@ -37,6 +37,7 @@
     * [`CheckBox`](#checkbox)
     * [`DropDown`](#dropdown)
     * [`Slider`](#slider)
+    * [`Switch`](#switch)
   * [Grid](#grid)
     * [`Container`](#container)
     * [`One`](#one)
@@ -52,8 +53,12 @@
     * [`Eleven`](#eleven)
     * [`Twelve`](#twelve)
   * [Miscellaneous](#miscellaneous)
+    * [`Avatar`](#avatar)
     * [`Content`](#content)
+    * [`PaginationApprove`](#paginationapprove)
+    * [`PaginationControls`](#paginationcontrols)
     * [`PillToggle`](#pilltoggle)
+    * [`Stat`](#stat)
 * [Commands](#commands)
 * [Contributing](#contributing)
 
@@ -830,7 +835,9 @@ import {
 class MyComponent extends React.Component {
 	render() {
 		return (
-			<Input defaultValue='Username' icon={ <Icons.SmallUser /> } />
+			<Input
+				defaultValue='Username'
+				icon={ <Icons.SmallUser /> } />
 		);
 	}
 }
@@ -863,11 +870,13 @@ import { Checkbox } from 'orchestra';
 class MyComponent extends React.Component {
 	render() {
 		return (
-			<Checkbox checked onClick={
-				(val) => {
-					console.log('hello world!')
-				}
-			} />
+			<Checkbox
+				checked 
+				onClick={
+					(val) => {
+						console.log('hello world!')
+					}
+				} />
 		);
 	}
 }
@@ -967,34 +976,73 @@ import { Slider } from 'orchestra';
 import { INTERVAL, MIN_VALUE, MAX_VALUE } from 'EXAMPLE_CONSTANT';
 
 class MyComponent extends React.Component {
-    onChange = (value) => {
-        console.log(value);
-    };
-    
-    onDragStart = (value) => {
-        console.log('drag started', value);
-    };
-    
-    onDragEnd = (value) => {
-        console.log('drag ended', value);
-    };
-    
-    render() {
-        const { value } = this.props;
-        
-        return (
-            <Slider
-                defaultValue={ value }
-                interval={ INTERVAL }
-                max={ MAX_VALUE }
-                min={ MIN_VALUE }
-                onChange={ this.onChange }  
-                onDragEnd={ this.onDragEnd }  
-                onDragStart={ this.onDragStart } />  
-        );
-    }
+	onChange = (value) => {
+		console.log(value);
+	};
+	
+	onDragStart = (value) => {
+		console.log('drag started', value);
+	};
+	
+	onDragEnd = (value) => {
+		console.log('drag ended', value);
+	};
+	
+	render() {
+		const { value } = this.props;
+		
+		return (
+			<Slider
+				defaultValue={ value }
+				interval={ INTERVAL }
+				max={ MAX_VALUE }
+				min={ MIN_VALUE }
+				onChange={ this.onChange }  
+				onDragEnd={ this.onDragEnd }  
+				onDragStart={ this.onDragStart } />  
+		);
+	}
 }
 ```
+### `Switch`
+
+* __HTML tag extended:__ `<div></div>`
+* __CSS class(es) used:__ `orch-Switch`
+* __Located at__: `src/components/form/Switch.jsx`
+
+**Props:**
+
+| Name                 | Type            | Desciption                                                                                     |
+| ---------------------|-----------------| -----------------------------------------------------------------------------------------------|
+| `active`             | `boolean`       | Boolean which determines whether the Switch list is active or not                             |
+| `onClick(val)`       | `function`      | What to do on a click, bool provided                                  |
+
+**Reason for existing:**
+
+The Switch is used for switches around the application.
+
+**Usage:**
+
+```javascript
+import { Switch } from 'orchestra';
+
+class MyComponent extends React.Component {
+	onClick = (value) => {
+		console.log(value);
+	};
+	
+	render() {
+		const { active } = this.props;
+
+		return (
+			<Switch 
+				active
+				onClick={ this.onClick } />
+		);
+	}
+}
+```
+
 
 ## Grid
 
@@ -1025,7 +1073,9 @@ import { Container, Six } from 'orchestra';
 class MyComponent extends React.Component {
 	render() {
 		return (
-			<Container items={ items } onClick={ onItemClick }>
+			<Container
+				items={ items }
+				onClick={ onItemClick }>
 				<Six />
 				<Six />
 			</Container>
@@ -1517,6 +1567,40 @@ class MyComponent extends React.Component {
 
 The following describes all of the miscellaneous components available for use in Orchestra.
 
+### `Avatar`
+
+* __HTML tag extended:__ `<div></div>`
+* __CSS class(es) used:__ `orch-avatar`
+* __Located at__: `src/components/misc/Avatar.jsx`
+
+**Props:**
+
+| Name                 | Type            | Desciption                                                 |
+| ---------------------|-----------------|------------------------------------------------------------|
+| `image`              | `string`        | Image URL                                                  |
+| `size`               | `numnber`       | Size of avatar, will be applied to height and width        |
+
+**Reason for existing:**
+
+The Avatar is used to display avatars or a default avatar for the Insightpool application.
+
+**Usage:**
+
+```javascript
+import { Avatar } from 'orchestra';
+
+class MyComponent extends React.Component {
+	render() {
+		return (
+			<Avatar
+				image='http://www.insightpool.com/user.jpg'
+				size={ 64 } />
+		);
+	}
+}
+```
+
+
 ### `Content`
 
 * __HTML tag extended:__ `<div></div>`
@@ -1545,12 +1629,112 @@ import { Content, Icons } from 'orchestra';
 class MyComponent extends React.Component {
 	render() {
 		return (
-			<Content icon={ <Icons.Links /> }
+			<Content
+				icon={ <Icons.Links /> }
 				onScrollBottom={ this.action() }
 				title='My Content'
 				widget={ this.renderButton() }>
 				Hello, this is my content!
 			</Content>
+		);
+	}
+}
+```
+
+
+### `PaginationApprove`
+
+* __HTML tag extended:__ `<div></div>`
+* __CSS class(es) used:__ `orch-pagination-approve`
+* __Located at__: `src/components/misc/PaginationApprove.jsx`
+
+**Props:**
+
+| Name                 | Type            | Desciption                                                 |
+| ---------------------|-----------------|------------------------------------------------------------|
+| `approvedDisabled`   | `boolean`       | To disable approval button                                 |
+| `onApprovalClick`    | `function`      | Function to call when approval is clicked                  |
+| `currentPage`        | `number|string` | Current page of results                                    |
+| `onDecreaseClick`    | `function`      | Function to call when decrease is clicked                  |
+| `onIncreaseClick`    | `function`      | Function to call when increase is clicked                  |
+| `decreaseDisabled`   | `boolean`       | To disable decrease button i.e. at first page of results   |
+| `increaseDisabled`   | `boolean`       | To disable decrease button i.e. at last page of results    |
+| `totalPages`         | `number|string` | Total pages of results                                     |
+
+**Reason for existing:**
+
+The PaginationApprove is used to go through pages of results and approve pages of results for the Insightpool application.
+
+**Usage:**
+
+```javascript
+import { PaginationApprove } from 'orchestra';
+
+class MyComponent extends React.Component {
+	onApprovalClick = () => {
+		console.log('approve');
+	};
+
+	onDecreaseClick = () => {
+		console.log('decrease');
+	};
+
+	onIncreaseClick = () => {
+		console.log('increase');
+	};
+
+	render() {
+		return (
+			<PaginationApprove
+				currentPage={ 5 }
+				onApprovalClick={ this.onApprovalClick }
+				onDecreaseClick={ this.onDecreaseClick }
+				onIncreaseClick={ this.onIncreaseClick }
+				totalPages={ 10 } />
+		);
+	}
+}
+```
+
+
+### `PaginationControls`
+
+* __HTML tag extended:__ `<div></div>`
+* __CSS class(es) used:__ `orch-pagination-controls`
+* __Located at__: `src/components/misc/PaginationControls.jsx`
+
+**Props:**
+
+| Name                 | Type            | Desciption                                                 |
+| ---------------------|-----------------|------------------------------------------------------------|
+| `onDecreaseClick`    | `function`      | Function to call when decrease is clicked                  |
+| `onIncreaseClick`    | `function`      | Function to call when increase is clicked                  |
+| `decreaseDisabled`   | `boolean`       | To disable decrease button i.e. at first page of results   |
+| `increaseDisabled`   | `boolean`       | To disable decrease button i.e. at last page of results    |
+
+**Reason for existing:**
+
+The PaginationControls is used to go through pages of results for the Insightpool application.
+
+**Usage:**
+
+```javascript
+import { PaginationControls } from 'orchestra';
+
+class MyComponent extends React.Component {
+	onDecreaseClick = () => {
+		console.log('decrease');
+	};
+
+	onIncreaseClick = () => {
+		console.log('increase');
+	};
+
+	render() {
+		return (
+			<PaginationControls
+				onDecreaseClick={ this.onDecreaseClick }
+				onIncreaseClick={ this.onIncreaseClick } />
 		);
 	}
 }
@@ -1611,7 +1795,46 @@ class MyComponent extends React.Component {
 		];
 
 		return (
-			<PillToggle items={ items } onClick={ onItemClick }>Hello World!</PillToggle>
+			<PillToggle
+				items={ items }
+				onClick={ onItemClick }>
+				Hello World!
+			</PillToggle>
+		);
+	}
+}
+```
+
+
+### `Stat`
+
+* __HTML tag extended:__ `<div></div>`
+* __CSS class(es) used:__ `orch-stat`
+* __Located at__: `src/components/misc/Stat.jsx`
+
+**Props:**
+
+| Name                 | Type            | Desciption                                                 |
+| ---------------------|-----------------|------------------------------------------------------------|
+| `name`               | `string`        | Name of stat                                               |
+| `number`             | `numnber|string`| Value of stat                                              |
+| `widgets`            | `array|element` | Widgets to put into statbox                                |
+
+**Reason for existing:**
+
+The Stat is used to display different stats for the Insightpool application.
+
+**Usage:**
+
+```javascript
+import { Stat } from 'orchestra';
+
+class MyComponent extends React.Component {
+	render() {
+		return (
+			<Stat
+				name='Stat'
+				number={ 100000 } />
 		);
 	}
 }
