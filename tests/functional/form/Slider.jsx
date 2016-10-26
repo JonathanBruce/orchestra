@@ -13,6 +13,7 @@ class SliderTest extends React.Component {
 
 		this.state = {
 			displayText: '',
+			disabled: false,
 			value: 1
 		};
 	}
@@ -43,8 +44,14 @@ class SliderTest extends React.Component {
 		});
 	};
 
+	onToggle = () => {
+		this.setState({
+			disabled: !this.state.disabled
+		});
+	};
+
 	render() {
-		const { displayText, value } = this.state;
+		const { disabled, displayText, value } = this.state;
 
 		return (
 			<div id='slider'>
@@ -52,6 +59,7 @@ class SliderTest extends React.Component {
 				<div id='display-text'>{ displayText }</div>
 				<Slider
 					defaultValue={ value }
+					disabled={ disabled }
 					interval={ 5 }
 					label='days'
 					max={ MAX_VALUE }
@@ -64,6 +72,7 @@ class SliderTest extends React.Component {
 					id='adjusting-value-input'
 					onChange={ this.onChangeTextInput }
 					type='text' />
+				<button id='toggle-disabled' onClick={ this.onToggle }>Toggle Disabled</button>
 			</div>
 		);
 	}

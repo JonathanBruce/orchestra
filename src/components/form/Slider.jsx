@@ -37,12 +37,11 @@ class Slider extends React.Component {
 	};
 
 	componentDidMount() {
-		const { disabled } = this.props;
+		this.registerEventListeners();
+	}
 
-		if (!disabled) {
-			document.addEventListener('mouseup', this.handleDragEnd);
-			document.addEventListener('mousemove', this.handleDragChange);
-		}
+	componentDidUpdate() {
+		this.registerEventListeners();
 	}
 
 	componentWillUnmount() {
@@ -58,9 +57,30 @@ class Slider extends React.Component {
 	constructor(props) {
 		super(props);
 
+		this.eventsAdded = false;
 		this.state = {
 			drag: false
 		};
+	}
+
+	/**
+	 * Make sure to switch on and off event listeners based on disabled state of the property
+	 */
+	registerEventListeners() {
+		const { disabled } = this.props;
+
+		if (!disabled && !this.eventsAdded) {
+			this.eventsAdded = true;
+
+			document.addEventListener('mouseup', this.handleDragEnd);
+			document.addEventListener('mousemove', this.handleDragChange);
+		}
+		else if (disabled && this.eventsAdded) {
+			this.eventsAdded = false;
+
+			document.removeEventListener('mouseup', this.handleDragEnd);
+			document.removeEventListener('mousemove', this.handleDragChange);
+		}
 	}
 
 	/**

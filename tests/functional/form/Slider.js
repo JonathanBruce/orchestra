@@ -83,6 +83,44 @@ define([
 				.then(function(position) {
 					assert.closeTo(position.x, 150, 1, 'position should reflect the changed values');
 				});
+		},
+		'it should be able to switch event listeners on and off when disabled state is changed': function() {
+			return this.remote.get(require.toUrl(url))
+				.findById('toggle-disabled')
+					.click()
+				.end()
+				.findById('slider')
+					.findByClassName('slider')
+						.moveMouseTo(0, 0)
+						.pressMouseButton()
+						.moveMouseTo(20, 0)
+						.releaseMouseButton()
+						.end()
+					.end()
+				.end()
+				.findById('display-text')
+					.getVisibleText()
+					.then(function(value) {
+						assert.equal(value, '', 'value should not have been set at all');
+					})
+				.end()
+				.findById('toggle-disabled')
+					.click()
+				.end()
+				.findById('slider')
+					.findByClassName('slider')
+						.moveMouseTo(0, 0)
+						.pressMouseButton()
+						.moveMouseTo(20, 0)
+						.releaseMouseButton()
+						.end()
+					.end()
+				.end()
+				.findById('display-text')
+				.getVisibleText()
+				.then(function(value) {
+					assert.equal(value, 'Released at 5', 'value should match corresponding to the position of the slider');
+				});
 		}
 	});
 });
