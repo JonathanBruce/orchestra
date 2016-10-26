@@ -162,9 +162,9 @@ class Slider extends React.Component {
 		switch (eventType) {
 			case SLIDER.DRAG_END:
 			case SLIDER.INPUT_END:
-				return onDragEnd(numValue);
+				return onDragEnd && onDragEnd(numValue);
 			case SLIDER.DRAG_START:
-				changeEvent = onDragStart;
+				changeEvent = onDragStart || onDragChange;
 				break;
 			default:
 				changeEvent = onDragChange;
