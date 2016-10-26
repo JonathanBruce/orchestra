@@ -25,8 +25,10 @@ export function scrollBottom(elem, action) {
  * @return {object}         X & Y Coordinate relative to the top left corner of the element
  */
 export function getRelativeCursorPosition(event, element) {
-	const mouseX = event.pageX - element.offsetLeft;
-	const mouseY = event.pageY - element.offsetTop;
+	const elementCoordinates = element.getBoundingClientRect();
+	const { left, top } = elementCoordinates;
+	const mouseX = event.clientX - left;
+	const mouseY = event.clientY - top;
 	const { clientWidth, clientHeight } = element;
 	const coordinate = {
 		x: mouseX,
