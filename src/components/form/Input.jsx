@@ -1,6 +1,8 @@
 /* global React */
 
 import classnames from 'classnames';
+import INPUT from 'constants/INPUT';
+import { isFunction } from 'lib/core';
 
 class Input extends React.Component {
 	static propTypes = {
@@ -8,6 +10,8 @@ class Input extends React.Component {
 		disabled: React.PropTypes.bool,
 		error: React.PropTypes.bool,
 		icon: React.PropTypes.element,
+		onBlur: React.PropTypes.func,
+		onFocus: React.PropTypes.func,
 		placeholder: React.PropTypes.string,
 		type: React.PropTypes.string.isRequired
 	};
@@ -31,11 +35,24 @@ class Input extends React.Component {
 
 	/**
 	 * Toggles local focus state
+	 * @param {object} event Synthetic Event Object
 	 */
-	toggleFocus = () => {
+	toggleFocus = (event) => {
+		const { onBlur, onFocus } = this.props;
+		const { type } = event;
+
 		this.setState({
 			focus: !this.state.focus
 		});
+
+		switch (type) {
+			case INPUT.FOCUS:
+				return isFunction(onFocus) && onFocus(event);
+			case INPUT.BLUR:
+				return isFunction(onBlur) && onBlur(event);
+			default:
+				break;
+		}
 	};
 
 	render() {
