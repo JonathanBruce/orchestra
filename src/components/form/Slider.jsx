@@ -151,10 +151,10 @@ class Slider extends React.Component {
 	handleInputEvent = (eventType, event) => {
 		const { keyCode, which, target } = event;
 		const keycode = keyCode || which;
-		const { blur, value } = target;
+		const { value } = target;
 
 		if (keycode === 13) {
-			blur();
+			target.blur();
 		}
 		else {
 			this.handleChangeEvent(value, eventType);
@@ -247,7 +247,7 @@ class Slider extends React.Component {
 						disabled={ disabled }
 						onBlur={ !disabled && this.handleInputEvent.bind(this, SLIDER.INPUT_END) }
 						onChange={ !disabled && this.handleInputEvent.bind(this, SLIDER.INPUT_CHANGE) }
-						onKeypress={ !disabled && this.handleInputEvent.bind(this, SLIDER.INPUT_KEYPRESS) }
+						onKeyUp={ !disabled && this.handleInputEvent.bind(this, SLIDER.INPUT_KEYPRESS) }
 						type='text'
 						value={ defaultValue.toString() } />
 					<label>{ label }</label>
