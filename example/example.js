@@ -215,15 +215,15 @@ class Example extends React.Component {
 					</Three>
 
 					<Four>
-						<MarketingFullPrimaryButton disabled>Marketing Primary</MarketingFullPrimaryButton>
+						<MarketingFullPrimaryButton>Marketing Primary</MarketingFullPrimaryButton>
 					</Four>
 
 					<Four>
-						<MarketingFullSecondaryButton disabled>Marketing Secondary</MarketingFullSecondaryButton>
+						<MarketingFullSecondaryButton>Marketing Secondary</MarketingFullSecondaryButton>
 					</Four>
 
 					<Two>
-						<MarketingPartialPrimaryButton disabled>MKT Part.</MarketingPartialPrimaryButton>
+						<MarketingPartialPrimaryButton>MKT Part.</MarketingPartialPrimaryButton>
 					</Two>
 
 					<Three>

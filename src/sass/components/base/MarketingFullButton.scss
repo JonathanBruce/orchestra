@@ -2,12 +2,13 @@
 	@include shadow();
 
 	border: 0px !important;
+	font-family: $raleway-bold;
 	font-size: 26px;
 	padding: 20px 0px;
 	text-transform: uppercase;
 	width: 380px;
 
-	&.disabled {
+	&:disabled {
 		@include disabled();
 	}
 }

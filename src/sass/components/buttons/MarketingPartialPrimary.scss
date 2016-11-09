@@ -2,10 +2,6 @@ button {
 	&.orch-marketing-partial {
 		&.primary {
 			@include marketingPartialPrimary();
-
-			font-size: 19px;
-			padding: 14px 0px;
-			width: 140px;
 		}
 	}
 }
