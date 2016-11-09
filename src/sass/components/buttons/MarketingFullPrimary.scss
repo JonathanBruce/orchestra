@@ -1,0 +1,7 @@
+button {
+	&.orch-marketing-full {
+		&.primary {
+			@include marketingFullPrimary();
+		}
+	}
+}

@@ -12,6 +12,7 @@ import {
 	Container,
 	Content,
 	FemaleButton,
+	Four,
 	FullPrimaryButton,
 	FullSecondaryButton,
 	FullTertiaryButton,
@@ -19,6 +20,9 @@ import {
 	Input,
 	LinksSubHeader,
 	MaleButton,
+	MarketingFullPrimaryButton,
+	MarketingFullSecondaryButton,
+	MarketingPartialPrimaryButton,
 	PaginationApprove,
 	PaginationControls,
 	PartialPrimaryButton,
@@ -39,7 +43,8 @@ import {
 	TertiaryPositiveButton,
 	Three,
 	TitleSubHeader,
-	Twelve
+	Twelve,
+	Two
 } from '../src/ui';
 
 class Example extends React.Component {
@@ -208,6 +213,18 @@ class Example extends React.Component {
 					<Three>
 						<TertiaryPositiveButton disabled><Icons.GoBack /></TertiaryPositiveButton>
 					</Three>
+
+					<Four>
+						<MarketingFullPrimaryButton disabled>Marketing Primary</MarketingFullPrimaryButton>
+					</Four>
+
+					<Four>
+						<MarketingFullSecondaryButton disabled>Marketing Secondary</MarketingFullSecondaryButton>
+					</Four>
+
+					<Two>
+						<MarketingPartialPrimaryButton disabled>MKT Part.</MarketingPartialPrimaryButton>
+					</Two>
 
 					<Three>
 						<DropDown
@@ -413,20 +430,6 @@ class Example extends React.Component {
 							}
 							decreaseDisabled={ false }
 							increaseDisabled={ false } />
-
-						<PaginationControls
-							onDecreaseClick={
-								() => {
-									console.log('decreasing');
-								}
-							}
-							onIncreaseClick={
-								() => {
-									console.log('increasing');
-								}
-							}
-							decreaseDisabled={ true }
-							increaseDisabled={ true } />
 					</Three>
 
 					<Three>

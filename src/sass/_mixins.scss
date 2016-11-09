@@ -133,6 +133,14 @@
 	color: #{$color};
 }
 
+@mixin goldenRodDarkWrapper($background-color: $pure-white, $color: $pure-white, $border-radius: 3px, $box-sizing: 'border-box') {
+	@include border($radius: #{$border-radius});
+	background-color: #{$background-color};
+	border-color: $goldenrod-dark;
+	box-sizing: #{$box-sizing};
+	color: #{$color};
+}
+
 @mixin ipBlueWrapper($background-color: $pure-white, $color: $dusk-blue, $border-radius: 3px, $box-sizing: 'border-box') {
 	@include border($radius: #{$border-radius});
 	background-color: #{$background-color};
@@ -311,6 +319,34 @@
 		path {
 			stroke: $IP-blue;
 		}
+	}
+}
+
+/**
+ * Marketing buttons
+ */
+
+@mixin marketingFullPrimary {
+	@include goldenRodDarkWrapper($goldenrod-dark);
+
+	&:hover {
+		background-color: $pumpkin;
+	}
+}
+
+@mixin marketingFullSecondary {
+	@include duskBlueDarkWrapper($dusk-blue-dark, $pure-white);
+
+	&:hover {
+		background-color: $dusk-blue;
+	}
+}
+
+@mixin marketingPartialPrimary {
+	@include ipBlueWrapper($IP-blue, $pure-white);
+
+	&:hover {
+		background-color: $IP-blue-dark;
 	}
 }
 

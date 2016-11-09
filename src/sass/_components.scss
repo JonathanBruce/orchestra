@@ -3,6 +3,8 @@
  */
 
 @import './components/base/FullButton.scss';
+@import './components/base/MarketingFullButton.scss';
+@import './components/base/MarketingPartialButton.scss';
 @import './components/base/PartialButton.scss';
 @import './components/base/PrimaryButton.scss';
 @import './components/base/SecondaryButton.scss';
@@ -19,6 +21,9 @@
 @import './components/buttons/FullPrimary.scss';
 @import './components/buttons/FullSecondary.scss';
 @import './components/buttons/FullTertiary.scss';
+@import './components/buttons/MarketingFullPrimary.scss';
+@import './components/buttons/MarketingFullSecondary.scss';
+@import './components/buttons/MarketingPartialPrimary.scss';
 @import './components/buttons/PartialPrimary.scss';
 @import './components/buttons/PartialSecondary.scss';
 @import './components/buttons/PartialTertiary.scss';
