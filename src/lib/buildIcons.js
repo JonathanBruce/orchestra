@@ -78,7 +78,8 @@ function buildIcons() {
 
 				className = capitalize(className ? className : file).replace('.svg', '');
 
-				const svg = data.toString().replace(/"/g, '\'');
+
+				const svg = data.toString().replace(/mask=".*?"/g, '').replace(/"/g, '\'');
 				const svgProcessed = svgPostProcessing(svg);
 				const classDefinition = buildClassDefinition(className, svgProcessed);
 

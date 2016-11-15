@@ -11,7 +11,7 @@ class CheckBox extends React.Component {
 		onClick: React.PropTypes.func.isRequired
 	};
 
-	onInputChange = () => {
+	onInputChange = (event) => {
 		const {
 			checked,
 			disabled,
@@ -19,7 +19,7 @@ class CheckBox extends React.Component {
 		} = this.props;
 
 		if (!disabled) {
-			onClick(checked || false);
+			onClick(checked || false, event);
 		}
 	};
 
@@ -40,7 +40,7 @@ class CheckBox extends React.Component {
 				<div className={ checkboxClassnames }>
 					<input checked={ checked }
 						disabled={ disabled }
-						onChange={ this.onInputChange }
+						onClick={ this.onInputChange }
 						ref='input'
 						type='checkbox' />
 					{ checked && <Checkmark onClick={ this.onInputChange } /> }

@@ -11,6 +11,13 @@ class CheckBoxTest extends React.Component {
 		this.onCheckBoxChange(disabledText, bool);
 	};
 
+	onEventCheckboxChange = (bool, event) => {
+		const eventText = this.refs[ 'event-text' ];
+		const eventType = event.type;
+
+		this.onCheckBoxChange(eventText, eventType);
+	}
+
 	onCheckedCheckboxChange = (bool) => {
 		const enabledText = this.refs[ 'checked-text' ];
 
@@ -47,6 +54,12 @@ class CheckBoxTest extends React.Component {
 				<div id='enabled-checkbox-unchecked'>
 					<div className='unchecked-text' ref='unchecked-text'></div>
 					<CheckBox onClick={ this.onUncheckedCheckboxChange }
+						label='Option A' />
+				</div>
+
+				<div id='event-checkbox-unchecked'>
+					<div className='unchecked-text' ref='event-text'></div>
+					<CheckBox onClick={ this.onEventCheckboxChange }
 						label='Option A' />
 				</div>
 			</div>

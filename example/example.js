@@ -17,12 +17,14 @@ import {
 	FullSecondaryButton,
 	FullTertiaryButton,
 	Icons,
+	Influencer,
 	Input,
 	LinksSubHeader,
 	MaleButton,
 	MarketingFullPrimaryButton,
 	MarketingFullSecondaryButton,
 	MarketingPartialPrimaryButton,
+	Nine,
 	PaginationApprove,
 	PaginationControls,
 	PartialPrimaryButton,
@@ -553,6 +555,119 @@ class Example extends React.Component {
 							name='Total People Engaged'
 							number={ '5,000,000' } />
 					</Six>
+
+					<Nine>
+						<Influencer biography='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+							followers='20K'
+							image='https://pbs.twimg.com/profile_images/569378815747444736/eIKjs6QX_normal.jpeg'
+							name='Jack McGlinchey'
+							location='Atlanta, Ga'
+							profiles={
+								[
+									{ type: 'aboutme', url: 'http://www.google.com' },
+									{ type: 'academiaedu' },
+									{ type: 'amplify' },
+									{ type: 'angellist' },
+									{ type: 'aolchat' },
+									{ type: 'bandcamp' },
+									{ type: 'bebo' },
+									{ type: 'behance' },
+									{ type: 'bitbucket' },
+									{ type: 'blipfm' },
+									{ type: 'blippy' },
+									{ type: 'blogger' },
+									{ type: 'crunchbase' },
+									{ type: 'dandyid' },
+									{ type: 'delicious' },
+									{ type: 'deviantart' },
+									{ type: 'diigo' },
+									{ type: 'digg' },
+									{ type: 'disqus' },
+									{ type: 'doyoubuzz' },
+									{ type: 'dribbble' },
+									{ type: 'econsultancy' },
+									{ type: 'facebook' },
+									{ type: 'favorsme' },
+									{ type: 'flickr' },
+									{ type: 'foursquare' },
+									{ type: 'friendfeed' },
+									{ type: 'friendster' },
+									{ type: 'gdgt' },
+									{ type: 'getglue' },
+									{ type: 'getsatisfaction' },
+									{ type: 'gist' },
+									{ type: 'github' },
+									{ type: 'goodreads' },
+									{ type: 'google' },
+									{ type: 'gravatar' },
+									{ type: 'hackernews' },
+									{ type: 'hi5' },
+									{ type: 'hunch' },
+									{ type: 'hypemachine' },
+									{ type: 'hyves' },
+									{ type: 'icqchat' },
+									{ type: 'identica' },
+									{ type: 'imdb' },
+									{ type: 'instagram' },
+									{ type: 'intensedebate' },
+									{ type: 'ircchat' },
+									{ type: 'klout' },
+									{ type: 'lanyrd' },
+									{ type: 'lastfm' },
+									{ type: 'linkedin' },
+									{ type: 'livejournal' },
+									{ type: 'meadiciona' },
+									{ type: 'mixcloud' },
+									{ type: 'meetup' },
+									{ type: 'mixi' },
+									{ type: 'myspace' },
+									{ type: 'ohloh' },
+									{ type: 'orkut' },
+									{ type: 'pandora' },
+									{ type: 'picasa' },
+									{ type: 'pinboard' },
+									{ type: 'pinterest' },
+									{ type: 'plancast' },
+									{ type: 'plaxo' },
+									{ type: 'plurk' },
+									{ type: 'quora' },
+									{ type: 'qik' },
+									{ type: 'reddit' },
+									{ type: 'ren' },
+									{ type: 'reverbnation' },
+									{ type: 'scribd' },
+									{ type: 'shelfari' },
+									{ type: 'skype' },
+									{ type: 'slideshare' },
+									{ type: 'smugmug' },
+									{ type: 'soundcloud' },
+									{ type: 'stackexchange' },
+									{ type: 'stackoverflow' },
+									{ type: 'steam' },
+									{ type: 'stumbleupon' },
+									{ type: 'tagged' },
+									{ type: 'tripit' },
+									{ type: 'tumblr' },
+									{ type: 'twitter' },
+									{ type: 'twitter_ads' },
+									{ type: 'typepad' },
+									{ type: 'vk' },
+									{ type: 'weibo' },
+									{ type: 'wordpress' },
+									{ type: 'vimeo' },
+									{ type: 'yelp' },
+									{ type: 'xing' },
+									{ type: 'youtube' }
+								]
+							}
+							relevance={ 8 }
+							resonance={ 10 } 
+							topics={
+								[ 'football', 'braves', 'baseball and something long', 'insightpool' ]
+							}
+							topicPrefix='#'
+							twitterHandle='something' />
+					</Nine>
 				</Container>
 			</div>
 		);

@@ -66,6 +66,24 @@ define([
 				.then(function (value) {
 					assert.equal(value, 'false', 'values should be equal');
 				});
+		},
+
+		'it should be able to get the event from an unchecked checkbox': function () {
+			return this.remote.get(require.toUrl(url))
+				.findById('event-checkbox-unchecked')
+					.findByClassName('orch-checkbox')
+						.findByClassName('checkbox')
+							.findByTagName('input')
+								.click()
+								.end()
+						.end()
+					.end()
+				.findByClassName('unchecked-text')
+				.getVisibleText()
+				.then(function (value) {
+					assert.equal(value, 'change', 'values should be equal');
+				});
+
 		}
 	});
 });

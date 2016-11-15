@@ -1,0 +1,148 @@
+.orch-influencer {
+	@include border(2px, $arctic-blue-dark, 3px);
+
+	box-sizing: border-box;
+	height: 200px;
+	padding: 18px 50px;
+	width: 880px;
+
+	.influencer,
+	.ip {
+		display: inline-block;
+		float: left;
+		width: 50%;
+	}
+
+	.influencer {
+		.biography {
+			color: $dusk-blue;
+			float: left;
+			font-family: $lato-regular;
+			font-size: 12px;
+			line-height: 17px;
+			margin-top: 15px;
+			padding-right: 30px;
+			text-align: justify;
+
+			.icon,
+			.text {
+				float: left;
+				display: inline-block;
+			}
+
+			.text {
+				padding-left: 15px;
+				width: 89%;
+			}
+		}
+
+		.orch-avatar {
+			float: left;
+			margin-right: 15px;
+		}
+
+		.details {
+			.location {
+				color: $steel-blue;
+				font-family: $lato-regular;
+				font-size: 14px;
+			}
+
+			.name {
+				color: $dusk-blue-dark;
+				font-family: $lato-bold;
+				font-size: 22px;
+			}
+		}
+
+		.social-profiles {
+			margin-top: 10px;
+
+			svg {
+				margin-right: 10px;
+			}
+		}
+	}
+
+	.ip {
+		.klout-topics,
+		.scores {
+			float: right;
+			width: 100%;
+		}
+
+		.scores {
+			height: 45px;
+			margin-bottom: 7px;
+
+			.followers,
+			.relevance,
+			.resonance {
+				border-right: 2px solid $arctic-blue-dark;
+				display: inline-block;
+				float: left;
+				font-family: $lato-bold;
+				font-size: 22px;
+				height: inherit;
+				padding: 0px 21px;
+				text-align: center;
+
+				&:last-child {
+					border-right: none;
+				}
+
+				span {
+					color: $steel-blue;
+					font-size: 8px;
+					letter-spacing: 3px;
+					position: relative;
+					text-transform: uppercase;
+					top: -14px;
+				}
+			}
+
+			.followers {
+				.value {
+					color: $IP-blue;
+				}
+			}
+
+			.relevance,
+			.resonance {
+				.value {
+					color: $dusk-blue;
+				}
+			}
+		}
+
+		.klout-topics {
+			height: 108px;
+
+			.title {
+				color: $steel-blue;
+				font-family: $lato-regular;
+				font-size: 12px;
+				letter-spacing: 3px;
+				margin-bottom: 15px;
+				text-transform: uppercase;
+				width: 100%;
+			}
+
+			.topic {
+				@include border(2px, $arctic-blue-dark, 3px);
+
+				color: $dusk-blue;
+				float: left;
+				font-family: $lato-regular;
+				font-size: 12px;
+				display: inline-block;
+				margin-bottom: 10px;
+				margin-right: 10px;
+				padding-bottom: 7px;
+				padding-top: 4px;
+				text-align: center;
+				width: 115px;
+			}
+		}
+	}
+}

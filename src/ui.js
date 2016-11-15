@@ -80,6 +80,7 @@ export TitleSubHeader from 'components/headers/TitleSubHeader.jsx';
 export Alert from 'components/misc/Alert.jsx';
 export Avatar from 'components/misc/Avatar.jsx';
 export Content from 'components/misc/Content.jsx';
+export Influencer from 'components/misc/Influencer.jsx';
 export PaginationApprove from 'components/misc/PaginationApprove.jsx';
 export PaginationControls from 'components/misc/PaginationControls.jsx';
 export PillToggle from 'components/misc/PillToggle.jsx';
