@@ -1,4 +1,10 @@
 /**
+ * Import Spinkit
+ */
+
+@import '../../node_modules/spinkit/scss/spinners/5-pulse';
+
+/**
  * Import base component styles
  */
 
@@ -52,6 +58,12 @@
 
 @import './components/headers/LinksSubHeader.scss';
 @import './components/headers/TitleSubHeader.scss';
+
+/**
+ * Import loaders component styles
+ */
+
+@import './components/loaders/Pulse.scss';
 
 /**
  * Import misc component styles

@@ -74,6 +74,12 @@ export LinksSubHeader from 'components/headers/LinksSubHeader.jsx';
 export TitleSubHeader from 'components/headers/TitleSubHeader.jsx';
 
 /**
+ * Export loader components
+ */
+
+export PulseLoader from 'components/loaders/Pulse.jsx';
+
+/**
  * Export misc components
  */
 

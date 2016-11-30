@@ -34,6 +34,7 @@ import {
 	PrimaryNegativeButton,
 	PrimaryNeutralButton,
 	PrimaryPositiveButton,
+	PulseLoader,
 	SecondaryNeutralButton,
 	SecondaryPositiveButton,
 	Six,
@@ -668,6 +669,10 @@ class Example extends React.Component {
 							topicPrefix='#'
 							twitterHandle='something' />
 					</Nine>
+
+					<Three>
+						<PulseLoader size={ 100 } />
+					</Three>
 				</Container>
 			</div>
 		);
