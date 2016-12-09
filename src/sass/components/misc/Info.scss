@@ -1,0 +1,62 @@
+.orch-info {
+	position: absolute;
+
+	.icon {
+		cursor: pointer;
+
+		svg {
+			&:hover {
+				ellipse {
+					stroke: $dusk-blue;
+				}
+
+				text {
+					fill: $dusk-blue;
+				}
+
+				&.open {
+					ellipse {
+						fill: $arctic-blue-dark;
+					}
+				}
+			}
+
+			text {
+				font-family: $lato-bold;
+				font-size: 16px;
+			}
+		}
+	}
+
+	.tooltip {
+		@include shadow($spread: 1px);
+
+		background-color: $pure-white;
+		display: block;
+		font-family: $lato-regular;
+		height: 250px;
+		left: 0px;
+		padding: 20px 15px;
+		position: absolute;
+		top: 25px;
+		width: 250px;
+		z-index: 3;
+
+		.title {
+			color: $steel-blue;
+			font-size: 12px;
+			letter-spacing: 3px;
+			padding-bottom: 10px;
+			text-transform: uppercase;
+		}
+
+		.value {
+			color: $dusk-blue;
+			font-size: 14px;
+		}
+
+		> div {
+			display: block;
+		}
+	}
+}

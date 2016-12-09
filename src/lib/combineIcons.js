@@ -24,11 +24,13 @@ function combineIcons() {
 		let exportsStr = '';
 
 		for (const file of files) {
-			const component = file.replace('.jsx', '');
-			const importStatement = buildImportStatement(component, file);
+			if (file !== '_all.js') {
+				const component = file.replace('.jsx', '');
+				const importStatement = buildImportStatement(component, file);
 
-			importsStr += `${importStatement}\n`;
-			exportsStr += `	${component},\n`;
+				importsStr += `${importStatement}\n`;
+				exportsStr += `	${component},\n`;
+			}
 		}
 
 		const lastComma = exportsStr.lastIndexOf(',');

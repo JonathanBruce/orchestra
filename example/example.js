@@ -12,6 +12,7 @@ import {
 	Container,
 	Content,
 	FemaleButton,
+	FilterBox,
 	Four,
 	FullPrimaryButton,
 	FullSecondaryButton,
@@ -554,11 +555,9 @@ class Example extends React.Component {
 							} />
 					</Three>
 
-					<Six>
-						<Stat
-							name='Total People Engaged'
-							number={ '5,000,000' } />
-					</Six>
+					<Three>
+						<PulseLoader size={ 100 } />
+					</Three>
 
 					<Nine>
 						<Influencer
@@ -581,7 +580,7 @@ class Example extends React.Component {
 								]
 							}
 							relevance={ 8 }
-							resonance={ 10 } 
+							resonance={ 10 }
 							topics={
 								[ 'football', 'braves', 'baseball and something long', 'insightpool' ]
 							}
@@ -589,9 +588,11 @@ class Example extends React.Component {
 							twitterHandle='something' />
 					</Nine>
 
-					<Three>
-						<PulseLoader size={ 100 } />
-					</Three>
+					<Six>
+						<Stat
+							name='Total People Engaged'
+							number={ '5,000,000' } />
+					</Six>
 
 					<Three>
 						<KeywordTag
@@ -605,7 +606,7 @@ class Example extends React.Component {
 								(tag) => {
 									console.log(tag);
 								}
-							} 
+							}
 							defaultValue='Some value' />
 
 						<KeywordTag
@@ -698,7 +699,7 @@ class Example extends React.Component {
 								(tag) => {
 									console.log(tag);
 								}
-							} 
+							}
 							defaultValue='Some value' />
 
 						<KeywordTag
@@ -707,7 +708,7 @@ class Example extends React.Component {
 								(tag) => {
 									console.log(tag);
 								}
-							} 
+							}
 							defaultValue='Some value' />
 
 						<KeywordTag
@@ -715,7 +716,7 @@ class Example extends React.Component {
 							onNetworkChange={
 								(network) => {
 									console.log(network);
-								}	
+								}
 							}
 							requirement={ REQUIREMENTS.NORMAL }
 							onRequirementChange={
@@ -730,7 +731,7 @@ class Example extends React.Component {
 							onNetworkChange={
 								(network) => {
 									console.log(network);
-								}	
+								}
 							}
 							openRequirement={ true }
 							requirement={ REQUIREMENTS.NORMAL }
@@ -740,6 +741,42 @@ class Example extends React.Component {
 								}
 							}
 							defaultValue='Some value' />
+					</Three>
+
+					<Three>
+						<FilterBox
+							onWidgetToggle={
+								() => {
+									console.log('toggled widget');
+								}
+							}
+							title={ 'Influencers Of' }
+							titleIcon={ <Icons.Instagram /> }
+							tooltipTitle={ 'Info Title' }
+							tooltipValue={ 'This is Information' }
+							widget={ <div>Widget Content</div> }
+							widgetIcon={ <Icons.Search /> }
+							widgetOpen={ false }>
+							<div>Content 1</div>
+							<div>Content 2</div>
+						</FilterBox>
+
+						<FilterBox
+							onWidgetToggle={
+								() => {
+									console.log('toggled widget');
+								}
+							}
+							title={ 'Bio Topic' }
+							titleIcon={ <Icons.Instagram /> }
+							tooltipTitle={ 'Info Title' }
+							tooltipValue={ 'This is Information' }
+							widget={ <div>Widget Content</div> }
+							widgetIcon={ <Icons.Search /> }
+							widgetOpen={ true }>
+							<div>Content 1</div>
+							<div>Content 2</div>
+						</FilterBox>
 					</Three>
 				</Container>
 			</div>

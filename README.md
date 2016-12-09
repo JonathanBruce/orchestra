@@ -55,12 +55,14 @@
   * [Miscellaneous](#miscellaneous)
     * [`Avatar`](#avatar)
     * [`Content`](#content)
+    * [`Info`](#info)
     * [`PaginationApprove`](#paginationapprove)
     * [`PaginationControls`](#paginationcontrols)
     * [`PillToggle`](#pilltoggle)
     * [`Stat`](#stat)
   * [Search](#search)
     * [`KeywordTag`](#keywordtag)
+    * [`FilterBox`](#filterbox)
 * [Commands](#commands)
 * [Contributing](#contributing)
 
@@ -1644,6 +1646,40 @@ class MyComponent extends React.Component {
 ```
 
 
+### `Info`
+
+* __HTML tag extended:__ `<div></div>`
+* __CSS class(es) used:__ `orch-info`
+* __Located at__: `src/components/misc/Info.jsx`
+
+**Props:**
+
+| Name              | Type          | Desciption                                    |
+| ------------------|---------------| ----------------------------------------------|
+| `title`           | `string`      | Title of the tooltip                          |
+| `value`           | `string`      | String content to be rendered                 |
+
+**Reason for existing:**
+
+This component is used for displaying a toggleable information tooltip
+
+**Usage:**
+
+```javascript
+import { Info } from 'orchestra';
+
+class MyComponent extends React.Component {
+	render() {
+		return (
+			<Info
+				title={ 'Tooltip' }
+				value={ 'This is an information window' } />
+		);
+	}
+}
+```
+
+
 ### `PaginationApprove`
 
 * __HTML tag extended:__ `<div></div>`
@@ -1901,6 +1937,67 @@ class MyComponent extends React.Component {
 	}
 }
 ```
+### `FilterBox`
+
+* __HTML tag extended:__ `<div></div>`
+* __CSS class(es) used:__ `orch-filter-box`
+* __Located at__: `src/components/search/FilterBox.jsx`
+
+**Props:**
+
+| Name              | Type          | Desciption                                    |
+| ------------------|---------------| ----------------------------------------------|
+| `children`        | `element`     | Dynamic content to be rendered                |
+| `onWidgetToggle`  | `function`    | Action to fire when expand is selected        |
+| `title`           | `string`      | Title of the filter box                       |
+| `titleIcon`       | `element`     | Optional filter box title icon                |
+| `tooltipTitle`    | `element`     | Optional tooltip title                        |
+| `tooltipValue`    | `element`     | Optional tooltip value                        |
+| `widget`          | `object`      | Flyout widget                                 |
+| `widgetIcon`      | `object`      | Icon for for the expand button                |
+| `widgetOpen`      | `boolean`     | Represents whether the flyout is expanded     |
+
+**Default Props:**
+
+| Name              | Default Value      |
+| ------------------|--------------------|
+| `widgetIcon`      | <Icons.Search />   |
+
+**Reason for existing:**
+
+This component is used for containing an expanding list of filters or other dynamic content, and supports an optional info tooltip and toggleable widget component.
+
+**Usage:**
+
+```javascript
+import { FilterBox, Icons } from 'orchestra';
+
+class MyComponent extends React.Component {
+	toggleSearchOverlay = () => {
+		// ...
+	}
+
+	render() {
+		return (
+			<FilterBox
+				info={ 'This is a description of the filter topics' }
+				title='Filter Topics'
+				titleIcon={ <Icons.Instagram /> }
+				tooltipTitle={ 'Tooltip Title' }
+				tooltipValue={ 'Descriptive Instructions' }
+				widget={ <SearchOverlay /> }
+				widgetIcon={ <Icons.Search /> }
+				widgetOpen={ true }
+				widgetToggle={ this.toggleSearchOverlay }>
+				{ this.props.children }
+			</FilterBox>
+		);
+	}
+}
+```
+
+
+
 # Commands
 
 Orchestra comes with a plethora of commands for you to use in conjunction with npm.

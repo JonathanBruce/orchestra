@@ -70,6 +70,7 @@ The following describes all of the miscellaneous components available for use in
 
 #include "./docs/api/misc/avatar.md"
 #include "./docs/api/misc/content.md"
+#include "./docs/api/misc/info.md"
 #include "./docs/api/misc/pagination_approve.md"
 #include "./docs/api/misc/pagination_controls.md"
 #include "./docs/api/misc/pill_toggle.md"
@@ -80,3 +81,4 @@ The following describes all of the miscellaneous components available for use in
 The following describes all of the search components available for use in Orchestra.
 
 #include "./docs/api/search/keyword_tag.md"
+#include "./docs/api/search/filter_box.md"

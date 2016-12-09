@@ -75,6 +75,12 @@ export LinksSubHeader from 'components/headers/LinksSubHeader.jsx';
 export TitleSubHeader from 'components/headers/TitleSubHeader.jsx';
 
 /**
+ * Export search components
+ */
+
+export FilterBox from 'components/search/FilterBox.jsx';
+
+/**
  * Export loader components
  */
 
@@ -87,6 +93,7 @@ export PulseLoader from 'components/loaders/Pulse.jsx';
 export Alert from 'components/misc/Alert.jsx';
 export Avatar from 'components/misc/Avatar.jsx';
 export Content from 'components/misc/Content.jsx';
+export Info from 'components/misc/Info.jsx';
 export Influencer from 'components/misc/Influencer.jsx';
 export PaginationApprove from 'components/misc/PaginationApprove.jsx';
 export PaginationControls from 'components/misc/PaginationControls.jsx';
