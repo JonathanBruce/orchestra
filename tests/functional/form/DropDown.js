@@ -17,7 +17,7 @@ define([
 						.findByClassName('selector')
 							.click()
 						.end()
-					.findByClassName('list')
+					.findByClassName('orch-menu')
 					.catch(function (value) {
 						assert.typeOf(value, 'error', 'error should be thrown');
 					});
@@ -30,7 +30,7 @@ define([
 						.findByClassName('selector')
 							.click()
 						.end()
-						.findByClassName('list')
+						.findByClassName('orch-menu')
 							.findByClassName('options')
 								.findByCssSelector('div:last-child')
 									.click()
@@ -49,14 +49,14 @@ define([
 			return this.remote.get(require.toUrl(url))
 				.findById('enabled-dropdown')
 					.findByClassName('orch-dropdown')
-						.findByClassName('list')
+						.findByClassName('orch-menu')
 							.click()
 							.end(3)
 				.findByTagName('body')
 					.click()
 					.end()
 				.findByClassName('enabled-dropdown')
-					.findByClassName('list')
+					.findByClassName('orch-menu')
 					.catch(function (value) {
 						assert.typeOf(value, 'error', 'error should be thrown');
 					});

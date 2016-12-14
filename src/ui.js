@@ -5,6 +5,7 @@ import 'sass/ui.scss';
  */
 
 export APP from 'constants/APP';
+export { REQUIREMENTS, SUPPORTED_NETWORKS } from 'constants/KEYWORD_TAGS';
 
 /**
  * Export icons
@@ -91,3 +92,9 @@ export PaginationApprove from 'components/misc/PaginationApprove.jsx';
 export PaginationControls from 'components/misc/PaginationControls.jsx';
 export PillToggle from 'components/misc/PillToggle.jsx';
 export Stat from 'components/misc/Stat.jsx';
+
+/**
+ * Export search components
+ */
+
+export KeywordTag from 'components/search/KeywordTag.jsx';

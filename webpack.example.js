@@ -7,12 +7,14 @@ var sourceDir = path.join(__dirname, '/src');
 var examplesDir = path.join(__dirname, '/example');
 
 module.exports = {
+	devtool: 'inline-source-map',
 	entry: path.join(examplesDir, 'example.js'),
 
 	output: {
 		path: examplesDir,
 		filename: 'example.build.js'
 	},
+
 	postcss: [ autoprefixer ],
 
 	module: {

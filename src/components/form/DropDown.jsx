@@ -2,6 +2,7 @@
 
 import classnames from 'classnames';
 import Icons from 'icons/_all';
+import Menu from './Menu.jsx';
 
 class DropDown extends React.Component {
 	static propTypes = {
@@ -31,10 +32,10 @@ class DropDown extends React.Component {
 	 */
 	hideList = (event) => {
 		const { active, onToggle } = this.props;
-		const { options } = this.refs;
+		const { menu } = this.refs;
 		const { target } = event;
 
-		if (options && !options.contains(target) && active) {
+		if (menu && !menu.contains(target) && active) {
 			onToggle();
 			document.body.removeEventListener('click', this.hideList);
 		}
@@ -65,31 +66,6 @@ class DropDown extends React.Component {
 	}
 
 	/**
-	 * Render options for dropdown
-	 * @returns {ReactElement} ReactElement
-	 */
-	renderDropDownOptions = () => {
-		const { options } = this.props;
-		const className = classnames('options', {
-			scrollbar: options.length > 3
-		});
-
-		return (
-			<div className='list'>
-				<div className={ className } ref='options'>
-					{
-						options.map((option, index) => (
-							<div key={ index } onClick={ this.onOptionChange.bind(this, option.value) }>
-								{ option.label }
-							</div>
-						))
-					}
-				</div>
-			</div>
-		);
-	};
-
-	/**
 	 * Render Dropdown Button
 	 * @returns {ReactElement} ReactElement
 	 */
@@ -118,7 +94,14 @@ class DropDown extends React.Component {
 	};
 
 	render() {
-		const { active, disabled } = this.props;
+		const {
+			active,
+			disabled,
+			onChange,
+			onToggle,
+			options,
+			selected
+		} = this.props;
 		const classes = classnames('orch-dropdown', {
 			disabled,
 			active
@@ -127,7 +110,10 @@ class DropDown extends React.Component {
 		return (
 			<div className={ classes }>
 				{ this.renderSelector() }
-				{ active && this.renderDropDownOptions() }
+				{ active && <Menu options={ options }
+					onChange={ onChange }
+					onToggle={ onToggle }
+					selected={ selected } /> }
 			</div>
 		);
 	}

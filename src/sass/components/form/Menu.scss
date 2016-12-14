@@ -1,0 +1,50 @@
+.orch-menu {
+	@include shadow();
+
+	border-radius: 3px;
+	left: 0px;
+	overflow: hidden;
+	padding-top: $dropdown-height;
+	position: absolute;
+	top: 0px;
+	width: 100%;
+
+	.options {
+		background: $pure-white;
+		max-height: $dropdown-height * 3;
+
+		&.scrollbar {
+			@include scrollbar();
+
+			overflow-x: hidden;
+			overflow-y: scroll;
+		}
+
+		> div {
+			box-sizing: border-box;
+			color: $steel-blue;
+			font-family: $lato-regular;
+			font-size: 14px;
+			height: $dropdown-height;
+			line-height: $dropdown-height;
+			overflow: hidden;
+			padding-left: 15px;
+			position: relative;
+			text-align: left;
+			text-overflow: ellipsis;
+			user-select: none;
+			white-space: nowrap;
+			width: 100%;
+
+			&:hover {
+				background: $arctic-blue-dark;
+				color: $dusk-blue
+			}
+
+			svg {
+				margin-right: 20px;
+				vertical-align: middle;
+			}
+		}
+	}
+}

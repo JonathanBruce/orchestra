@@ -1,0 +1,16 @@
+import { NETWORKS } from './NETWORKS';
+
+export const REQUIREMENTS = {
+	EMPTY: 'empty',
+	EXCLUDE: 'exclude',
+	LOCKED: 'locked',
+	NORMAL: 'normal',
+	STREAM: 'stream'
+};
+
+export const SUPPORTED_NETWORKS = {
+	FACEBOOK: NETWORKS.FACEBOOK,
+	INSTAGRAM: NETWORKS.INSTAGRAM,
+	LINKEDIN: NETWORKS.LINKEDIN,
+	YOUTUBE: NETWORKS.YOUTUBE
+};

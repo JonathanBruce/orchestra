@@ -1,0 +1,247 @@
+@mixin requirement($color, $border-color, $icon-color, $svg-element) {
+	border-color: #{$border-color};
+	color: #{$color};
+
+	input[ type='text' ] {
+		color: #{$color};
+	}
+
+	.tag {
+		.requirement {
+			svg.icon {
+				#{$svg-element} {
+					stroke: #{$icon-color};
+				}
+			}
+
+			svg.chevron {
+				path {
+					stroke: #{$icon-color};
+				}
+			}
+		}
+	}
+}
+
+.orch-keyword-tag {
+	border: 2px solid;
+	border-radius: 5px;
+
+	&.empty {
+		@include arcticBlueDarkWrapper($border-radius: 5px);
+
+		color: $steel-blue;
+		font-family: $lato-medium-italic;
+		font-size: 12px;
+		padding: 7.5px 10px;
+		width: 254px;
+
+		&:hover {
+			background-color: $arctic-blue-dark;
+			color: $dusk-blue;
+			cursor: pointer;
+		}
+	}
+
+	&.exclude,
+	&.locked,
+	&.normal,
+	&.stream {
+		border-color: $pure-white;
+		font-size: 14px;
+		height: 30px;
+		width: 250px;
+		
+		&.edit {
+			@include shadow();
+
+			.tag {
+				.keyword {
+					border-bottom-right-radius: 3px;
+					border-top-right-radius: 3px;
+					width: 193px;
+
+					&:hover {
+						background-color: $pure-white;
+					}
+				}
+			}
+		}
+	}
+
+	&.exclude {
+		@include requirement($watermelon, $watermelon, $watermelon-dark, 'g');
+	}
+
+	&.locked {
+		@include requirement($dusk-blue, $dusk-blue, $dusk-blue, 'g');
+	}
+
+	&.normal,
+	&.stream {
+		@include requirement($mid-blue, $IP-blue, $IP-blue, 'path');
+	}
+
+	&.stream {
+		.tag {
+			.requirement {
+				&:hover {
+					background-color: $pure-white;
+					cursor: default;
+				}
+			}
+		}
+	}
+
+	.tag {
+		border-radius: 3px;
+		position: relative;
+
+		.delete,
+		.keyword,
+		.network,
+		.requirement {
+			background-color: $pure-white;
+			cursor: pointer;
+			display: inline-block;
+			float: left;
+
+			&:hover {
+				background-color: $arctic-blue;
+			}
+		}
+
+		.delete,
+		.network,
+		.requirement {
+			height: 22px;
+		}
+
+		.delete {
+			border-bottom-right-radius: 3px;
+			border-top-right-radius: 3px;
+			padding-bottom: 4px;
+			padding-left: 6px;
+			padding-right: 4px;
+			padding-top: 4px;
+			width: 24px;
+
+			svg {
+				height: 22px;
+				width: 22px;
+
+				path {
+					stroke: $cloudy-blue-grey;
+				}
+			}
+
+			&:hover {
+				svg {
+					path {
+						stroke: $dusk-blue;
+					}
+				}
+			}
+		}
+
+		.keyword {
+			font-family: $lato-regular;
+			font-size: 14px;
+			height: 30px;
+			line-height: 30px;
+			padding-left: 10px;
+			width: 159px;
+
+			input[ type='text' ] {
+				font-family: $lato-regular;
+				font-size: 14px;
+				width: 185px;
+			}
+
+			@include placeholder('input', $cloudy-blue-grey, $lato-medium-italic, 12px);
+		}
+
+		.network,
+		.requirement {
+			border-bottom-left-radius: 3px;
+			border-top-left-radius: 3px;
+			padding-bottom: 5px;
+			padding-left: 6px;
+			padding-right: 4px;
+			padding-top: 3px;
+			position: relative;
+			width: 37px;
+
+			> span {
+				color: $IP-blue;
+				font-family: $lato-regular;
+				font-size: 14px;
+				left: 5px;
+				position: relative;
+				top: 4px;
+			}
+
+			svg {
+				height: 24px;
+				width: 24px;
+
+				&.chevron {
+					height: 5px;
+					left: 32px;
+					position: absolute;
+					top: 14px;
+					width: 10px;
+				}
+			}
+
+			.orch-menu {
+				@include shadow($y: 5px);
+
+				padding-top: 0px;
+				top: 31.5px;
+				width: 250px;
+				z-index: 9999;
+
+				.options {
+					> div {
+						padding-left: 8px;
+					}
+				}
+			}
+		}
+
+		.network {
+			border-right: 2px solid $arctic-blue-dark;
+			padding-left: 4px;
+		}
+	}
+
+	&.with-network-and-requirement {
+		.tag {
+			.keyword {
+				width: 112px;
+			}
+
+			.requirement {
+				border-bottom-left-radius: 0px;
+				border-top-left-radius: 0px;
+
+				.orch-menu {
+					width: 203px !important;
+				}
+			}
+		}
+
+		&.edit {
+			.tag {
+				.keyword {
+					width: 112px !important;
+
+					input[ type='text' ] {
+						width: 138px !important;
+					}
+				}
+			}
+		}
+	}
+}

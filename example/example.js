@@ -19,6 +19,7 @@ import {
 	Icons,
 	Influencer,
 	Input,
+	KeywordTag,
 	LinksSubHeader,
 	MaleButton,
 	MarketingFullPrimaryButton,
@@ -35,11 +36,13 @@ import {
 	PrimaryNeutralButton,
 	PrimaryPositiveButton,
 	PulseLoader,
+	REQUIREMENTS,
 	SecondaryNeutralButton,
 	SecondaryPositiveButton,
 	Six,
 	Slider,
 	Stat,
+	SUPPORTED_NETWORKS,
 	Switch,
 	TertiaryNegativeButton,
 	TertiaryNeutralButton,
@@ -558,104 +561,20 @@ class Example extends React.Component {
 					</Six>
 
 					<Nine>
-						<Influencer biography='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+						<Influencer
+							biography='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
 							followers='20K'
-							image='https://pbs.twimg.com/profile_images/569378815747444736/eIKjs6QX_normal.jpeg'
+							image='https://pbs.twimg.com/profile_images/489091337690419200/L_r1zbKT_400x400.png'
 							name='Jack McGlinchey'
-							location='Atlanta, Ga'
+							location='Atlanta, GA'
 							profiles={
 								[
-									{ type: 'aboutme', url: 'http://www.google.com', pos: 0 },
-									{ type: 'academiaedu', pos: 0 },
-									{ type: 'amplify', pos: 0 },
-									{ type: 'angellist', pos: 0 },
-									{ type: 'aolchat', pos: 0 },
-									{ type: 'bandcamp', pos: 0 },
-									{ type: 'bebo', pos: 0 },
-									{ type: 'behance', pos: 0 },
-									{ type: 'bitbucket', pos: 0 },
-									{ type: 'blipfm', pos: 0 },
-									{ type: 'blippy', pos: 0 },
-									{ type: 'blogger', pos: 0 },
-									{ type: 'crunchbase', pos: 0 },
-									{ type: 'dandyid', pos: 0 },
-									{ type: 'delicious', pos: 0 },
-									{ type: 'deviantart', pos: 0 },
-									{ type: 'diigo', pos: 0 },
-									{ type: 'digg', pos: 0 },
-									{ type: 'disqus', pos: 0 },
-									{ type: 'doyoubuzz', pos: 0 },
-									{ type: 'dribbble', pos: 0 },
-									{ type: 'econsultancy', pos: 0 },
 									{ type: 'facebook', pos: 6 },
-									{ type: 'favorsme', pos: 0 },
-									{ type: 'flickr', pos: 0 },
-									{ type: 'foursquare', pos: 0 },
-									{ type: 'friendfeed', pos: 0 },
-									{ type: 'friendster', pos: 0 },
-									{ type: 'gdgt', pos: 0 },
-									{ type: 'getglue', pos: 0 },
-									{ type: 'getsatisfaction', pos: 0 },
-									{ type: 'gist', pos: 0 },
-									{ type: 'github', pos: 0 },
-									{ type: 'goodreads', pos: 0 },
-									{ type: 'google', pos: 0 },
-									{ type: 'gravatar', pos: 0 },
-									{ type: 'hackernews', pos: 0 },
-									{ type: 'hi5', pos: 0 },
-									{ type: 'hunch', pos: 0 },
-									{ type: 'hypemachine', pos: 0 },
-									{ type: 'hyves', pos: 0 },
-									{ type: 'icqchat', pos: 0 },
-									{ type: 'identica', pos: 0 },
-									{ type: 'imdb', pos: 0 },
 									{ type: 'instagram', pos: 4 },
-									{ type: 'intensedebate', pos: 0 },
-									{ type: 'ircchat', pos: 0 },
-									{ type: 'klout', pos: 0 },
-									{ type: 'lanyrd', pos: 0 },
-									{ type: 'lastfm', pos: 0 },
-									{ type: 'linkedin', pos: 0 },
-									{ type: 'livejournal', pos: 0 },
-									{ type: 'meadiciona', pos: 0 },
-									{ type: 'mixcloud', pos: 0 },
-									{ type: 'meetup', pos: 0 },
-									{ type: 'mixi', pos: 0 },
-									{ type: 'myspace', pos: 0 },
-									{ type: 'ohloh', pos: 0 },
-									{ type: 'orkut', pos: 0 },
-									{ type: 'pandora', pos: 0 },
-									{ type: 'picasa', pos: 0 },
-									{ type: 'pinboard', pos: 0 },
-									{ type: 'pinterest', pos: 0 },
-									{ type: 'plancast', pos: 0 },
-									{ type: 'plaxo', pos: 0 },
-									{ type: 'plurk', pos: 0 },
-									{ type: 'quora', pos: 0 },
-									{ type: 'qik', pos: 0 },
 									{ type: 'reddit', pos: 3 },
-									{ type: 'ren', pos: 0 },
-									{ type: 'reverbnation', pos: 0 },
-									{ type: 'scribd', pos: 0 },
-									{ type: 'shelfari', pos: 0 },
 									{ type: 'skype', pos: 2 },
-									{ type: 'slideshare', pos: 0 },
-									{ type: 'smugmug', pos: 0 },
-									{ type: 'soundcloud', pos: 0 },
 									{ type: 'stackexchange', pos: 1 },
-									{ type: 'stackoverflow', pos: 0 },
-									{ type: 'steam', pos: 0 },
-									{ type: 'stumbleupon', pos: 0 },
-									{ type: 'tagged', pos: 0 },
-									{ type: 'tripit', pos: 0 },
-									{ type: 'tumblr', pos: 0 },
 									{ type: 'twitter', pos: 5 },
-									{ type: 'twitter_ads', pos: 0 },
-									{ type: 'typepad', pos: 0 },
-									{ type: 'vk', pos: 0 },
-									{ type: 'weibo', pos: 0 },
-									{ type: 'wordpress', pos: 0 },
-									{ type: 'vimeo', pos: 0 },
 									{ type: 'yelp', pos: 0 },
 									{ type: 'xing', pos: 0 },
 									{ type: 'youtube', pos: 0 }
@@ -672,6 +591,155 @@ class Example extends React.Component {
 
 					<Three>
 						<PulseLoader size={ 100 } />
+					</Three>
+
+					<Three>
+						<KeywordTag
+							network={ SUPPORTED_NETWORKS.FACEBOOK }
+							onNetworkChange={
+								(network) => {
+									console.log(network);
+								}
+							}
+							onTagChange={
+								(tag) => {
+									console.log(tag);
+								}
+							} 
+							defaultValue='Some value' />
+
+						<KeywordTag
+							network={ SUPPORTED_NETWORKS.INSTAGRAM }
+							onNetworkChange={
+								(network) => {
+									console.log(network);
+								}
+							}
+							onTagChange={
+								(tag) => {
+									console.log(tag);
+								}
+							}
+							defaultValue='Some value' />
+
+						<KeywordTag
+							network={ SUPPORTED_NETWORKS.LINKEDIN }
+							onNetworkChange={
+								(network) => {
+									console.log(network);
+								}
+							}
+							onTagChange={
+								(tag) => {
+									console.log(tag);
+								}
+							}
+							defaultValue='Some value' />
+
+						<KeywordTag
+							network={ SUPPORTED_NETWORKS.YOUTUBE }
+							onNetworkChange={
+								(network) => {
+									console.log(network);
+								}
+							}
+							onTagChange={
+								(tag) => {
+									console.log(tag);
+								}
+							}
+							defaultValue='Some value' />
+
+						<KeywordTag
+							requirement={ REQUIREMENTS.EXCLUDE }
+							onRequirementChange={
+								(requirement) => {
+									console.log(requirement);
+								}
+							}
+							onTagChange={
+								(tag) => {
+									console.log(tag);
+								}
+							}
+							defaultValue='Some value' />
+
+						<KeywordTag
+							requirement={ REQUIREMENTS.LOCKED }
+							onRequirementChange={
+								(requirement) => {
+									console.log(requirement);
+								}
+							}
+							onTagChange={
+								(tag) => {
+									console.log(tag);
+								}
+							}
+							defaultValue='Some value' />
+
+						<KeywordTag
+							requirement={ REQUIREMENTS.NORMAL }
+							onRequirementChange={
+								(requirement) => {
+									console.log(requirement);
+								}
+							}
+							onTagChange={
+								(tag) => {
+									console.log(tag);
+								}
+							}
+							defaultValue='Some value' />
+
+						<KeywordTag
+							requirement={ REQUIREMENTS.STREAM }
+							onTagChange={
+								(tag) => {
+									console.log(tag);
+								}
+							} 
+							defaultValue='Some value' />
+
+						<KeywordTag
+							requirement={ REQUIREMENTS.STREAM }
+							onTagChange={
+								(tag) => {
+									console.log(tag);
+								}
+							} 
+							defaultValue='Some value' />
+
+						<KeywordTag
+							network={ SUPPORTED_NETWORKS.YOUTUBE }
+							onNetworkChange={
+								(network) => {
+									console.log(network);
+								}	
+							}
+							requirement={ REQUIREMENTS.NORMAL }
+							onRequirementChange={
+								(requirement) => {
+									console.log(requirement);
+								}
+							}
+							defaultValue='Some value' />
+
+						<KeywordTag
+							network={ SUPPORTED_NETWORKS.YOUTUBE }
+							onNetworkChange={
+								(network) => {
+									console.log(network);
+								}	
+							}
+							openRequirement={ true }
+							requirement={ REQUIREMENTS.NORMAL }
+							onRequirementChange={
+								(requirement) => {
+									console.log(requirement);
+								}
+							}
+							defaultValue='Some value' />
 					</Three>
 				</Container>
 			</div>

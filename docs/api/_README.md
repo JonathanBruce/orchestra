@@ -74,3 +74,9 @@ The following describes all of the miscellaneous components available for use in
 #include "./docs/api/misc/pagination_controls.md"
 #include "./docs/api/misc/pill_toggle.md"
 #include "./docs/api/misc/stat.md"
+
+## Search !heading
+
+The following describes all of the search components available for use in Orchestra.
+
+#include "./docs/api/search/keyword_tag.md"

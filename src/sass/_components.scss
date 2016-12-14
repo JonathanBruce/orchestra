@@ -49,6 +49,7 @@
 @import './components/form/CheckBox.scss';
 @import './components/form/DropDown.scss';
 @import './components/form/Input.scss';
+@import './components/form/Menu.scss';
 @import './components/form/Slider.scss';
 @import './components/form/Switch.scss';
 
@@ -77,3 +78,9 @@
 @import './components/misc/PaginationControls.scss';
 @import './components/misc/PillToggle.scss';
 @import './components/misc/Stat.scss';
+
+/**
+ * Import search component styles
+ */
+
+ @import './components/search/KeywordTag.scss';

@@ -81,7 +81,7 @@ define([
 				.findByClassName('unchecked-text')
 				.getVisibleText()
 				.then(function (value) {
-					assert.equal(value, 'change', 'values should be equal');
+					assert.equal(value, 'click', 'values should be equal');
 				});
 
 		}
