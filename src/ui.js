@@ -96,6 +96,7 @@ export Avatar from 'components/misc/Avatar.jsx';
 export Content from 'components/misc/Content.jsx';
 export Info from 'components/misc/Info.jsx';
 export Influencer from 'components/misc/Influencer.jsx';
+export Notifier from 'components/misc/Notifier.jsx';
 export PaginationApprove from 'components/misc/PaginationApprove.jsx';
 export PaginationControls from 'components/misc/PaginationControls.jsx';
 export PillToggle from 'components/misc/PillToggle.jsx';

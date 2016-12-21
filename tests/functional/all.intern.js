@@ -27,5 +27,6 @@ define([
 	'tests/functional/form/Input',
 	'tests/functional/form/Slider',
 	'tests/functional/grid/Column',
+	'tests/functional/misc/Notifier',
 	'tests/functional/misc/PillToggle'
 ]);

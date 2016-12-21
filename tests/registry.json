@@ -26,6 +26,7 @@
 		"functional/form/Input",
 		"functional/form/Slider",
 		"functional/grid/Column",
+		"functional/misc/Notifier",
 		"functional/misc/PillToggle"
 	]
 }
