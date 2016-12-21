@@ -1,0 +1,104 @@
+$filter-box-size: 280px;
+
+.orch-filter-box {
+	@include arcticBlueDarkWrapper($background-color: $arctic-blue, $border-radius: 3px);
+
+	width: $filter-box-size;
+
+	.header {
+		box-sizing: border-box;
+		display: inline-block;
+		height: 40px;
+		padding: 10px 15px;
+		width: 100%;
+
+		div {
+			display: inline-block;
+			line-height: normal;
+			vertical-align: middle;
+		}
+
+		.info {
+			display: inline;
+		}
+
+		.title {
+			font-family: $lato-bold;
+			font-size: 15px;
+			padding-right: 10px;
+			padding-top: 4px;
+			color: $dusk-blue;
+		}
+
+		.widget-icons {
+			float: right;
+			text-align: center;
+
+			&:hover {
+				.icon {
+					cursor: pointer;
+
+					svg {
+						path {
+							stroke: $dusk-blue;
+						}
+					}
+				}
+
+				div:not(.icon) {
+					svg {
+						polyline {
+							stroke: $dusk-blue;
+						}
+					}
+				}
+			}
+
+			.icon {
+				width: 24px;
+				height: 24px;
+
+				svg {
+					path {
+						stroke: $IP-blue;
+					}
+				}
+			}
+
+			div:not(.icon) {
+				&.disabled {
+					svg {
+						polyline {
+							opacity: 0;
+						}
+					}
+				}
+			}
+
+			.left-arrow {
+				transform: rotate(90deg);
+			}
+
+			.right-arrow {
+				transform: rotate(270deg);
+			}
+		}
+	}
+
+	.items {
+		padding: 0px 15px 15px;
+
+		> div {
+			padding-top: 10px;
+
+			&:last-child {
+				padding-bottom: 10px;
+			}
+		}
+	}
+
+	.widget {
+		position: absolute;
+		left: $filter-box-size + 15;
+	}
+}

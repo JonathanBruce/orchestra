@@ -12,6 +12,7 @@ class Influencer extends React.Component {
 			React.PropTypes.string
 		]),
 		image: React.PropTypes.string.isRequired,
+		location: React.PropTypes.string,
 		name: React.PropTypes.string.isRequired,
 		profiles: React.PropTypes.array,
 		relevance: React.PropTypes.oneOfType([
@@ -53,8 +54,6 @@ class Influencer extends React.Component {
 		const sortedProfiles = this.sortSocialProfileIcons(profiles);
 		const icons = [];
 		let count = 0;
-
-		console.log(sortedProfiles);
 
 		for (const sortedProfile of sortedProfiles) {
 			const { type, url } = sortedProfile;
@@ -99,6 +98,7 @@ class Influencer extends React.Component {
 			resonance,
 			topics
 		} = this.props;
+
 		return (
 			<div className='orch-influencer'>
 				<div className='influencer'>

@@ -1,4 +1,5 @@
-/* global React */
+/* global console, React */
+/* eslint-disable no-console */
 
 import TertiaryButton from 'components/base/TertiaryButton.jsx';
 

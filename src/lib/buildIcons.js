@@ -7,7 +7,8 @@ const fs = require('fs');
 const path = require('path');
 const spawn = require('child_process').spawn;
 const mkdirp = require('mkdirp');
-const removeIconsDir = spawn('rm', [ '-rf', './src/icons' ]);
+const spawnOptions = { shell: true };
+const removeIconsDir = spawn('rm', [ '-r', '-f', './src/icons' ], spawnOptions);
 
 function buildClassDefinition(className, body) {
 	return `
@@ -101,7 +102,7 @@ removeIconsDir.on('close', () => {
 			throw new Error(err);
 		}
 
-		const svgMinify = spawn('./node_modules/svgo/bin/svgo', [ '-f', 'src/svg/' ]);
+		const svgMinify = spawn('./node_modules/svgo/bin/svgo', [ '-f', 'src/svg/' ], spawnOptions);
 
 		svgMinify.on('close', () => {
 			buildIcons();
