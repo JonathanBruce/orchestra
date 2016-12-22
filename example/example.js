@@ -602,6 +602,11 @@ class Example extends React.Component {
 									console.log(network);
 								}
 							}
+							onNetworkToggle={
+								() => {
+									console.log('toggled network');
+								}
+							}
 							onTagChange={
 								(tag) => {
 									console.log(tag);
@@ -614,6 +619,11 @@ class Example extends React.Component {
 							onNetworkChange={
 								(network) => {
 									console.log(network);
+								}
+							}
+							onNetworkToggle={
+								() => {
+									console.log('toggled network');
 								}
 							}
 							onTagChange={
@@ -630,6 +640,11 @@ class Example extends React.Component {
 									console.log(network);
 								}
 							}
+							onNetworkToggle={
+								() => {
+									console.log('toggled network');
+								}
+							}
 							onTagChange={
 								(tag) => {
 									console.log(tag);
@@ -642,6 +657,11 @@ class Example extends React.Component {
 							onNetworkChange={
 								(network) => {
 									console.log(network);
+								}
+							}
+							onNetworkToggle={
+								() => {
+									console.log('toggled network');
 								}
 							}
 							onTagChange={
@@ -658,6 +678,11 @@ class Example extends React.Component {
 									console.log(requirement);
 								}
 							}
+							onRequirementToggle={
+								() => {
+									console.log('toggled requirement');
+								}
+							}
 							onTagChange={
 								(tag) => {
 									console.log(tag);
@@ -672,6 +697,11 @@ class Example extends React.Component {
 									console.log(requirement);
 								}
 							}
+							onRequirementToggle={
+								() => {
+									console.log('toggled requirement');
+								}
+							}
 							onTagChange={
 								(tag) => {
 									console.log(tag);
@@ -684,6 +714,11 @@ class Example extends React.Component {
 							onRequirementChange={
 								(requirement) => {
 									console.log(requirement);
+								}
+							}
+							onRequirementToggle={
+								() => {
+									console.log('toggled requirement');
 								}
 							}
 							onTagChange={
@@ -718,26 +753,56 @@ class Example extends React.Component {
 									console.log(network);
 								}
 							}
+							onNetworkToggle={
+								() => {
+									console.log('toggled network');
+								}
+							}
 							requirement={ REQUIREMENTS.NORMAL }
 							onRequirementChange={
 								(requirement) => {
 									console.log(requirement);
 								}
 							}
+							onRequirementToggle={
+								() => {
+									console.log('toggled requirement');
+								}
+							}
+							onTagChange={
+								(tag) => {
+									console.log(tag);
+								}
+							}
 							defaultValue='Some value' />
 
 						<KeywordTag
 							network={ SUPPORTED_NETWORKS.YOUTUBE }
-							onNetworkChange={
-								(network) => {
-									console.log(network);
-								}
-							}
 							openRequirement={ true }
+							onNetworkChange={
+								(network) => {
+									console.log(network);
+								}
+							}
+							onNetworkToggle={
+								() => {
+									console.log('toggled network');
+								}
+							}
 							requirement={ REQUIREMENTS.NORMAL }
 							onRequirementChange={
 								(requirement) => {
 									console.log(requirement);
+								}
+							}
+							onRequirementToggle={
+								() => {
+									console.log('toggled requirement');
+								}
+							}
+							onTagChange={
+								(tag) => {
+									console.log(tag);
 								}
 							}
 							defaultValue='Some value' />

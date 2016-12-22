@@ -35,7 +35,7 @@ class Menu extends React.Component {
 	render() {
 		const { options } = this.props;
 		const optionsClasses = classnames('options', {
-			scrollbar: options.length > 4
+			scrollbar: options.length > 3
 		});
 
 		return (

@@ -8,13 +8,13 @@
 
 	.tag {
 		.requirement {
-			svg.icon {
+			> svg.icon {
 				#{$svg-element} {
 					stroke: #{$icon-color};
 				}
 			}
 
-			svg.chevron {
+			> svg.chevron {
 				path {
 					stroke: #{$icon-color};
 				}

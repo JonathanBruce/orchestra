@@ -21,7 +21,7 @@ class KeywordTag extends Component {
 		onRequirementChange: React.PropTypes.func,
 		onRequirementToggle: React.PropTypes.func,
 		openRequirement: React.PropTypes.boolean,
-		onTagChange: React.PropTypes.func,
+		onTagChange: React.PropTypes.func.isRequired,
 		requirement: React.PropTypes.string
 	};
 
@@ -36,7 +36,8 @@ class KeywordTag extends Component {
 
 	static defaultProps = {
 		openNetwork: false,
-		openRequirement: false
+		openRequirement: false,
+		network: SUPPORTED_NETWORKS.ALL
 	};
 
 	componentWillMount() {
@@ -196,14 +197,20 @@ class KeywordTag extends Component {
 	 * Renders requirement dropdown
 	 */
 	renderNetworkDropDown = () => {
-		const { openNetwork, network } = this.props;
+		const {
+			onNetworkToggle,
+			openNetwork,
+			network
+		} = this.props;
 		const networks = Object.values(SUPPORTED_NETWORKS);
 
 		if (this.hasNetworkChange() && networks.indexOf(network) > -1) {
-			delete networks[ networks.indexOf(network) ];
+			networks.splice(networks.indexOf(network), 1);
 
 			return (
-				<div className='network'>
+				<div
+					className='network'
+					onClick={ !openNetwork && onNetworkToggle }>
 					{ this.renderNetworkIcon(network) }
 					<Icons.SmallChevron className='chevron' />
 					{ openNetwork && this.renderNetworkMenu(networks) }
@@ -216,21 +223,27 @@ class KeywordTag extends Component {
 	 * Renders requirement dropdown
 	 */
 	renderRequirementDropDown = () => {
-		const { openRequirement, requirement } = this.props;
+		const {
+			onRequirementToggle,
+			openRequirement,
+			requirement
+		} = this.props;
 		const requirements = Object.values(REQUIREMENTS);
 
 		if (requirements.indexOf(requirement) > -1) {
 			const requirementIcon = this.renderRequirementIcon(requirement);
 
 			if (requirement !== REQUIREMENTS.STREAM) {
-				delete requirements[ requirements.indexOf(REQUIREMENTS.STREAM) ];
-				delete requirements[ requirements.indexOf(REQUIREMENTS.EMPTY) ];
-				delete requirements[ requirements.indexOf(requirement) ];
+				requirements.splice(requirements.indexOf(REQUIREMENTS.STREAM), 1);
+				requirements.splice(requirements.indexOf(REQUIREMENTS.EMPTY), 1);
+				requirements.splice(requirements.indexOf(requirement), 1);
 
 				const requirementMenu = this.renderRequirementMenu(requirements);
 
 				return (
-					<div className='requirement'>
+					<div
+						className='requirement'
+						onClick={ !openRequirement && onRequirementToggle }>
 						{ requirementIcon }
 						<Icons.SmallChevron className='chevron' />
 						{ openRequirement && this.hasRequirementChange() && requirementMenu }
@@ -321,7 +334,6 @@ class KeywordTag extends Component {
 	 * Renders network menu
 	 */
 	renderNetworkMenu = (options) => {
-		debugger;
 		const { onNetworkChange, onNetworkToggle } = this.props;
 		const networkOptions = options.map((option) => {
 			return {
@@ -342,7 +354,7 @@ class KeywordTag extends Component {
 	 * Renders requirement menu
 	 */
 	renderRequirementMenu = (options) => {
-		const { onNetworkChange, onNetworkToggle } = this.props;
+		const { onRequirementChange, onRequirementToggle } = this.props;
 		const requirementOptions = options.map((option) => {
 			return {
 				label: this.renderRequirementMenuOption(option),
@@ -353,8 +365,8 @@ class KeywordTag extends Component {
 		return (
 			<Menu
 				options={ requirementOptions }
-				onChange={ onNetworkChange } 
-				onToggle={ onNetworkToggle } />
+				onChange={ onRequirementChange } 
+				onToggle={ onRequirementToggle } />
 		);
 	};
 
