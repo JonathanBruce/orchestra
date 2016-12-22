@@ -13,6 +13,7 @@ class KeywordTag extends Component {
 		defaultValue: React.PropTypes.string,
 		id: React.PropTypes.string,
 		onDeleteClick: React.PropTypes.func,
+		onEmptyClick: React.PropTypes.func,
 		network: React.PropTypes.string,
 		onNetworkChange: React.PropTypes.func,
 		onNetworkToggle: React.PropTypes.func,
@@ -377,6 +378,7 @@ class KeywordTag extends Component {
 
 	render() {
 		const { edit } = this.state;
+		const { onEmptyClick } = this.props;
 		const requirement = this.props.requirement || REQUIREMENTS.NORMAL;
 		const keywordTagClasses = classnames('orch-keyword-tag', {
 			edit,
@@ -390,7 +392,8 @@ class KeywordTag extends Component {
 					requirement === REQUIREMENTS.EMPTY
 					? (
 						<div
-							className='tag clearfix'>
+							className='tag clearfix'
+							onClick={ onEmptyClick }>
 							Type here to add another...
 						</div>
 					)

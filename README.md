@@ -1896,6 +1896,7 @@ The following describes all of the search components available for use in Orches
 | ---------------------|-----------------|------------------------------------------------------------|
 | `id`                 | `string`        | ID of follower                                             |
 | `onDeleteClick`      | `func`          | Function for deleting the keyword tag                      |
+| `onEmptyClick`       | `func`          | Function for when the tag is empty                         |
 | `network`            | `string`        | Value for current network                                  |
 | `onNetworkChange`    | `func`          | Function for changing network in network menu              |
 | `onNetworkToggle`    | `func`          | Function for toggling the network menu open or closed      |
