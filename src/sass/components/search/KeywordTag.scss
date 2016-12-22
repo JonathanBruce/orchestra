@@ -45,7 +45,7 @@
 
 	&.exclude,
 	&.locked,
-	&.normal,
+	&.neutral,
 	&.stream {
 		border-color: $pure-white;
 		font-size: 14px;
@@ -77,7 +77,7 @@
 		@include requirement($dusk-blue, $dusk-blue, $dusk-blue, 'g');
 	}
 
-	&.normal,
+	&.neutral,
 	&.stream {
 		@include requirement($mid-blue, $IP-blue, $IP-blue, 'path');
 	}

@@ -710,7 +710,7 @@ class Example extends React.Component {
 							defaultValue='Some value' />
 
 						<KeywordTag
-							requirement={ REQUIREMENTS.NORMAL }
+							requirement={ REQUIREMENTS.NEUTRAL }
 							onRequirementChange={
 								(requirement) => {
 									console.log(requirement);
@@ -758,7 +758,7 @@ class Example extends React.Component {
 									console.log('toggled network');
 								}
 							}
-							requirement={ REQUIREMENTS.NORMAL }
+							requirement={ REQUIREMENTS.NEUTRAL }
 							onRequirementChange={
 								(requirement) => {
 									console.log(requirement);
@@ -789,7 +789,7 @@ class Example extends React.Component {
 									console.log('toggled network');
 								}
 							}
-							requirement={ REQUIREMENTS.NORMAL }
+							requirement={ REQUIREMENTS.NEUTRAL }
 							onRequirementChange={
 								(requirement) => {
 									console.log(requirement);

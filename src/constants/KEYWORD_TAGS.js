@@ -4,7 +4,7 @@ export const REQUIREMENTS = {
 	EMPTY: 'empty',
 	EXCLUDE: 'exclude',
 	LOCKED: 'locked',
-	NORMAL: 'normal',
+	NEUTRAL: 'neutral',
 	STREAM: 'stream'
 };
 

@@ -180,7 +180,7 @@ class KeywordTag extends Component {
 				return (
 					<Icons.Lock className='icon' />
 				);
-			case REQUIREMENTS.NORMAL:
+			case REQUIREMENTS.NEUTRAL:
 				return (
 					<Icons.Filter className='icon' />
 				);
@@ -391,7 +391,7 @@ class KeywordTag extends Component {
 	render() {
 		const { edit } = this.state;
 		const { onEmptyClick } = this.props;
-		const requirement = this.props.requirement || REQUIREMENTS.NORMAL;
+		const requirement = this.props.requirement || REQUIREMENTS.NEUTRAL;
 		const keywordTagClasses = classnames('orch-keyword-tag', {
 			edit,
 			[ requirement ]: true,
