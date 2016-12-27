@@ -27,6 +27,7 @@ import {
 	MarketingFullSecondaryButton,
 	MarketingPartialPrimaryButton,
 	Nine,
+	Notifier,
 	PaginationApprove,
 	PaginationControls,
 	PartialPrimaryButton,
@@ -842,6 +843,21 @@ class Example extends React.Component {
 							<div>Content 1</div>
 							<div>Content 2</div>
 						</FilterBox>
+					</Three>
+
+					<Three>
+						<Notifier
+							active
+							icon={ <Icons.AdvancedSearch /> }
+							onClick={ () => {
+								console.log('notifier clicked');
+							} }
+							value={ 3 } />
+
+						<Notifier
+							disabled
+							icon={ <Icons.AdvancedSearch /> }
+							value={ 3 } />
 					</Three>
 				</Container>
 			</div>

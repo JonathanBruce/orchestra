@@ -71,6 +71,7 @@ The following describes all of the miscellaneous components available for use in
 #include "./docs/api/misc/avatar.md"
 #include "./docs/api/misc/content.md"
 #include "./docs/api/misc/info.md"
+#include "./docs/api/misc/notifier.md"
 #include "./docs/api/misc/pagination_approve.md"
 #include "./docs/api/misc/pagination_controls.md"
 #include "./docs/api/misc/pill_toggle.md"
