@@ -1,7 +1,7 @@
 /* global React */
 
 import Avatar from './Avatar.jsx';
-import { NETWORKS } from 'constants/NETWORKS';
+import { ALL_NETWORKS } from 'maestro';
 import Icons from 'icons/_all';
 
 class Influencer extends React.Component {
@@ -57,7 +57,7 @@ class Influencer extends React.Component {
 
 		for (const sortedProfile of sortedProfiles) {
 			const { type, url } = sortedProfile;
-			const networks = Object.values(NETWORKS);
+			const networks = Object.values(ALL_NETWORKS);
 
 			if (networks.indexOf(type) > -1 && count < 6) {
 				const network = type[ 0 ].toUpperCase() + type.slice(1);

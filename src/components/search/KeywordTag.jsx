@@ -5,7 +5,7 @@ import Component from 'components/extensions/Component.jsx';
 import Icons from 'icons/_all';
 import { isFunction } from 'lib/core';
 import Menu from '../form/Menu.jsx';
-import { REQUIREMENTS, SUPPORTED_NETWORKS } from 'constants/KEYWORD_TAGS';
+import { REQUIREMENTS, SUPPORTED_NETWORKS } from 'maestro';
 import { toUpperCaseFirstCharacter } from 'lib/string';
 
 class KeywordTag extends Component {
@@ -25,21 +25,6 @@ class KeywordTag extends Component {
 		requirement: React.PropTypes.string
 	};
 
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			edit: false,
-			value: this.props && this.props.defaultValue ? this.props.defaultValue : ''
-		};
-	}
-
-	static defaultProps = {
-		openNetwork: false,
-		openRequirement: false,
-		network: SUPPORTED_NETWORKS.ALL
-	};
-
 	componentWillMount() {
 		const {
 			network,
@@ -50,17 +35,32 @@ class KeywordTag extends Component {
 
 		if (!network
 			&& !onNetworkChange
-			&& !requirement 
+			&& !requirement
 			&& !onRequirementChange) {
 			throw new Error('No network or requirement!');
 		}
 
 		if (requirement
 			&& requirement !== REQUIREMENTS.STREAM
-			&& requirement !== REQUIREMENTS.EMPTY 
+			&& requirement !== REQUIREMENTS.EMPTY
 			&& !onRequirementChange) {
 			throw new Error('Requirement present but no onRequirementChange passed!');
 		}
+	}
+
+	static defaultProps = {
+		openNetwork: false,
+		openRequirement: false,
+		network: SUPPORTED_NETWORKS.ALL
+	};
+
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			edit: false,
+			value: this.props && this.props.defaultValue ? this.props.defaultValue : ''
+		};
 	}
 
 	/**
@@ -98,8 +98,6 @@ class KeywordTag extends Component {
 	 */
 	onTagKeyDown = (event) => {
 		const { keyCode } = event;
-		const { onTagChange } = this.props;
-		const { value } = this.state;
 
 		if (keyCode === 13) {
 			this.onTagBlur();
@@ -250,13 +248,12 @@ class KeywordTag extends Component {
 					</div>
 				);
 			}
-			else {
-				return (
-					<div className='requirement'>
-						{ requirementIcon }
-					</div>
-				);
-			}
+
+			return (
+				<div className='requirement'>
+					{ requirementIcon }
+				</div>
+			);
 		}
 	};
 
@@ -345,7 +342,7 @@ class KeywordTag extends Component {
 		return (
 			<Menu
 				options={ networkOptions }
-				onChange={ onNetworkChange } 
+				onChange={ onNetworkChange }
 				onToggle={ onNetworkToggle } />
 		);
 	};
@@ -365,7 +362,7 @@ class KeywordTag extends Component {
 		return (
 			<Menu
 				options={ requirementOptions }
-				onChange={ onRequirementChange } 
+				onChange={ onRequirementChange }
 				onToggle={ onRequirementToggle } />
 		);
 	};

@@ -38,13 +38,11 @@ import {
 	PrimaryNeutralButton,
 	PrimaryPositiveButton,
 	PulseLoader,
-	REQUIREMENTS,
 	SecondaryNeutralButton,
 	SecondaryPositiveButton,
 	Six,
 	Slider,
 	Stat,
-	SUPPORTED_NETWORKS,
 	Switch,
 	TertiaryNegativeButton,
 	TertiaryNeutralButton,
@@ -597,7 +595,7 @@ class Example extends React.Component {
 
 					<Three>
 						<KeywordTag
-							network={ SUPPORTED_NETWORKS.FACEBOOK }
+							network='facebook'
 							onNetworkChange={
 								(network) => {
 									console.log(network);
@@ -616,7 +614,7 @@ class Example extends React.Component {
 							defaultValue='Some value' />
 
 						<KeywordTag
-							network={ SUPPORTED_NETWORKS.INSTAGRAM }
+							network='instagram'
 							onNetworkChange={
 								(network) => {
 									console.log(network);
@@ -635,7 +633,7 @@ class Example extends React.Component {
 							defaultValue='Some value' />
 
 						<KeywordTag
-							network={ SUPPORTED_NETWORKS.LINKEDIN }
+							network='linkedin'
 							onNetworkChange={
 								(network) => {
 									console.log(network);
@@ -654,7 +652,7 @@ class Example extends React.Component {
 							defaultValue='Some value' />
 
 						<KeywordTag
-							network={ SUPPORTED_NETWORKS.YOUTUBE }
+							network='youtube'
 							onNetworkChange={
 								(network) => {
 									console.log(network);
@@ -673,7 +671,7 @@ class Example extends React.Component {
 							defaultValue='Some value' />
 
 						<KeywordTag
-							requirement={ REQUIREMENTS.EXCLUDE }
+							requirement='exclude'
 							onRequirementChange={
 								(requirement) => {
 									console.log(requirement);
@@ -692,7 +690,7 @@ class Example extends React.Component {
 							defaultValue='Some value' />
 
 						<KeywordTag
-							requirement={ REQUIREMENTS.LOCKED }
+							requirement='locked'
 							onRequirementChange={
 								(requirement) => {
 									console.log(requirement);
@@ -711,7 +709,7 @@ class Example extends React.Component {
 							defaultValue='Some value' />
 
 						<KeywordTag
-							requirement={ REQUIREMENTS.NEUTRAL }
+							requirement='neutral'
 							onRequirementChange={
 								(requirement) => {
 									console.log(requirement);
@@ -730,7 +728,7 @@ class Example extends React.Component {
 							defaultValue='Some value' />
 
 						<KeywordTag
-							requirement={ REQUIREMENTS.STREAM }
+							requirement='stream'
 							onTagChange={
 								(tag) => {
 									console.log(tag);
@@ -739,7 +737,7 @@ class Example extends React.Component {
 							defaultValue='Some value' />
 
 						<KeywordTag
-							requirement={ REQUIREMENTS.STREAM }
+							requirement='stream'
 							onTagChange={
 								(tag) => {
 									console.log(tag);
@@ -748,7 +746,7 @@ class Example extends React.Component {
 							defaultValue='Some value' />
 
 						<KeywordTag
-							network={ SUPPORTED_NETWORKS.YOUTUBE }
+							network='youtube'
 							onNetworkChange={
 								(network) => {
 									console.log(network);
@@ -759,7 +757,7 @@ class Example extends React.Component {
 									console.log('toggled network');
 								}
 							}
-							requirement={ REQUIREMENTS.NEUTRAL }
+							requirement='neutral'
 							onRequirementChange={
 								(requirement) => {
 									console.log(requirement);
@@ -778,7 +776,7 @@ class Example extends React.Component {
 							defaultValue='Some value' />
 
 						<KeywordTag
-							network={ SUPPORTED_NETWORKS.YOUTUBE }
+							network='youtube'
 							openRequirement={ true }
 							onNetworkChange={
 								(network) => {
@@ -790,7 +788,7 @@ class Example extends React.Component {
 									console.log('toggled network');
 								}
 							}
-							requirement={ REQUIREMENTS.NEUTRAL }
+							requirement='neutral'
 							onRequirementChange={
 								(requirement) => {
 									console.log(requirement);

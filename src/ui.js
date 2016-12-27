@@ -5,8 +5,6 @@ import 'sass/ui.scss';
  */
 
 export APP from 'constants/APP';
-export { NETWORKS } from 'constants/NETWORKS';
-export { REQUIREMENTS, SUPPORTED_NETWORKS } from 'constants/KEYWORD_TAGS';
 
 /**
  * Export icons
