@@ -24,9 +24,11 @@
 			background: $silver;
 		}
 	}
-
-	& > * {
-		float: left;
+	
+	&.active {
+		.icon {
+			float: right;
+		}
 	}
 
 	.left-arrow,
@@ -62,6 +64,7 @@
 	}
 
 	.icon {
+		float: left;
 		height: 32px;
 		position: relative;
 		width: 32px;

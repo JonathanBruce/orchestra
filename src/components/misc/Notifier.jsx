@@ -32,6 +32,7 @@ class Notifier extends React.Component {
 			value
 		} = this.props;
 		const notifierClasses = classnames('orch-notifier', {
+			active,
 			clearfix: true,
 			disabled
 		});
