@@ -1,7 +1,7 @@
 .orch-notifier {
 	cursor: pointer;
 	height: 32px;
-	width: 42px;
+	width: 46px;
 
 	svg g,
 	svg path {
@@ -44,6 +44,8 @@
 	}
 
 	.left-arrow {
+		float: left;
+
 		svg {
 			left: 0;
 			transform: rotate(90deg);
@@ -51,6 +53,8 @@
 	}
 
 	.right-arrow {
+		float: right;
+
 		svg {
 			right: 0;
 			transform: rotate(270deg);
