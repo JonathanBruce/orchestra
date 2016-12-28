@@ -24,12 +24,14 @@ class FilterBox extends React.Component {
 	renderHeader() {
 		const {
 			title,
+			titleIcon,
 			tooltipTitle,
 			tooltipValue
 		} = this.props;
 
 		return (
 			<div className='header'>
+				<div className='title-icon'>{ titleIcon }</div>
 				<div className='title'>{ title }</div>
 
 				{
