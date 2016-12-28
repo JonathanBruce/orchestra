@@ -41,7 +41,7 @@ class Notifier extends React.Component {
 				className={ notifierClasses }
 				onClick={ onClick }>
 				{
-					!active && (
+					active && (
 						<div className='left-arrow'>
 							<Icons.SmallChevron />
 						</div>
@@ -62,7 +62,7 @@ class Notifier extends React.Component {
 				</div>
 
 				{
-					active && (
+					!active && (
 						<div className='right-arrow'>
 							<Icons.SmallChevron />
 						</div>

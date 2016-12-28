@@ -844,7 +844,6 @@ class Example extends React.Component {
 
 					<Three>
 						<Notifier
-							active
 							icon={ <Icons.AdvancedSearch /> }
 							onClick={ () => {
 								console.log('notifier clicked');
@@ -852,6 +851,7 @@ class Example extends React.Component {
 							value={ 3 } />
 
 						<Notifier
+							active
 							disabled
 							icon={ <Icons.AdvancedSearch /> }
 							value={ 3 } />
