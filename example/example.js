@@ -815,7 +815,6 @@ class Example extends React.Component {
 								}
 							}
 							title={ 'Influencers Of' }
-							titleIcon={ <Icons.Instagram /> }
 							tooltipTitle={ 'Info Title' }
 							tooltipValue={ 'This is Information' }
 							widget={ <div>Widget Content</div> }

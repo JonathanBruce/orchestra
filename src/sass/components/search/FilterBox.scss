@@ -22,11 +22,16 @@ $filter-box-size: 280px;
 			display: inline;
 		}
 
+		.title-icon {
+			svg {
+				padding-right: 5px;
+			}
+		}
+
 		.title {
 			font-family: $lato-bold;
 			font-size: 15px;
 			padding-right: 10px;
-			padding-top: 4px;
 			color: $dusk-blue;
 		}
 
@@ -47,7 +52,7 @@ $filter-box-size: 280px;
 
 				div:not(.icon) {
 					svg {
-						polyline {
+						path {
 							stroke: $dusk-blue;
 						}
 					}
@@ -68,7 +73,7 @@ $filter-box-size: 280px;
 			div:not(.icon) {
 				&.disabled {
 					svg {
-						polyline {
+						path {
 							opacity: 0;
 						}
 					}
