@@ -6,6 +6,7 @@ var webpackEntries = require('./tests/support/webpack');
 var testsDir = path.join(__dirname, '/tests');
 
 module.exports = {
+	devtool: 'inline-source-map',
 	entry: webpackEntries(testsDir),
 
 	output: {

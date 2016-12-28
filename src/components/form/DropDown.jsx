@@ -1,4 +1,4 @@
-/* global React, document */
+/* global React, ReactDOM, document */
 
 import classnames from 'classnames';
 import Icons from 'icons/_all';
@@ -30,40 +30,38 @@ class DropDown extends React.Component {
 	 * Hides the dropdown list
 	 * @param event Event object
 	 */
-	hideList = (event) => {
-		const { active, onToggle } = this.props;
-		const { menu } = this.refs;
+	hideMenu = (event) => {
+		const { active } = this.props;
+		const menuNode = ReactDOM.findDOMNode(this.menu);
+		const menuOptionsNode = menuNode && menuNode.children[ 0 ];
 		const { target } = event;
 
-		if (menu && !menu.contains(target) && active) {
-			onToggle();
-			document.body.removeEventListener('click', this.hideList);
+		if (menuOptionsNode && !menuOptionsNode.contains(target) && active) {
+			this.toggleAndRemoveHideMenuListener();
 		}
-	};
-
-	/**
-	 * Pass selected value to the select handler
-	 * @param selected value which was selected
-	 */
-	onOptionChange = (selected) => {
-		const { onChange, onToggle } = this.props;
-
-		onChange(selected);
-		onToggle();
-		document.body.removeEventListener('click', this.hideList);
 	};
 
 	/**
 	 * Shows the dropdown
 	 */
-	showList = () => {
+	showMenu = () => {
 		const { active, onToggle } = this.props;
 
 		if (!active) {
 			onToggle();
-			document.body.addEventListener('click', this.hideList);
+			document.body.addEventListener('click', this.hideMenu);
 		}
-	}
+	};
+
+	/**
+	 * Toggles onToggle prop and removes hideMenu listener
+	 */
+	toggleAndRemoveHideMenuListener = () => {
+		const { onToggle } = this.props;
+
+		onToggle();
+		document.body.removeEventListener('click', this.hideMenu);
+	};
 
 	/**
 	 * Render Dropdown Button
@@ -81,7 +79,7 @@ class DropDown extends React.Component {
 		const currentText = currentOption && !active ? currentOption.label : currentLabel;
 
 		return (
-			<div className='selector' onClick={ this.showList }>
+			<div className='selector' onClick={ this.showMenu }>
 				<div className='text'>
 					{ currentText }
 				</div>
@@ -98,7 +96,6 @@ class DropDown extends React.Component {
 			active,
 			disabled,
 			onChange,
-			onToggle,
 			options,
 			selected
 		} = this.props;
@@ -111,8 +108,13 @@ class DropDown extends React.Component {
 			<div className={ classes }>
 				{ this.renderSelector() }
 				{ active && <Menu options={ options }
+					ref={
+						(menu) => {
+							this.menu = menu;
+						}
+					}
 					onChange={ onChange }
-					onToggle={ onToggle }
+					onToggle={ this.toggleAndRemoveHideMenuListener }
 					selected={ selected } /> }
 			</div>
 		);

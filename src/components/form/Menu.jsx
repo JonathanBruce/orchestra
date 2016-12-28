@@ -29,7 +29,6 @@ class Menu extends React.Component {
 
 		onChange(selected);
 		onToggle();
-		document.body.removeEventListener('click', this.hideList);
 	};
 
 	render() {
