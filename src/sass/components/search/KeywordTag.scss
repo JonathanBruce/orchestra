@@ -50,7 +50,7 @@
 		border-color: $pure-white;
 		font-size: 14px;
 		height: 30px;
-		width: 246px;
+		width: 242px;
 		
 		&.edit {
 			@include shadow();
@@ -59,7 +59,7 @@
 				.keyword {
 					border-bottom-right-radius: 3px;
 					border-top-right-radius: 3px;
-					width: 189px;
+					width: 185px;
 
 					&:hover {
 						background-color: $pure-white;
@@ -150,12 +150,12 @@
 			height: 30px;
 			line-height: 30px;
 			padding-left: 10px;
-			width: 155px;
+			width: 151px;
 
 			input[ type='text' ] {
 				font-family: $lato-regular;
 				font-size: 14px;
-				width: 185px;
+				width: 181px;
 			}
 
 			@include placeholder('input', $cloudy-blue-grey, $lato-medium-italic, 12px);
@@ -199,7 +199,7 @@
 
 				padding-top: 0px;
 				top: 31.5px;
-				width: 246px;
+				width: 242px;
 				z-index: 9999;
 
 				.options {
@@ -219,7 +219,7 @@
 	&.with-network-and-requirement {
 		.tag {
 			.keyword {
-				width: 108px;
+				width: 104px;
 			}
 
 			.requirement {
@@ -227,7 +227,7 @@
 				border-top-left-radius: 0px;
 
 				.orch-menu {
-					width: 200px !important;
+					width: 195px !important;
 				}
 			}
 		}
@@ -235,7 +235,7 @@
 		&.edit {
 			.tag {
 				.keyword {
-					width: 108px !important;
+					width: 104px !important;
 
 					input[ type='text' ] {
 						width: 134px !important;

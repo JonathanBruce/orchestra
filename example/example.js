@@ -808,7 +808,7 @@ class Example extends React.Component {
 
 						<KeywordTag
 							network='youtube'
-							openNetwork={ true }
+							openRequirement={ true }
 							onNetworkChange={
 								(network) => {
 									console.log(network);
