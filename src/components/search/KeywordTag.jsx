@@ -1,4 +1,4 @@
-/* global React */
+/* global document, React, ReactDOM */
 
 import classnames from 'classnames';
 import Component from 'components/extensions/Component.jsx';
@@ -79,6 +79,73 @@ class KeywordTag extends Component {
 		const { onRequirementChange } = this.props;
 
 		return isFunction(onRequirementChange);
+	};
+
+
+	/**
+	 * Hides the dropdown list
+	 * @param event Event object
+	 */
+	hideMenu = (obj) => {
+		const menuNode = ReactDOM.findDOMNode(obj.menu);
+		const menuOptionsNode = menuNode && menuNode.children[ 0 ];
+		const { target } = obj.event;
+
+		if (menuOptionsNode && !menuOptionsNode.contains(target) && obj.open) {
+			obj.toggle();
+		}
+	};
+
+	/**
+	 * Wrapper for hide menu
+	 */
+	hideNetworkMenu = (event) => {
+		const { openNetwork } = this.props;
+
+		if (openNetwork) {
+			this.hideMenu({
+				event,
+				menu: this.networkMenu,
+				open: openNetwork,
+				toggle: this.onToggleNetwork
+			});
+		}
+	};
+
+	/**
+	 * Wrapper for hide menu
+	 */
+	hideRequirementMenu = (event) => {
+		const { openRequirement } = this.props;
+
+		if (openRequirement) {
+			this.hideMenu({
+				event,
+				menu: this.requirementMenu,
+				open: openRequirement,
+				toggle: this.onToggleRequirement
+			});
+		}
+	};
+
+	/**
+	 * Toggles network
+	 */
+	onNetworkToggle = () => {
+		const { onNetworkToggle } = this.props;
+
+		onNetworkToggle();
+		this.removeHideMenuListener(this.hideNetworkMenu);
+	};
+
+	/**
+	 * Toggles requirement
+	 */
+	onRequirementToggle = () => {
+		const { onRequirementToggle } = this.props;
+
+		onRequirementToggle();
+		this.removeHideMenuListener(this.hideRequirementMenu);
 	};
 
 	/**
@@ -195,11 +262,7 @@ class KeywordTag extends Component {
 	 * Renders requirement dropdown
 	 */
 	renderNetworkDropDown = () => {
-		const {
-			onNetworkToggle,
-			openNetwork,
-			network
-		} = this.props;
+		const { openNetwork, network } = this.props;
 		const networks = Object.values(SUPPORTED_NETWORKS);
 
 		if (this.hasNetworkChange() && networks.indexOf(network) > -1) {
@@ -208,7 +271,7 @@ class KeywordTag extends Component {
 			return (
 				<div
 					className='network'
-					onClick={ !openNetwork && onNetworkToggle }>
+					onClick={ this.showNetworkMenu }>
 					{ this.renderNetworkIcon(network) }
 					<Icons.SmallChevron className='chevron' />
 					{ openNetwork && this.renderNetworkMenu(networks) }
@@ -241,7 +304,7 @@ class KeywordTag extends Component {
 				return (
 					<div
 						className='requirement'
-						onClick={ !openRequirement && onRequirementToggle }>
+						onClick={ this.showRequirementMenu }>
 						{ requirementIcon }
 						<Icons.SmallChevron className='chevron' />
 						{ openRequirement && this.hasRequirementChange() && requirementMenu }
@@ -331,7 +394,7 @@ class KeywordTag extends Component {
 	 * Renders network menu
 	 */
 	renderNetworkMenu = (options) => {
-		const { onNetworkChange, onNetworkToggle } = this.props;
+		const { onNetworkChange } = this.props;
 		const networkOptions = options.map((option) => {
 			return {
 				label: this.renderNetworkMenuOption(option),
@@ -343,7 +406,12 @@ class KeywordTag extends Component {
 			<Menu
 				options={ networkOptions }
 				onChange={ onNetworkChange }
-				onToggle={ onNetworkToggle } />
+				onToggle={ this.onNetworkToggle }
+				ref={
+					(networkMenu) => {
+						this.networkMenu = networkMenu;
+					}
+				} />
 		);
 	};
 
@@ -351,7 +419,7 @@ class KeywordTag extends Component {
 	 * Renders requirement menu
 	 */
 	renderRequirementMenu = (options) => {
-		const { onRequirementChange, onRequirementToggle } = this.props;
+		const { onRequirementChange } = this.props;
 		const requirementOptions = options.map((option) => {
 			return {
 				label: this.renderRequirementMenuOption(option),
@@ -363,7 +431,12 @@ class KeywordTag extends Component {
 			<Menu
 				options={ requirementOptions }
 				onChange={ onRequirementChange }
-				onToggle={ onRequirementToggle } />
+				onToggle={ this.onRequirementToggle }
+				ref={
+					(requirementMenu) => {
+						this.requirementMenu = requirementMenu;
+					}
+				} />
 		);
 	};
 
@@ -377,12 +450,47 @@ class KeywordTag extends Component {
 	}
 
 	/**
+	 * Shows menu
+	 */
+	showMenu = (open, toggle, hide) => {
+		if (!open) {
+			toggle();
+			document.body.addEventListener('click', hide);
+		}
+	};
+
+	/**
+	 * Wrapper for show menu for network
+	 */
+	showNetworkMenu = () => {
+		const { openNetwork, onNetworkToggle } = this.props;
+
+		this.showMenu(openNetwork, onNetworkToggle, this.hideNetworkMenu);
+	};
+
+	/**
+	 * Wrapper for show menu for network
+	 */
+	showRequirementMenu = () => {
+		const { openRequirement, onRequirementToggle } = this.props;
+
+		this.showMenu(openRequirement, onRequirementToggle, this.hideRequirementMenu);
+	};
+
+	/**
 	 * Sets value state
 	 */
 	setValue = (param) => {
 		this.setState({
 			value: param && param.hasOwnProperty('target') ? param.target.value : param
 		});
+	};
+
+	/**
+	 * Removes hideMenu event listener
+	 */
+	removeHideMenuListener = (hide) => {
+		document.body.removeEventListener('click', hide);
 	};
 
 	render() {
@@ -403,7 +511,7 @@ class KeywordTag extends Component {
 						<div
 							className='tag clearfix'
 							onClick={ onEmptyClick }>
-							Type here to add another...
+							Click here to add a tag...
 						</div>
 					)
 					: (

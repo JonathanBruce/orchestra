@@ -107,7 +107,8 @@ class DropDown extends React.Component {
 		return (
 			<div className={ classes }>
 				{ this.renderSelector() }
-				{ active && <Menu options={ options }
+				{ active && <Menu
+					options={ options }
 					ref={
 						(menu) => {
 							this.menu = menu;
@@ -115,7 +116,8 @@ class DropDown extends React.Component {
 					}
 					onChange={ onChange }
 					onToggle={ this.toggleAndRemoveHideMenuListener }
-					selected={ selected } /> }
+					selected={ selected } />
+				}
 			</div>
 		);
 	}
