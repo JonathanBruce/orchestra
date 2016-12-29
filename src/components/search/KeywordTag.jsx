@@ -11,6 +11,7 @@ import { toUpperCaseFirstCharacter } from 'lib/string';
 class KeywordTag extends Component {
 	static propTypes = {
 		defaultValue: React.PropTypes.string,
+		edit: React.PropTypes.bool,
 		id: React.PropTypes.string,
 		onDeleteClick: React.PropTypes.func,
 		onEmptyClick: React.PropTypes.func,
@@ -48,6 +49,16 @@ class KeywordTag extends Component {
 		}
 	}
 
+	componentDidMount() {
+		const { edit } = this.props;
+
+		if (edit) {
+			const { keyword } = this.refs;
+
+			keyword.focus();
+		}
+	}
+
 	static defaultProps = {
 		openNetwork: false,
 		openRequirement: false,
@@ -58,7 +69,7 @@ class KeywordTag extends Component {
 		super(props);
 
 		this.state = {
-			edit: false,
+			edit: this.props && this.props.edit ? this.props.edit : false,
 			value: this.props && this.props.defaultValue ? this.props.defaultValue : ''
 		};
 	}

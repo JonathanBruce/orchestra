@@ -34,7 +34,7 @@
 		font-family: $lato-medium-italic;
 		font-size: 12px;
 		padding: 7.5px 10px;
-		width: 254px;
+		width: 246px;
 
 		&:hover {
 			background-color: $arctic-blue-dark;
@@ -50,7 +50,7 @@
 		border-color: $pure-white;
 		font-size: 14px;
 		height: 30px;
-		width: 250px;
+		width: 246px;
 		
 		&.edit {
 			@include shadow();
@@ -59,7 +59,7 @@
 				.keyword {
 					border-bottom-right-radius: 3px;
 					border-top-right-radius: 3px;
-					width: 193px;
+					width: 189px;
 
 					&:hover {
 						background-color: $pure-white;
@@ -150,7 +150,7 @@
 			height: 30px;
 			line-height: 30px;
 			padding-left: 10px;
-			width: 159px;
+			width: 155px;
 
 			input[ type='text' ] {
 				font-family: $lato-regular;
@@ -199,7 +199,7 @@
 
 				padding-top: 0px;
 				top: 31.5px;
-				width: 250px;
+				width: 246px;
 				z-index: 9999;
 
 				.options {
@@ -219,7 +219,7 @@
 	&.with-network-and-requirement {
 		.tag {
 			.keyword {
-				width: 112px;
+				width: 108px;
 			}
 
 			.requirement {
@@ -227,7 +227,7 @@
 				border-top-left-radius: 0px;
 
 				.orch-menu {
-					width: 203px !important;
+					width: 200px !important;
 				}
 			}
 		}
@@ -235,10 +235,10 @@
 		&.edit {
 			.tag {
 				.keyword {
-					width: 112px !important;
+					width: 108px !important;
 
 					input[ type='text' ] {
-						width: 138px !important;
+						width: 134px !important;
 					}
 				}
 			}
