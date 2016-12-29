@@ -1,7 +1,7 @@
 .orch-notifier {
 	cursor: pointer;
 	height: 32px;
-	width: 46px;
+	width: 52px;
 
 	svg g,
 	svg path {
@@ -26,8 +26,12 @@
 	}
 	
 	&.active {
-		.icon {
-			float: right;
+		.left-arrow {
+			visibility: visible;
+		}
+
+		.right-arrow {
+			visibility: hidden;
 		}
 	}
 
@@ -47,6 +51,7 @@
 
 	.left-arrow {
 		float: left;
+		visibility: hidden;
 
 		svg {
 			left: 0;
