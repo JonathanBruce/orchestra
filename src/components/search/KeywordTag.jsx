@@ -197,8 +197,9 @@ class KeywordTag extends Component {
 
 		if (value !== this.props.defaultValue) {
 			this.setValue(value);
-			onTagChange(value);
 		}
+
+		onTagChange(value);
 	};
 
 	/**
