@@ -27,6 +27,7 @@
 		"functional/form/Slider",
 		"functional/grid/Column",
 		"functional/misc/Notifier",
-		"functional/misc/PillToggle"
+		"functional/misc/PillToggle",
+		"functional/search/KeywordTag"
 	]
 }

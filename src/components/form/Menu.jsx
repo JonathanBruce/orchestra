@@ -1,4 +1,4 @@
-/* global React, document */
+/* global React */
 
 import classnames from 'classnames';
 

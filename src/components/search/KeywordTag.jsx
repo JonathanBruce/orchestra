@@ -5,6 +5,7 @@ import Component from 'components/extensions/Component.jsx';
 import Icons from 'icons/_all';
 import { isFunction } from 'lib/core';
 import Menu from '../form/Menu.jsx';
+import { nodeOrParentNodeHasClass } from 'lib/dom';
 import { REQUIREMENTS, SUPPORTED_NETWORKS } from 'maestro';
 import { toUpperCaseFirstCharacter } from 'lib/string';
 
@@ -13,15 +14,15 @@ class KeywordTag extends Component {
 		defaultValue: React.PropTypes.string,
 		edit: React.PropTypes.bool,
 		id: React.PropTypes.string,
-		onDeleteClick: React.PropTypes.func,
+		onDeleteClick: React.PropTypes.func.isRequired,
 		onEmptyClick: React.PropTypes.func,
 		network: React.PropTypes.string,
 		onNetworkChange: React.PropTypes.func,
 		onNetworkToggle: React.PropTypes.func,
-		openNetwork: React.PropTypes.boolean,
+		openNetwork: React.PropTypes.bool,
 		onRequirementChange: React.PropTypes.func,
 		onRequirementToggle: React.PropTypes.func,
-		openRequirement: React.PropTypes.boolean,
+		openRequirement: React.PropTypes.bool,
 		onTagChange: React.PropTypes.func.isRequired,
 		requirement: React.PropTypes.string
 	};
@@ -57,6 +58,8 @@ class KeywordTag extends Component {
 
 			keyword.focus();
 		}
+
+		document.body.addEventListener('click', this.toggleMenus);
 	}
 
 	static defaultProps = {
@@ -118,7 +121,7 @@ class KeywordTag extends Component {
 				event,
 				menu: this.networkMenu,
 				open: openNetwork,
-				toggle: this.onToggleNetwork
+				toggle: this.onNetworkToggle
 			});
 		}
 	};
@@ -134,7 +137,7 @@ class KeywordTag extends Component {
 				event,
 				menu: this.requirementMenu,
 				open: openRequirement,
-				toggle: this.onToggleRequirement
+				toggle: this.onRequirementToggle
 			});
 		}
 	};
@@ -146,7 +149,6 @@ class KeywordTag extends Component {
 		const { onNetworkToggle } = this.props;
 
 		onNetworkToggle();
-		this.removeHideMenuListener(this.hideNetworkMenu);
 	};
 
 	/**
@@ -156,7 +158,6 @@ class KeywordTag extends Component {
 		const { onRequirementToggle } = this.props;
 
 		onRequirementToggle();
-		this.removeHideMenuListener(this.hideRequirementMenu);
 	};
 
 	/**
@@ -281,9 +282,7 @@ class KeywordTag extends Component {
 			networks.splice(networks.indexOf(network), 1);
 
 			return (
-				<div
-					className='network'
-					onClick={ this.showNetworkMenu }>
+				<div className='network'>
 					{ this.renderNetworkIcon(network) }
 					<Icons.SmallChevron className='chevron' />
 					{ openNetwork && this.renderNetworkMenu(networks) }
@@ -296,11 +295,7 @@ class KeywordTag extends Component {
 	 * Renders requirement dropdown
 	 */
 	renderRequirementDropDown = () => {
-		const {
-			onRequirementToggle,
-			openRequirement,
-			requirement
-		} = this.props;
+		const { openRequirement, requirement } = this.props;
 		const requirements = Object.values(REQUIREMENTS);
 
 		if (requirements.indexOf(requirement) > -1) {
@@ -314,9 +309,7 @@ class KeywordTag extends Component {
 				const requirementMenu = this.renderRequirementMenu(requirements);
 
 				return (
-					<div
-						className='requirement'
-						onClick={ this.showRequirementMenu }>
+					<div className='requirement'>
 						{ requirementIcon }
 						<Icons.SmallChevron className='chevron' />
 						{ openRequirement && this.hasRequirementChange() && requirementMenu }
@@ -464,10 +457,9 @@ class KeywordTag extends Component {
 	/**
 	 * Shows menu
 	 */
-	showMenu = (open, toggle, hide) => {
+	showMenu = (open, toggle) => {
 		if (!open) {
 			toggle();
-			document.body.addEventListener('click', hide);
 		}
 	};
 
@@ -498,11 +490,23 @@ class KeywordTag extends Component {
 		});
 	};
 
-	/**
-	 * Removes hideMenu event listener
-	 */
-	removeHideMenuListener = (hide) => {
-		document.body.removeEventListener('click', hide);
+	toggleMenus = (event) => {
+		const { openNetwork, openRequirement } = this.props;
+		const { target } = event;
+
+		if (nodeOrParentNodeHasClass(target, 'requirement') && !openRequirement) {
+			this.showRequirementMenu();
+		}
+		else if (openRequirement) {
+			this.hideRequirementMenu(event);
+		}
+
+		if (nodeOrParentNodeHasClass(target, 'network') && !openNetwork) {
+			this.showNetworkMenu();
+		}
+		else if (openNetwork) {
+			this.hideNetworkMenu(event);
+		}
 	};
 
 	render() {

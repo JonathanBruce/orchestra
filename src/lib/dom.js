@@ -1,24 +1,6 @@
 import { getRatioValue } from 'lib/math';
 
 /**
- * [scrollBottom description]
- * @param  {[type]} elem   [description]
- * @param  {[type]} action [description]
- * @return {[type]}        [description]
- */
-export function scrollBottom(elem, action) {
-	if (elem && action) {
-		const docHeight = elem.scrollHeight ? elem.scrollHeight : elem.offsetHeight;
-		const winHeight = elem.innerHeight ? elem.innerHeight : elem.clientHeight;
-		const scrollPoint = elem.scrollY ? elem.scrollY : elem.scrollTop;
-
-		if ((scrollPoint + winHeight) === docHeight && action) {
-			action();
-		}
-	}
-}
-
-/**
  * Get current cursor position relative to the element
  * @param  {object} event   Synthetic Event object
  * @param  {object} element DOM Element
@@ -81,4 +63,38 @@ export function getElementCursorValue(event, element, properties = {}) {
 		value: max,
 		intercept: min
 	});
+}
+
+export function nodeOrParentNodeHasClass(target, className) {
+	let node = target;
+	let hasClass = false;
+
+	while (node) {
+		if (node.className === className) {
+			hasClass = true;
+			break;
+		}
+
+		node = node.parentNode;
+	}
+
+	return hasClass;
+}
+
+/**
+ * [scrollBottom description]
+ * @param  {[type]} elem   [description]
+ * @param  {[type]} action [description]
+ * @return {[type]}        [description]
+ */
+export function scrollBottom(elem, action) {
+	if (elem && action) {
+		const docHeight = elem.scrollHeight ? elem.scrollHeight : elem.offsetHeight;
+		const winHeight = elem.innerHeight ? elem.innerHeight : elem.clientHeight;
+		const scrollPoint = elem.scrollY ? elem.scrollY : elem.scrollTop;
+
+		if ((scrollPoint + winHeight) === docHeight && action) {
+			action();
+		}
+	}
 }
