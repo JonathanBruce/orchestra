@@ -32,18 +32,18 @@ class Notifier extends React.Component {
 			value
 		} = this.props;
 		const notifierClasses = classnames('orch-notifier', {
-			active,
 			clearfix: true,
 			disabled
+		});
+		const arrowClasses = classnames({
+			'right-arrow': active,
+			'left-arrow': !active
 		});
 
 		return (
 			<div
 				className={ notifierClasses }
 				onClick={ onClick }>
-				<div className='left-arrow'>
-					<Icons.SmallChevron />
-				</div>
 
 				<div className='icon'>
 					{ icon }
@@ -58,7 +58,7 @@ class Notifier extends React.Component {
 					}
 				</div>
 
-				<div className='right-arrow'>
+				<div className={ arrowClasses }>
 					<Icons.SmallChevron />
 				</div>
 			</div>
