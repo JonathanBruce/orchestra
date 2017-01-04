@@ -64,19 +64,12 @@ class FilterBox extends React.Component {
 			widgetIcon,
 			widgetOpen
 		} = this.props;
-		const leftArrowClasses = classnames('left-arrow', {
-			disabled: !widgetOpen
-		});
 		const rightArrowClasses = classnames('right-arrow', {
-			disabled: widgetOpen
+			open: widgetOpen
 		});
 
 		return widget && (
 			<div className='widget-icons'>
-				<div className={ leftArrowClasses }>
-					<Icons.SmallChevron />
-				</div>
-
 				<div
 					className='icon'
 					onClick={ onWidgetToggle }>

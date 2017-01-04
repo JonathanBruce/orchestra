@@ -70,22 +70,12 @@ $filter-box-size: 280px;
 				}
 			}
 
-			div:not(.icon) {
-				&.disabled {
-					svg {
-						path {
-							opacity: 0;
-						}
-					}
-				}
-			}
-
-			.left-arrow {
-				transform: rotate(90deg);
-			}
-
 			.right-arrow {
 				transform: rotate(270deg);
+
+				&.open {
+					transform: rotate(90deg);
+				}
 			}
 		}
 	}
