@@ -21,7 +21,8 @@
     "intern:grid": "./node_modules/intern/bin/intern-runner.js config=tests/intern.grid.js",
     "test:browserstack": "npm run build:test-ui && npm run build:intern && npm run intern:browserstack",
     "test:local": "npm run build:test-ui && npm run build:intern && npm run intern:local",
-    "test:grid": "npm run build:test-ui && npm run build:intern && npm run intern:grid"
+    "test:grid": "npm run build:test-ui && npm run build:intern && npm run intern:grid",
+    "watch:example": "webpack-dev-server --config webpack.example.js"
   },
   "author": "",
   "license": "ISC",
@@ -49,11 +50,13 @@
     "postcss-loader": "^0.9.1",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
+    "react-hot-loader": "^1.3.1",
     "sass-loader": "^3.2.0",
     "source-map-support": "^0.4.0",
     "style-loader": "^0.13.1",
     "svgo": "^0.6.6",
-    "webpack": "^1.13.0"
+    "webpack": "^1.13.0",
+    "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
     "maestro": "git+ssh://git@github.com/insightpool/maestro.git#4e8a6089c3c5add81b19cbc1689840917a4e8f94",

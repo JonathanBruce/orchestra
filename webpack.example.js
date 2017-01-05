@@ -7,6 +7,11 @@ var sourceDir = path.join(__dirname, '/src');
 var examplesDir = path.join(__dirname, '/example');
 
 module.exports = {
+	devServer: {
+		contentBase: './example',
+		hot: true
+	},
+
 	devtool: 'inline-source-map',
 	entry: path.join(examplesDir, 'example.js'),
 
