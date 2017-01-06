@@ -1,0 +1,54 @@
+.orch-action-dropdown {
+	width: 116px;
+
+	&.resource-action {
+		.chevron,
+		.icon,
+		.state {
+			display: inline-block;
+		}
+
+		.icon {
+			svg {
+				margin-right: 10px;
+				vertical-align: middle;
+			}
+		}
+
+		&.saved {
+			color: $mint-green;
+
+		}
+
+		&.update {
+			color: $IP-blue;
+		}
+
+		.chevron {
+			float: right;
+			position: relative;
+			right: -4px;
+			top: -1px;
+			transform: rotate(180deg);
+
+			svg {
+				path {
+					stroke: $cloudy-blue-grey;
+				}
+			}
+		}
+	}
+
+	&:hover {
+		.chevron {
+			top: 3px;
+			transform: rotate(0deg);
+
+			svg {
+				path {
+					stroke: $dusk-blue;
+				}
+			}
+		}
+	}
+}

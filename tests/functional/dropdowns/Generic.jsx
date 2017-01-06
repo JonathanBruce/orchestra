@@ -2,7 +2,7 @@
 /* global document, React, ReactDOM, window */
 
 import 'sass/ui.scss';
-import DropDown from 'components/form/DropDown.jsx';
+import DropDown from 'components/dropdowns/Generic.jsx';
 
 class DropDownTest extends React.Component {
 	constructor(props) {

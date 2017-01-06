@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import Component from 'components/extensions/Component.jsx';
 import Icons from 'icons/_all';
 import { isFunction } from 'lib/core';
-import Menu from '../form/Menu.jsx';
+import Menu from '../misc/Menu.jsx';
 import { REQUIREMENTS, SUPPORTED_NETWORKS } from 'maestro';
 import { toUpperCaseFirstCharacter } from 'lib/string';
 

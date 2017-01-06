@@ -38,6 +38,8 @@ import {
 	PrimaryNeutralButton,
 	PrimaryPositiveButton,
 	PulseLoader,
+	RESOURCE_ACTION_DROPDOWN,
+	ResourceActionDropDown,
 	SecondaryNeutralButton,
 	SecondaryPositiveButton,
 	Six,
@@ -886,6 +888,10 @@ class Example extends React.Component {
 							disabled
 							icon={ <Icons.AdvancedSearch /> }
 							value={ 3 } />
+					</Three>
+
+					<Three>
+						<ResourceActionDropDown state={ RESOURCE_ACTION_DROPDOWN.SAVED } />
 					</Three>
 				</Container>
 			</div>

@@ -22,11 +22,12 @@ define([
 	'tests/functional/buttons/TertiaryNegative',
 	'tests/functional/buttons/TertiaryNeutral',
 	'tests/functional/buttons/TertiaryPositive',
+	'tests/functional/dropdowns/Generic',
 	'tests/functional/form/CheckBox',
-	'tests/functional/form/DropDown',
 	'tests/functional/form/Input',
 	'tests/functional/form/Slider',
 	'tests/functional/grid/Column',
 	'tests/functional/misc/Notifier',
-	'tests/functional/misc/PillToggle'
+	'tests/functional/misc/PillToggle',
+	'tests/functional/search/KeywordTag'
 ]);

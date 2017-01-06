@@ -2,9 +2,9 @@
 
 import classnames from 'classnames';
 import Icons from 'icons/_all';
-import Menu from './Menu.jsx';
+import Menu from '../misc/Menu.jsx';
 
-class DropDown extends React.Component {
+class GenericDropDown extends React.Component {
 	static propTypes = {
 		active: React.PropTypes.bool,
 		disabled: React.PropTypes.bool,
@@ -99,7 +99,7 @@ class DropDown extends React.Component {
 			options,
 			selected
 		} = this.props;
-		const classes = classnames('orch-dropdown', {
+		const classes = classnames('orch-dropdown orch-generic-dropdown', {
 			disabled,
 			active
 		});
@@ -123,4 +123,4 @@ class DropDown extends React.Component {
 	}
 }
 
-export default DropDown;
+export default GenericDropDown;

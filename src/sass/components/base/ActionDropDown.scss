@@ -1,0 +1,13 @@
+.orch-action-dropdown {
+	border-left: 2px solid $arctic-blue;
+	border-right: 2px solid $arctic-blue;
+	color: $steel-blue;
+	font-family: $lato-regular;
+	font-size: 16px;
+	padding: 21px 15px;
+
+	&:hover {
+		background-color: $arctic-blue;
+		cursor: pointer;
+	}
+}

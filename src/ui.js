@@ -5,6 +5,7 @@ import 'sass/ui.scss';
  */
 
 export APP from 'constants/APP';
+export RESOURCE_ACTION_DROPDOWN from 'constants/RESOURCE_ACTION_DROPDOWN';
 
 /**
  * Export icons
@@ -57,12 +58,19 @@ export TertiaryNeutralButton from 'components/buttons/TertiaryNeutral.jsx';
 export TertiaryPositiveButton from 'components/buttons/TertiaryPositive.jsx';
 
 /**
+ * Export dropdoown components
+ */
+
+export DropDown from 'components/dropdowns/Generic.jsx';
+export GenericDropDown from 'components/dropdowns/Generic.jsx';
+export ResourceActionDropDown from 'components/dropdowns/ResourceAction.jsx';
+
+/**
  * Export form components
  */
 
 export CheckBox from 'components/form/CheckBox.jsx';
 export Input from 'components/form/Input.jsx';
-export DropDown from 'components/form/DropDown.jsx';
 export Slider from 'components/form/Slider.jsx';
 export Switch from 'components/form/Switch.jsx';
 
@@ -78,6 +86,7 @@ export TitleSubHeader from 'components/headers/TitleSubHeader.jsx';
  */
 
 export FilterBox from 'components/search/FilterBox.jsx';
+export KeywordTag from 'components/search/KeywordTag.jsx';
 
 /**
  * Export loader components
@@ -99,9 +108,3 @@ export PaginationApprove from 'components/misc/PaginationApprove.jsx';
 export PaginationControls from 'components/misc/PaginationControls.jsx';
 export PillToggle from 'components/misc/PillToggle.jsx';
 export Stat from 'components/misc/Stat.jsx';
-
-/**
- * Export search components
- */
-
-export KeywordTag from 'components/search/KeywordTag.jsx';

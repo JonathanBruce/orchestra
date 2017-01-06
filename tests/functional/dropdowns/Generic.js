@@ -5,12 +5,12 @@ define([
 	'intern/chai!assert',
 	'require'
 ], function (registerSuite, assert, require) {
-	var url = './DropDown.html';
+	var url = './Generic.html';
 
 	registerSuite({
-		name: 'functional/form/DropDown',
+		name: 'functional/form/Generic',
 
-		'it shouldn\'t be able to open a disabled dropdown'() {
+		'it shouldn\'t be able to open a disabled generic'() {
 			return this.remote.get(require.toUrl(url))
 				.findById('disabled-dropdown')
 					.findByClassName('orch-dropdown')
@@ -23,7 +23,7 @@ define([
 					});
 		},
 
-		'it should be able to change an enabled dropdown'() {
+		'it should be able to change an enabled generic'() {
 			return this.remote.get(require.toUrl(url))
 				.findById('enabled-dropdown')
 					.findByClassName('orch-dropdown')
@@ -45,7 +45,7 @@ define([
 							});
 		},
 
-		'it should be able to close a dropdown by clicking away from it.'() {
+		'it should be able to close a generic by clicking away from it.'() {
 			return this.remote.get(require.toUrl(url))
 				.findById('enabled-dropdown')
 					.findByClassName('orch-dropdown')

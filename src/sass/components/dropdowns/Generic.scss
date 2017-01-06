@@ -1,7 +1,8 @@
 $dropdown-height: 34px;
 $chevron-width: 24px;
 
-.orch-dropdown {
+.orch-dropdown,
+.orch-generic-dropdown {
 	color: $dusk-blue;
 	cursor: pointer;
 	position: relative;
