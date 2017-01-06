@@ -96,6 +96,12 @@ export KeywordTag from 'components/search/KeywordTag.jsx';
 export PulseLoader from 'components/loaders/Pulse.jsx';
 
 /**
+ * Export menu components
+ */
+
+export ResourceActionMenu from 'components/menus/ResourceAction.jsx';
+
+/**
  * Export misc components
  */
 

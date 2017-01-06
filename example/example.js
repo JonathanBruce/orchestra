@@ -40,6 +40,7 @@ import {
 	PulseLoader,
 	RESOURCE_ACTION_DROPDOWN,
 	ResourceActionDropDown,
+	ResourceActionMenu,
 	SecondaryNeutralButton,
 	SecondaryPositiveButton,
 	Six,
@@ -900,6 +901,12 @@ class Example extends React.Component {
 							title='Add To Segment'
 							value='0' />
 					</Three>
+
+					<Six>
+						<ResourceActionMenu
+							placeholder='UPS Followers 10-22'
+							title='Name Your Search:' />
+					</Six>
 				</Container>
 			</div>
 		);

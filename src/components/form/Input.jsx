@@ -12,7 +12,7 @@ class Input extends React.Component {
 		icon: React.PropTypes.element,
 		onBlur: React.PropTypes.func,
 		onFocus: React.PropTypes.func,
-		placeholder: React.PropTypes.string,
+		placeholder: React.PropTypes.string.isRequired,
 		type: React.PropTypes.string.isRequired
 	};
 
