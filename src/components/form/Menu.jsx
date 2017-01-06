@@ -11,6 +11,7 @@ class Menu extends React.Component {
 			})
 		).isRequired,
 		onChange: React.PropTypes.func.isRequired,
+		onMenuLeave: React.PropTypes.func,
 		onToggle: React.PropTypes.func.isRequired,
 		selected: React.PropTypes.any
 	};
@@ -18,6 +19,15 @@ class Menu extends React.Component {
 	static defaultProps = {
 		active: false,
 		options: []
+	}
+
+	/**
+	 * Passes event to onMenuLeave
+	 */
+	onMenuLeave = (event) => {
+		const { onMenuLeave } = this.props;
+
+		onMenuLeave(event);
 	}
 
 	/**
@@ -38,7 +48,7 @@ class Menu extends React.Component {
 		});
 
 		return (
-			<div className='orch-menu'>
+			<div className='orch-menu' onMouseLeave={ this.onMenuLeave }>
 				<div className={ optionsClasses } ref='menu'>
 					{
 						options.map((option, index) => (

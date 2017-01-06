@@ -1,11 +1,10 @@
-/* global document, React, ReactDOM */
+/* global React */
 
 import classnames from 'classnames';
 import Component from 'components/extensions/Component.jsx';
 import Icons from 'icons/_all';
 import { isFunction } from 'lib/core';
 import Menu from '../form/Menu.jsx';
-import { nodeOrParentNodeHasClass } from 'lib/dom';
 import { REQUIREMENTS, SUPPORTED_NETWORKS } from 'maestro';
 import { toUpperCaseFirstCharacter } from 'lib/string';
 
@@ -58,8 +57,6 @@ class KeywordTag extends Component {
 
 			keyword.focus();
 		}
-
-		document.body.addEventListener('click', this.toggleMenus);
 	}
 
 	static defaultProps = {
@@ -95,50 +92,25 @@ class KeywordTag extends Component {
 		return isFunction(onRequirementChange);
 	};
 
-
-	/**
-	 * Hides the dropdown list
-	 * @param event Event object
-	 */
-	hideMenu = (obj) => {
-		const menuNode = ReactDOM.findDOMNode(obj.menu);
-		const menuOptionsNode = menuNode && menuNode.children[ 0 ];
-		const { target } = obj.event;
-
-		if (menuOptionsNode && !menuOptionsNode.contains(target) && obj.open) {
-			obj.toggle();
-		}
-	};
-
 	/**
 	 * Wrapper for hide menu
 	 */
-	hideNetworkMenu = (event) => {
+	hideNetworkMenu = () => {
 		const { openNetwork } = this.props;
 
 		if (openNetwork) {
-			this.hideMenu({
-				event,
-				menu: this.networkMenu,
-				open: openNetwork,
-				toggle: this.onNetworkToggle
-			});
+			this.onNetworkToggle();
 		}
 	};
 
 	/**
 	 * Wrapper for hide menu
 	 */
-	hideRequirementMenu = (event) => {
+	hideRequirementMenu = () => {
 		const { openRequirement } = this.props;
 
 		if (openRequirement) {
-			this.hideMenu({
-				event,
-				menu: this.requirementMenu,
-				open: openRequirement,
-				toggle: this.onRequirementToggle
-			});
+			this.onRequirementToggle();
 		}
 	};
 
@@ -238,7 +210,7 @@ class KeywordTag extends Component {
 
 		return NetworkIcon
 			? (
-				<NetworkIcon className='icon' />
+				<NetworkIcon className='icon' ref='network-icon' />
 			)
 			: (
 				<span>All</span>
@@ -252,15 +224,15 @@ class KeywordTag extends Component {
 		switch (requirement) {
 			case REQUIREMENTS.EXCLUDE:
 				return (
-					<Icons.Exclude className='icon' />
+					<Icons.Exclude className='icon' ref='requirement-icon' />
 				);
 			case REQUIREMENTS.LOCKED:
 				return (
-					<Icons.Lock className='icon' />
+					<Icons.Lock className='icon' ref='requirement-icon' />
 				);
 			case REQUIREMENTS.NEUTRAL:
 				return (
-					<Icons.Filter className='icon' />
+					<Icons.Filter className='icon' ref='requirement-icon' />
 				);
 			case REQUIREMENTS.STREAM:
 				return (
@@ -282,7 +254,9 @@ class KeywordTag extends Component {
 			networks.splice(networks.indexOf(network), 1);
 
 			return (
-				<div className='network'>
+				<div className='network'
+					onMouseEnter={ this.showNetworkMenu }
+					onMouseLeave={ this.hideNetworkMenu }>
 					{ this.renderNetworkIcon(network) }
 					<Icons.SmallChevron className='chevron' />
 					{ openNetwork && this.renderNetworkMenu(networks) }
@@ -309,7 +283,9 @@ class KeywordTag extends Component {
 				const requirementMenu = this.renderRequirementMenu(requirements);
 
 				return (
-					<div className='requirement'>
+					<div className='requirement'
+						onMouseEnter={ this.showRequirementMenu }
+						onMouseLeave={ this.hideRequirementMenu }>
 						{ requirementIcon }
 						<Icons.SmallChevron className='chevron' />
 						{ openRequirement && this.hasRequirementChange() && requirementMenu }
@@ -411,6 +387,7 @@ class KeywordTag extends Component {
 			<Menu
 				options={ networkOptions }
 				onChange={ onNetworkChange }
+				onMenuLeave={ this.hideNetworkMenu }
 				onToggle={ this.onNetworkToggle }
 				ref={
 					(networkMenu) => {
@@ -436,6 +413,7 @@ class KeywordTag extends Component {
 			<Menu
 				options={ requirementOptions }
 				onChange={ onRequirementChange }
+				onMenuLeave={ this.hideRequirementMenu }
 				onToggle={ this.onRequirementToggle }
 				ref={
 					(requirementMenu) => {
@@ -455,30 +433,25 @@ class KeywordTag extends Component {
 	}
 
 	/**
-	 * Shows menu
+	 * Wrapper for show menu for network
 	 */
-	showMenu = (open, toggle) => {
-		if (!open) {
-			toggle();
+	showNetworkMenu = () => {
+		const { openNetwork } = this.props;
+
+		if (!openNetwork) {
+			this.onNetworkToggle();
 		}
 	};
 
 	/**
 	 * Wrapper for show menu for network
 	 */
-	showNetworkMenu = () => {
-		const { openNetwork, onNetworkToggle } = this.props;
-
-		this.showMenu(openNetwork, onNetworkToggle, this.hideNetworkMenu);
-	};
-
-	/**
-	 * Wrapper for show menu for network
-	 */
 	showRequirementMenu = () => {
-		const { openRequirement, onRequirementToggle } = this.props;
+		const { openRequirement } = this.props;
 
-		this.showMenu(openRequirement, onRequirementToggle, this.hideRequirementMenu);
+		if (!openRequirement) {
+			this.onRequirementToggle();
+		}
 	};
 
 	/**
@@ -488,25 +461,6 @@ class KeywordTag extends Component {
 		this.setState({
 			value: param && param.hasOwnProperty('target') ? param.target.value : param
 		});
-	};
-
-	toggleMenus = (event) => {
-		const { openNetwork, openRequirement } = this.props;
-		const { target } = event;
-
-		if (nodeOrParentNodeHasClass(target, 'requirement') && !openRequirement) {
-			this.showRequirementMenu();
-		}
-		else if (openRequirement) {
-			this.hideRequirementMenu(event);
-		}
-
-		if (nodeOrParentNodeHasClass(target, 'network') && !openNetwork) {
-			this.showNetworkMenu();
-		}
-		else if (openNetwork) {
-			this.hideNetworkMenu(event);
-		}
 	};
 
 	render() {
@@ -532,7 +486,8 @@ class KeywordTag extends Component {
 					)
 					: (
 						<div
-							className='tag clearfix'>
+							className='tag clearfix'
+							ref='tag'>
 							{ this.renderNetworkDropDown() }
 							{ this.renderRequirementDropDown() }
 							{ this.renderKeyword() }
