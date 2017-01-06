@@ -2,6 +2,7 @@
 
 import Component from 'components/extensions/Component.jsx';
 import classnames from 'classnames';
+import Icons from 'icons/_all';
 
 class ActionDropDown extends Component {
 	static propTypes = {
@@ -20,6 +21,10 @@ class ActionDropDown extends Component {
 		return (
 			<div { ...this.props } className={ this.mergeClasses(classes, this.props.className) }>
 				{ this.props.children }
+
+				<div className='chevron'>
+					<Icons.Chevron />
+				</div>
 			</div>
 		);
 	}

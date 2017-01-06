@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import Component from 'components/extensions/Component.jsx';
 import Icons from 'icons/_all';
 import { isFunction } from 'lib/core';
-import Menu from '../misc/Menu.jsx';
+import GenericMenu from '../menus/Generic.jsx';
 import { REQUIREMENTS, SUPPORTED_NETWORKS } from 'maestro';
 import { toUpperCaseFirstCharacter } from 'lib/string';
 
@@ -384,7 +384,7 @@ class KeywordTag extends Component {
 		});
 
 		return (
-			<Menu
+			<GenericMenu
 				options={ networkOptions }
 				onChange={ onNetworkChange }
 				onMenuLeave={ this.hideNetworkMenu }
@@ -410,7 +410,7 @@ class KeywordTag extends Component {
 		});
 
 		return (
-			<Menu
+			<GenericMenu
 				options={ requirementOptions }
 				onChange={ onRequirementChange }
 				onMenuLeave={ this.hideRequirementMenu }

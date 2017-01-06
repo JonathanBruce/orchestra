@@ -8,6 +8,35 @@
 
 	&:hover {
 		background-color: $arctic-blue;
+		color: $dusk-blue !important;
 		cursor: pointer;
+	}
+
+	.chevron {
+		display: inline-block;
+		float: right;
+		position: relative;
+		right: -4px;
+		top: -1px;
+		transform: rotate(180deg);
+
+		svg {
+			path {
+				stroke: $cloudy-blue-grey;
+			}
+		}
+	}
+
+	&:hover {
+		.chevron {
+			top: 3px;
+			transform: rotate(0deg);
+
+			svg {
+				path {
+					stroke: $dusk-blue;
+				}
+			}
+		}
 	}
 }

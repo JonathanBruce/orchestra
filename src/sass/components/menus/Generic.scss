@@ -1,4 +1,5 @@
-.orch-menu {
+.orch-menu,
+.orch-generic-menu {
 	@include shadow();
 
 	border-radius: 3px;

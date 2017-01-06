@@ -2,7 +2,7 @@
 
 import classnames from 'classnames';
 
-class Menu extends React.Component {
+class GenericMenu extends React.Component {
 	static propTypes = {
 		options: React.PropTypes.arrayOf(
 			React.PropTypes.shape({
@@ -48,7 +48,7 @@ class Menu extends React.Component {
 		});
 
 		return (
-			<div className='orch-menu' onMouseLeave={ this.onMenuLeave }>
+			<div className='orch-menu orch-generic-menu' onMouseLeave={ this.onMenuLeave }>
 				<div className={ optionsClasses } ref='menu'>
 					{
 						options.map((option, index) => (
@@ -65,4 +65,4 @@ class Menu extends React.Component {
 	}
 }
 
-export default Menu;
+export default GenericMenu;

@@ -57,10 +57,6 @@ class ResourceActionDropDown extends React.Component {
 				<div className='state'>
 					{ text }
 				</div>
-
-				<div className='chevron'>
-					<Icons.Chevron />
-				</div>
 			</ActionDropDown>
 		);
 	}

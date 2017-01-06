@@ -2,7 +2,7 @@
 
 import classnames from 'classnames';
 import Icons from 'icons/_all';
-import Menu from '../misc/Menu.jsx';
+import GenericMenu from '../menus/Generic.jsx';
 
 class GenericDropDown extends React.Component {
 	static propTypes = {
@@ -107,7 +107,7 @@ class GenericDropDown extends React.Component {
 		return (
 			<div className={ classes }>
 				{ this.renderSelector() }
-				{ active && <Menu
+				{ active && <GenericMenu
 					options={ options }
 					ref={
 						(menu) => {

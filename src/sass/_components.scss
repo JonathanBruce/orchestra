@@ -49,6 +49,7 @@
 
 @import './components/dropdowns/Generic.scss';
 @import './components/dropdowns/ResourceAction.scss';
+@import './components/dropdowns/ValueAction.scss';
 
 /**
  * Import form component styles
@@ -73,6 +74,12 @@
 @import './components/loaders/Pulse.scss';
 
 /**
+ * Import menu component styles
+ */
+
+@import './components/menus/Generic.scss';
+
+/**
  * Import search component styles
  */
 
@@ -88,7 +95,6 @@
 @import './components/misc/Content.scss';
 @import './components/misc/Influencer.scss';
 @import './components/misc/Info.scss';
-@import './components/misc/Menu.scss';
 @import './components/misc/Notifier.scss';
 @import './components/misc/PaginationApprove.scss';
 @import './components/misc/PaginationControls.scss';

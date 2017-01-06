@@ -1,8 +1,7 @@
 .orch-action-dropdown {
-	width: 116px;
-
 	&.resource-action {
-		.chevron,
+		width: 116px;
+
 		.icon,
 		.state {
 			display: inline-block;
@@ -22,33 +21,6 @@
 
 		&.update {
 			color: $IP-blue;
-		}
-
-		.chevron {
-			float: right;
-			position: relative;
-			right: -4px;
-			top: -1px;
-			transform: rotate(180deg);
-
-			svg {
-				path {
-					stroke: $cloudy-blue-grey;
-				}
-			}
-		}
-	}
-
-	&:hover {
-		.chevron {
-			top: 3px;
-			transform: rotate(0deg);
-
-			svg {
-				path {
-					stroke: $dusk-blue;
-				}
-			}
 		}
 	}
 }

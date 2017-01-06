@@ -194,7 +194,8 @@
 				}
 			}
 
-			.orch-menu {
+			.orch-menu,
+			.orch-generic-menu {
 				@include shadow($y: 5px);
 
 				padding-top: 0px;
@@ -226,7 +227,8 @@
 				border-bottom-left-radius: 0px;
 				border-top-left-radius: 0px;
 
-				.orch-menu {
+				.orch-menu,
+				.orch-generic-menu {
 					width: 195px !important;
 				}
 			}

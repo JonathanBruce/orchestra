@@ -64,6 +64,7 @@ export TertiaryPositiveButton from 'components/buttons/TertiaryPositive.jsx';
 export DropDown from 'components/dropdowns/Generic.jsx';
 export GenericDropDown from 'components/dropdowns/Generic.jsx';
 export ResourceActionDropDown from 'components/dropdowns/ResourceAction.jsx';
+export ValueActionDropDown from 'components/dropdowns/ValueAction.jsx';
 
 /**
  * Export form components

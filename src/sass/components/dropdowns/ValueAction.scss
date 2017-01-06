@@ -1,0 +1,27 @@
+.orch-action-dropdown {
+	&.value-action {
+		width: 234px;
+
+		.value,
+		.title {
+			display: inline-block;
+			line-height: 29px;
+		}
+
+		.value {
+			background-color: $arctic-blue-dark;
+			border-radius: 100px;
+			color: $steel-blue;
+			font-family: $lato-black;
+			height: 32px;
+			margin-right: 10px;
+			text-align: center;
+			width: 50px;
+
+			&.greater-than-zero {
+				background-color: $goldenrod-dark;
+				color: $pure-white;
+			}
+		}
+	}
+}

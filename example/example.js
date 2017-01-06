@@ -52,7 +52,8 @@ import {
 	Three,
 	TitleSubHeader,
 	Twelve,
-	Two
+	Two,
+	ValueActionDropDown
 } from '../src/ui';
 
 class Example extends React.Component {
@@ -892,6 +893,12 @@ class Example extends React.Component {
 
 					<Three>
 						<ResourceActionDropDown state={ RESOURCE_ACTION_DROPDOWN.SAVED } />
+					</Three>
+
+					<Three>
+						<ValueActionDropDown
+							title='Add To Segment'
+							value='0' />
 					</Three>
 				</Container>
 			</div>
