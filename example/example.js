@@ -3,6 +3,7 @@
 
 import '../src/sass/_example.scss';
 import {
+	ACTION_MENU,
 	Alert,
 	APP,
 	Avatar,
@@ -40,7 +41,6 @@ import {
 	PulseLoader,
 	RESOURCE_ACTION_DROPDOWN,
 	ResourceActionDropDown,
-	ResourceActionMenu,
 	SecondaryNeutralButton,
 	SecondaryPositiveButton,
 	Six,
@@ -893,20 +893,28 @@ class Example extends React.Component {
 					</Three>
 
 					<Three>
-						<ResourceActionDropDown state={ RESOURCE_ACTION_DROPDOWN.SAVED } />
+						<ResourceActionDropDown
+							state={ RESOURCE_ACTION_DROPDOWN.SAVE }
+							position={ ACTION_MENU.RIGHT }>
+							Content
+						</ResourceActionDropDown>
 					</Three>
 
 					<Three>
 						<ValueActionDropDown
 							title='Add To Segment'
-							value='0' />
+							value='0'>
+							Content
+						</ValueActionDropDown>
 					</Three>
 
-					<Six>
-						<ResourceActionMenu
-							placeholder='UPS Followers 10-22'
-							title='Name Your Search:' />
-					</Six>
+					<Three>
+						<ValueActionDropDown
+							title='Add To Segment'
+							value='1.1K'>
+							Content
+						</ValueActionDropDown>
+					</Three>
 				</Container>
 			</div>
 		);

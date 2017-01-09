@@ -2,6 +2,7 @@
 
 import Component from 'components/extensions/Component.jsx';
 import classnames from 'classnames';
+import ACTION_MENU from '../../constants/ACTION_MENU';
 
 class ActionMenu extends Component {
 	static propTypes = {
@@ -9,12 +10,16 @@ class ActionMenu extends Component {
 		children: React.PropTypes.oneOfType([
 			React.PropTypes.array,
 			React.PropTypes.string
-		])
+		]),
+		position: React.PropTypes.string
 	};
 
 	render() {
+		const { position } = this.props;
 		const classes = classnames({
-			'orch-action-menu': true
+			'orch-action-menu': true,
+			left: !position || position === ACTION_MENU.LEFT,
+			right: position === ACTION_MENU.RIGHT
 		});
 
 		return (

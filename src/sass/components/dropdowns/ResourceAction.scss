@@ -1,6 +1,6 @@
-.orch-action-dropdown {
-	&.resource-action {
-		width: 116px;
+.orch-resource-action-dropdown {
+	&.orch-action-dropdown {
+		width: 120px;
 
 		.icon,
 		.state {
@@ -16,7 +16,6 @@
 
 		&.saved {
 			color: $mint-green;
-
 		}
 
 		&.update {

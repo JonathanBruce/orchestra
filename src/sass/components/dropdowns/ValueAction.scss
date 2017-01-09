@@ -1,11 +1,16 @@
-.orch-action-dropdown {
-	&.value-action {
-		width: 234px;
+.orch-value-action-dropdown {
+	&.orch-action-dropdown {
+		width: 200px;
 
-		.value,
-		.title {
+		.orch-action-menu {
+			left: -1px;
+			position: absolute;
+			top: 60px;
+		}
+
+		.title,
+		.value {
 			display: inline-block;
-			line-height: 29px;
 		}
 
 		.value {
@@ -13,7 +18,8 @@
 			border-radius: 100px;
 			color: $steel-blue;
 			font-family: $lato-black;
-			height: 32px;
+			padding-bottom: 5px;
+			padding-top: 8px;
 			margin-right: 10px;
 			text-align: center;
 			width: 50px;

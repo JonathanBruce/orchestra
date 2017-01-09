@@ -70,7 +70,7 @@
 	}
 
 	&.exclude {
-		@include requirement($watermelon, $watermelon, $watermelon-dark, 'g');
+		@include requirement($watermelon, $watermelon-dark, $watermelon-dark, 'g');
 	}
 
 	&.locked {

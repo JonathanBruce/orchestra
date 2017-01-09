@@ -4,6 +4,7 @@ import 'sass/ui.scss';
  * Export constants
  */
 
+export ACTION_MENU from 'constants/ACTION_MENU';
 export APP from 'constants/APP';
 export RESOURCE_ACTION_DROPDOWN from 'constants/RESOURCE_ACTION_DROPDOWN';
 
@@ -58,7 +59,7 @@ export TertiaryNeutralButton from 'components/buttons/TertiaryNeutral.jsx';
 export TertiaryPositiveButton from 'components/buttons/TertiaryPositive.jsx';
 
 /**
- * Export dropdoown components
+ * Export dropdown components
  */
 
 export DropDown from 'components/dropdowns/Generic.jsx';
@@ -94,12 +95,6 @@ export KeywordTag from 'components/search/KeywordTag.jsx';
  */
 
 export PulseLoader from 'components/loaders/Pulse.jsx';
-
-/**
- * Export menu components
- */
-
-export ResourceActionMenu from 'components/menus/ResourceAction.jsx';
 
 /**
  * Export misc components

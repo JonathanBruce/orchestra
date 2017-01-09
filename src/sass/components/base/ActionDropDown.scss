@@ -4,7 +4,13 @@
 	color: $steel-blue;
 	font-family: $lato-regular;
 	font-size: 16px;
-	padding: 21px 15px;
+	padding: 14px 15px;
+	position: relative;
+
+	&.icon,
+	&.state {
+		float: left;
+	}
 
 	&:hover {
 		background-color: $arctic-blue;
@@ -12,18 +18,38 @@
 		cursor: pointer;
 	}
 
-	.chevron {
+	> .chevron {
 		display: inline-block;
 		float: right;
 		position: relative;
 		right: -4px;
-		top: -1px;
+		top: -2px;
 		transform: rotate(180deg);
 
 		svg {
 			path {
 				stroke: $cloudy-blue-grey;
 			}
+		}
+	}
+
+	.orch-action-menu {
+		color: $steel-blue;
+		font-family: $lato-regular;
+		font-size: 14px;
+		position: absolute;
+
+		&.left,
+		&.right {
+			top: 60px;
+		}
+
+		&.left {
+			left: -1px;
+		}
+
+		&.right {
+			right: -1px;
 		}
 	}
 

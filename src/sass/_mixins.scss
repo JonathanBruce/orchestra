@@ -104,9 +104,9 @@
 	}
 }
 
-@mixin shadow($blur: 10px, $spread: 5px, $x: 0px, $y: 0px) {
-	box-shadow: $x $y $blur $spread rgba(0, 0, 0, 0.15) !important;
-	-webkit-box-shadow: $x $y $blur $spread rgba(0, 0, 0, 0.15) !important;
+@mixin shadow($blur: 10px, $spread: 5px, $x: 0px, $y: 0px, $alpha: 0.10) {
+	box-shadow: $x $y $blur $spread rgba(0, 0, 0, $alpha) !important;
+	-webkit-box-shadow: $x $y $blur $spread rgba(0, 0, 0, $alpha) !important;
 }
 
 /**
