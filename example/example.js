@@ -4,6 +4,7 @@
 import '../src/sass/_example.scss';
 import {
 	ACTION_MENU,
+	ActionMenu,
 	Alert,
 	APP,
 	Avatar,
@@ -27,6 +28,7 @@ import {
 	MarketingFullPrimaryButton,
 	MarketingFullSecondaryButton,
 	MarketingPartialPrimaryButton,
+	NestedMenu,
 	Nine,
 	Notifier,
 	PaginationApprove,
@@ -903,7 +905,8 @@ class Example extends React.Component {
 					<Three>
 						<ValueActionDropDown
 							title='Add To Segment'
-							value='0'>
+							value='0'
+							position={ ACTION_MENU.RIGHT }>
 							Content
 						</ValueActionDropDown>
 					</Three>
@@ -914,6 +917,27 @@ class Example extends React.Component {
 							value='1.1K'>
 							Content
 						</ValueActionDropDown>
+					</Three>
+
+					<Three>
+						<NestedMenu
+							onChange={
+								(value) => {
+									console.log(value);
+								}
+							}
+							onToggle={
+								() => {
+									console.log('toggled');
+								}
+							}
+							options={
+								[
+									{ icon: ( <Icons.Links /> ), label: 'one', value: 1 },
+									{ icon: ( <Icons.Pencil /> ), label: 'two', value: 2 },
+									{ icon: ( <Icons.Segments /> ), label: 'three', value: 3, widget: ( <ActionMenu>Content</ActionMenu> ) }
+								]
+							} />
 					</Three>
 				</Container>
 			</div>

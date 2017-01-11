@@ -2,7 +2,8 @@
 	@include shadow($blur: 11px, $spread: 2px, $x: 0px, $y: 5px, $alpha: 0.21);
 
 	background-color: $pure-white;
+	border-radius: 3px;
 	padding: 20px 15px;
-	width: 380px;
+	width: 350px;
 	z-index: 1;
 }

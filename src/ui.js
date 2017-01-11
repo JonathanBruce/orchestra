@@ -9,31 +9,6 @@ export APP from 'constants/APP';
 export RESOURCE_ACTION_DROPDOWN from 'constants/RESOURCE_ACTION_DROPDOWN';
 
 /**
- * Export icons
- */
-
-export Icons from 'icons/_all';
-
-/**
- * Export grid components
- */
-
-export Column from 'components/grid/Column.jsx';
-export Container from 'components/grid/Container.jsx';
-export Eight from 'components/grid/Eight.jsx';
-export Eleven from 'components/grid/Eleven.jsx';
-export Five from 'components/grid/Five.jsx';
-export Four from 'components/grid/Four.jsx';
-export Nine from 'components/grid/Nine.jsx';
-export One from 'components/grid/One.jsx';
-export Seven from 'components/grid/Seven.jsx';
-export Six from 'components/grid/Six.jsx';
-export Ten from 'components/grid/Ten.jsx';
-export Three from 'components/grid/Three.jsx';
-export Twelve from 'components/grid/Twelve.jsx';
-export Two from 'components/grid/Two.jsx';
-
-/**
  * Export button components
  */
 
@@ -57,6 +32,25 @@ export SecondaryPositiveButton from 'components/buttons/SecondaryPositive.jsx';
 export TertiaryNegativeButton from 'components/buttons/TertiaryNegative.jsx';
 export TertiaryNeutralButton from 'components/buttons/TertiaryNeutral.jsx';
 export TertiaryPositiveButton from 'components/buttons/TertiaryPositive.jsx';
+
+/**
+ * Export grid components
+ */
+
+export Column from 'components/grid/Column.jsx';
+export Container from 'components/grid/Container.jsx';
+export Eight from 'components/grid/Eight.jsx';
+export Eleven from 'components/grid/Eleven.jsx';
+export Five from 'components/grid/Five.jsx';
+export Four from 'components/grid/Four.jsx';
+export Nine from 'components/grid/Nine.jsx';
+export One from 'components/grid/One.jsx';
+export Seven from 'components/grid/Seven.jsx';
+export Six from 'components/grid/Six.jsx';
+export Ten from 'components/grid/Ten.jsx';
+export Three from 'components/grid/Three.jsx';
+export Twelve from 'components/grid/Twelve.jsx';
+export Two from 'components/grid/Two.jsx';
 
 /**
  * Export dropdown components
@@ -84,17 +78,23 @@ export LinksSubHeader from 'components/headers/LinksSubHeader.jsx';
 export TitleSubHeader from 'components/headers/TitleSubHeader.jsx';
 
 /**
- * Export search components
+ * Export icons
  */
 
-export FilterBox from 'components/search/FilterBox.jsx';
-export KeywordTag from 'components/search/KeywordTag.jsx';
+export Icons from 'icons/_all';
 
 /**
  * Export loader components
  */
 
 export PulseLoader from 'components/loaders/Pulse.jsx';
+
+/**
+ * Export menu components
+ */
+
+export ActionMenu from 'components/menus/Action.jsx';
+export NestedMenu from 'components/menus/Nested.jsx';
 
 /**
  * Export misc components
@@ -110,3 +110,10 @@ export PaginationApprove from 'components/misc/PaginationApprove.jsx';
 export PaginationControls from 'components/misc/PaginationControls.jsx';
 export PillToggle from 'components/misc/PillToggle.jsx';
 export Stat from 'components/misc/Stat.jsx';
+
+/**
+ * Export search components
+ */
+
+export FilterBox from 'components/search/FilterBox.jsx';
+export KeywordTag from 'components/search/KeywordTag.jsx';

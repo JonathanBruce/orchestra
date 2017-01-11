@@ -1,0 +1,54 @@
+.orch-nested-menu {
+	@include shadow($blur: 11px, $spread: 2px, $x: 0px, $y: 5px, $alpha: 0.21);
+
+	border-radius: 3px;
+	width: 380px;
+
+	.options {
+		> div {
+			color: $dusk-blue;
+			font-family: $lato-regular;
+			font-size: 16px;
+
+			.chevron {
+				display: inline-block;
+				float: right;
+				position: relative;
+				right: 20px;
+				top: 15px;
+				transform: rotate(180deg);
+
+				svg {
+					height: 24px;
+					width: 24px;
+				}
+			}
+
+			.widget {
+				padding: 0px;
+
+				> div {
+					box-shadow: none !important;
+					-webkit-box-shadow: none !important;
+				}
+			}
+		
+			&:hover {
+				background-color: $arctic-blue;
+				cursor: pointer;
+
+				.chevron {
+					top: 17px;
+					transform: rotate(0deg);
+				}
+			}
+
+			> svg {
+				height: 32px;
+				padding: 12px 20px;
+				vertical-align: middle;
+				width: 32px;
+			}
+		}
+	}
+}

@@ -2,6 +2,10 @@
 	&.orch-action-dropdown {
 		width: 120px;
 
+		> .chevron {
+			top: -1px;
+		}
+
 		.icon,
 		.state {
 			display: inline-block;
@@ -20,6 +24,12 @@
 
 		&.update {
 			color: $IP-blue;
+		}
+
+		&:hover {
+			> .chevron {
+				top: 3px;
+			}
 		}
 	}
 }

@@ -15,7 +15,7 @@ class ActionMenu extends Component {
 	};
 
 	render() {
-		const { position } = this.props;
+		const { className, position } = this.props;
 		const classes = classnames({
 			'orch-action-menu': true,
 			left: !position || position === ACTION_MENU.LEFT,
@@ -23,7 +23,7 @@ class ActionMenu extends Component {
 		});
 
 		return (
-			<div { ...this.props } className={ this.mergeClasses(classes, this.props.className) }>
+			<div className={ this.mergeClasses(classes, className) }>
 				{ this.props.children }
 			</div>
 		);

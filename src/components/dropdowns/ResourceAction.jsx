@@ -1,7 +1,7 @@
 /* global React */
 
 import ActionDropDown from 'components/base/ActionDropDown.jsx';
-import ActionMenu from 'components/base/ActionMenu.jsx';
+import ActionMenu from 'components/menus/Action.jsx';
 import classnames from 'classnames';
 import Icons from 'icons/_all';
 import RESOURCE_ACTION_DROPDOWN from 'constants/RESOURCE_ACTION_DROPDOWN';

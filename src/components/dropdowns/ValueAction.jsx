@@ -1,6 +1,6 @@
 /* global React */
 
-import ActionMenu from 'components/base/ActionMenu.jsx';
+import ActionMenu from 'components/menus/Action.jsx';
 import ActionDropDown from 'components/base/ActionDropDown.jsx';
 import classnames from 'classnames';
 
@@ -48,7 +48,7 @@ class ValueActionDropDown extends React.Component {
 				onMouseEnter={ this.toggleOpen }
 				onMouseLeave={ this.toggleOpen }>
 				<div className={ valueClasses }>
-					{ value }
+					{ value || '0' }
 				</div>
 
 				<div className='title'>

@@ -2,8 +2,11 @@
 	&.orch-action-dropdown {
 		width: 200px;
 
+		> .chevron {
+			top: 1px;
+		}
+
 		.orch-action-menu {
-			left: -1px;
 			position: absolute;
 			top: 60px;
 		}
@@ -18,8 +21,8 @@
 			border-radius: 100px;
 			color: $steel-blue;
 			font-family: $lato-black;
-			padding-bottom: 5px;
-			padding-top: 8px;
+			padding-bottom: 7px;
+			padding-top: 6px;
 			margin-right: 10px;
 			text-align: center;
 			width: 50px;
@@ -27,6 +30,12 @@
 			&.greater-than-zero {
 				background-color: $goldenrod-dark;
 				color: $pure-white;
+			}
+		}
+
+		&:hover {
+			> .chevron {
+				top: 5px;
 			}
 		}
 	}

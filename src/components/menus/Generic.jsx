@@ -6,7 +6,7 @@ class GenericMenu extends React.Component {
 	static propTypes = {
 		options: React.PropTypes.arrayOf(
 			React.PropTypes.shape({
-				label: React.PropTypes.string,
+				label: React.PropTypes.string.isRequired,
 				value: React.PropTypes.any.isRequired
 			})
 		).isRequired,
@@ -42,13 +42,13 @@ class GenericMenu extends React.Component {
 	};
 
 	render() {
-		const { options } = this.props;
+		const { onMenuLeave, options } = this.props;
 		const optionsClasses = classnames('options', {
 			scrollbar: options.length > 3
 		});
 
 		return (
-			<div className='orch-menu orch-generic-menu' onMouseLeave={ this.onMenuLeave }>
+			<div className='orch-menu orch-generic-menu' onMouseLeave={ onMenuLeave && this.onMenuLeave }>
 				<div className={ optionsClasses } ref='menu'>
 					{
 						options.map((option, index) => (
