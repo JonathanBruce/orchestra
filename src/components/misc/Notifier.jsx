@@ -36,8 +36,8 @@ class Notifier extends React.Component {
 			disabled
 		});
 		const arrowClasses = classnames({
-			'right-arrow': active,
-			'left-arrow': !active
+			'right-arrow': !active,
+			'left-arrow': active
 		});
 
 		return (
