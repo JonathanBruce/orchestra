@@ -39,7 +39,7 @@ class ValueActionDropDown extends React.Component {
 		} = this.props;
 		const { open } = this.state;
 		const valueClasses = classnames('value', {
-			'greater-than-zero': value !== '0'
+			'greater-than-zero': (value) && value !== '0'
 		});
 
 		return (

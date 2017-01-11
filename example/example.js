@@ -905,7 +905,6 @@ class Example extends React.Component {
 					<Three>
 						<ValueActionDropDown
 							title='Add To Segment'
-							value='0'
 							position={ ACTION_MENU.RIGHT }>
 							Content
 						</ValueActionDropDown>
