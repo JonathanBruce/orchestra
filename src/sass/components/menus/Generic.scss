@@ -12,7 +12,7 @@
 
 	.options {
 		background: $pure-white;
-		max-height: $dropdown-height * 3;
+		max-height: $dropdown-height * 8;
 
 		&.scrollbar {
 			@include scrollbar();
@@ -38,7 +38,7 @@
 			width: 100%;
 
 			&:hover {
-				background: $arctic-blue-dark;
+				background: $arctic-blue;
 				color: $dusk-blue
 			}
 

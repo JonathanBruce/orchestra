@@ -16,6 +16,14 @@ class Input extends React.Component {
 		type: React.PropTypes.string.isRequired
 	};
 
+	componentDidMount() {
+		const { icon } = this.props;
+
+		if (icon) {
+			throw new Error('Icon is no longer supported in the Input component');
+		}
+	}
+
 	constructor() {
 		super();
 
@@ -56,15 +64,12 @@ class Input extends React.Component {
 	};
 
 	render() {
-		const {
-			icon,
-			...props
-		} = this.props;
+		const { disabled, error } = this.props;
 		const containerClassnames = classnames({
 			clearfix: true,
-			disabled: props.disabled,
+			disabled,
 			focus: this.state.focus,
-			error: props.error,
+			error,
 			'orch-input': true,
 			'orch-secondary': true
 		});
@@ -72,9 +77,8 @@ class Input extends React.Component {
 		return (
 			<div className={ containerClassnames }
 				onClick={ this.onContainerClick }>
-				{ icon }
 				<div className='item'>
-					<input { ...props }
+					<input { ...this.props }
 					onBlur={ this.toggleFocus }
 					onFocus={ this.toggleFocus }
 					ref='input' />

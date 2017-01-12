@@ -823,7 +823,6 @@ The following describes all of the form components available for use in Orchestr
 | ------------- |---------------| ----------------------------------------------|
 | `disabled`    | `boolean`     | Disables the component                        |
 | `error`       | `boolean`     | Puts the input in an error state              |
-| `icon`        | `object`      | Icon to use (use orchestra Icons)             |
 
 **Reason for existing:**
 
