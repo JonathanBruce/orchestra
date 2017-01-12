@@ -10,7 +10,6 @@
 | ------------- |---------------| ----------------------------------------------|
 | `disabled`    | `boolean`     | Disables the component                        |
 | `error`       | `boolean`     | Puts the input in an error state              |
-| `icon`        | `object`      | Icon to use (use orchestra Icons)             |
 
 **Reason for existing:**
 

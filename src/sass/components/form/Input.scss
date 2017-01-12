@@ -5,6 +5,13 @@
 	&.orch-secondary {
 		@include arcticBlueDarkWrapper();
 
+		padding-left: 14px;
+
+		.item {
+			padding-left: 0px;
+			width: 100%;
+		}
+
 		&:hover {
 			@include powderBlueWrapper();
 		}
@@ -19,11 +26,20 @@
 		padding: 0px;
 		width: 100%;
 
-		&::-webkit-input-placeholder,
-		&::-moz-placeholder,
-		&:-ms-input-placeholder,
+		&::-webkit-input-placeholder {
+			color: $steel-blue;
+		}
+
+		&::-moz-placeholder {
+			color: $steel-blue;
+		}
+
+		&:-ms-input-placeholder {
+			color: $steel-blue;
+		}
+
 		&:-moz-input-placeholder {
-			color: $cloudy-blue-grey;
+			color: $steel-blue;
 		}
 	}
 

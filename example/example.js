@@ -278,7 +278,13 @@ class Example extends React.Component {
 								[
 									{ label: 'one', value: 1 },
 									{ label: 'two', value: 2 },
-									{ label: 'three', value: 3 }
+									{ label: 'three', value: 3 },
+									{ label: 'four', value: 4 },
+									{ label: 'five', value: 5 },
+									{ label: 'six', value: 6 },
+									{ label: 'seven', value: 7 },
+									{ label: 'eight', value: 8 },
+									{ label: 'nine', value: 9 }
 								]
 							}
 							selected={ 1 } />
@@ -332,7 +338,7 @@ class Example extends React.Component {
 					</Three>
 
 					<Three>
-						<Input icon={ <Icons.SmallUser /> }
+						<Input
 							placeholder='Username'
 							type='text' />
 					</Three>
@@ -341,7 +347,6 @@ class Example extends React.Component {
 						<Input
 							defaultValue='Error Text'
 							error={ true }
-							icon={ <Icons.SmallUser /> }
 							placeholder='Username'
 							type='text' />
 					</Three>
@@ -350,7 +355,6 @@ class Example extends React.Component {
 						<Input
 							defaultValue='Disabled text'
 							disabled={ true }
-							icon={ <Icons.SmallUser /> }
 							placeholder='Username'
 							type='text' />
 					</Three>

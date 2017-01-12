@@ -1,6 +1,7 @@
 /* global React */
 
 import classnames from 'classnames';
+import GENERIC_MENU from 'constants/GENERIC_MENU';
 
 class GenericMenu extends React.Component {
 	static propTypes = {
@@ -44,7 +45,7 @@ class GenericMenu extends React.Component {
 	render() {
 		const { onMenuLeave, options } = this.props;
 		const optionsClasses = classnames('options', {
-			scrollbar: options.length > 3
+			scrollbar: options.length > GENERIC_MENU.LENGTH
 		});
 
 		return (
