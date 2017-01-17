@@ -59,7 +59,7 @@
     "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
-    "maestro": "git+ssh://git@github.com/insightpool/maestro.git#4e8a6089c3c5add81b19cbc1689840917a4e8f94",
+    "maestro": "git+ssh://git@github.com/insightpool/maestro.git#9535cbb98ce01fda9fc7e74e64939b0ddc6758ba",
     "spinkit": "^1.2.5"
   }
 }
