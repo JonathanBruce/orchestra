@@ -20,7 +20,7 @@ class Input extends React.Component {
 		const { icon } = this.props;
 
 		if (icon) {
-			throw new Error('Icon is no longer supported in the Input component');
+			console.warn('Icon is no longer supported in the Input component');
 		}
 	}
 
