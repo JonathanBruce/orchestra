@@ -1,5 +1,7 @@
 .orch-content {
 	@include arcticBlueDarkWrapper();
+
+	position: relative;
 	width: inherit;
 
 	header {
