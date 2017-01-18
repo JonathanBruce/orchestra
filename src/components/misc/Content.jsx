@@ -12,6 +12,7 @@ class Content extends Component {
 			React.PropTypes.element,
 			React.PropTypes.string
 		]),
+		height: React.PropTypes.string.isRequired,
 		icon: React.PropTypes.element.isRequired,
 		onScrollBottom: React.PropTypes.func,
 		title: React.PropTypes.string.isRequired,
@@ -46,9 +47,14 @@ class Content extends Component {
 		const {
 			children,
 			icon,
+			height,
 			title,
 			widget
 		} = this.props;
+		const contentStyles = {
+			height,
+			'max-height': height
+		};
 
 		return (
 			<div className='orch-content'>
@@ -58,7 +64,10 @@ class Content extends Component {
 					<div className='widget'>{ widget }</div>
 				</header>
 
-				<div className='content' ref='content'>
+				<div
+					className='content'
+					ref='content'
+					style={ contentStyles }>
 					{ children }
 				</div>
 			</div>

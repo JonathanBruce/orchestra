@@ -89,7 +89,9 @@ class Example extends React.Component {
 					</Twelve>
 
 					<Twelve>
-						<Content icon={ <Icons.Accounts /> }
+						<Content
+							height='100px'
+							icon={ <Icons.Accounts /> }
 							onScrollBottom={
 								() => {
 									console.log('hit the bottom');

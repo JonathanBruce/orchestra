@@ -42,6 +42,7 @@
 
 	.content {
 		@include scrollbar();
-		padding: 20px;
+
+		overflow-y: scroll;
 	}
 }
