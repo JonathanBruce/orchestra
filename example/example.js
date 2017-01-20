@@ -788,7 +788,6 @@ class Example extends React.Component {
 							defaultValue='Some value' />
 
 						<KeywordTag
-							edit={ true }
 							network='youtube'
 							onNetworkChange={
 								(network) => {

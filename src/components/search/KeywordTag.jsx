@@ -306,18 +306,6 @@ class KeywordTag extends Component {
 	 */
 	renderKeyword = () => {
 		const { edit, value } = this.state;
-		const subLength = 22;
-		let subValue;
-
-		if (value.length < subLength) {
-			subValue = value;
-		}
-		else if (this.hasNetworkChange() && this.hasRequirementChange()) {
-			subValue = value.substring(0, subLength - 5) + '...';
-		}
-		else {
-			subValue = value.substring(0, subLength - 1) + '...';
-		}
 
 		return (
 			<div
@@ -325,7 +313,7 @@ class KeywordTag extends Component {
 				onClick={ this.onTagClick }>
 				{
 					!edit
-					? subValue
+					? value
 					: (
 						<input
 							onBlur={ this.onTagBlur }
@@ -470,7 +458,7 @@ class KeywordTag extends Component {
 		const keywordTagClasses = classnames('orch-keyword-tag', {
 			edit,
 			[ requirement ]: true,
-			'with-network-and-requirement': this.hasNetworkChange() && this.hasRequirementChange()
+			'network-and-requirement': this.hasNetworkChange() && this.hasRequirementChange()
 		});
 
 		return (
