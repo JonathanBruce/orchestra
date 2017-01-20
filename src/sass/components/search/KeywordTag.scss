@@ -26,6 +26,7 @@
 .orch-keyword-tag {
 	border: 2px solid;
 	border-radius: 5px;
+	width: 242px;
 
 	&.empty {
 		@include arcticBlueDarkWrapper($border-radius: 5px);
@@ -34,7 +35,7 @@
 		font-family: $lato-medium-italic;
 		font-size: 12px;
 		padding: 7.5px 10px;
-		width: 246px;
+		width: 246px !important;
 
 		&:hover {
 			background-color: $arctic-blue-dark;
@@ -49,8 +50,6 @@
 	&.stream {
 		border-color: $pure-white;
 		font-size: 14px;
-		height: 30px;
-		width: 242px;
 		
 		&.edit {
 			@include shadow();
@@ -149,7 +148,10 @@
 			font-size: 14px;
 			height: 30px;
 			line-height: 30px;
+			overflow: hidden;
 			padding-left: 10px;
+			text-overflow: ellipsis;
+			white-space: nowrap;
 			width: 151px;
 
 			input[ type='text' ] {
@@ -217,7 +219,7 @@
 		}
 	}
 
-	&.with-network-and-requirement {
+	&.network-and-requirement {
 		.tag {
 			.keyword {
 				width: 104px;
@@ -237,7 +239,7 @@
 		&.edit {
 			.tag {
 				.keyword {
-					width: 104px !important;
+					width: 138px !important;
 
 					input[ type='text' ] {
 						width: 134px !important;
