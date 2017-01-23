@@ -1935,22 +1935,26 @@ The following describes all of the search components available for use in Orches
 
 **Props:**
 
+=======
 | Name                 | Type            | Desciption                                                  |
 | ---------------------|-----------------|-------------------------------------------------------------|
+| `disabled`           | `bool`          | Represents whether the tag should be disabled               |
 | `id`                 | `string`        | ID of follower                                              |
 | `invalid`            | `boolean`       | Boolean for whether the input value is invalid              |
-| `onDeleteClick`      | `func`          | Function for deleting the keyword tag                       |
 | `onEditToggle`       | `func`          | Function for additional callbacks while editmode is toggled |
+| `onDeleteClick`      | `func`          | Function for deleting the keyword tag                       |
 | `onEmptyClick`       | `func`          | Function for when the tag is empty                          |
 | `network`            | `string`        | Value for current network                                   |
 | `onNetworkChange`    | `func`          | Function for changing network in network menu               |
 | `onNetworkToggle`    | `func`          | Function for toggling the network menu open or closed       |
 | `openNetwork`        | `boolean`       | Boolean for whether the network menu should be open         |
+| `onPreviewClick`     | `func`          | Function for clicking a preview tag                         |
 | `onRequirementChange`| `func`          | Function for changing network in network menu               |
 | `onRequirementToggle`| `func`          | Function for toggling the requirement menu open or closed   |
-| `openRequirement`    | `func`          | Boolean for whether the requirement menu should be open     |
+| `openRequirement`    | `boolean`       | Boolean for whether the requirement menu should be open     |
 | `onTagChange`        | `func`          | Function for changing tag value                             |
-| `requirement`        | `string`        | Value for current network                                   |
+| `preview`            | `boolean`       | Represents whether the tag is in preview mode               |
+| `requirement`        | `string`        | Value for current requirement                               |
 | `value`              | `string`        | Value for keyword tag                                       |
 
 **Reason for existing:**
@@ -1961,6 +1965,7 @@ The KeywordTag is used to display keyword tags for the Insightpool application.
 
 ```javascript
 import { KeywordTag } from 'orchestra';
+import { REQUIREMENTS } from 'maestro';
 import { SUPPORTED_NETWORKS } from 'constants/KEYWORD_TAGS';
 
 class MyComponent extends React.Component {
@@ -1968,8 +1973,11 @@ class MyComponent extends React.Component {
 		return (
 			<KeywordTag
 				id='2929392'
-				invalid={ true }
-				network={ SUPPORTED_NETWORKS.LOCKED }
+				disabled={ false }
+				invalid={ false }
+				network={ SUPPORTED_NETWORKS.TWITTER }
+				preview={ false }
+				requirement={ REQUIREMENTS.NEUTRAL }
 				onEditToggle={
 				    (edit) => {
 				        console.log(edit);

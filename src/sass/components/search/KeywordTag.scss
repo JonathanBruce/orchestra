@@ -1,4 +1,4 @@
-@mixin requirement($color, $border-color, $icon-color, $svg-element) {
+@mixin requirement($color, $border-color, $icon-color, $svg-elements...) {
 	border-color: #{$border-color};
 	color: #{$color};
 
@@ -9,7 +9,7 @@
 	.tag {
 		.requirement {
 			> svg.icon {
-				#{$svg-element} {
+				#{$svg-elements} {
 					stroke: #{$icon-color};
 				}
 			}
@@ -44,13 +44,36 @@
 		}
 	}
 
+	&.preview {
+		width: 165px !important;
+
+		&.disabled {
+			@include requirement($cloudy-blue-grey, $arctic-blue-dark, $cloudy-blue-grey, 'path', 'g');
+
+			color: $mid-blue;
+			padding: 0px;
+
+			&:hover {
+				color: $mid-blue;
+			}
+		}
+
+		.tag {
+			.keyword {
+				width: 108px;
+			}
+		}
+	}
+
 	&.exclude,
 	&.locked,
 	&.neutral,
 	&.stream {
 		border-color: $pure-white;
 		font-size: 14px;
-		
+		height: 30px;
+		width: 242px;
+
 		&.edit {
 			@include shadow();
 

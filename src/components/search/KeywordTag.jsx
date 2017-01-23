@@ -11,29 +11,34 @@ import { toUpperCaseFirstCharacter } from 'lib/string';
 class KeywordTag extends Component {
 	static propTypes = {
 		defaultValue: React.PropTypes.string,
+		disabled: React.PropTypes.bool,
 		edit: React.PropTypes.bool,
 		id: React.PropTypes.string,
 		invalid: React.PropTypes.bool,
-		onDeleteClick: React.PropTypes.func.isRequired,
+		onDeleteClick: React.PropTypes.func,
 		onEditToggle: React.PropTypes.func,
 		onEmptyClick: React.PropTypes.func,
 		network: React.PropTypes.string,
 		onNetworkChange: React.PropTypes.func,
 		onNetworkToggle: React.PropTypes.func,
 		openNetwork: React.PropTypes.bool,
+		onPreviewClick: React.PropTypes.func,
 		onRequirementChange: React.PropTypes.func,
 		onRequirementToggle: React.PropTypes.func,
 		openRequirement: React.PropTypes.bool,
-		onTagChange: React.PropTypes.func.isRequired,
+		onTagChange: React.PropTypes.func,
+		preview: React.PropTypes.bool,
 		requirement: React.PropTypes.string
 	};
 
 	componentWillMount() {
 		const {
+			edit,
 			network,
 			onNetworkChange,
-			requirement,
-			onRequirementChange
+			onRequirementChange,
+			preview,
+			requirement
 		} = this.props;
 
 		if (!network
@@ -49,6 +54,17 @@ class KeywordTag extends Component {
 			&& !onRequirementChange) {
 			throw new Error('Requirement present but no onRequirementChange passed!');
 		}
+
+		if (preview	&& edit) {
+			throw new Error('Tags is a preview state are not editable!');
+		}
+
+		if (preview
+			&& requirement
+			&& network
+			&& network !== SUPPORTED_NETWORKS.ALL) {
+			throw new Error('Preview tags cannot have a selected network!');
+		}
 	}
 
 	componentDidMount() {
@@ -60,6 +76,16 @@ class KeywordTag extends Component {
 			keyword.focus();
 		}
 	}
+
+	componentWillUpdate(nextProps, nextState) {
+		const { defaultValue, preview } = this.props;
+		const { defaultValue: nextDefaultValue } = nextProps;
+
+		if (preview && nextDefaultValue !== defaultValue && !nextDefaultValue !== nextState.value) {
+			this.state.value = nextDefaultValue;
+		}
+	}
+
 
 	static defaultProps = {
 		openNetwork: false,
@@ -138,12 +164,19 @@ class KeywordTag extends Component {
 	 * Listens for tag clicks
 	 */
 	onTagClick = () => {
-		this.setEdit(true, () => {
-			const { keyword } = this.refs;
+		const { onPreviewClick, preview } = this.props;
 
-			keyword.focus();
-			keyword.select();
-		});
+		if (preview) {
+			onPreviewClick();
+		}
+		else {
+			this.setEdit(true, () => {
+				const { keyword } = this.refs;
+
+				keyword.focus();
+				keyword.select();
+			});
+		}
 	};
 
 	/**
@@ -182,9 +215,9 @@ class KeywordTag extends Component {
 	 */
 	renderDelete = () => {
 		const { edit } = this.state;
-		const { onDeleteClick } = this.props;
+		const { onDeleteClick, preview } = this.props;
 
-		if (!edit) {
+		if (!edit && !preview) {
 			return (
 				<div
 					className='delete'
@@ -223,18 +256,25 @@ class KeywordTag extends Component {
 	 * Renders requirement icon
 	 */
 	renderRequirementIcon = (requirement) => {
+		const { disabled, preview } = this.props;
+
+		const iconStyle = classnames('icon', {
+			disabled,
+			preview
+		});
+
 		switch (requirement) {
 			case REQUIREMENTS.EXCLUDE:
 				return (
-					<Icons.Exclude className='icon' ref='requirement-icon' />
+					<Icons.Exclude className={ iconStyle } ref='requirement-icon' />
 				);
 			case REQUIREMENTS.LOCKED:
 				return (
-					<Icons.Lock className='icon' ref='requirement-icon' />
+					<Icons.Lock className={ iconStyle } ref='requirement-icon' />
 				);
 			case REQUIREMENTS.NEUTRAL:
 				return (
-					<Icons.Filter className='icon' ref='requirement-icon' />
+					<Icons.Filter className={ iconStyle } ref='requirement-icon' />
 				);
 			case REQUIREMENTS.STREAM:
 				return (
@@ -463,18 +503,25 @@ class KeywordTag extends Component {
 
 	render() {
 		const { edit } = this.state;
-		const { onEmptyClick } = this.props;
+		const {
+			disabled,
+			onEmptyClick,
+			preview
+		} = this.props;
 		const requirement = this.props.requirement || REQUIREMENTS.NEUTRAL;
 		const keywordTagClasses = classnames('orch-keyword-tag', {
+			disabled,
 			edit,
+			preview,
 			[ requirement ]: true,
 			'network-and-requirement': this.hasNetworkChange() && this.hasRequirementChange()
 		});
+		const showEmptyTag = requirement === REQUIREMENTS.EMPTY && !preview;
 
 		return (
 			<div className={ keywordTagClasses }>
 				{
-					requirement === REQUIREMENTS.EMPTY
+					showEmptyTag
 					? (
 						<div
 							className='tag clearfix'

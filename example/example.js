@@ -818,7 +818,7 @@ class Example extends React.Component {
 							defaultValue='Some value' />
 
 						<KeywordTag
-							edit={ true }
+							edit={ false }
 							invalid={ true }
 							network='youtube'
 							onEditToggle={
@@ -836,7 +836,61 @@ class Example extends React.Component {
 									console.log('toggled network');
 								}
 							}
+							onRequirementChange={
+								(requirement) => {
+									console.log(requirement);
+								}
+							}
+							requirement='neutral' />
+
+						<KeywordTag
+							disabled={ false }
+							openRequirement={ false }
 							requirement='neutral'
+							onRequirementChange={
+								(requirement) => {
+									console.log(requirement);
+								}
+							}
+							onRequirementToggle={
+								() => {
+									console.log('toggled requirement');
+								}
+							}
+							onPreviewClick={
+								() => {
+									console.log('clicked preview');
+								}
+							}
+							preview={ true }
+							defaultValue='Some value' />
+
+						<KeywordTag
+							disabled={ true }
+							openRequirement={ false }
+							requirement='neutral'
+							onRequirementChange={
+								(requirement) => {
+									console.log(requirement);
+								}
+							}
+							onRequirementToggle={
+								() => {
+									console.log('toggled requirement');
+								}
+							}
+							onPreviewClick={
+								() => {
+									console.log('clicked preview');
+								}
+							}
+							preview={ true }
+							defaultValue='Some value' />
+
+						<KeywordTag
+							disabled={ true }
+							openRequirement={ false }
+							requirement='locked'
 							onRequirementChange={
 								(requirement) => {
 									console.log(requirement);
@@ -852,6 +906,34 @@ class Example extends React.Component {
 									console.log(tag);
 								}
 							}
+							onPreviewClick={
+								() => {
+									console.log('clicked preview');
+								}
+							}
+							preview={ true }
+							defaultValue='Some value' />
+
+						<KeywordTag
+							disabled={ true }
+							openRequirement={ false }
+							requirement='exclude'
+							onRequirementChange={
+								(requirement) => {
+									console.log(requirement);
+								}
+							}
+							onRequirementToggle={
+								() => {
+									console.log('toggled requirement');
+								}
+							}
+							onPreviewClick={
+								() => {
+									console.log('clicked preview');
+								}
+							}
+							preview={ true }
 							defaultValue='Some value' />
 
 						<KeywordTag
