@@ -6,21 +6,23 @@
 
 **Props:**
 
-| Name                 | Type            | Desciption                                                 |
-| ---------------------|-----------------|------------------------------------------------------------|
-| `id`                 | `string`        | ID of follower                                             |
-| `onDeleteClick`      | `func`          | Function for deleting the keyword tag                      |
-| `onEmptyClick`       | `func`          | Function for when the tag is empty                         |
-| `network`            | `string`        | Value for current network                                  |
-| `onNetworkChange`    | `func`          | Function for changing network in network menu              |
-| `onNetworkToggle`    | `func`          | Function for toggling the network menu open or closed      |
-| `openNetwork`        | `boolean`       | Boolean for whether the network menu should be open        |
-| `onRequirementChange`| `func`          | Function for changing network in network menu              |
-| `onRequirementToggle`| `func`          | Function for toggling the requirement menu open or closed  |
-| `openRequirement`    | `func`          | Boolean for whether the requirement menu should be open    |
-| `onTagChange`        | `func`          | Function for changing tag value                            |
-| `requirement`        | `string`        | Value for current network                                  |
-| `value`              | `string`        | Value for keyword tag                                      |
+| Name                 | Type            | Desciption                                                  |
+| ---------------------|-----------------|-------------------------------------------------------------|
+| `id`                 | `string`        | ID of follower                                              |
+| `invalid`            | `boolean`       | Boolean for whether the input value is invalid              |
+| `onDeleteClick`      | `func`          | Function for deleting the keyword tag                       |
+| `onEditToggle`       | `func`          | Function for additional callbacks while editmode is toggled |
+| `onEmptyClick`       | `func`          | Function for when the tag is empty                          |
+| `network`            | `string`        | Value for current network                                   |
+| `onNetworkChange`    | `func`          | Function for changing network in network menu               |
+| `onNetworkToggle`    | `func`          | Function for toggling the network menu open or closed       |
+| `openNetwork`        | `boolean`       | Boolean for whether the network menu should be open         |
+| `onRequirementChange`| `func`          | Function for changing network in network menu               |
+| `onRequirementToggle`| `func`          | Function for toggling the requirement menu open or closed   |
+| `openRequirement`    | `func`          | Boolean for whether the requirement menu should be open     |
+| `onTagChange`        | `func`          | Function for changing tag value                             |
+| `requirement`        | `string`        | Value for current network                                   |
+| `value`              | `string`        | Value for keyword tag                                       |
 
 **Reason for existing:**
 
@@ -37,7 +39,13 @@ class MyComponent extends React.Component {
 		return (
 			<KeywordTag
 				id='2929392'
-				network={ SUPPORTED_NETWORKS.LOCKED } 
+				invalid={ true }
+				network={ SUPPORTED_NETWORKS.LOCKED }
+				onEditToggle={
+				    (edit) => {
+				        console.log(edit);
+				    }
+				}
 				onNetworkChange={
 					(network) => {
 						console.log(network);
@@ -47,6 +55,11 @@ class MyComponent extends React.Component {
 					(value) => {
 						console.log(value);
 					}
+				}
+				onTagInputChange = {
+				    (value) => {
+				        console.log(value);
+				    }
 				} />
 		);
 	}

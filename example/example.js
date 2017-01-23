@@ -818,6 +818,43 @@ class Example extends React.Component {
 							defaultValue='Some value' />
 
 						<KeywordTag
+							edit={ true }
+							invalid={ true }
+							network='youtube'
+							onEditToggle={
+								(edit) => {
+									console.log(edit);
+								}
+							}
+							onNetworkChange={
+								(network) => {
+									console.log(network);
+								}
+							}
+							onNetworkToggle={
+								() => {
+									console.log('toggled network');
+								}
+							}
+							requirement='neutral'
+							onRequirementChange={
+								(requirement) => {
+									console.log(requirement);
+								}
+							}
+							onRequirementToggle={
+								() => {
+									console.log('toggled requirement');
+								}
+							}
+							onTagChange={
+								(tag) => {
+									console.log(tag);
+								}
+							}
+							defaultValue='Some value' />
+
+						<KeywordTag
 							network='youtube'
 							openRequirement={ true }
 							onNetworkChange={

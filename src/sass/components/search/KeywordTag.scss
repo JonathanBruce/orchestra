@@ -161,6 +161,14 @@
 			}
 
 			@include placeholder('input', $cloudy-blue-grey, $lato-medium-italic, 12px);
+
+			&.invalid {
+				> span {
+					background: $watermelon;
+					color: $pure-white;
+					padding: 1px 4px;
+				}
+			}
 		}
 
 		.network,

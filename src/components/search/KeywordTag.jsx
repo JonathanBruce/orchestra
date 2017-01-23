@@ -13,7 +13,9 @@ class KeywordTag extends Component {
 		defaultValue: React.PropTypes.string,
 		edit: React.PropTypes.bool,
 		id: React.PropTypes.string,
+		invalid: React.PropTypes.bool,
 		onDeleteClick: React.PropTypes.func.isRequired,
+		onEditToggle: React.PropTypes.func,
 		onEmptyClick: React.PropTypes.func,
 		network: React.PropTypes.string,
 		onNetworkChange: React.PropTypes.func,
@@ -305,15 +307,17 @@ class KeywordTag extends Component {
 	 * Renders keyword
 	 */
 	renderKeyword = () => {
+		const { invalid } = this.props;
 		const { edit, value } = this.state;
+		const inputClasses = classnames('keyword', { invalid });
 
 		return (
 			<div
-				className='keyword'
+				className={ inputClasses }
 				onClick={ this.onTagClick }>
 				{
 					!edit
-					? value
+					? <span>{ value }</span>
 					: (
 						<input
 							onBlur={ this.onTagBlur }
@@ -415,6 +419,12 @@ class KeywordTag extends Component {
 	 * Sets edit state
 	 */
 	setEdit = (edit, context) => {
+		const { onEditToggle } = this.props;
+
+		if (onEditToggle) {
+			onEditToggle(edit);
+		}
+
 		this.setState({
 			edit
 		}, context);
@@ -446,9 +456,9 @@ class KeywordTag extends Component {
 	 * Sets value state
 	 */
 	setValue = (param) => {
-		this.setState({
-			value: param && param.hasOwnProperty('target') ? param.target.value : param
-		});
+		const value = param && param.hasOwnProperty('target') ? param.target.value : param;
+
+		this.setState({ value });
 	};
 
 	render() {
