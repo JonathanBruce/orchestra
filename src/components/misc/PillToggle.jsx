@@ -8,7 +8,10 @@ class PillToggle extends React.Component {
 			React.PropTypes.shape({
 				active: React.PropTypes.bool.isRequired,
 				label: React.PropTypes.string.isRequired,
-				notifications: React.PropTypes.array,
+				notifications: React.PropTypes.oneOfType([
+					React.PropTypes.array,
+					React.PropTypes.number
+				]),
 				value: React.PropTypes.oneOfType([
 					React.PropTypes.string,
 					React.PropTypes.number
