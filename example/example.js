@@ -937,6 +937,14 @@ class Example extends React.Component {
 							defaultValue='Some value' />
 
 						<KeywordTag
+							defaultValue='Just input'
+							onTagChange={
+								(tag) => {
+									console.log(tag);
+								}
+							} />
+
+						<KeywordTag
 							network='youtube'
 							openRequirement={ true }
 							onNetworkChange={
