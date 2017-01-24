@@ -68,6 +68,7 @@
 	&.exclude,
 	&.locked,
 	&.neutral,
+	&.no-network-and-requirement,
 	&.stream {
 		border-color: $pure-white;
 		font-size: 14px;
@@ -97,6 +98,19 @@
 
 	&.locked {
 		@include requirement($dusk-blue, $dusk-blue, $dusk-blue, 'g');
+	}
+
+	&.no-network-and-requirement {
+		.tag {
+			.keyword {
+				border-radius: 3px;
+				width: 197px;
+
+				input[ type='text' ] {
+					width: 220px !important;
+				}
+			}
+		}
 	}
 
 	&.neutral,

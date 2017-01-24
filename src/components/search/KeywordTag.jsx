@@ -35,25 +35,9 @@ class KeywordTag extends Component {
 		const {
 			edit,
 			network,
-			onNetworkChange,
-			onRequirementChange,
 			preview,
 			requirement
 		} = this.props;
-
-		if (!network
-			&& !onNetworkChange
-			&& !requirement
-			&& !onRequirementChange) {
-			throw new Error('No network or requirement!');
-		}
-
-		if (requirement
-			&& requirement !== REQUIREMENTS.STREAM
-			&& requirement !== REQUIREMENTS.EMPTY
-			&& !onRequirementChange) {
-			throw new Error('Requirement present but no onRequirementChange passed!');
-		}
 
 		if (preview	&& edit) {
 			throw new Error('Tags is a preview state are not editable!');
@@ -90,7 +74,8 @@ class KeywordTag extends Component {
 	static defaultProps = {
 		openNetwork: false,
 		openRequirement: false,
-		network: SUPPORTED_NETWORKS.ALL
+		network: SUPPORTED_NETWORKS.ALL,
+		requirement: REQUIREMENTS.NEUTRAL
 	};
 
 	constructor(props) {
@@ -207,7 +192,9 @@ class KeywordTag extends Component {
 			this.setValue(value);
 		}
 
-		onTagChange(value);
+		if (onTagChange) {
+			onTagChange(value);
+		}
 	};
 
 	/**
@@ -311,7 +298,10 @@ class KeywordTag extends Component {
 	 * Renders requirement dropdown
 	 */
 	renderRequirementDropDown = () => {
-		const { openRequirement, requirement } = this.props;
+		const {
+			openRequirement,
+			requirement
+		} = this.props;
 		const requirements = Object.values(REQUIREMENTS);
 
 		if (requirements.indexOf(requirement) > -1) {
@@ -506,12 +496,14 @@ class KeywordTag extends Component {
 		const {
 			disabled,
 			onEmptyClick,
-			preview
+			preview,
+			requirement
 		} = this.props;
-		const requirement = this.props.requirement || REQUIREMENTS.NEUTRAL;
+		const onlyInput = !this.hasNetworkChange() && !this.hasRequirementChange();
 		const keywordTagClasses = classnames('orch-keyword-tag', {
 			disabled,
 			edit,
+			'no-network-and-requirement': onlyInput,
 			preview,
 			[ requirement ]: true,
 			'network-and-requirement': this.hasNetworkChange() && this.hasRequirementChange()
@@ -533,8 +525,8 @@ class KeywordTag extends Component {
 						<div
 							className='tag clearfix'
 							ref='tag'>
-							{ this.renderNetworkDropDown() }
-							{ this.renderRequirementDropDown() }
+							{ this.hasRequirementChange() && this.renderNetworkDropDown() }
+							{ this.hasNetworkChange() && this.renderRequirementDropDown() }
 							{ this.renderKeyword() }
 							{ this.renderDelete() }
 						</div>
