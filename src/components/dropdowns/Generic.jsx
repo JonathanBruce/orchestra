@@ -10,7 +10,10 @@ class GenericDropDown extends React.Component {
 		disabled: React.PropTypes.bool,
 		options: React.PropTypes.arrayOf(
 			React.PropTypes.shape({
-				label: React.PropTypes.string,
+				label: React.PropTypes.oneOfType([
+					React.PropTypes.string,
+					React.PropTypes.object
+				]),
 				value: React.PropTypes.any.isRequired
 			})
 		).isRequired,
