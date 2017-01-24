@@ -29,6 +29,10 @@ class FilterBox extends React.Component {
 			tooltipValue
 		} = this.props;
 
+		const infoStyle = classnames('info', {
+			'no-title-icon': !titleIcon
+		});
+
 		return (
 			<div className='header'>
 				<div className='title-icon'>{ titleIcon }</div>
@@ -36,7 +40,7 @@ class FilterBox extends React.Component {
 
 				{
 					tooltipTitle && (
-						<div className='info'>
+						<div className={ infoStyle }>
 							<Info title={ tooltipTitle } value={ tooltipValue } />
 						</div>
 					)
