@@ -526,8 +526,8 @@ class KeywordTag extends Component {
 						<div
 							className='tag clearfix'
 							ref='tag'>
-							{ this.hasRequirementChange() && this.renderNetworkDropDown() }
-							{ this.hasNetworkChange() && this.renderRequirementDropDown() }
+							{ this.hasNetworkChange() && this.renderNetworkDropDown() }
+							{ this.hasRequirementChange() && this.renderRequirementDropDown() }
 							{ this.renderKeyword() }
 							{ this.renderDelete() }
 						</div>
