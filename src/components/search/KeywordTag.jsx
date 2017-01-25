@@ -181,7 +181,6 @@ class KeywordTag extends Component {
 	onTagBlur = () => {
 		const { onTagChange } = this.props;
 		const { value } = this.state;
-		const upperValue = toUpperCaseFirstCharacter(value);
 
 		this.setEdit(false);
 
@@ -190,6 +189,8 @@ class KeywordTag extends Component {
 		}
 
 		if (value !== this.props.defaultValue) {
+			const upperValue = toUpperCaseFirstCharacter(value);
+
 			this.setValue(upperValue);
 		}
 
