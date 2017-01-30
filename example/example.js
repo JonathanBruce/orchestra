@@ -15,6 +15,7 @@ import {
 	Content,
 	FemaleButton,
 	FilterBox,
+	FloatingSubHeader,
 	Four,
 	FullPrimaryButton,
 	FullSecondaryButton,
@@ -71,6 +72,10 @@ class Example extends React.Component {
 	render() {
 		return (
 			<div>
+				<FloatingSubHeader>
+					<div>Floating Content</div>
+				</FloatingSubHeader>
+
 				<Container className='example-container'>
 					<Twelve className='title'>
 						<h1>Orchestra Example Page</h1>

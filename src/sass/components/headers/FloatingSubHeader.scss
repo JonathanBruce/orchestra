@@ -1,0 +1,15 @@
+$header-height: 65px;
+$top-height: 10px;
+
+.orch-floating-sub-header {
+	@include floating($header-height, $top-height, 'init', 'floating');
+
+	background-color: $pure-white;
+	height: 60px;
+	left: 0;
+	padding: 13px 20px;
+	position: fixed;
+	top: $header-height;
+	transform: translate3d(0);
+	width: 100%;
+}
