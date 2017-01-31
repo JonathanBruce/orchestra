@@ -43,6 +43,8 @@
 	.content {
 		@include scrollbar();
 
-		overflow-y: scroll;
+		.overflow {
+			overflow-y: scroll;
+		}
 	}
 }
