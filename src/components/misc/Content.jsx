@@ -1,5 +1,6 @@
 /* global React, ReactDOM */
 
+import classnames from 'classnames';
 import Component from 'components/extensions/Component.jsx';
 import { scrollBottom } from 'lib/dom';
 
@@ -55,6 +56,9 @@ class Content extends Component {
 			height,
 			'max-height': height
 		};
+		const contentClasses = classnames('content', {
+			overflow: !!height
+		});
 
 		return (
 			<div className='orch-content'>
@@ -65,7 +69,7 @@ class Content extends Component {
 				</header>
 
 				<div
-					className='content'
+					className={ contentClasses }
 					ref='content'
 					style={ contentStyles }>
 					{ children }

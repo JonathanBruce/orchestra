@@ -90,6 +90,24 @@ class Example extends React.Component {
 
 					<Twelve>
 						<Content
+							icon={ <Icons.Accounts /> }
+							onScrollBottom={
+								() => {
+									console.log('hit the bottom');
+								}
+							}
+							title='Twitter Accounts'
+							widget={
+								<SecondaryPositiveButton icon={ <Icons.Links /> } >
+									Connect New
+								</SecondaryPositiveButton>
+							}>
+							List of accounts
+						</Content>
+					</Twelve>
+
+					<Twelve>
+						<Content
 							height='100px'
 							icon={ <Icons.Accounts /> }
 							onScrollBottom={
