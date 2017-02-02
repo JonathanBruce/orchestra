@@ -169,6 +169,7 @@ class Slider extends React.Component {
 	handleChangeEvent = (value, eventType) => {
 		const {
 			defaultValue,
+			disabled,
 			interval,
 			max,
 			min,
@@ -178,6 +179,10 @@ class Slider extends React.Component {
 		} = this.props;
 		const numValue = Number(value);
 		let changeEvent;
+
+		if (disabled) {
+			return;
+		}
 
 		switch (eventType) {
 			case SLIDER.DRAG_END:
@@ -243,12 +248,11 @@ class Slider extends React.Component {
 				</div>
 				<div className='slider-display'>
 					<Input
-						defaultValue={ defaultValue.toString() }
 						disabled={ disabled }
-						onBlur={ !disabled && this.handleInputEvent.bind(this, SLIDER.INPUT_END) }
-						onChange={ !disabled && this.handleInputEvent.bind(this, SLIDER.INPUT_CHANGE) }
-						onKeyUp={ !disabled && this.handleInputEvent.bind(this, SLIDER.INPUT_KEYPRESS) }
 						placeholder='0'
+						onBlur={ this.handleInputEvent.bind(this, SLIDER.INPUT_END) }
+						onChange={ this.handleInputEvent.bind(this, SLIDER.INPUT_CHANGE) }
+						onKeyUp={ this.handleInputEvent.bind(this, SLIDER.INPUT_KEYPRESS) }
 						type='text'
 						value={ defaultValue.toString() } />
 					<label>{ label }</label>
