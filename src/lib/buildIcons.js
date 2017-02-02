@@ -39,13 +39,18 @@ function capitalizeWithHyphens(str, index) {
 }
 
 function svgPostProcessing(str) {
+	const regEx = /fill-rule|stop-color|stroke-linecap|stroke-linejoin|stop-opacity|stroke-width|<svg/gi;
 	const match = {
-		'stroke-width': 'strokeWidth',
+		'fill-rule': 'fillRule',
+		'stop-color': 'stopColor',
 		'stroke-linecap': 'strokeLinecap',
+		'stroke-linejoin': 'strokeLineJoin',
+		'stop-opacity': 'stopOpacity',
+		'stroke-width': 'strokeWidth',
 		'<svg': '<svg { ...this.props }'
 	};
 
-	return str.replace(/stroke-width|stroke-linecap|<svg/gi, (matched) => {
+	return str.replace(regEx, (matched) => {
 		return match[ matched ];
 	});
 }
