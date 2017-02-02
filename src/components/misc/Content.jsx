@@ -13,7 +13,7 @@ class Content extends Component {
 			React.PropTypes.element,
 			React.PropTypes.string
 		]),
-		height: React.PropTypes.string.isRequired,
+		height: React.PropTypes.string,
 		icon: React.PropTypes.element.isRequired,
 		onScrollBottom: React.PropTypes.func,
 		title: React.PropTypes.string.isRequired,
@@ -54,7 +54,7 @@ class Content extends Component {
 		} = this.props;
 		const contentStyles = {
 			height,
-			'max-height': height
+			maxHeight: height
 		};
 		const contentClasses = classnames('content', {
 			overflow: !!height

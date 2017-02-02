@@ -25,7 +25,7 @@ class Avatar extends React.Component {
 		const { image, size } = this.props;
 		const { imageError } = this.state;
 		const imageStyles = {
-			'border-radius': (size / 2)
+			borderRadius: (size / 2)
 		};
 
 		if (!imageError && image) {

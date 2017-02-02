@@ -13,7 +13,7 @@ class ValueActionDropDown extends React.Component {
 		]),
 		position: React.PropTypes.string,
 		title: React.PropTypes.string.isRequired,
-		value: React.PropTypes.string.isRequired
+		value: React.PropTypes.string
 	};
 
 	constructor(props) {

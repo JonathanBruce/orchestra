@@ -39,12 +39,16 @@ function capitalizeWithHyphens(str, index) {
 }
 
 function svgPostProcessing(str) {
-	const regEx = /fill-rule|stop-color|stroke-linecap|stroke-linejoin|stop-opacity|stroke-width|<svg/gi;
+	const regEx = /fill-rule|font-family|font-size|font-weight|letter-spacing|stop-color|stroke-linecap|stroke-linejoin|stop-opacity|stroke-width|<svg/gi;
 	const match = {
 		'fill-rule': 'fillRule',
+		'font-family': 'fontFamily',
+		'font-size': 'fontSize',
+		'font-weight': 'fontWeight',
+		'letter-spacing': 'letterSpacing',
 		'stop-color': 'stopColor',
 		'stroke-linecap': 'strokeLinecap',
-		'stroke-linejoin': 'strokeLineJoin',
+		'stroke-linejoin': 'strokeLinejoin',
 		'stop-opacity': 'stopOpacity',
 		'stroke-width': 'strokeWidth',
 		'<svg': '<svg { ...this.props }'

@@ -7,7 +7,10 @@ class GenericMenu extends React.Component {
 	static propTypes = {
 		options: React.PropTypes.arrayOf(
 			React.PropTypes.shape({
-				label: React.PropTypes.string.isRequired,
+				label: React.PropTypes.oneOfType([
+					React.PropTypes.string,
+					React.PropTypes.object
+				]),
 				value: React.PropTypes.any.isRequired
 			})
 		).isRequired,

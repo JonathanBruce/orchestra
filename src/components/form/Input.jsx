@@ -11,6 +11,7 @@ class Input extends React.Component {
 		error: React.PropTypes.bool,
 		icon: React.PropTypes.element,
 		onBlur: React.PropTypes.func,
+		onChange: React.PropTypes.func,
 		onFocus: React.PropTypes.func,
 		placeholder: React.PropTypes.string.isRequired,
 		type: React.PropTypes.string.isRequired
@@ -64,7 +65,7 @@ class Input extends React.Component {
 	};
 
 	render() {
-		const { disabled, error } = this.props;
+		const { disabled, error, ...props } = this.props;
 		const containerClassnames = classnames({
 			clearfix: true,
 			disabled,
@@ -78,8 +79,10 @@ class Input extends React.Component {
 			<div className={ containerClassnames }
 				onClick={ this.onContainerClick }>
 				<div className='item'>
-					<input { ...this.props }
+					<input
+					{ ...props }
 					onBlur={ this.toggleFocus }
+					onChange={ this.onChange }
 					onFocus={ this.toggleFocus }
 					ref='input' />
 				</div>

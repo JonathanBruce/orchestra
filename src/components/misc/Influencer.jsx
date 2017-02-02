@@ -65,7 +65,9 @@ class Influencer extends React.Component {
 
 				if (NetworkIcon) {
 					icons.push((
-						<a href={ url } target='_new'>
+						<a href={ url }
+							key={ count }
+							target='_new'>
 							<NetworkIcon />
 						</a>
 					));

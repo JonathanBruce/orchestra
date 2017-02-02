@@ -248,6 +248,7 @@ class Slider extends React.Component {
 						onBlur={ !disabled && this.handleInputEvent.bind(this, SLIDER.INPUT_END) }
 						onChange={ !disabled && this.handleInputEvent.bind(this, SLIDER.INPUT_CHANGE) }
 						onKeyUp={ !disabled && this.handleInputEvent.bind(this, SLIDER.INPUT_KEYPRESS) }
+						placeholder='0'
 						type='text'
 						value={ defaultValue.toString() } />
 					<label>{ label }</label>

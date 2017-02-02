@@ -6,7 +6,10 @@ import Info from '../misc/Info.jsx';
 
 class FilterBox extends React.Component {
 	static propTypes = {
-		children: React.PropTypes.element,
+		children: React.PropTypes.oneOfType([
+			React.PropTypes.array,
+			React.PropTypes.element
+		]).isRequired,
 		onWidgetToggle: React.PropTypes.func,
 		title: React.PropTypes.string.isRequired,
 		titleIcon: React.PropTypes.element,

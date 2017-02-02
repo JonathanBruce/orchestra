@@ -27,7 +27,8 @@ class CheckBox extends React.Component {
 		const {
 			checked,
 			disabled,
-			label
+			label,
+			...props
 		} = this.props;
 		const checkboxClassnames = classnames({
 			checkbox: true,
@@ -38,7 +39,9 @@ class CheckBox extends React.Component {
 		return (
 			<div className='orch-checkbox'>
 				<div className={ checkboxClassnames }>
-					<input checked={ checked }
+					<input
+						{ ...props }
+						checked={ checked }
 						disabled={ disabled }
 						onClick={ this.onInputChange }
 						ref='input'

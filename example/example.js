@@ -359,6 +359,11 @@ class Example extends React.Component {
 
 					<Three>
 						<Input
+							onChange={
+								(value) => {
+									console.log(value);
+								}
+							}
 							placeholder='Username'
 							type='text' />
 					</Three>
@@ -367,6 +372,11 @@ class Example extends React.Component {
 						<Input
 							defaultValue='Error Text'
 							error={ true }
+							onChange={
+								(value) => {
+									console.log(value);
+								}
+							}
 							placeholder='Username'
 							type='text' />
 					</Three>
@@ -375,6 +385,11 @@ class Example extends React.Component {
 						<Input
 							defaultValue='Disabled text'
 							disabled={ true }
+							onChange={
+								(value) => {
+									console.log(value);
+								}
+							}
 							placeholder='Username'
 							type='text' />
 					</Three>
@@ -419,11 +434,19 @@ class Example extends React.Component {
 							}
 						} label='Option A' />
 
-						<CheckBox checked onClick={
-							(value) => {
-								console.log(value);
+						<CheckBox
+							checked
+							onChange={
+								(value) => {
+									console.log(value);
+								}
 							}
-						} label='Option B' />
+							onClick={
+								(value) => {
+									console.log(value);
+								}
+							}
+							label='Option B' />
 
 						<CheckBox disabled onClick={
 							(value) => {
@@ -431,11 +454,20 @@ class Example extends React.Component {
 							}
 						} label='Option C' />
 
-						<CheckBox checked disabled onClick={
-							(value) => {
-								console.log(value);
+						<CheckBox
+							checked
+							disabled
+							onClick={
+								(value) => {
+									console.log(value);
+								}
 							}
-						} label='Option D' />
+							onChange={
+								(value) => {
+									console.log(value);
+								}
+							}
+							label='Option D' />
 					</Three>
 
 					<Three>
@@ -560,7 +592,13 @@ class Example extends React.Component {
 							disabled
 							label='foo'
 							max={ 365 }
-							min={ 0 } />
+							min={ 0 }
+							onDragChange={
+								(sliderValue) => {
+									this.setState({ sliderValue });
+								}
+							} />
+
 						<Slider
 							defaultValue={ this.state.sliderValue }
 							interval={ 5 }
@@ -836,6 +874,7 @@ class Example extends React.Component {
 							defaultValue='Some value' />
 
 						<KeywordTag
+							defaultValue='Puppies'
 							edit={ false }
 							invalid={ true }
 							network='youtube'
