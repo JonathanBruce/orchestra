@@ -56,6 +56,30 @@
 	}
 }
 
+/**
+ * Floating mixin adds transitions to an absolutely positioned element when an initial class is not applied
+ * This allows FloatingSubHeader to hide/display based on scroll movements
+ * @param {<CSS unit>} normal-height Initial display height
+ * @param {<CSS unit>} float-height  Floated display height
+ * @param {string}      initial-class Initial class which prevents transitions onLoad
+ * @param {string}      float-class   Floating class which determines which transition to apply
+ */
+@mixin floating($normal-height, $float-height, $initial-class, $float-class) {
+	z-index: 3;
+
+	&:not(.#{$initial-class}) {
+		&.#{$float-class} {
+			transition: 0.5s;
+			top: $float-height;
+		}
+
+		&:not(.#{$float-class}) {
+			transition: 0.5s;
+			top: $normal-height;
+		}
+	}
+}
+
 @mixin focus() {
 	border-color: $pure-white !important;
 	outline: none !important;

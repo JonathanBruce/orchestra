@@ -26,6 +26,7 @@
 		"functional/form/Input",
 		"functional/form/Slider",
 		"functional/grid/Column",
+		"functional/header/FloatingSubHeader",
 		"functional/misc/Notifier",
 		"functional/misc/PillToggle",
 		"functional/search/KeywordTag"

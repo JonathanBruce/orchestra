@@ -74,6 +74,7 @@ export Switch from 'components/form/Switch.jsx';
  * Export header components
  */
 
+export FloatingSubHeader from 'components/headers/FloatingSubHeader.jsx';
 export LinksSubHeader from 'components/headers/LinksSubHeader.jsx';
 export TitleSubHeader from 'components/headers/TitleSubHeader.jsx';
 
