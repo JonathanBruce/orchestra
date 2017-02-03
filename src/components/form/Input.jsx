@@ -65,7 +65,12 @@ class Input extends React.Component {
 	};
 
 	render() {
-		const { disabled, error, ...props } = this.props;
+		const {
+			disabled,
+			error,
+			onChange,
+			...props
+		} = this.props;
 		const containerClassnames = classnames({
 			clearfix: true,
 			disabled,
@@ -82,7 +87,7 @@ class Input extends React.Component {
 					<input
 					{ ...props }
 					onBlur={ this.toggleFocus }
-					onChange={ this.onChange }
+					onChange={ onChange }
 					onFocus={ this.toggleFocus }
 					ref='input' />
 				</div>
