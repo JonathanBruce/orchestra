@@ -6,7 +6,8 @@ import SubHeader from 'components/base/SubHeader.jsx';
 
 class FloatingSubHeader extends Component {
 	static propTypes = {
-		children: React.PropTypes.array
+		children: React.PropTypes.array,
+		fixed: React.PropTypes.bool
 	};
 
 	componentWillMount() {
@@ -33,21 +34,24 @@ class FloatingSubHeader extends Component {
 	 * Determines whether to float the subheader bar based on scroll
 	 */
 	onScroll = () => {
+		const { fixed } = this.props;
 		const { scrollTop } = document.body;
 		const { floating, initialPosition, position } = this.state;
 		const scrollDown = scrollTop > position;
 		const initialScroll = position === 0 && scrollTop > 0 && initialPosition;
 
-		if (scrollDown && !floating && !initialScroll) {
-			this.setFloating(true);
-		}
-		else if ((!scrollDown && floating) || scrollTop === 0) {
-			this.setFloating(false);
-		}
+		if (!fixed) {
+			if (scrollDown && !floating && !initialScroll) {
+				this.setFloating(true);
+			}
+			else if ((!scrollDown && floating) || scrollTop === 0) {
+				this.setFloating(false);
+			}
 
-		this.setState({
-			position: scrollTop
-		});
+			this.setState({
+				position: scrollTop
+			});
+		}
 	};
 
 	/**

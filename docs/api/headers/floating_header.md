@@ -9,6 +9,7 @@
 | Name              | Type          | Desciption                                    |
 | ------------------|---------------| ----------------------------------------------|
 | `children`        | `element`     | Dynamic content to be rendered                |
+| `fixed`           | `boolean`     | Determines whether the bar is fixed           |
 
 **Reason for existing:**
 
@@ -23,7 +24,7 @@ import { FloatingSubHeader } from 'orchestra';
 class MyComponent extends React.Component {
 	render() {
 		return (
-			<FloatingSubHeader>
+			<FloatingSubHeader fixed={ false }>
 				{ this.props.children }
 			</FloatingSubHeader>
 		);

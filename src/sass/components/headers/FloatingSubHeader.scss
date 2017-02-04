@@ -1,5 +1,5 @@
 $header-height: 65px;
-$top-height: 10px;
+$top-height: 8px;
 
 .orch-floating-sub-header {
 	@include floating($header-height, $top-height, 'init', 'floating');
