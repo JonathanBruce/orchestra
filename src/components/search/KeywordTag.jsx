@@ -119,11 +119,13 @@ class KeywordTag extends Component {
 	/**
 	 * Wrapper for hide menu
 	 */
-	hideRequirementMenu = () => {
+	hideRequirementMenu = (event) => {
 		const { openRequirement } = this.props;
 
 		if (openRequirement) {
-			this.onRequirementToggle();
+			event.stopPropagation();
+
+			this.onRequirementToggle(event);
 		}
 	};
 
@@ -139,10 +141,14 @@ class KeywordTag extends Component {
 	/**
 	 * Toggles requirement
 	 */
-	onRequirementToggle = () => {
+	onRequirementToggle = (event) => {
 		const { onRequirementToggle } = this.props;
 
-		onRequirementToggle();
+		if (event) {
+			event.stopPropagation();
+		}
+
+		onRequirementToggle(event);
 	};
 
 	/**
@@ -476,11 +482,11 @@ class KeywordTag extends Component {
 	/**
 	 * Wrapper for show menu for network
 	 */
-	showRequirementMenu = () => {
+	showRequirementMenu = (event) => {
 		const { openRequirement } = this.props;
 
 		if (!openRequirement) {
-			this.onRequirementToggle();
+			this.onRequirementToggle(event);
 		}
 	};
 
