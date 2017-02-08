@@ -7,7 +7,8 @@ import SubHeader from 'components/base/SubHeader.jsx';
 class FloatingSubHeader extends Component {
 	static propTypes = {
 		children: React.PropTypes.array,
-		fixed: React.PropTypes.bool
+		fixed: React.PropTypes.bool,
+		onFloat: React.PropTypes.func
 	};
 
 	componentWillMount() {
@@ -58,6 +59,12 @@ class FloatingSubHeader extends Component {
 	 * Sets the current floating state for the header
 	 */
 	setFloating = (value) => {
+		const { onFloat } = this.props;
+
+		if (onFloat) {
+			onFloat(value);
+		}
+
 		this.setState({
 			initialPosition: false,
 			floating: value

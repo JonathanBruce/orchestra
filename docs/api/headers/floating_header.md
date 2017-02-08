@@ -6,10 +6,11 @@
 
 **Props:**
 
-| Name              | Type          | Desciption                                    |
-| ------------------|---------------| ----------------------------------------------|
-| `children`        | `element`     | Dynamic content to be rendered                |
-| `fixed`           | `boolean`     | Determines whether the bar is fixed           |
+| Name              | Type          | Desciption                                      |
+| ------------------|---------------| ------------------------------------------------|
+| `children`        | `element`     | Dynamic content to be rendered                  |
+| `fixed`           | `boolean`     | Determines whether the bar is fixed             |
+| `onFloat`         | `function`    | Provides a callback method after changing float |
 
 **Reason for existing:**
 
@@ -22,9 +23,13 @@ Scrolling down causes the menu to float above, and scrolling up (or to the top) 
 import { FloatingSubHeader } from 'orchestra';
 
 class MyComponent extends React.Component {
+	onFloat = () => {
+		// ...
+	}
+
 	render() {
 		return (
-			<FloatingSubHeader fixed={ false }>
+			<FloatingSubHeader fixed={ false } onFloat={ this.onFloat }>
 				{ this.props.children }
 			</FloatingSubHeader>
 		);

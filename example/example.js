@@ -72,7 +72,13 @@ class Example extends React.Component {
 	render() {
 		return (
 			<div>
-				<FloatingSubHeader>
+				<FloatingSubHeader
+					fixed={ false }
+					onFloat={
+						(floatInd) => {
+							console.log(floatInd);
+						}
+					}>
 					<div>Floating Content</div>
 				</FloatingSubHeader>
 
