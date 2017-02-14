@@ -20,6 +20,7 @@ import {
 	FullPrimaryButton,
 	FullSecondaryButton,
 	FullTertiaryButton,
+	HighlightTag,
 	Icons,
 	Influencer,
 	Input,
@@ -1212,6 +1213,16 @@ class Example extends React.Component {
 							value='1.1K'>
 							Content
 						</ValueActionDropDown>
+					</Three>
+
+					<Three>
+						<HighlightTag
+							label={ 'Tag Name' }
+							onClose={
+								() => {
+									console.log('close highlight tag');
+								}
+							} />
 					</Three>
 
 					<Three>
