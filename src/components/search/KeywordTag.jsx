@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import Component from 'components/extensions/Component.jsx';
 import Icons from 'icons/_all';
 import { isFunction } from 'lib/core';
+import defaultClusterImage from 'images/bitmap.jpg';
 import GenericMenu from '../menus/Generic.jsx';
 import { REQUIREMENTS, SUPPORTED_NETWORKS } from 'maestro';
 import { toUpperCaseFirstCharacter } from 'lib/string';
@@ -13,6 +14,7 @@ class KeywordTag extends Component {
 		defaultValue: React.PropTypes.string,
 		disabled: React.PropTypes.bool,
 		edit: React.PropTypes.bool,
+		editable: React.PropTypes.bool,
 		id: React.PropTypes.string,
 		invalid: React.PropTypes.bool,
 		onDeleteClick: React.PropTypes.func,
@@ -28,7 +30,9 @@ class KeywordTag extends Component {
 		openRequirement: React.PropTypes.bool,
 		onTagChange: React.PropTypes.func,
 		preview: React.PropTypes.bool,
-		requirement: React.PropTypes.string
+		requirement: React.PropTypes.string,
+		selected: React.PropTypes.bool,
+		thumbnail: React.PropTypes.string
 	};
 
 	componentWillMount() {
@@ -72,6 +76,7 @@ class KeywordTag extends Component {
 
 
 	static defaultProps = {
+		editable: true,
 		openNetwork: false,
 		openRequirement: false,
 		network: SUPPORTED_NETWORKS.ALL,
@@ -86,6 +91,16 @@ class KeywordTag extends Component {
 			value: this.props && this.props.defaultValue ? this.props.defaultValue : ''
 		};
 	}
+
+	/**
+	 * Function to trigger image error handling callback function
+	 * @param {object} event DOM event object
+	 */
+	handleThumbnailError = () => {
+		this.setState({
+			thumbnailError: true
+		});
+	};
 
 	/**
 	 * Checks if has onNetworkChange
@@ -103,6 +118,15 @@ class KeywordTag extends Component {
 		const { onRequirementChange } = this.props;
 
 		return isFunction(onRequirementChange);
+	};
+
+	/**
+	 * checks if thumbnail has length and is a string
+	 */
+	hasThumbnail = () => {
+		const { thumbnail } = this.props;
+
+		return typeof thumbnail === 'string' && thumbnail.length;
 	};
 
 	/**
@@ -155,12 +179,12 @@ class KeywordTag extends Component {
 	 * Listens for tag clicks
 	 */
 	onTagClick = () => {
-		const { onPreviewClick, preview } = this.props;
+		const { editable, onPreviewClick } = this.props;
 
-		if (preview) {
+		if (onPreviewClick) {
 			onPreviewClick();
 		}
-		else {
+		else if (editable) {
 			this.setEdit(true, () => {
 				const { keyword } = this.refs;
 
@@ -210,9 +234,9 @@ class KeywordTag extends Component {
 	 */
 	renderDelete = () => {
 		const { edit } = this.state;
-		const { onDeleteClick, preview } = this.props;
+		const { onDeleteClick } = this.props;
 
-		if (!edit && !preview) {
+		if (!edit && onDeleteClick) {
 			return (
 				<div
 					className='delete'
@@ -454,6 +478,29 @@ class KeywordTag extends Component {
 	};
 
 	/**
+	 * renders the thumbnail for a tag
+	 */
+	renderThumbnail = () => {
+		const { thumbnail } = this.props;
+		const { thumbnailError } = this.state;
+
+		return (
+			thumbnailError
+			? (
+				<img
+					onClick={ this.onTagClick }
+					src={ defaultClusterImage } />
+			)
+			: (
+				<img
+					onClick={ this.onTagClick }
+					onError={ this.handleThumbnailError }
+					src={ thumbnail } />
+			)
+		);
+	};
+
+	/**
 	 * Sets edit state
 	 */
 	setEdit = (edit, context) => {
@@ -503,18 +550,25 @@ class KeywordTag extends Component {
 		const { edit } = this.state;
 		const {
 			disabled,
+			onDeleteClick,
 			onEmptyClick,
 			preview,
-			requirement
+			requirement,
+			selected
 		} = this.props;
-		const onlyInput = !this.hasNetworkChange() && !this.hasRequirementChange();
+		const hasThumbnail = this.hasThumbnail();
+		const onlyInput = !hasThumbnail && !this.hasNetworkChange() && !this.hasRequirementChange();
+		const networkAndRequirement = !hasThumbnail && this.hasNetworkChange() && this.hasRequirementChange();
 		const keywordTagClasses = classnames('orch-keyword-tag', {
 			disabled,
 			edit,
+			'no-delete': !isFunction(onDeleteClick),
 			'no-network-and-requirement': onlyInput,
 			preview,
 			[ requirement ]: true,
-			'network-and-requirement': this.hasNetworkChange() && this.hasRequirementChange()
+			'network-and-requirement': networkAndRequirement,
+			selected,
+			thumbnail: hasThumbnail
 		});
 		const showEmptyTag = requirement === REQUIREMENTS.EMPTY && !preview;
 
@@ -533,8 +587,9 @@ class KeywordTag extends Component {
 						<div
 							className='tag clearfix'
 							ref='tag'>
-							{ this.hasNetworkChange() && this.renderNetworkDropDown() }
-							{ this.hasRequirementChange() && this.renderRequirementDropDown() }
+							{ hasThumbnail && this.renderThumbnail() }
+							{ !hasThumbnail && this.hasNetworkChange() && this.renderNetworkDropDown() }
+							{ !hasThumbnail && this.hasRequirementChange() && this.renderRequirementDropDown() }
 							{ this.renderKeyword() }
 							{ this.renderDelete() }
 						</div>

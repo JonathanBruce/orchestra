@@ -10,6 +10,7 @@
 | Name                 | Type            | Desciption                                                  |
 | ---------------------|-----------------|-------------------------------------------------------------|
 | `disabled`           | `bool`          | Represents whether the tag should be disabled               |
+| `editable`           | `bool`          | Represents whether a tag should be editable                 |
 | `id`                 | `string`        | ID of follower                                              |
 | `invalid`            | `boolean`       | Boolean for whether the input value is invalid              |
 | `onEditToggle`       | `func`          | Function for additional callbacks while editmode is toggled |
@@ -26,6 +27,8 @@
 | `onTagChange`        | `func`          | Function for changing tag value                             |
 | `preview`            | `boolean`       | Represents whether the tag is in preview mode               |
 | `requirement`        | `string`        | Value for current requirement                               |
+| `selected`           | `boolean`       | Boolean for whether the selected visual state is active     |
+| `thumbnail`          | `string`        | source url for thumbnail tags, fallback available for error |
 | `value`              | `string`        | Value for keyword tag                                       |
 
 **Reason for existing:**
