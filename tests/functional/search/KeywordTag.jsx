@@ -14,6 +14,7 @@ class KeywordTagTest extends React.Component {
 			openNetworkTwo: false,
 			openRequirement: false,
 			openRequirementTwo: false,
+			previewClicked: false,
 			requirement: null
 		};
 	}
@@ -52,31 +53,95 @@ class KeywordTagTest extends React.Component {
 		});
 	};
 
+	onPreviewClick = () => {
+		console.log('suh');
+		this.setState({ previewClicked: true });
+	};
+
 	render() {
-		const { openNetwork, openNetworkTwo, openRequirement, openRequirementTwo } = this.state;
+		const {
+			openNetwork,
+			openNetworkTwo,
+			openRequirement,
+			openRequirementTwo,
+			previewClicked
+		} = this.state;
 
 		return (
 			<div id='keyword-tag'>
-				<KeywordTag
-					defaultValue='A Default Value'
-					network={ SUPPORTED_NETWORKS.TWITTER }
-					onDeleteClick={
-						() => {
-							console.log('delete');
+				<div id='uneditable'>
+					<KeywordTag
+						defaultValue='A Default Value'
+						editable={ false }
+						requirement={ REQUIREMENTS.NEUTRAL } />
+				</div>
+
+				<div id='thumbnail-trump'>
+					<KeywordTag
+						defaultValue='A Default Value'
+						network={ SUPPORTED_NETWORKS.TWITTER }
+						onDeleteClick={
+							() => {
+								console.log('delete');
+							}
 						}
-					}
-					onNetworkChange={ this.onNetworkChange }
-					onNetworkToggle={ this.onNetworkToggle }
-					onRequirementToggle={ this.onRequirementToggle }
-					onRequirementChange={ this.onRequirementChange }
-					onTagChange={
-						() => {
-							console.log('tag changed');
+						onNetworkChange={ this.onNetworkChange }
+						onNetworkToggle={ this.onNetworkToggle }
+						onRequirementToggle={ this.onRequirementToggle }
+						onRequirementChange={ this.onRequirementChange }
+						onTagChange={
+							() => {
+								console.log('tag changed');
+							}
 						}
-					}
-					openNetwork={ openNetwork }
-					openRequirement={ openRequirement }
-					requirement={ REQUIREMENTS.NEUTRAL } />
+						openNetwork={ openNetwork }
+						openRequirement={ openRequirement }
+						requirement={ REQUIREMENTS.NEUTRAL }
+						thumbnail='url' />
+				</div>
+
+				<div id='delete-exists'>
+					<KeywordTag
+						defaultValue='A Default Value'
+						onDeleteClick={
+							() => {
+								console.log('delete');
+							}
+						}
+						requirement={ REQUIREMENTS.NEUTRAL } />
+				</div>
+
+				<div id='delete-doesnt-exist'>
+					<KeywordTag
+						defaultValue='A Default Value'
+						requirement={ REQUIREMENTS.NEUTRAL } />
+				</div>
+
+				<div id='preview-click-exists'>
+					<KeywordTag
+						defaultValue='A Default Value'
+						onPreviewClick={ this.onPreviewClick }
+						requirement={ REQUIREMENTS.NEUTRAL } />
+				</div>
+
+				<div id='preview-click-doesnt-exist'>
+					<KeywordTag
+						defaultValue='A Default Value'
+						disabled={ true }
+						editable={ false }
+						requirement={ REQUIREMENTS.NEUTRAL } />
+				</div>
+
+				<div id='selected'>
+					<KeywordTag
+						defaultValue='A Default Value'
+						selected
+						requirement={ REQUIREMENTS.NEUTRAL } />
+				</div>
+
+				<div id='preview-clicked'>
+					{ previewClicked ? 'Clicked!' : 'Not Clicked' }
+				</div>
 
 				<KeywordTag
 					defaultValue='A Default Value'

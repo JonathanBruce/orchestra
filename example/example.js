@@ -675,6 +675,11 @@ class Example extends React.Component {
 					<Three>
 						<KeywordTag
 							network='facebook'
+							onDeleteClick={
+								() => {
+									console.log('delete');
+								}
+							}
 							onNetworkChange={
 								(network) => {
 									console.log(network);
@@ -694,6 +699,11 @@ class Example extends React.Component {
 
 						<KeywordTag
 							network='instagram'
+							onDeleteClick={
+								() => {
+									console.log('delete');
+								}
+							}
 							onNetworkChange={
 								(network) => {
 									console.log(network);
@@ -732,6 +742,11 @@ class Example extends React.Component {
 
 						<KeywordTag
 							network='youtube'
+							onDeleteClick={
+								() => {
+									console.log('delete');
+								}
+							}
 							onNetworkChange={
 								(network) => {
 									console.log(network);
@@ -751,6 +766,11 @@ class Example extends React.Component {
 
 						<KeywordTag
 							requirement='exclude'
+							onDeleteClick={
+								() => {
+									console.log('delete');
+								}
+							}
 							onRequirementChange={
 								(requirement) => {
 									console.log(requirement);
@@ -770,6 +790,11 @@ class Example extends React.Component {
 
 						<KeywordTag
 							requirement='locked'
+							onDeleteClick={
+								() => {
+									console.log('delete');
+								}
+							}
 							onRequirementChange={
 								(requirement) => {
 									console.log(requirement);
@@ -789,6 +814,11 @@ class Example extends React.Component {
 
 						<KeywordTag
 							requirement='neutral'
+							onDeleteClick={
+								() => {
+									console.log('delete');
+								}
+							}
 							onRequirementChange={
 								(requirement) => {
 									console.log(requirement);
@@ -808,6 +838,11 @@ class Example extends React.Component {
 
 						<KeywordTag
 							requirement='stream'
+							onDeleteClick={
+								() => {
+									console.log('delete');
+								}
+							}
 							onTagChange={
 								(tag) => {
 									console.log(tag);
@@ -817,6 +852,11 @@ class Example extends React.Component {
 
 						<KeywordTag
 							requirement='stream'
+							onDeleteClick={
+								() => {
+									console.log('delete');
+								}
+							}
 							onTagChange={
 								(tag) => {
 									console.log(tag);
@@ -826,6 +866,11 @@ class Example extends React.Component {
 
 						<KeywordTag
 							network='youtube'
+							onDeleteClick={
+								() => {
+									console.log('delete');
+								}
+							}
 							onNetworkChange={
 								(network) => {
 									console.log(network);
@@ -856,6 +901,11 @@ class Example extends React.Component {
 
 						<KeywordTag
 							network='youtube'
+							onDeleteClick={
+								() => {
+									console.log('delete');
+								}
+							}
 							onNetworkChange={
 								(network) => {
 									console.log(network);
@@ -889,6 +939,11 @@ class Example extends React.Component {
 							edit={ false }
 							invalid={ true }
 							network='youtube'
+							onDeleteClick={
+								() => {
+									console.log('delete');
+								}
+							}
 							onEditToggle={
 								(edit) => {
 									console.log(edit);
@@ -907,6 +962,25 @@ class Example extends React.Component {
 							onRequirementChange={
 								(requirement) => {
 									console.log(requirement);
+								}
+							}
+							requirement='neutral' />
+
+						<KeywordTag
+							defaultValue='Home & Design'
+							edit={ false }
+							editable={ false }
+							thumbnail='s'
+							requirement='neutral' />
+
+						<KeywordTag
+							defaultValue='Home & Design'
+							edit={ false }
+							editable={ false }
+							thumbnail='s'
+							onDeleteClick={
+								() => {
+									console.log('delete');
 								}
 							}
 							requirement='neutral' />
@@ -931,6 +1005,28 @@ class Example extends React.Component {
 								}
 							}
 							preview={ true }
+							defaultValue='Some value' />
+
+						<KeywordTag
+							disabled={ false }
+							onPreviewClick={
+								() => {
+									console.log('clicked preview');
+								}
+							}
+							preview={ true }
+							thumbnail='s'
+							defaultValue='Some value' />
+
+						<KeywordTag
+							disabled={ false }
+							onPreviewClick={
+								() => {
+									console.log('clicked preview');
+								}
+							}
+							preview={ true }
+							thumbnail='https://pbs.twimg.com/profile_images/758493074938957824/oQZlspEJ_400x400.jpg'
 							defaultValue='Some value' />
 
 						<KeywordTag
