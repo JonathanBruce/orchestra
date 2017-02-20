@@ -1,0 +1,46 @@
+.orch-highlight-tag {
+	background-color: $IP-blue;
+	border-radius: 3px;
+	color: $pure-white;
+	display: inline-block;
+	height: 30px;
+
+	> div {
+		display: inline-block;
+	}
+
+	.label {
+		border-right: 2px solid $arctic-blue-dark;
+		font-family: $lato-bold; 
+		font-size: 15px;
+		padding: 7px 10px 5px;
+	}
+
+	.close {
+		border-bottom-right-radius: 3px;
+		border-top-right-radius: 3px;
+		cursor: pointer;
+		height: 30px;
+		margin-top: 0px;
+		vertical-align: top;
+
+		&:hover {
+			background-color: $dusk-blue;
+		}
+
+		.icon {
+			height: 16px;
+
+			svg {
+				height: 16px;
+				padding: 7px 5px;
+				width: 16px;
+
+				path {
+					stroke: $pure-white;
+					stroke-width: 2px;
+				}
+			}
+		}
+	}
+}

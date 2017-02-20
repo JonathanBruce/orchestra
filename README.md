@@ -62,8 +62,9 @@
     * [`PillToggle`](#pilltoggle)
     * [`Stat`](#stat)
   * [Search](#search)
-    * [`KeywordTag`](#keywordtag)
     * [`FilterBox`](#filterbox)
+    * [`HighlightTag`](#highlighttag)
+    * [`KeywordTag`](#keywordtag)
 * [Commands](#commands)
 * [Contributing](#contributing)
 
@@ -1927,6 +1928,106 @@ class MyComponent extends React.Component {
 
 The following describes all of the search components available for use in Orchestra.
 
+### `FilterBox`
+
+* __HTML tag extended:__ `<div></div>`
+* __CSS class(es) used:__ `orch-filter-box`
+* __Located at__: `src/components/search/FilterBox.jsx`
+
+**Props:**
+
+| Name              | Type          | Desciption                                    |
+| ------------------|---------------| ----------------------------------------------|
+| `children`        | `element`     | Dynamic content to be rendered                |
+| `onWidgetToggle`  | `function`    | Action to fire when expand is selected        |
+| `title`           | `string`      | Title of the filter box                       |
+| `titleIcon`       | `element`     | Optional filter box title icon                |
+| `tooltipTitle`    | `element`     | Optional tooltip title                        |
+| `tooltipValue`    | `element`     | Optional tooltip value                        |
+| `widget`          | `object`      | Flyout widget                                 |
+| `widgetIcon`      | `object`      | Icon for for the expand button                |
+| `widgetOpen`      | `boolean`     | Represents whether the flyout is expanded     |
+
+**Default Props:**
+
+| Name              | Default Value      |
+| ------------------|--------------------|
+| `widgetIcon`      | <Icons.Search />   |
+
+**Reason for existing:**
+
+This component is used for containing an expanding list of filters or other dynamic content, and supports an optional info tooltip and toggleable widget component.
+
+**Usage:**
+
+```javascript
+import { FilterBox, Icons } from 'orchestra';
+
+class MyComponent extends React.Component {
+	toggleSearchOverlay = () => {
+		// ...
+	}
+
+	render() {
+		return (
+			<FilterBox
+				info={ 'This is a description of the filter topics' }
+				title='Filter Topics'
+				titleIcon={ <Icons.Instagram /> }
+				tooltipTitle={ 'Tooltip Title' }
+				tooltipValue={ 'Descriptive Instructions' }
+				widget={ <SearchOverlay /> }
+				widgetIcon={ <Icons.Search /> }
+				widgetOpen={ true }
+				widgetToggle={ this.toggleSearchOverlay }>
+				{ this.props.children }
+			</FilterBox>
+		);
+	}
+}
+```
+
+
+### `HighlightTag`
+
+* __HTML tag extended:__ `<div></div>`
+* __CSS class(es) used:__ `orch-highlight-tag`
+* __Located at__: `src/components/search/HighlightTag.jsx`
+
+**Props:**
+
+| Name              | Type          | Desciption                                    |
+| ------------------|---------------| ----------------------------------------------|
+| `label`           | `element`     | Tag label to be displayed                     |
+| `onClose`         | `function`    | Action to fire when X button is clicked       |
+
+
+**Reason for existing:**
+
+This component is used for displaying a removeable highlight tag which can be displayed in place of text inputs.
+
+**Usage:**
+
+```javascript
+import { HighlightTag } from 'orchestra';
+
+class MyComponent extends React.Component {
+	onCloseHighlightTag = () => {
+		// ...
+	}
+
+	render() {
+		return (
+			<FilterBox
+				label='Sports'
+				onClose={ this.onCloseHighlightTag }>
+			</FilterBox>
+		);
+	}
+}
+```
+
+
 ### `KeywordTag`
 
 * __HTML tag extended:__ `<div></div>`
@@ -2005,66 +2106,6 @@ class MyComponent extends React.Component {
 	}
 }
 ```
-### `FilterBox`
-
-* __HTML tag extended:__ `<div></div>`
-* __CSS class(es) used:__ `orch-filter-box`
-* __Located at__: `src/components/search/FilterBox.jsx`
-
-**Props:**
-
-| Name              | Type          | Desciption                                    |
-| ------------------|---------------| ----------------------------------------------|
-| `children`        | `element`     | Dynamic content to be rendered                |
-| `onWidgetToggle`  | `function`    | Action to fire when expand is selected        |
-| `title`           | `string`      | Title of the filter box                       |
-| `titleIcon`       | `element`     | Optional filter box title icon                |
-| `tooltipTitle`    | `element`     | Optional tooltip title                        |
-| `tooltipValue`    | `element`     | Optional tooltip value                        |
-| `widget`          | `object`      | Flyout widget                                 |
-| `widgetIcon`      | `object`      | Icon for for the expand button                |
-| `widgetOpen`      | `boolean`     | Represents whether the flyout is expanded     |
-
-**Default Props:**
-
-| Name              | Default Value      |
-| ------------------|--------------------|
-| `widgetIcon`      | <Icons.Search />   |
-
-**Reason for existing:**
-
-This component is used for containing an expanding list of filters or other dynamic content, and supports an optional info tooltip and toggleable widget component.
-
-**Usage:**
-
-```javascript
-import { FilterBox, Icons } from 'orchestra';
-
-class MyComponent extends React.Component {
-	toggleSearchOverlay = () => {
-		// ...
-	}
-
-	render() {
-		return (
-			<FilterBox
-				info={ 'This is a description of the filter topics' }
-				title='Filter Topics'
-				titleIcon={ <Icons.Instagram /> }
-				tooltipTitle={ 'Tooltip Title' }
-				tooltipValue={ 'Descriptive Instructions' }
-				widget={ <SearchOverlay /> }
-				widgetIcon={ <Icons.Search /> }
-				widgetOpen={ true }
-				widgetToggle={ this.toggleSearchOverlay }>
-				{ this.props.children }
-			</FilterBox>
-		);
-	}
-}
-```
-
-
 
 # Commands
 

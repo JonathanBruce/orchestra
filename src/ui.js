@@ -117,4 +117,5 @@ export Stat from 'components/misc/Stat.jsx';
  */
 
 export FilterBox from 'components/search/FilterBox.jsx';
+export HighlightTag from 'components/search/HighlightTag.jsx';
 export KeywordTag from 'components/search/KeywordTag.jsx';

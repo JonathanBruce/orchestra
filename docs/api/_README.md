@@ -81,5 +81,6 @@ The following describes all of the miscellaneous components available for use in
 
 The following describes all of the search components available for use in Orchestra.
 
-#include "./docs/api/search/keyword_tag.md"
 #include "./docs/api/search/filter_box.md"
+#include "./docs/api/search/highlight_tag.md"
+#include "./docs/api/search/keyword_tag.md"
