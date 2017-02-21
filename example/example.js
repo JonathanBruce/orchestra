@@ -636,6 +636,9 @@ class Example extends React.Component {
 
 					<Three>
 						<PulseLoader size={ 100 } />
+						<PulseLoader
+							prompt={ 'loading text here' }
+							size={ 100 } />
 					</Three>
 
 					<Nine>

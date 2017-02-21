@@ -1,3 +1,13 @@
-.sk-spinner-pulse {
-    background-color: $IP-blue-dark;
+.orch-pulse-loading {
+	.loading-text {
+		color: $IP-blue-alt;
+		font-family: $lato-regular;
+		font-size: 14px;
+		margin-bottom: 30px;
+		text-align: center;
+	}
+
+	.sk-spinner-pulse {
+		background-color: $IP-blue-dark;
+	}
 }
