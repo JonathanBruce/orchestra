@@ -1031,6 +1031,18 @@ class Example extends React.Component {
 							defaultValue='Some value' />
 
 						<KeywordTag
+							disabled={ false }
+							onPreviewClick={
+								() => {
+									console.log('clicked preview');
+								}
+							}
+							preview={ true }
+							selected
+							thumbnail='https://pbs.twimg.com/profile_images/758493074938957824/oQZlspEJ_400x400.jpg'
+							defaultValue='Some value' />
+
+						<KeywordTag
 							disabled={ true }
 							openRequirement={ false }
 							requirement='neutral'
