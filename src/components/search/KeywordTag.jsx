@@ -66,10 +66,10 @@ class KeywordTag extends Component {
 	}
 
 	componentWillUpdate(nextProps, nextState) {
-		const { defaultValue, preview } = this.props;
+		const { defaultValue } = this.props;
 		const { defaultValue: nextDefaultValue } = nextProps;
 
-		if (preview && nextDefaultValue !== defaultValue && !nextDefaultValue !== nextState.value) {
+		if (nextDefaultValue !== defaultValue && nextDefaultValue !== nextState.value) {
 			this.state.value = nextDefaultValue;
 		}
 	}
