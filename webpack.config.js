@@ -9,9 +9,9 @@ module.exports = {
 	entry: path.join(sourceDir, 'ui.js'),
 
 	externals: {
-		maestro: 'maestro',
 		react: 'react',
-		'react-dom': 'react-dom'
+		'react-dom': 'react-dom',
+		'sheet-music': 'sheet-music'
 	},
 
 	output: {

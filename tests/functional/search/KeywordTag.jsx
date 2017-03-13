@@ -2,7 +2,7 @@
 
 import 'sass/ui.scss';
 import KeywordTag from 'components/search/KeywordTag.jsx';
-import { REQUIREMENTS, SUPPORTED_NETWORKS } from 'maestro';
+import { REQUIREMENTS, SUPPORTED_NETWORKS } from 'sheet-music';
 
 class KeywordTagTest extends React.Component {
 	constructor(props) {

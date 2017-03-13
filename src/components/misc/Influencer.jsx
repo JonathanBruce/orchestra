@@ -1,7 +1,7 @@
 /* global React */
 
 import Avatar from './Avatar.jsx';
-import { ALL_NETWORKS } from 'maestro';
+import { ALL_NETWORKS } from 'sheet-music';
 import Icons from 'icons/_all';
 
 class Influencer extends React.Component {

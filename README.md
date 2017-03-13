@@ -2069,8 +2069,7 @@ The KeywordTag is used to display keyword tags for the Insightpool application.
 
 ```javascript
 import { KeywordTag } from 'orchestra';
-import { REQUIREMENTS } from 'maestro';
-import { SUPPORTED_NETWORKS } from 'constants/KEYWORD_TAGS';
+import { REQUIREMENTS, SUPPORTED_NETWORKS } from 'sheet-music';
 
 class MyComponent extends React.Component {
 	render() {

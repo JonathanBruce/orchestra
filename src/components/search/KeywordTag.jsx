@@ -6,7 +6,7 @@ import Icons from 'icons/_all';
 import { isFunction } from 'lib/core';
 import defaultClusterImage from 'images/bitmap.jpg';
 import GenericMenu from '../menus/Generic.jsx';
-import { REQUIREMENTS, SUPPORTED_NETWORKS } from 'maestro';
+import { REQUIREMENTS, SUPPORTED_NETWORKS } from 'sheet-music';
 import { toUpperCaseFirstCharacter } from 'lib/string';
 
 class KeywordTag extends Component {
