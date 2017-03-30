@@ -25,6 +25,7 @@
 		"functional/form/CheckBox",
 		"functional/form/Input",
 		"functional/form/Slider",
+		"functional/form/RangeSlider",
 		"functional/grid/Column",
 		"functional/header/FloatingSubHeader",
 		"functional/misc/Notifier",

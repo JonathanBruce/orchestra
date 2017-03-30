@@ -43,6 +43,7 @@ import {
 	PrimaryNeutralButton,
 	PrimaryPositiveButton,
 	PulseLoader,
+	RangeSlider,
 	RESOURCE_ACTION_DROPDOWN,
 	ResourceActionDropDown,
 	SecondaryNeutralButton,
@@ -62,14 +63,6 @@ import {
 } from '../src/ui';
 
 class Example extends React.Component {
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			sliderValue: 0
-		};
-	}
-
 	render() {
 		return (
 			<div>
@@ -612,7 +605,7 @@ class Example extends React.Component {
 							} />
 
 						<Slider
-							defaultValue={ this.state.sliderValue }
+							defaultValue={ 0 }
 							interval={ 5 }
 							label='bar'
 							max={ 20 }
@@ -632,6 +625,19 @@ class Example extends React.Component {
 									this.setState({ sliderValue });
 								}
 							} />
+
+						<RangeSlider
+							interval={ 1 }
+							max={ 1000001 }
+							maxDisplay={ 5000 }
+							maxLabel='1m+'
+							maxValue={ 5000 }
+							min={ 0 }
+							minDisplay={ 5 }
+							minLabel='0'
+							minValue={ 5 }
+							width={ 193 }/>
+
 					</Three>
 
 					<Three>

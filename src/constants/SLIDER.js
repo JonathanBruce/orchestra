@@ -4,7 +4,8 @@ const SLIDER = {
 	DRAG_START: 'drag_start',
 	INPUT_CHANGE: 'input_change',
 	INPUT_KEYPRESS: 'input_keypress',
-	INPUT_END: 'input_end'
+	INPUT_END: 'input_end',
+	INPUT_START: 'input_start'
 };
 
 export default SLIDER;

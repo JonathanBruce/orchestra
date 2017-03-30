@@ -1,0 +1,55 @@
+.orch-range-slider {
+	margin-bottom: 35px;
+	width: 248px;
+	@include sliderDisplay();
+
+	> label {
+		display: inline-block;
+		width: 15px;
+
+		&:first-child {
+			margin-right: 10px;
+		}
+	}
+
+	.range {
+        @include slider();
+		display: inline-block;
+		float: none;
+		width: 180px;
+		margin-right: 15px;
+		top: 4px;
+
+		.track {
+			width: 180px;
+		}
+
+		.slider-display {
+			.orch-input {
+				.item {
+					width: 50px;
+				}
+			}
+		}
+
+        .left,
+		.right {
+			display: inline-block;
+			position: relative;
+
+			.slider-display {
+				position: absolute;
+				margin-left: 0;
+				left: -25px;
+				top: 26px;
+			}
+
+			&.dragging {
+				.item {
+					width: 60px;
+					z-index: 10;
+				}
+			}
+		}
+	}
+}

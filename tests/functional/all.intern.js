@@ -26,6 +26,7 @@ define([
 	'tests/functional/form/CheckBox',
 	'tests/functional/form/Input',
 	'tests/functional/form/Slider',
+	'tests/functional/form/RangeSlider',
 	'tests/functional/grid/Column',
 	'tests/functional/header/FloatingSubHeader',
 	'tests/functional/misc/Notifier',
