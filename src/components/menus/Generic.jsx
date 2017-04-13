@@ -15,7 +15,6 @@ class GenericMenu extends React.Component {
 			})
 		).isRequired,
 		onChange: React.PropTypes.func.isRequired,
-		onMenuLeave: React.PropTypes.func,
 		onToggle: React.PropTypes.func.isRequired,
 		selected: React.PropTypes.any
 	};
@@ -23,15 +22,6 @@ class GenericMenu extends React.Component {
 	static defaultProps = {
 		active: false,
 		options: []
-	}
-
-	/**
-	 * Passes event to onMenuLeave
-	 */
-	onMenuLeave = (event) => {
-		const { onMenuLeave } = this.props;
-
-		onMenuLeave(event);
 	}
 
 	/**
@@ -46,13 +36,13 @@ class GenericMenu extends React.Component {
 	};
 
 	render() {
-		const { onMenuLeave, options } = this.props;
+		const { options } = this.props;
 		const optionsClasses = classnames('options', {
 			scrollbar: options.length > GENERIC_MENU.LENGTH
 		});
 
 		return (
-			<div className='orch-menu orch-generic-menu' onMouseLeave={ onMenuLeave && this.onMenuLeave }>
+			<div className='orch-menu orch-generic-menu'>
 				<div className={ optionsClasses } ref='menu'>
 					{
 						options.map((option, index) => (

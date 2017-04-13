@@ -147,8 +147,6 @@ class KeywordTag extends Component {
 		const { openRequirement } = this.props;
 
 		if (openRequirement) {
-			event.stopPropagation();
-
 			this.onRequirementToggle(event);
 		}
 	};
@@ -441,7 +439,6 @@ class KeywordTag extends Component {
 			<GenericMenu
 				options={ networkOptions }
 				onChange={ onNetworkChange }
-				onMenuLeave={ this.hideNetworkMenu }
 				onToggle={ this.onNetworkToggle }
 				ref={
 					(networkMenu) => {
@@ -467,7 +464,6 @@ class KeywordTag extends Component {
 			<GenericMenu
 				options={ requirementOptions }
 				onChange={ onRequirementChange }
-				onMenuLeave={ this.hideRequirementMenu }
 				onToggle={ this.onRequirementToggle }
 				ref={
 					(requirementMenu) => {
