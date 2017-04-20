@@ -6,7 +6,7 @@ import Icons from 'icons/_all';
 import { isFunction } from 'lib/core';
 import defaultClusterImage from 'images/bitmap.jpg';
 import GenericMenu from '../menus/Generic.jsx';
-import { REQUIREMENTS, SUPPORTED_NETWORKS } from 'sheet-music';
+import { BIO_PROFILE_KEYWORD_NETWORKS, REQUIREMENTS } from 'sheet-music';
 import { toUpperCaseFirstCharacter } from 'lib/string';
 
 class KeywordTag extends Component {
@@ -50,7 +50,7 @@ class KeywordTag extends Component {
 		if (preview
 			&& requirement
 			&& network
-			&& network !== SUPPORTED_NETWORKS.ALL) {
+			&& network !== BIO_PROFILE_KEYWORD_NETWORKS.ALL) {
 			throw new Error('Preview tags cannot have a selected network!');
 		}
 	}
@@ -79,7 +79,7 @@ class KeywordTag extends Component {
 		editable: true,
 		openNetwork: false,
 		openRequirement: false,
-		network: SUPPORTED_NETWORKS.ALL,
+		network: BIO_PROFILE_KEYWORD_NETWORKS.ALL,
 		requirement: REQUIREMENTS.NEUTRAL
 	};
 
@@ -307,7 +307,7 @@ class KeywordTag extends Component {
 	 */
 	renderNetworkDropDown = () => {
 		const { openNetwork, network } = this.props;
-		const networks = Object.values(SUPPORTED_NETWORKS);
+		const networks = Object.values(BIO_PROFILE_KEYWORD_NETWORKS);
 
 		if (this.hasNetworkChange() && networks.indexOf(network) > -1) {
 			networks.splice(networks.indexOf(network), 1);
