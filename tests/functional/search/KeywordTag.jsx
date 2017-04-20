@@ -2,7 +2,7 @@
 
 import 'sass/ui.scss';
 import KeywordTag from 'components/search/KeywordTag.jsx';
-import { REQUIREMENTS, SUPPORTED_NETWORKS } from 'sheet-music';
+import { BIO_PROFILE_KEYWORD_NETWORKS, REQUIREMENTS } from 'sheet-music';
 
 class KeywordTagTest extends React.Component {
 	constructor(props) {
@@ -79,7 +79,7 @@ class KeywordTagTest extends React.Component {
 				<div id='thumbnail-trump'>
 					<KeywordTag
 						defaultValue='A Default Value'
-						network={ SUPPORTED_NETWORKS.TWITTER }
+						network={ BIO_PROFILE_KEYWORD_NETWORKS.TWITTER }
 						onDeleteClick={
 							() => {
 								console.log('delete');
@@ -145,7 +145,7 @@ class KeywordTagTest extends React.Component {
 
 				<KeywordTag
 					defaultValue='A Default Value'
-					network={ SUPPORTED_NETWORKS.TWITTER }
+					network={ BIO_PROFILE_KEYWORD_NETWORKS.TWITTER }
 					onDeleteClick={
 						() => {
 							console.log('delete');
