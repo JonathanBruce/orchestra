@@ -1132,7 +1132,7 @@ class Example extends React.Component {
 
 						<KeywordTag
 							network='youtube'
-							openRequirement={ true }
+							openRequirement={ false }
 							onNetworkChange={
 								(network) => {
 									console.log(network);
@@ -1160,6 +1160,43 @@ class Example extends React.Component {
 								}
 							}
 							defaultValue='Some value' />
+
+						<KeywordTag
+							defaultValue={ 'foo' }
+							onDeleteClick={
+								() => {
+									console.log('on delete clicked');
+								}
+							}
+							onOptionsChange={
+								(option) => {
+									console.log(option);
+								}
+							}
+							onOptionsToggle={
+								() => {
+									console.log('toggled option');
+								}
+							}
+							onRequirementChange={
+								(requirement) => {
+									console.log(requirement);
+								}
+							}
+							onRequirementToggle={
+								() => {
+									console.log('toggled requirement');
+								}
+							}
+							openOptions={ true }
+							openRequirement={ false }
+							options={
+								[
+									{ label: 'Foo', value: 'foo' },
+									{ label: 'Bar', value: 'bar' },
+									{ label: 'Baz', value: 'baz' }
+								]
+							} />
 					</Three>
 
 					<Three>

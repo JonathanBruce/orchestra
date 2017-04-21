@@ -259,6 +259,31 @@
 				width: 181px;
 			}
 
+			.option-display {
+				padding-left: 14px;
+				text-transform: capitalize;
+			}
+
+			.orch-menu,
+			.orch-generic-menu {
+				@include shadow($y: 5px);
+
+				padding-top: 0px;
+				top: 31.5px;
+				z-index: 9999;
+
+				.options {
+					> div {
+						padding-left: 8px;
+					}
+				}
+			}
+
+			> svg.chevron {
+				position: relative;
+				top: -1px;
+			}
+
 			@include placeholder('input', $cloudy-blue-grey, $lato-medium-italic, 12px);
 
 			&.invalid {
@@ -309,7 +334,6 @@
 
 				padding-top: 0px;
 				top: 30.5px;
-				width: 242px;
 				z-index: 9999;
 
 				.options {
@@ -352,6 +376,24 @@
 						width: 134px !important;
 					}
 				}
+			}
+		}
+	}
+
+	&.option-and-requirement {
+		.requirement {
+			border-right: 2px solid $arctic-blue-dark;
+			padding-left: 4px;
+		}
+
+		.keyword {
+			padding-left: 4px;
+			width: 157px;
+
+			.orch-menu,
+			.orch-generic-menu {
+				width: 198px;
+				left: 45px;
 			}
 		}
 	}

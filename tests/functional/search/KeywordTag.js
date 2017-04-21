@@ -66,9 +66,8 @@ define([
 			return this.remote.get(require.toUrl(url))
 				.findById('delete-doesnt-exist')
 					.findByClassName('orch-keyword-tag')
-						.findByClassName('delete')
-			.then(function (node) {
-				assert.isUndefined(node, 'delete should be undefined');
+			.catch(function (error) {
+				assert.isEqual(error.name, 'NoSuchElement');
 			});
 		},
 

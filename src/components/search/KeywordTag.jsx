@@ -23,11 +23,15 @@ class KeywordTag extends Component {
 		network: React.PropTypes.string,
 		onNetworkChange: React.PropTypes.func,
 		onNetworkToggle: React.PropTypes.func,
+		onOptionsChange: React.PropTypes.func,
+		onOptionsToggle: React.PropTypes.func,
+		openOptions: React.PropTypes.bool,
 		openNetwork: React.PropTypes.bool,
 		onPreviewClick: React.PropTypes.func,
 		onRequirementChange: React.PropTypes.func,
 		onRequirementToggle: React.PropTypes.func,
 		openRequirement: React.PropTypes.bool,
+		options: React.PropTypes.array,
 		onTagChange: React.PropTypes.func,
 		preview: React.PropTypes.bool,
 		requirement: React.PropTypes.string,
@@ -78,6 +82,7 @@ class KeywordTag extends Component {
 	static defaultProps = {
 		editable: true,
 		openNetwork: false,
+		openOptions: false,
 		openRequirement: false,
 		network: BIO_PROFILE_KEYWORD_NETWORKS.ALL,
 		requirement: REQUIREMENTS.NEUTRAL
@@ -112,6 +117,15 @@ class KeywordTag extends Component {
 	};
 
 	/**
+	 * Checks if it has custom change
+	 */
+	hasOptionsChange = () => {
+		const { onOptionsChange, options } = this.props;
+
+		return isFunction(onOptionsChange) && options && options.length;
+	};
+
+	/**
 	 * Checks if has onRequirementChange
 	 */
 	hasRequirementChange = () => {
@@ -143,6 +157,17 @@ class KeywordTag extends Component {
 	/**
 	 * Wrapper for hide menu
 	 */
+	hideOptionsMenu = () => {
+		const { openOptions } = this.props;
+
+		if (openOptions) {
+			this.onOptionsToggle();
+		}
+	};
+
+	/**
+	 * Wrapper for hide menu
+	 */
 	hideRequirementMenu = (event) => {
 		const { openRequirement } = this.props;
 
@@ -158,6 +183,15 @@ class KeywordTag extends Component {
 		const { onNetworkToggle } = this.props;
 
 		onNetworkToggle();
+	};
+
+	/**
+	 * Toggles keyword option
+	 */
+	onOptionsToggle = () => {
+		const { onOptionsToggle } = this.props;
+
+		onOptionsToggle();
 	};
 
 	/**
@@ -367,6 +401,15 @@ class KeywordTag extends Component {
 	 * Renders keyword
 	 */
 	renderKeyword = () => {
+		return this.hasOptionsChange()
+			? this.renderKeywordOptions()
+			: this.renderKeywordInput();
+	};
+
+	/**
+	 * Render keyword input
+	 */
+	renderKeywordInput = () => {
 		const { invalid } = this.props;
 		const { edit, value } = this.state;
 		const inputClasses = classnames('keyword', { invalid });
@@ -377,8 +420,8 @@ class KeywordTag extends Component {
 				onClick={ this.onTagClick }>
 				{
 					!edit
-					? <span>{ value }</span>
-					: (
+						? <span>{ value }</span>
+						: (
 						<input
 							onBlur={ this.onTagBlur }
 							onChange={ this.setValue }
@@ -392,6 +435,43 @@ class KeywordTag extends Component {
 			</div>
 		);
 	};
+
+	/**
+	 * Render keyword options
+	 */
+	renderKeywordOptions() {
+		const { defaultValue, openOptions } = this.props;
+
+		return (
+			<div
+				className='keyword'
+				onMouseEnter={ this.showOptionsMenu }
+				onMouseLeave={ this.hideOptionsMenu }>
+				<Icons.SmallChevron className='chevron' />
+				<span className='option-display'>{ defaultValue }</span>
+				{ openOptions && this.renderKeywordOptionsMenu() }
+			</div>
+		);
+	}
+
+	/**
+	 * Render keyword options menu
+	 */
+	renderKeywordOptionsMenu() {
+		const { options, onOptionsChange } = this.props;
+
+		return (
+			<GenericMenu
+				options={ options }
+				onChange={ onOptionsChange }
+				onToggle={ this.onOptionsToggle }
+				ref={
+					(optionsMenu) => {
+						this.optionsMenu = optionsMenu;
+					}
+				} />
+		);
+	}
 
 	/**
 	 * Renders menu option
@@ -523,6 +603,17 @@ class KeywordTag extends Component {
 	};
 
 	/**
+	 * Wrapper for hide menu
+	 */
+	showOptionsMenu = () => {
+		const { openOptions } = this.props;
+
+		if (!openOptions) {
+			this.onOptionsToggle();
+		}
+	};
+
+	/**
 	 * Wrapper for show menu for network
 	 */
 	showRequirementMenu = (event) => {
@@ -555,6 +646,7 @@ class KeywordTag extends Component {
 		const hasThumbnail = this.hasThumbnail();
 		const onlyInput = !hasThumbnail && !this.hasNetworkChange() && !this.hasRequirementChange();
 		const networkAndRequirement = !hasThumbnail && this.hasNetworkChange() && this.hasRequirementChange();
+		const optionAndRequirement = !hasThumbnail && this.hasRequirementChange() && this.hasOptionsChange();
 		const keywordTagClasses = classnames('orch-keyword-tag', {
 			disabled,
 			edit,
@@ -563,6 +655,7 @@ class KeywordTag extends Component {
 			preview,
 			[ requirement ]: true,
 			'network-and-requirement': networkAndRequirement,
+			'option-and-requirement': optionAndRequirement,
 			selected,
 			thumbnail: hasThumbnail
 		});

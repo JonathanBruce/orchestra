@@ -20,11 +20,15 @@
 | `onNetworkChange`    | `func`          | Function for changing network in network menu               |
 | `onNetworkToggle`    | `func`          | Function for toggling the network menu open or closed       |
 | `openNetwork`        | `boolean`       | Boolean for whether the network menu should be open         |
+| `onOptionsChange`    | `func`          | Function for changing values in keyword options menu        |
+| `onOptionsToggle`    | `func`          | Function for toggling values in keyword options menu        |
+| `openOptions`        | `boolean`       | Boolean for whether the options menu should be open         |
 | `onPreviewClick`     | `func`          | Function for clicking a preview tag                         |
 | `onRequirementChange`| `func`          | Function for changing network in network menu               |
 | `onRequirementToggle`| `func`          | Function for toggling the requirement menu open or closed   |
 | `openRequirement`    | `boolean`       | Boolean for whether the requirement menu should be open     |
 | `onTagChange`        | `func`          | Function for changing tag value                             |
+| `options`            | `array`         | Array of objects containing `label` and `value`             |
 | `preview`            | `boolean`       | Represents whether the tag is in preview mode               |
 | `requirement`        | `string`        | Value for current requirement                               |
 | `selected`           | `boolean`       | Boolean for whether the selected visual state is active     |

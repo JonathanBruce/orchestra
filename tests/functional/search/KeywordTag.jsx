@@ -1,4 +1,5 @@
-/* global document, React, ReactDOM */
+/* eslint-disable no-console */
+/* global console, document, React, ReactDOM */
 
 import 'sass/ui.scss';
 import KeywordTag from 'components/search/KeywordTag.jsx';
@@ -12,8 +13,10 @@ class KeywordTagTest extends React.Component {
 			network: null,
 			openNetwork: false,
 			openNetworkTwo: false,
+			openOptions: false,
 			openRequirement: false,
 			openRequirementTwo: false,
+			optionValue: 'foo',
 			previewClicked: false,
 			requirement: null
 		};
@@ -29,6 +32,14 @@ class KeywordTagTest extends React.Component {
 
 	onNetworkToggleTwo = () => {
 		this.setState({ openNetworkTwo: !this.state.openNetworkTwo });
+	};
+
+	onOptionsChange = (optionValue) => {
+		this.setState({ optionValue });
+	};
+
+	onOptionsToggle = () => {
+		this.setState({ openOptions: !this.state.openOptions });
 	};
 
 	onRequirementChange = (requirement) => {
@@ -62,8 +73,10 @@ class KeywordTagTest extends React.Component {
 		const {
 			openNetwork,
 			openNetworkTwo,
+			openOptions,
 			openRequirement,
 			openRequirementTwo,
+			optionValue,
 			previewClicked
 		} = this.state;
 
@@ -163,6 +176,25 @@ class KeywordTagTest extends React.Component {
 					openNetwork={ openNetworkTwo }
 					openRequirement={ openRequirementTwo }
 					requirement={ REQUIREMENTS.NEUTRAL } />
+
+				<KeywordTag
+					defaultValue={ optionValue }
+					onOptionsChange={ this.onOptionsChange }
+					onOptionsToggle={ this.onOptionsToggle }
+					onRequirementChange={ this.onRequirementChange }
+					onDeleteClick={
+						() => {
+							console.log('delete');
+						}
+					}
+					options={
+						[
+							{ label: 'Foo', value: 'foo' },
+							{ label: 'Bar', value: 'bar' },
+							{ label: 'Baz', value: 'baz' }
+						]
+					}
+					openOptions={ openOptions } />
 			</div>
 		);
 	}
