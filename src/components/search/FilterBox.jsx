@@ -11,6 +11,7 @@ class FilterBox extends React.Component {
 			React.PropTypes.element
 		]).isRequired,
 		onWidgetToggle: React.PropTypes.func,
+		replacementWidget: React.PropTypes.object,
 		title: React.PropTypes.string.isRequired,
 		titleIcon: React.PropTypes.element,
 		tooltipTitle: React.PropTypes.string,
@@ -67,6 +68,7 @@ class FilterBox extends React.Component {
 	renderWidgetIcon() {
 		const {
 			onWidgetToggle,
+			replacementWidget,
 			widget,
 			widgetIcon,
 			widgetOpen
@@ -75,7 +77,11 @@ class FilterBox extends React.Component {
 			open: widgetOpen
 		});
 
-		return widget && (
+		if (!widget) {
+			return;
+		}
+
+		return replacementWidget || (
 			<div className='widget-icons'>
 				<div
 					className='icon'

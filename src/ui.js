@@ -67,6 +67,7 @@ export ValueActionDropDown from 'components/dropdowns/ValueAction.jsx';
 
 export CheckBox from 'components/form/CheckBox.jsx';
 export Input from 'components/form/Input.jsx';
+export RangeSlider from 'components/form/RangeSlider.jsx';
 export Slider from 'components/form/Slider.jsx';
 export Switch from 'components/form/Switch.jsx';
 
@@ -95,6 +96,7 @@ export PulseLoader from 'components/loaders/Pulse.jsx';
  */
 
 export ActionMenu from 'components/menus/Action.jsx';
+export GenericMenu from 'components/menus/Generic.jsx';
 export NestedMenu from 'components/menus/Nested.jsx';
 
 /**

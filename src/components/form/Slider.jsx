@@ -51,6 +51,7 @@ class Slider extends React.Component {
 
 	static defaultProps = {
 		interval: 1,
+		defaultValue: 0,
 		width: SLIDER.DEFAULT_WIDTH
 	};
 
