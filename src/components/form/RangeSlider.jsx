@@ -190,19 +190,18 @@ class RangeSlider extends React.Component {
 			onDragStart,
 			onInputStart
 		} = this.props;
-		const numValue = Number(value);
+		let numValue = Number(value);
 		let changeEvent;
 		const changingValue = this.props[ `${ element }Value` ];
-		let invalidChange = false;
 
-		if (element === 'min') {
-			invalidChange = numValue > maxValue;
+		if (element === 'min' && numValue > maxValue) {
+			numValue = maxValue;
 		}
-		else {
-			invalidChange = numValue < minValue;
+		else if (numValue < minValue) {
+			numValue = minValue;
 		}
 
-		if (invalidChange || disabled) {
+		if (disabled) {
 			return;
 		}
 
