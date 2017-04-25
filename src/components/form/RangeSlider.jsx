@@ -195,7 +195,7 @@ class RangeSlider extends React.Component {
 		const changingValue = this.props[ `${ element }Value` ];
 		let invalidChange = false;
 
-		if (element === 'left') {
+		if (element === 'min') {
 			invalidChange = numValue > maxValue;
 		}
 		else {
@@ -209,7 +209,7 @@ class RangeSlider extends React.Component {
 		switch (eventType) {
 			case SLIDER.DRAG_END:
 			case SLIDER.INPUT_END:
-				return onDragEnd && onDragEnd(numValue, element);
+				return onDragEnd && onDragEnd(numValue, element, eventType);
 			case SLIDER.DRAG_START:
 				changeEvent = onDragStart || onDragChange;
 				break;
@@ -230,7 +230,7 @@ class RangeSlider extends React.Component {
 			: getIntervalValue(numValue, interval);
 
 		if (!isNaN(numValue) && changedValue !== changingValue && changeEvent) {
-			changeEvent(changedValue, element);
+			changeEvent(changedValue, element, eventType);
 		}
 	};
 
@@ -248,12 +248,12 @@ class RangeSlider extends React.Component {
 			width
 		} = this.props;
 		const { drag } = this.state;
-		const currentPositionLeft = getRatioValue({
+		const currentPositionMin = getRatioValue({
 			numerator: minValue,
 			denominator: max,
 			value: width
 		});
-		const currentPositionRight = getRatioValue({
+		const currentPositionMax = getRatioValue({
 			numerator: maxValue,
 			denominator: max,
 			value: width
@@ -261,33 +261,33 @@ class RangeSlider extends React.Component {
 		const sliderClassnames = classNames('orch-range-slider', 'clearfix', {
 			disabled
 		});
-		const translateValueLeft = `translateX(${currentPositionLeft}px)`;
-		const translateValueRight = `translateX(${currentPositionRight}px)`;
-		const leftKnobPosition = {
-			MozTransform: translateValueLeft,
-			msTransform: translateValueLeft,
-			transform: translateValueLeft,
-			WebkitTransform: translateValueLeft
+		const translateValueMin = `translateX(${currentPositionMin}px)`;
+		const translateValueMax = `translateX(${currentPositionMax}px)`;
+		const minKnobPosition = {
+			MozTransform: translateValueMin,
+			msTransform: translateValueMin,
+			transform: translateValueMin,
+			WebkitTransform: translateValueMin
 		};
-		const rightKnobPosition = {
-			MozTransform: translateValueRight,
-			msTransform: translateValueRight,
-			transform: translateValueRight,
-			WebkitTransform: translateValueRight
+		const maxKnobPosition = {
+			MozTransform: translateValueMax,
+			msTransform: translateValueMax,
+			transform: translateValueMax,
+			WebkitTransform: translateValueMax
 		};
-		const trackWidth = currentPositionRight - currentPositionLeft + 7;
+		const trackWidth = currentPositionMax - currentPositionMin + 7;
 		const trackCoverWidth = {
-			MozTransform: translateValueLeft,
-			msTransform: translateValueLeft,
-			transform: translateValueLeft,
-			WebkitTransform: translateValueLeft,
+			MozTransform: translateValueMin,
+			msTransform: translateValueMin,
+			transform: translateValueMin,
+			WebkitTransform: translateValueMin,
 			width: `${trackWidth}px`
 		};
-		const leftClass = classNames('left', {
-			dragging: drag === 'left'
+		const minClass = classNames('min', {
+			dragging: drag === 'min'
 		});
-		const rightClass = classNames('right', {
-			dragging: drag === 'right'
+		const maxClass = classNames('max', {
+			dragging: drag === 'max'
 		});
 
 		return (
@@ -299,33 +299,33 @@ class RangeSlider extends React.Component {
 						<div className='cover' style={ trackCoverWidth } />
 					</div>
 
-					<div className={ leftClass } style={ leftKnobPosition }>
-						<div className='knob' onMouseDown={ !disabled && this.handleDragStart.bind(this, 'left') }/>
+					<div className={ minClass } style={ minKnobPosition }>
+						<div className='knob' onMouseDown={ !disabled && this.handleDragStart.bind(this, 'min') }/>
 
 						<div className='slider-display'>
 							<Input
 								disabled={ disabled }
 								placeholder='0'
-								onBlur={ this.handleInputEvent.bind(this, 'left', SLIDER.INPUT_END) }
-								onChange={ this.handleInputEvent.bind(this, 'right', SLIDER.INPUT_CHANGE) }
-								onFocus={ this.handleInputEvent.bind(this, 'right', SLIDER.INPUT_START) }
-								onKeyUp={ this.handleInputEvent.bind(this, 'right', SLIDER.INPUT_KEYPRESS) }
+								onBlur={ this.handleInputEvent.bind(this, 'min', SLIDER.INPUT_END) }
+								onChange={ this.handleInputEvent.bind(this, 'min', SLIDER.INPUT_CHANGE) }
+								onFocus={ this.handleInputEvent.bind(this, 'min', SLIDER.INPUT_START) }
+								onKeyUp={ this.handleInputEvent.bind(this, 'min', SLIDER.INPUT_KEYPRESS) }
 								type='text'
 								value={ minDisplay.toString() } />
 						</div>
 					</div>
 
-					<div className={ rightClass } style={ rightKnobPosition }>
-						<div className='knob' onMouseDown={ !disabled && this.handleDragStart.bind(this, 'right') }/>
+					<div className={ maxClass } style={ maxKnobPosition }>
+						<div className='knob' onMouseDown={ !disabled && this.handleDragStart.bind(this, 'max') }/>
 
 						<div className='slider-display'>
 							<Input
 								disabled={ disabled }
 								placeholder='0'
-								onBlur={ this.handleInputEvent.bind(this, 'right', SLIDER.INPUT_END) }
-								onChange={ this.handleInputEvent.bind(this, 'right', SLIDER.INPUT_CHANGE) }
-								onFocus={ this.handleInputEvent.bind(this, 'right', SLIDER.INPUT_START) }
-								onKeyUp={ this.handleInputEvent.bind(this, 'right', SLIDER.INPUT_KEYPRESS) }
+								onBlur={ this.handleInputEvent.bind(this, 'max', SLIDER.INPUT_END) }
+								onChange={ this.handleInputEvent.bind(this, 'max', SLIDER.INPUT_CHANGE) }
+								onFocus={ this.handleInputEvent.bind(this, 'max', SLIDER.INPUT_START) }
+								onKeyUp={ this.handleInputEvent.bind(this, 'max', SLIDER.INPUT_KEYPRESS) }
 								type='text'
 								value={ maxDisplay.toString() } />
 						</div>
