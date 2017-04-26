@@ -269,7 +269,7 @@
 				@include shadow($y: 5px);
 
 				padding-top: 0px;
-				top: 31.5px;
+				top: 30.5px;
 				z-index: 9999;
 
 				.options {
@@ -384,6 +384,11 @@
 		.requirement {
 			border-right: 2px solid $arctic-blue-dark;
 			padding-left: 4px;
+
+			.orch-menu,
+			.orch-generic-menu {
+				width: 214px;
+			}
 		}
 
 		.keyword {

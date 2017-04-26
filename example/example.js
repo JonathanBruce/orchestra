@@ -1188,8 +1188,8 @@ class Example extends React.Component {
 									console.log('toggled requirement');
 								}
 							}
-							openOptions={ true }
-							openRequirement={ false }
+							openOptions={ false }
+							openRequirement={ true }
 							options={
 								[
 									{ label: 'Foo', value: 'foo' },
