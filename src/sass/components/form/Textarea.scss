@@ -1,0 +1,46 @@
+.orch-textarea {
+    textarea {
+        @include input();
+
+        height: 34px;
+        line-height: 17px;
+        padding-top: 5px;
+        resize: none;
+    }
+    
+    &.orch-secondary {
+        padding: 0;
+
+        textarea {
+	        @include arcticBlueDarkWrapper();
+
+	        padding-left: 14px;
+
+	        &:hover {
+	        	@include powderBlueWrapper();
+	        }
+        }
+	}
+
+    &.disabled {
+        textarea {
+            @include disabledInput($pure-white);
+        }
+    }
+
+	&.error {
+		textarea {
+            @include watermelonWrapper($pure-white, $dusk-blue);
+
+            &:hover {
+            	@include watermelonWrapper($pure-white, $dusk-blue);
+            }
+        }
+	}
+
+	&.focus {
+		textarea {
+            @include focus();
+        }
+	}
+}
