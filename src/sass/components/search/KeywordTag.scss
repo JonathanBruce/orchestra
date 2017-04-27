@@ -334,6 +334,7 @@
 
 				padding-top: 0px;
 				top: 30.5px;
+				width: 242px;
 				z-index: 9999;
 
 				.options {
@@ -387,7 +388,7 @@
 
 			.orch-menu,
 			.orch-generic-menu {
-				width: 214px;
+				width: 214px !important;
 			}
 		}
 
@@ -397,7 +398,7 @@
 
 			.orch-menu,
 			.orch-generic-menu {
-				width: 198px;
+				width: 198px !important;
 				left: 45px;
 			}
 		}
