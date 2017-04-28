@@ -55,6 +55,7 @@ import {
 	TertiaryNegativeButton,
 	TertiaryNeutralButton,
 	TertiaryPositiveButton,
+	Textarea,
 	Three,
 	TitleSubHeader,
 	Twelve,
@@ -304,12 +305,7 @@ class Example extends React.Component {
 									{ label: 'one', value: 1 },
 									{ label: 'two', value: 2 },
 									{ label: 'three', value: 3 },
-									{ label: 'four', value: 4 },
-									{ label: 'five', value: 5 },
-									{ label: 'six', value: 6 },
-									{ label: 'seven', value: 7 },
-									{ label: 'eight', value: 8 },
-									{ label: 'nine', value: 9 }
+									{ label: 'four', value: 4 }
 								]
 							}
 							selected={ 1 } />
@@ -397,6 +393,41 @@ class Example extends React.Component {
 							}
 							placeholder='Username'
 							type='text' />
+					</Three>
+
+					<Three>
+						<Textarea
+							defaultValue='normal text'
+							onChange={
+								(value) => {
+									console.log(value);
+								}
+							}
+							placeholder='username'/>
+					</Three>
+
+					<Three>
+						<Textarea
+							defaultValue='error text'
+							error={ true }
+							onChange={
+								(value) => {
+									console.log(value);
+								}
+							}
+							placeholder='username'/>
+					</Three>
+
+					<Three>
+						<Textarea
+							defaultValue='Disabled text'
+							disabled={ true }
+							onChange={
+								(value) => {
+									console.log(value);
+								}
+							}
+							placeholder='username'/>
 					</Three>
 
 					<Three>

@@ -10,6 +10,19 @@
 	}
 }
 
+@mixin disabledInput($input-background-color) {
+		background-color: #{$input-background-color};
+		color: $silver-dark !important;
+		cursor: default !important;
+
+		&::-webkit-input-placeholder,
+		&::-moz-placeholder,
+		&:-ms-input-placeholder,
+		&:-moz-input-placeholder {
+			color: $silver-dark;
+		}
+}
+
 @mixin disabled($background-color: $silver,
 	$input-background-color: $pure-white,
 	$svg-fill-color: $silver-dark,
@@ -21,17 +34,9 @@
 	cursor: default !important;
 	pointer-events: none;
 
+	textarea,
 	input {
-		background-color: #{$input-background-color};
-		color: $silver-dark !important;
-		cursor: default !important;
-
-		&::-webkit-input-placeholder,
-		&::-moz-placeholder,
-		&:-ms-input-placeholder,
-		&:-moz-input-placeholder {
-			color: $silver-dark;
-		}
+		@include disabledInput($pure-white);
 	}
 
 	label,
@@ -88,6 +93,32 @@
 	&:hover {
 		border-color: $pure-white !important;
 		outline: none !important;
+	}
+}
+
+@mixin input() {
+	background-color: $pure-white;
+	color: $dusk-blue;
+	font-family: $lato-regular;
+	font-size: 14px;
+	height: inherit;
+	padding: 0px;
+	width: 100%;
+
+	&::-webkit-input-placeholder {
+		color: $steel-blue;
+	}
+
+	&::-moz-placeholder {
+		color: $steel-blue;
+	}
+
+	&:-ms-input-placeholder {
+		color: $steel-blue;
+	}
+
+	&:-moz-input-placeholder {
+		color: $steel-blue;
 	}
 }
 

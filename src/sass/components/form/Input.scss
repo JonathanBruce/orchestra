@@ -18,29 +18,7 @@
 	}
 
 	input {
-		background-color: $pure-white;
-		color: $dusk-blue;
-		font-family: $lato-regular;
-		font-size: 14px;
-		height: inherit;
-		padding: 0px;
-		width: 100%;
-
-		&::-webkit-input-placeholder {
-			color: $steel-blue;
-		}
-
-		&::-moz-placeholder {
-			color: $steel-blue;
-		}
-
-		&:-ms-input-placeholder {
-			color: $steel-blue;
-		}
-
-		&:-moz-input-placeholder {
-			color: $steel-blue;
-		}
+		@include input();
 	}
 
 	&.disabled {

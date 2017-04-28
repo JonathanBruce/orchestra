@@ -70,6 +70,7 @@ export Input from 'components/form/Input.jsx';
 export RangeSlider from 'components/form/RangeSlider.jsx';
 export Slider from 'components/form/Slider.jsx';
 export Switch from 'components/form/Switch.jsx';
+export Textarea from 'components/form/Textarea.jsx';
 
 /**
  * Export header components
