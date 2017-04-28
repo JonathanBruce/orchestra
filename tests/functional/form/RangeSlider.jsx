@@ -3,14 +3,6 @@
 
 import 'sass/ui.scss';
 import RangeSlider from 'components/form/RangeSlider.jsx';
-import {
-	onStart,
-	onEnd,
-	onChange
-} from 'lib/range.js';
-
-const MAX_VALUE = 20;
-const MIN_VALUE = 0;
 
 class RangeSliderTest extends React.Component {
 	constructor(props) {
@@ -19,38 +11,59 @@ class RangeSliderTest extends React.Component {
 		this.state = {
 			displayText: '',
 			disabled: false,
-			left: 0,
-			leftDisplay: 0,
-			right: 0,
-			rightDisplay: 0
+			min: 0,
+			minDisplay: '0',
+			max: 15,
+			maxDisplay: '15'
 		};
 	}
 
+	onEnd = (value) => {
+		this.setState({
+			displayText: `Released at ${value}`
+		});
+	};
+
+	onChange = (rangeValue, element) => {
+		this.setState({
+			[ `${ element }Display` ]: rangeValue,
+			[ element ]: rangeValue
+		});
+	};
+
+	onStart = (value, element) => {
+		this.setState({ [ `${ element }Display` ]: value });
+	};
+
 	render() {
 		const {
-			left,
-			leftDisplay,
-			right,
-			rightDisplay
+			displayText,
+			min,
+			minDisplay,
+			max,
+			maxDisplay
 		} = this.state;
 
 		return (
 			<div id='range'>
+				<div id='display-min-value'>{ min }</div>
+				<div id='display-max-value'>{ max }</div>
+				<div id='display-text'>{ displayText }</div>
 				<RangeSlider
 					interval={ 5 }
 					max={ 20 }
-					maxDisplay={ rightDisplay }
-					maxLabel='1m+'
-					maxValue={ right }
+					maxDisplay={ maxDisplay }
+					maxLabel='20'
+					maxValue={ max }
 					min={ 0 }
-					minDisplay={ leftDisplay }
+					minDisplay={ minDisplay }
 					minLabel='0'
-					minValue={ left }
-					onDragChange={ onChange.bind(this) }
-					onDragEnd={ onEnd.bind(this) }
-					onInputStart={ onStart.bind(this) }
-					onDragStart={ onChange.bind(this) }
-					width={ 193 } />
+					minValue={ min }
+					onDragChange={ this.onChange }
+					onDragEnd={ this.onEnd }
+					onDragStart={ this.onChange }
+					shortenedDisplay
+					width={ 180 } />
 			</div>
 		);
 	}

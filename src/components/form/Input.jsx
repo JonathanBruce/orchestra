@@ -1,4 +1,5 @@
-/* global React */
+/* eslint-disable no-console */
+/* global console, React */
 
 import classnames from 'classnames';
 import INPUT from 'constants/INPUT';
@@ -86,6 +87,7 @@ class Input extends React.Component {
 				<div className='item'>
 					<input
 					{ ...props }
+					disabled={ disabled }
 					onBlur={ this.toggleFocus }
 					onChange={ onChange }
 					onFocus={ this.toggleFocus }

@@ -23,4 +23,14 @@
 		}
 
 	}
+
+	.slider-display {
+		.orch-input {
+			&.focus {
+				.item {
+					width: 35px;
+				}
+			}
+		}
+	}
 }

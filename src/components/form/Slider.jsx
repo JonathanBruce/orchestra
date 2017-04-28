@@ -58,8 +58,11 @@ class Slider extends React.Component {
 	constructor(props) {
 		super(props);
 
+		const { defaultValue } = props;
+
 		this.eventsAdded = false;
 		this.state = {
+			defaultValue,
 			drag: false
 		};
 	}
@@ -113,7 +116,7 @@ class Slider extends React.Component {
 		if (drag) {
 			const nextValue = this.getSliderCursorValue(event);
 
-			this.handleChangeEvent(nextValue);
+			this.handleChangeEvent(nextValue, SLIDER.DRAG_CHANGE);
 		}
 	};
 
@@ -135,8 +138,7 @@ class Slider extends React.Component {
 	 * Handle slider drag end event
 	 */
 	handleDragEnd = () => {
-		const { drag } = this.state;
-		const { defaultValue } = this.props;
+		const { defaultValue, drag } = this.state;
 
 		if (drag) {
 			this.setState({ drag: false });
@@ -154,10 +156,10 @@ class Slider extends React.Component {
 		const keycode = keyCode || which;
 		const { value } = target;
 
-		if (keycode === 13) {
+		if (keycode === 13 && eventType === SLIDER.INPUT_KEYPRESS) {
 			target.blur();
 		}
-		else {
+		else if (eventType === SLIDER.INPUT_CHANGE) {
 			this.handleChangeEvent(value, eventType);
 		}
 	};
@@ -169,34 +171,13 @@ class Slider extends React.Component {
 	 */
 	handleChangeEvent = (value, eventType) => {
 		const {
-			defaultValue,
 			disabled,
 			interval,
 			max,
 			min,
-			onDragChange,
-			onDragEnd,
-			onDragStart
+			onDragEnd
 		} = this.props;
 		const numValue = Number(value);
-		let changeEvent;
-
-		if (disabled) {
-			return;
-		}
-
-		switch (eventType) {
-			case SLIDER.DRAG_END:
-			case SLIDER.INPUT_END:
-				return onDragEnd && onDragEnd(numValue);
-			case SLIDER.DRAG_START:
-				changeEvent = onDragStart || onDragChange;
-				break;
-			default:
-				changeEvent = onDragChange;
-				break;
-		}
-
 		const changedValue = eventType === SLIDER.INPUT_CHANGE
 			? getRatioValue({
 				numerator: numValue,
@@ -206,19 +187,55 @@ class Slider extends React.Component {
 			})
 			: getIntervalValue(numValue, interval);
 
-		if (!isNaN(numValue) && changedValue !== defaultValue && changeEvent) {
-			changeEvent(changedValue);
+		if (disabled) {
+			return;
 		}
+
+		switch (eventType) {
+			case SLIDER.DRAG_END:
+			case SLIDER.INPUT_END:
+				if (onDragEnd) {
+					onDragEnd(numValue);
+				}
+
+				break;
+			default:
+				this.setDragValues(changedValue, eventType);
+
+				break;
+		}
+	};
+
+	/**
+	 * Set in-component drag values
+	 * @param {number} value     Drag Value
+	 */
+	setDragValues = (value, eventType) => {
+		const { onDragChange, onDragEnd } = this.props;
+		const isDragChange = eventType === SLIDER.DRAG_CHANGE || eventType === SLIDER.INPUT_CHANGE;
+		const isDragEnd = eventType === SLIDER.DRAG_END || eventType === SLIDER.INPUT_END;
+
+		if (isDragChange) {
+			onDragChange(value);
+		}
+
+		if (isDragEnd) {
+			onDragEnd(value);
+		}
+
+		this.setState({
+			defaultValue: value
+		});
 	};
 
 	render() {
 		const {
-			defaultValue,
 			disabled,
 			label,
 			max,
 			width
 		} = this.props;
+		const { defaultValue } = this.state;
 		const currentPosition = getRatioValue({
 			numerator: defaultValue,
 			denominator: max,
@@ -254,6 +271,7 @@ class Slider extends React.Component {
 						onBlur={ this.handleInputEvent.bind(this, SLIDER.INPUT_END) }
 						onChange={ this.handleInputEvent.bind(this, SLIDER.INPUT_CHANGE) }
 						onKeyUp={ this.handleInputEvent.bind(this, SLIDER.INPUT_KEYPRESS) }
+						ref='slider-input'
 						type='text'
 						value={ defaultValue.toString() } />
 					<label>{ label }</label>
