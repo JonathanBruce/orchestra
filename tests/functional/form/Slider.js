@@ -22,7 +22,7 @@ define([
 				.findById('display-value')
 				.getVisibleText()
 				.then(function(value) {
-					assert.equal(value, '10', 'value should match corresponding to the position of the slider');
+					assert.equal(value, '1', 'value should match corresponding to the position of the slider');
 				});
 		},
 		'it should be able to have the slider draggable and update values': function() {
@@ -37,7 +37,7 @@ define([
 				.findById('display-value')
 				.getVisibleText()
 				.then(function(value) {
-					assert.equal(value, '10', 'value should match corresponding to the position of the slider');
+					assert.equal(value, '1', 'value should match corresponding to the position of the slider');
 				});
 		},
 		'it should be able to increment/decrement the slider by intervals': function () {
@@ -67,7 +67,7 @@ define([
 					.findByClassName('knob')
 					.getPosition()
 				.then(function(position) {
-					assert.closeTo(position.x, 150, 1, 'position should reflect the changed values');
+					assert.closeTo(position.x, 7, 1, 'position should reflect the changed values');
 				});
 		},
 		'it should be able to update the slider value from the built-in input': function() {

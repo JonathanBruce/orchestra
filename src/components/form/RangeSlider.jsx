@@ -5,25 +5,26 @@ import { getIntervalValue, getRatioValue } from 'lib/math';
 import { getElementCursorValue } from 'lib/dom';
 import Input from 'components/form/Input.jsx';
 import SLIDER from 'constants/SLIDER';
+import { shortenNumber, unshortenNumber } from 'lib/string';
 
 class RangeSlider extends React.Component {
 	/**
 	 * propType definition
-	 * @type {boolean}  disabled     Boolean which determines the availability of the slider. Defaults to false
-	 * @type {number}   interval     The incremental step the slider should move by
-	 * @type {number}   max          Number representing the highest value the slider can reach
-	 * @type {number}   maxDisplay   Value which is set for the right slider's display value.
-	 * @type {string}   maxLabel     String value representing the display label for the min value of the slider
-	 * @type {number}   maxValue     Value which is set for the right slider's actual value. Parsed for truncation.
-	 * @type {number}   min          Number representing the lowest value the slider can reach.
-	 * @type {number}   minDisplay   Value which is set for the left slider's display value.
-	 * @type {string}   minLabel     String value representing the display label for the max value of the slider
-	 * @type {number}   minValue     Value which is set for the left slider's actual value. Parsed for truncation.
-	 * @type {function} onDragChange A function which is called when the slider is dragged. The value that slider is pointing to will be passed down
-	 * @type {function} onDragEnd    A function that is called when user lets go of the slider. The value of the position where slider ended will be passed down
-	 * @type {function} onDragStart  A function that is called when user initiates the drag of the slider. The value of the position where slider started will be passed down
-	 * @type {function} onInputStart A function that is called when user clicks on one of the slider inputs. The value of the position where slider started will be passed down
-	 * @type {number}   width        Number representing the width of the slider
+	 * @type {boolean}  disabled         Boolean which determines the availability of the slider. Defaults to false
+	 * @type {number}   interval         The incremental step the slider should move by
+	 * @type {number}   max              Number representing the highest value the slider can reach
+	 * @type {number}   maxDisplay       Value which is set for the right slider's display value.
+	 * @type {string}   maxLabel         String value representing the display label for the min value of the slider
+	 * @type {number}   maxValue         Value which is set for the right slider's actual value. Parsed for truncation.
+	 * @type {number}   min              Number representing the lowest value the slider can reach.
+	 * @type {number}   minDisplay       Value which is set for the left slider's display value.
+	 * @type {string}   minLabel         String value representing the display label for the max value of the slider
+	 * @type {number}   minValue         Value which is set for the left slider's actual value. Parsed for truncation.
+	 * @type {function} onDragChange     A function which is called when the slider is dragged. The value that slider is pointing to will be passed down
+	 * @type {function} onDragEnd        A function that is called when user lets go of the slider. The value of the position where slider ended will be passed down
+	 * @type {function} onDragStart      A function that is called when user initiates the drag of the slider. The value of the position where slider started will be passed down
+	 * @type {function} onDragStart      A function that is called when user initiates the drag of the slider. The value of the position where slider started will be passed down
+	 * @type {number}   width            Number representing the width of the slider
 	 */
 	static propTypes = {
 		disabled: React.PropTypes.bool,
@@ -39,7 +40,6 @@ class RangeSlider extends React.Component {
 		onDragChange: React.PropTypes.func.isRequired,
 		onDragEnd: React.PropTypes.func,
 		onDragStart: React.PropTypes.func,
-		onInputStart: React.PropTypes.func,
 		width: React.PropTypes.number
 	};
 
@@ -58,9 +58,9 @@ class RangeSlider extends React.Component {
 
 	static defaultProps = {
 		interval: 1,
-		minDisplay: 0,
+		minDisplay: '0',
 		minValue: 0,
-		maxDisplay: 0,
+		maxDisplay: '0',
 		maxValue: 0,
 		width: SLIDER.DEFAULT_WIDTH
 	};
@@ -68,8 +68,19 @@ class RangeSlider extends React.Component {
 	constructor(props) {
 		super(props);
 
+		const {
+			maxDisplay,
+			maxValue,
+			minDisplay,
+			minValue
+		} = this.props;
+
 		this.eventsAdded = false;
 		this.state = {
+			maxDisplay,
+			maxValue,
+			minDisplay,
+			minValue,
 			drag: false
 		};
 	}
@@ -120,10 +131,12 @@ class RangeSlider extends React.Component {
 	handleDragChange = (event) => {
 		const { drag } = this.state;
 
+		event.preventDefault();
+
 		if (drag) {
 			const nextValue = this.getSliderCursorValue(event);
 
-			this.handleChangeEvent(drag, nextValue);
+			this.handleChangeEvent(drag, nextValue, SLIDER.DRAG_CHANGE);
 		}
 	};
 
@@ -131,9 +144,8 @@ class RangeSlider extends React.Component {
 	 * Handle slider drag start event
 	 * @param {object} event Synthetic Event object
 	 */
-	handleDragStart = (knob, event) => {
+	handleDragStart = (knob, nextValue) => {
 		const { drag } = this.state;
-		const nextValue = this.getSliderCursorValue(event);
 
 		if (!drag) {
 			this.setState({ drag: knob });
@@ -146,7 +158,7 @@ class RangeSlider extends React.Component {
 	 */
 	handleDragEnd = () => {
 		const { drag } = this.state;
-		const value = this.props[ `${ drag }Value` ];
+		const value = this.state[ `${ drag }Value` ];
 
 		if (drag) {
 			this.setState({ drag: false });
@@ -163,12 +175,14 @@ class RangeSlider extends React.Component {
 		const { keyCode, which, target } = event;
 		const keycode = keyCode || which;
 		const { value } = target;
+		const numValue = value ? unshortenNumber(value) : 0;
 
-		if (keycode === 13) {
+		if (keycode === 13 && eventType === SLIDER.INPUT_KEYPRESS) {
 			target.blur();
 		}
 		else {
-			this.handleChangeEvent(input, value, eventType);
+			this.setState({ [ `${input}Display` ]: numValue });
+			this.handleChangeEvent(input, numValue, eventType);
 		}
 	};
 
@@ -182,43 +196,18 @@ class RangeSlider extends React.Component {
 			disabled,
 			interval,
 			max,
-			maxValue,
-			min,
-			minValue,
-			onDragChange,
-			onDragEnd,
-			onDragStart,
-			onInputStart
+			min
 		} = this.props;
 		let numValue = Number(value);
-		let changeEvent;
-		const changingValue = this.props[ `${ element }Value` ];
 
-		if (element === 'min' && numValue > maxValue) {
-			numValue = maxValue;
+		if (numValue > max) {
+			numValue = max;
 		}
-		else if (numValue < minValue) {
-			numValue = minValue;
+		else if (numValue < min) {
+			numValue = min;
 		}
 
-		if (disabled) {
-			return;
-		}
-
-		switch (eventType) {
-			case SLIDER.DRAG_END:
-			case SLIDER.INPUT_END:
-				return onDragEnd && onDragEnd(numValue, element, eventType);
-			case SLIDER.DRAG_START:
-				changeEvent = onDragStart || onDragChange;
-				break;
-			case SLIDER.INPUT_START:
-				return onInputStart(changingValue, element);
-			default:
-				changeEvent = onDragChange;
-				break;
-		}
-
+		const changingValue = this.state[ `${ element }Value` ];
 		const changedValue = eventType === SLIDER.INPUT_CHANGE
 			? getRatioValue({
 				numerator: numValue,
@@ -228,25 +217,156 @@ class RangeSlider extends React.Component {
 			})
 			: getIntervalValue(numValue, interval);
 
-		if (!isNaN(numValue) && changedValue !== changingValue && changeEvent) {
-			changeEvent(changedValue, element, eventType);
+		if (disabled) {
+			return;
 		}
+
+		switch (eventType) {
+			case SLIDER.DRAG_END:
+			case SLIDER.INPUT_END:
+			case SLIDER.INPUT_START:
+				this.setDragValues(changingValue, element, eventType);
+
+				break;
+			default:
+				this.setDragValues(changedValue, element, eventType);
+
+				break;
+		}
+	};
+
+	/**
+	 * Handle mouse down event to determine if it is the max or min knob user is changing
+	 */
+	handleMouseDownEvent = (event) => {
+		const {
+			[ 'max-input' ]: maxInput,
+			[ 'min-input' ]: minInput
+		} = this.refs;
+		const { target } = event;
+		const inputClicked = maxInput.contains(target)
+			|| maxInput === target
+			|| minInput.contains(target)
+			|| minInput === target;
+
+		if (inputClicked) {
+			return;
+		}
+
+		const { minValue, maxValue } = this.state;
+		const nextValue = this.getSliderCursorValue(event);
+		let knobType;
+
+		if (nextValue > maxValue) {
+			knobType = SLIDER.RANGE_MAX;
+		}
+		else if (nextValue < minValue) {
+			knobType = SLIDER.RANGE_MIN;
+		}
+		else {
+			const maxRange = Math.abs(maxValue - nextValue);
+			const minRange = Math.abs(minValue - nextValue);
+
+			knobType = (maxRange < minRange) ? SLIDER.RANGE_MAX : SLIDER.RANGE_MIN;
+		}
+
+		this.handleDragStart(knobType, nextValue);
+	};
+
+	/**
+	 * Determine if the number passed in is going past the range set by its respected knob
+	 * @param  {number}  num      Number to check its range
+	 * @param  {string}  knobType Knob Type
+	 * @return {boolean}          Indicator to check if the number exceeds its appropriate range
+	 */
+	invalidMinMaxRange = (num, knobType) => {
+		const { maxValue, minValue } = this.state;
+
+		if (knobType === SLIDER.RANGE_MAX) {
+			return num <= minValue;
+		}
+
+		if (knobType === SLIDER.RANGE_MIN) {
+			return num >= maxValue;
+		}
+
+		return false;
+	};
+
+	/**
+	 * Set in-component drag values
+	 * @param {number} value     Drag Value
+	 * @param {string} knobType  Knob type
+	 * @param {string} eventType Event Type
+	 */
+	setDragValues = (value, knobType, eventType) => {
+		const {
+			onDragChange,
+			onDragEnd,
+			onDragStart
+		} = this.props;
+		const displayValue = shortenNumber(value);
+		const exceedsBounds = this.invalidMinMaxRange(value, knobType);
+		const notDragEnd = eventType !== SLIDER.DRAG_END && eventType !== SLIDER.INPUT_END;
+		const updatedState = {
+			[ `${knobType}Value` ]: value
+		};
+		let callback;
+
+		if (exceedsBounds && notDragEnd) {
+			return;
+		}
+
+		switch (eventType) {
+			case SLIDER.DRAG_START:
+				callback = onDragStart;
+				Object.assign(updatedState, {
+					[ `${knobType}Display` ]: displayValue
+				});
+
+				break;
+			case SLIDER.DRAG_CHANGE:
+				callback = onDragChange;
+				Object.assign(updatedState, {
+					[ `${knobType}Display` ]: displayValue
+				});
+
+				break;
+			case SLIDER.DRAG_END:
+			case SLIDER.INPUT_END:
+				callback = onDragEnd;
+				Object.assign(updatedState, {
+					[ `${knobType}Display` ]: displayValue
+				});
+
+				break;
+			default:
+				break;
+		}
+
+		if (callback) {
+			callback(value, knobType);
+		}
+
+		this.setState(updatedState);
 	};
 
 	render() {
 		const {
 			disabled,
-			minDisplay,
-			minValue,
 			max,
 			maxLabel,
 			minLabel,
 			min,
-			maxDisplay,
-			maxValue,
 			width
 		} = this.props;
-		const { drag } = this.state;
+		const {
+			drag,
+			maxDisplay,
+			maxValue,
+			minDisplay,
+			minValue
+		} = this.state;
 		const currentPositionMin = getRatioValue({
 			numerator: minValue,
 			denominator: max,
@@ -282,51 +402,54 @@ class RangeSlider extends React.Component {
 			WebkitTransform: translateValueMin,
 			width: `${trackWidth}px`
 		};
-		const minClass = classNames('min', {
-			dragging: drag === 'min'
+		const minClass = classNames(`range-${SLIDER.RANGE_MIN}`, {
+			dragging: drag === SLIDER.RANGE_MIN
 		});
-		const maxClass = classNames('max', {
-			dragging: drag === 'max'
+		const maxClass = classNames(`range-${SLIDER.RANGE_MAX}`, {
+			dragging: drag === SLIDER.RANGE_MAX
 		});
 
 		return (
 			<div className={ sliderClassnames }>
 				<label>{ minLabel || min }</label>
 
-				<div className='range' ref='slider' >
-					<div className='track' onMouseDown={ !disabled && this.handleDragStart.bind(this, 'track') }>
+				<div
+					className='range'
+					ref='slider'
+					onMouseDown={ !disabled && this.handleMouseDownEvent }>
+					<div className='track'>
 						<div className='cover' style={ trackCoverWidth } />
 					</div>
 
 					<div className={ minClass } style={ minKnobPosition }>
-						<div className='knob' onMouseDown={ !disabled && this.handleDragStart.bind(this, 'min') }/>
+						<div className='knob' />
 
-						<div className='slider-display'>
+						<div className='slider-display' ref='min-input'>
 							<Input
 								disabled={ disabled }
 								placeholder='0'
-								onBlur={ this.handleInputEvent.bind(this, 'min', SLIDER.INPUT_END) }
-								onChange={ this.handleInputEvent.bind(this, 'min', SLIDER.INPUT_CHANGE) }
-								onFocus={ this.handleInputEvent.bind(this, 'min', SLIDER.INPUT_START) }
-								onKeyUp={ this.handleInputEvent.bind(this, 'min', SLIDER.INPUT_KEYPRESS) }
+								onBlur={ this.handleInputEvent.bind(this, SLIDER.RANGE_MIN, SLIDER.INPUT_END) }
+								onChange={ this.handleInputEvent.bind(this, SLIDER.RANGE_MIN, SLIDER.INPUT_CHANGE) }
+								onFocus={ this.handleInputEvent.bind(this, SLIDER.RANGE_MIN, SLIDER.INPUT_START) }
+								onKeyUp={ this.handleInputEvent.bind(this, SLIDER.RANGE_MIN, SLIDER.INPUT_KEYPRESS) }
 								type='text'
-								value={ minDisplay.toString() } />
+								value={ minDisplay } />
 						</div>
 					</div>
 
 					<div className={ maxClass } style={ maxKnobPosition }>
-						<div className='knob' onMouseDown={ !disabled && this.handleDragStart.bind(this, 'max') }/>
+						<div className='knob' />
 
-						<div className='slider-display'>
+						<div className='slider-display' ref='max-input'>
 							<Input
 								disabled={ disabled }
 								placeholder='0'
-								onBlur={ this.handleInputEvent.bind(this, 'max', SLIDER.INPUT_END) }
-								onChange={ this.handleInputEvent.bind(this, 'max', SLIDER.INPUT_CHANGE) }
-								onFocus={ this.handleInputEvent.bind(this, 'max', SLIDER.INPUT_START) }
-								onKeyUp={ this.handleInputEvent.bind(this, 'max', SLIDER.INPUT_KEYPRESS) }
+								onBlur={ this.handleInputEvent.bind(this, SLIDER.RANGE_MAX, SLIDER.INPUT_END) }
+								onChange={ this.handleInputEvent.bind(this, SLIDER.RANGE_MAX, SLIDER.INPUT_CHANGE) }
+								onFocus={ this.handleInputEvent.bind(this, SLIDER.RANGE_MAX, SLIDER.INPUT_START) }
+								onKeyUp={ this.handleInputEvent.bind(this, SLIDER.RANGE_MAX, SLIDER.INPUT_KEYPRESS) }
 								type='text'
-								value={ maxDisplay.toString() } />
+								value={ maxDisplay } />
 						</div>
 					</div>
 				</div>
