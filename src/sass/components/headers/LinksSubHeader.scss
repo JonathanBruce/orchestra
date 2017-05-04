@@ -20,5 +20,10 @@
 	.widgets {
 		margin-right: 20px;
 		padding: 12px 0px;
+
+		> * {
+			display: inline-block;
+			vertical-align: top;
+		}
 	}
 }
