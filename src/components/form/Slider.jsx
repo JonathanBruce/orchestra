@@ -12,16 +12,17 @@ import SLIDER from 'constants/SLIDER';
 class Slider extends React.Component {
 	/**
 	 * propType definition
-	 * @type {number}   defaultValue Value which is currently set. Will need to be update `onChange` handler
-	 * @type {boolean}  disabled     Boolean which determines the availability of the slider. Defaults to false
-	 * @type {number}   interval     The incremental step the slider should move by
-	 * @type {string}   label        String value representing the display label value of the slider
-	 * @type {number}   max          Number representing the highest value the slider can reach
-	 * @type {number}   min          Number representing the lowest value the slider can reach.
-	 * @type {function} onDragChange A function which is called when the slider is dragged. The value that slider is pointing to will be passed down
-	 * @type {function} onDragEnd    A function that is called when user lets go of the slider. The value of the position where slider ended will be passed down
-	 * @type {function} onDragStart  A function that is called when user initiates the drag of the slider. The value of the position where slider started will be passed down
-	 * @type {number}   width        Number representing the width of the slider
+	 * @type {number}   defaultValue  Value which is currently set. Will need to be update `onChange` handler
+	 * @type {boolean}  disabled      Boolean which determines the availability of the slider. Defaults to false
+	 * @type {number}   interval      The incremental step the slider should move by
+	 * @type {string}   label         String value representing the display label value of the slider
+	 * @type {number}   max           Number representing the highest value the slider can reach
+	 * @type {number}   min           Number representing the lowest value the slider can reach.
+	 * @type {function} onDragChange  A function which is called when the slider is dragged. The value that slider is pointing to will be passed down
+	 * @type {function} onDragEnd     A function that is called when user lets go of the slider. The value of the position where slider ended will be passed down
+	 * @type {function} onDragStart   A function that is called when user initiates the drag of the slider. The value of the position where slider started will be passed down
+	 * @type {function} onInputChange A function that is called when user initiates the modifies the input field.
+	 * @type {number}   width         Number representing the width of the slider
 	 */
 	static propTypes = {
 		defaultValue: React.PropTypes.number.isRequired,
@@ -33,6 +34,7 @@ class Slider extends React.Component {
 		onDragChange: React.PropTypes.func.isRequired,
 		onDragEnd: React.PropTypes.func,
 		onDragStart: React.PropTypes.func,
+		onInputChange: React.PropTypes.func,
 		width: React.PropTypes.number
 	};
 
@@ -175,7 +177,8 @@ class Slider extends React.Component {
 			interval,
 			max,
 			min,
-			onDragEnd
+			onDragEnd,
+			onInputChange
 		} = this.props;
 		const numValue = Number(value);
 		const changedValue = eventType === SLIDER.INPUT_CHANGE
@@ -196,6 +199,15 @@ class Slider extends React.Component {
 			case SLIDER.INPUT_END:
 				if (onDragEnd) {
 					onDragEnd(numValue);
+				}
+
+				break;
+			case SLIDER.INPUT_CHANGE:
+				this.setDragValues(changedValue, eventType);
+				const changeHandler = onInputChange || onDragEnd;
+
+				if (changeHandler) {
+					changeHandler(numValue);
 				}
 
 				break;
