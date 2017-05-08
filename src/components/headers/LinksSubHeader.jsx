@@ -6,7 +6,6 @@ import SubHeader from 'components/base/SubHeader.jsx';
 class LinksSubHeader extends Component {
 	static propTypes = {
 		children: React.PropTypes.array,
-		onClick: React.PropTypes.func.isRequired,
 		widgets: React.PropTypes.oneOfType([
 			React.PropTypes.array,
 			React.PropTypes.element
