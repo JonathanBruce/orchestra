@@ -13,6 +13,7 @@ import {
 	DropDown,
 	Container,
 	Content,
+	EarnedMediaStat,
 	FemaleButton,
 	FilterBox,
 	FloatingSubHeader,
@@ -1334,6 +1335,14 @@ class Example extends React.Component {
 								]
 							} />
 					</Three>
+
+					<Four>
+						<EarnedMediaStat
+							icon={ <Icons.Impressions /> }
+							amount={ '$10000.00' }
+							title='Impressions'
+							number={ 1000 } />
+					</Four>
 				</Container>
 			</div>
 		);

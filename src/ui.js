@@ -107,6 +107,7 @@ export NestedMenu from 'components/menus/Nested.jsx';
 export Alert from 'components/misc/Alert.jsx';
 export Avatar from 'components/misc/Avatar.jsx';
 export Content from 'components/misc/Content.jsx';
+export EarnedMediaStat from 'components/misc/EarnedMediaStat.jsx';
 export Info from 'components/misc/Info.jsx';
 export Influencer from 'components/misc/Influencer.jsx';
 export Notifier from 'components/misc/Notifier.jsx';
