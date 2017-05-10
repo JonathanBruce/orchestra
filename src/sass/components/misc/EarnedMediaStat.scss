@@ -1,0 +1,81 @@
+.orch-earned-media-stat {
+	height: 200px;
+	position: relative;
+	width: 180px;
+
+	.orch-stat {
+		height: 100px;
+	}
+
+	.media-stat {
+		.orch-stat {
+			border-bottom: 1px solid $arctic-blue-dark;
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+
+			.stat {
+				padding: 8px 10px;
+
+				.value {
+					font-size: 34px;
+				}
+
+				.name {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+
+	.media-earned {
+		.orch-stat {
+			border-top: 1px solid $arctic-blue-dark;
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+
+			.stat {
+				padding: 35px 10px;
+
+				.value {
+					color: $mint-green;
+					font-size: 16px;
+					font-family: $lato-regular;
+				}
+
+				.name {
+					color: $IP-blue;
+					font-size: 18px;
+					letter-spacing: 4px;
+					position: relative;
+    				right: -3px;
+				}
+			}
+		}
+	}
+
+	.media-icon {
+		align-items: center;
+		background: $pure-white;
+		border: 2px solid $arctic-blue-dark;
+		border-radius: 22px;
+		bottom: 0;
+		display: flex;
+		height: 42px;
+		justify-content: center;
+		left: 0;
+		margin: auto;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 42px;
+
+		svg {
+			height: 30px;
+			width: 30px;
+			path,
+			g {
+				stroke: $arctic-blue-dark;
+			}
+		}
+	}
+}

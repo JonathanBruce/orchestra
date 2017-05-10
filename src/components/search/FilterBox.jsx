@@ -15,7 +15,10 @@ class FilterBox extends React.Component {
 		title: React.PropTypes.string.isRequired,
 		titleIcon: React.PropTypes.element,
 		tooltipTitle: React.PropTypes.string,
-		tooltipValue: React.PropTypes.string,
+		tooltipValue: React.PropTypes.oneOfType([
+			React.PropTypes.array,
+			React.PropTypes.string
+		]),
 		widget: React.PropTypes.element,
 		widgetIcon: React.PropTypes.element,
 		widgetOpen: React.PropTypes.bool
