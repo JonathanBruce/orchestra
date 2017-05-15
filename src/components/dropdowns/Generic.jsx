@@ -110,7 +110,7 @@ class GenericDropDown extends React.Component {
 		return (
 			<div className={ classes }>
 				{ this.renderSelector() }
-				{ active && <GenericMenu
+				<GenericMenu
 					options={ options }
 					ref={
 						(menu) => {
@@ -120,7 +120,6 @@ class GenericDropDown extends React.Component {
 					onChange={ onChange }
 					onToggle={ this.toggleAndRemoveHideMenuListener }
 					selected={ selected } />
-				}
 			</div>
 		);
 	}

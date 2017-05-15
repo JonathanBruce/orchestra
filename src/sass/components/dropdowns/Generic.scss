@@ -7,8 +7,16 @@ $chevron-width: 24px;
 	cursor: pointer;
 	position: relative;
 
+	.orch-generic-menu {
+		display: none;
+	}
+
 	&.active {
 		z-index: 100;
+
+		.orch-generic-menu {
+			display: block;
+		}
 	}
 
 	.selector {
