@@ -63,6 +63,7 @@ import {
 	Two,
 	ValueActionDropDown
 } from '../src/ui';
+import { REQUIREMENTS } from 'sheet-music';
 
 class Example extends React.Component {
 	render() {
@@ -715,6 +716,23 @@ class Example extends React.Component {
 					</Six>
 
 					<Three>
+						<KeywordTag
+							requirement={ REQUIREMENTS.STREAM }
+							onDeleteClick={
+								() => {
+									console.log('delete');
+								}
+							}
+							onTagChange={
+								(tag) => {
+									console.log(tag);
+								}
+							}
+							onRequirementChange={
+								() => {}
+							}
+							defaultValue='Big Butt So What' />
+
 						<KeywordTag
 							network='facebook'
 							onDeleteClick={
