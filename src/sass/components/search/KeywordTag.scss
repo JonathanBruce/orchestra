@@ -133,7 +133,13 @@
 
 	&.stream {
 		.tag {
+			.keyword { 
+				width: 163px;
+			}
+
 			.requirement {
+				width: 25px;
+
 				&:hover {
 					background-color: $pure-white;
 					cursor: default;
