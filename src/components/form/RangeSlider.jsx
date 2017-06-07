@@ -175,7 +175,7 @@ class RangeSlider extends React.Component {
 		const { keyCode, which, target } = event;
 		const keycode = keyCode || which;
 		const { value } = target;
-		const numValue = value ? unshortenNumber(value) : 0;
+		const numValue = value ? unshortenNumber(value) : '';
 
 		if (keycode === 13 && eventType === SLIDER.INPUT_KEYPRESS) {
 			target.blur();

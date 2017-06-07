@@ -59,7 +59,7 @@
     "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
-	"sheet-music": "git+ssh://git@github.com/insightpool/sheet-music.git#dd1bbbe73a85baaa73d9c2c7adc7477aa47031c3",
+	"sheet-music": "git+ssh://git@github.com/insightpool/sheet-music.git#1cc862f582957a5413bd4034940abac519e5ff4f",
     "spinkit": "^1.2.5"
   }
 }
