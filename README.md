@@ -2145,7 +2145,6 @@ class MyComponent extends React.Component {
 
 **Props:**
 
-=======
 | Name                 | Type            | Desciption                                                  |
 | ---------------------|-----------------|-------------------------------------------------------------|
 | `disabled`           | `bool`          | Represents whether the tag should be disabled               |
@@ -2156,6 +2155,7 @@ class MyComponent extends React.Component {
 | `onDeleteClick`      | `func`          | Function for deleting the keyword tag                       |
 | `onEmptyClick`       | `func`          | Function for when the tag is empty                          |
 | `network`            | `string`        | Value for current network                                   |
+| `networks`           | `array`         | Array of networks for network options                       |
 | `onNetworkChange`    | `func`          | Function for changing network in network menu               |
 | `onNetworkToggle`    | `func`          | Function for toggling the network menu open or closed       |
 | `openNetwork`        | `boolean`       | Boolean for whether the network menu should be open         |
@@ -2192,6 +2192,7 @@ class MyComponent extends React.Component {
 				disabled={ false }
 				invalid={ false }
 				network={ ALL_NETWORKS.TWITTER }
+				networks={ [ ALL_NETWORKS.TWITTER ] }
 				preview={ false }
 				requirement={ REQUIREMENTS.NEUTRAL }
 				onEditToggle={
