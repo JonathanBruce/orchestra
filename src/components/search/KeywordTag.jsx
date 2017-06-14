@@ -21,6 +21,7 @@ class KeywordTag extends Component {
 		onEditToggle: React.PropTypes.func,
 		onEmptyClick: React.PropTypes.func,
 		network: React.PropTypes.string,
+		networks: React.PropTypes.array,
 		onNetworkChange: React.PropTypes.func,
 		onNetworkToggle: React.PropTypes.func,
 		onOptionsChange: React.PropTypes.func,
@@ -78,13 +79,13 @@ class KeywordTag extends Component {
 		}
 	}
 
-
 	static defaultProps = {
 		editable: true,
 		openNetwork: false,
 		openOptions: false,
 		openRequirement: false,
 		network: BIO_PROFILE_KEYWORD_NETWORKS.ALL,
+		networks: Object.values(BIO_PROFILE_KEYWORD_NETWORKS),
 		requirement: REQUIREMENTS.NEUTRAL
 	};
 
@@ -340,11 +341,15 @@ class KeywordTag extends Component {
 	 * Renders requirement dropdown
 	 */
 	renderNetworkDropDown = () => {
-		const { openNetwork, network } = this.props;
-		const networks = Object.values(BIO_PROFILE_KEYWORD_NETWORKS);
+		const {
+			openNetwork,
+			network,
+			networks
+		} = this.props;
+		const networkOptions = networks.slice();
 
 		if (this.hasNetworkChange() && networks.indexOf(network) > -1) {
-			networks.splice(networks.indexOf(network), 1);
+			networkOptions.splice(networks.indexOf(network), 1);
 
 			return (
 				<div className='network'
@@ -352,7 +357,7 @@ class KeywordTag extends Component {
 					onMouseLeave={ this.hideNetworkMenu }>
 					{ this.renderNetworkIcon(network) }
 					<Icons.SmallChevron className='chevron' />
-					{ openNetwork && this.renderNetworkMenu(networks) }
+					{ openNetwork && this.renderNetworkMenu(networkOptions) }
 				</div>
 			);
 		}
