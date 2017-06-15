@@ -10,8 +10,8 @@ class FilterBox extends React.Component {
 			React.PropTypes.array,
 			React.PropTypes.element
 		]).isRequired,
-		onWidgetToggle: React.PropTypes.func,
-		replacementWidget: React.PropTypes.object,
+		onMenuWidgetToggle: React.PropTypes.func,
+		widget: React.PropTypes.object,
 		title: React.PropTypes.string.isRequired,
 		titleIcon: React.PropTypes.element,
 		tooltipTitle: React.PropTypes.string,
@@ -19,13 +19,13 @@ class FilterBox extends React.Component {
 			React.PropTypes.array,
 			React.PropTypes.string
 		]),
-		widget: React.PropTypes.element,
-		widgetIcon: React.PropTypes.element,
-		widgetOpen: React.PropTypes.bool
+		menuWidget: React.PropTypes.element,
+		menuWidgetIcon: React.PropTypes.element,
+		menuWidgetOpen: React.PropTypes.bool
 	};
 
 	static defaultProps = {
-		widgetIcon: <Icons.Search />
+		menuWidgetIcon: <Icons.Search />
 	};
 
 	renderHeader() {
@@ -59,37 +59,37 @@ class FilterBox extends React.Component {
 	}
 
 	renderWidget() {
-		const { widget, widgetOpen } = this.props;
+		const { menuWidget, menuWidgetOpen } = this.props;
 
-		return widget && widgetOpen	&& (
+		return menuWidget && menuWidgetOpen	&& (
 			<div className='widget'>
-				{ widget }
+				{ menuWidget }
 			</div>
 		);
 	}
 
 	renderWidgetIcon() {
 		const {
-			onWidgetToggle,
-			replacementWidget,
+			onMenuWidgetToggle,
 			widget,
-			widgetIcon,
-			widgetOpen
+			menuWidget,
+			menuWidgetIcon,
+			menuWidgetOpen
 		} = this.props;
 		const rightArrowClasses = classnames('right-arrow', {
-			open: widgetOpen
+			open: menuWidgetOpen
 		});
 
-		if (!widget) {
+		if (!menuWidget) {
 			return;
 		}
 
-		return replacementWidget || (
+		return widget || (
 			<div className='widget-icons'>
 				<div
 					className='icon'
-					onClick={ onWidgetToggle }>
-					{ widgetIcon }
+					onClick={ onMenuWidgetToggle }>
+					{ menuWidgetIcon }
 				</div>
 
 				<div className={ rightArrowClasses }>

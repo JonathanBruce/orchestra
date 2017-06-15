@@ -1252,7 +1252,7 @@ class Example extends React.Component {
 
 					<Three>
 						<FilterBox
-							onWidgetToggle={
+							onMenuWidgetToggle={
 								() => {
 									console.log('toggled widget');
 								}
@@ -1260,9 +1260,9 @@ class Example extends React.Component {
 							title={ 'Influencers Of' }
 							tooltipTitle={ 'Info Title' }
 							tooltipValue={ 'This is Information' }
-							widget={ <div>Widget Content</div> }
-							widgetIcon={ <Icons.Search /> }
-							widgetOpen={ false }>
+							menuWidget={ <div>Widget Content</div> }
+							menuWidgetIcon={ <Icons.Search /> }
+							menuWidgetOpen={ false }>
 							<div>Content 1</div>
 							<div>Content 2</div>
 						</FilterBox>
@@ -1277,9 +1277,9 @@ class Example extends React.Component {
 							titleIcon={ <Icons.Instagram /> }
 							tooltipTitle={ 'Info Title' }
 							tooltipValue={ 'This is Information' }
-							widget={ <div>Widget Content</div> }
-							widgetIcon={ <Icons.Search /> }
-							widgetOpen={ true }>
+							menuWidget={ <div>Widget Content</div> }
+							menuWidgetIcon={ <Icons.Search /> }
+							menuWidgetOpen={ true }>
 							<div>Content 1</div>
 							<div>Content 2</div>
 						</FilterBox>
