@@ -1182,6 +1182,7 @@ class Example extends React.Component {
 
 						<KeywordTag
 							network='youtube'
+							networks={ [ 'youtube' ] }
 							openRequirement={ false }
 							onNetworkChange={
 								(network) => {
