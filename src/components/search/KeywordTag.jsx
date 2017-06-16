@@ -348,16 +348,18 @@ class KeywordTag extends Component {
 		} = this.props;
 		const networkOptions = networks.slice();
 
-		if (this.hasNetworkChange() && networks.indexOf(network) > -1) {
-			networkOptions.splice(networks.indexOf(network), 1);
+		if (this.hasNetworkChange() && networkOptions.indexOf(network) > -1) {
+			networkOptions.splice(networkOptions.indexOf(network), 1);
+
+			const optionsExist = networkOptions.length > 0;
 
 			return (
 				<div className='network'
 					onMouseEnter={ this.showNetworkMenu }
 					onMouseLeave={ this.hideNetworkMenu }>
 					{ this.renderNetworkIcon(network) }
-					<Icons.SmallChevron className='chevron' />
-					{ openNetwork && this.renderNetworkMenu(networkOptions) }
+					{ optionsExist && <Icons.SmallChevron className='chevron' /> }
+					{ openNetwork && optionsExist && this.renderNetworkMenu(networkOptions) }
 				</div>
 			);
 		}
