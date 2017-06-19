@@ -10,6 +10,13 @@
 		text-align: center;
 	}
 
+	h2 {
+		color: #aecfeb;
+		font-family: 'Lato-bold';
+		font-size: 24pt;
+		text-align: center;
+	}
+	
 	.orch-checkbox {
 		margin-right: 20px;
 		margin-bottom: 20px;
@@ -23,9 +30,22 @@
 			padding-top: 50px;
 		}
 	}
+	
+	p {
+		font-family: 'Lato-bold';
+		text-align: left;
+	}
 
 	.stat-widget {
 		background-color: #CCCCCC;
 		height: inherit;
+	}
+
+	table {
+		border: 2px solid black;
+		font-family: 'Lato-bold';
+		table-layout: fixed;
+		text-align: center;
+		width: 100%;
 	}
 }
