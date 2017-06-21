@@ -107,10 +107,15 @@
 			.keyword {
 				border-radius: 3px;
 				width: 197px;
+				height: 28px;
 
 				input[ type='text' ] {
 					width: 220px !important;
 				}
+			}
+
+			.delete {
+				height: 21px;
 			}
 		}
 	}
