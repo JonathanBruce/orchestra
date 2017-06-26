@@ -41,9 +41,7 @@ class EarnedMediaStat extends React.Component {
 
 		return (
 			<div className='media-earned'>
-				<Stat
-					name='EMV'
-					number={ amount } />
+				<Stat number={ amount } />
 			</div>
 		);
 	}
