@@ -19,6 +19,10 @@ class Stat extends React.Component {
 		])
 	};
 
+	static defaultProps = {
+		name: ''
+	};
+
 	render() {
 		const {
 			number,
@@ -40,7 +44,7 @@ class Stat extends React.Component {
 			<div className={ orchStatClasses }>
 				<div className='stat'>
 					<div className={ valueClasses }>{ number || value }</div>
-					<div className={ nameClasses }>{ name }</div>
+					{ name && <div className={ nameClasses }>{ name }</div> }
 				</div>
 
 				{ widgets && <div className='widgets'>{ widgets }</div> }
