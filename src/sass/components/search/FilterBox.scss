@@ -3,7 +3,7 @@ $filter-box-size: 280px;
 .orch-filter-box {
 	@include arcticBlueDarkWrapper($background-color: $arctic-blue, $border-radius: 3px);
 
-	box-shadow: 0px 10px 10px -10px rgba($IP-blue, 0.2);
+	box-shadow: 3px 3px 6px rgba(0,0,0,.1);
 	padding: 15px;
 	width: $filter-box-size;
 

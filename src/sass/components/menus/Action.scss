@@ -1,5 +1,5 @@
 .orch-action-menu {
-	@include shadow($blur: 11px, $spread: 2px, $x: 0px, $y: 5px, $alpha: 0.21);
+	@include shadow($blur: 6px, $spread: 0px, $x: 3px, $y: 3px, $alpha: 0.1);
 
 	background-color: $pure-white;
 	border-radius: 3px;

@@ -1,6 +1,6 @@
 .orch-menu,
 .orch-generic-menu {
-	@include shadow($blur: 11px, $spread: 2px, $x: 0px, $y: 5px, $alpha: 0.21);
+	@include shadow($spread: 0px, $blur: 6px, $x: 3px, $y: 3px, $alpha: 0.1);
 
 	border-radius: 3px;
 	left: 0px;
