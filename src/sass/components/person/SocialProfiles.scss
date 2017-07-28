@@ -1,0 +1,36 @@
+.orch-social-profiles {
+	.additional-bubble {
+		background-color: $arctic-blue;
+		border-radius: 50%;
+		border: 2px solid $arctic-blue-dark;
+		box-sizing: border-box;
+		color: $steel-blue;
+		font-size: 10px;
+		height: 24px;
+		line-height: 21px;
+		text-align: center;
+		width: 24px;
+	}
+
+	.profile {
+		display: inline-block;
+		vertical-align: top;
+		margin-right: 10px;
+
+		svg {
+			border-radius: 50%;
+			box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+		}
+
+		.follower-count {
+			font-size: 10px;
+			font-family: $lato-bold;
+			color: $dusk-blue;
+			text-align: center;
+
+			> * {
+				display: inline-block;
+			}
+		}
+	}
+}

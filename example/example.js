@@ -7,6 +7,7 @@ import ButtonList from './components/ButtonList.js';
 import ContentExample from './components/ContentExample.js';
 import Forms from './components/Forms.js';
 import Misc from './components/Misc.js';
+import PersonComponents from './components/Person.js';
 import {
 	Container,
 	FloatingSubHeader,
@@ -78,6 +79,8 @@ class Example extends React.Component {
 					<Misc />
 
 					<SVGs />
+
+					<PersonComponents/>
 				</Container>
 			</div>
 		);

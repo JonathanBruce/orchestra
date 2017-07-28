@@ -116,6 +116,12 @@ export PaginationControls from 'components/misc/PaginationControls.jsx';
 export PillToggle from 'components/misc/PillToggle.jsx';
 export Stat from 'components/misc/Stat.jsx';
 
+
+/**
+ * Export person card components
+ */
+export SocialProfiles from 'components/person/SocialProfiles.jsx';
+
 /**
  * Export search components
  */
